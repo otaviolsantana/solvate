@@ -23,26 +23,26 @@ source $HOME_SOLVATE/suite/qforce.profile
 # Some useful aliases
 
 #--------------------------------# #------------------------------#  #-------------------------------------#
-alias   msolv=$(which solvate);    alias microsolv=$(which solvate); alias micro=$HOME_SOLVATE/modules/micro
+#lias   msolv=$(which solvate);    alias microsolv=$(which solvate); alias micro=$HOME_SOLVATE/modules/micro
 #--------------------------------# #------------------------------#  #-------------------------------------#
-alias     g09="rung09";            alias gsn="rung09";               alias gau="rung09"
+#lias     g09="rung09";            alias gsn="rung09";               alias gau="rung09"
 #lias     g16="rung16";            alias gsn="rung16";               alias gau="rung16"
 #--------------------------------# #------------------------------#  #-------------------------------------#
-alias    orca="runorca"
-alias     xtb="runxtb"
-alias   crest="runcrest"
-alias     gmx="rungmx"
+#lias    orca="runorca"
+#lias     xtb="runxtb"
+#lias   crest="runcrest"
+#lias     gmx="rungmx"
 #lias    namd="runnamd"
 #--------------------------------#
-alias     gv5="rungv5"
-alias    jmol="runjmol"
-alias     vmd="runvmd"
+#lias     gv5="rungv5"
+#lias    jmol="runjmol"
+#lias     vmd="runvmd"
 #--------------------------------#
-alias packmol="runpackmol"
-alias  qforce="runqforce"
+#lias packmol="runpackmol"
+#lias  qforce="runqforce"
 #--------------------------------#
-#lias   babel="outin"
-alias   babel="runbabel"
+#lias   babel="runbabel"
+#--------------------------------#
 alias      sv="sview"
 #--------------------------------#
 alias    info="infos"
