@@ -10,7 +10,7 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
 
 **INSTALLATION**
 
-	To configure _Solvate Suite_, adjust "solvate.profile" and execute "solvate.config" script.
+	To configure the suite, adjust “solvate.profile” and execute “solvate.config” script.
 
 **CONTENTS**
 
