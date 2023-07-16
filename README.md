@@ -1,4 +1,4 @@
-# Solvate Suite
+# _Solvate Suite_
 
 **Version 2023.07**
 
