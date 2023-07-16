@@ -1,8 +1,7 @@
-# _Solvate Suite_
-
-**Version 2023.07**
+# _Solvate Suite_ 2023.07
 
 Last update: 07.jul.2023
+
 
 **OVERVIEW**
 
