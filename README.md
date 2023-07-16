@@ -24,10 +24,8 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
 **TESTED MACHINE CONFIGURATION**
 
 	OS: Kubuntu 22.04.2 LTS x86_64 
-	Host: 81V7 Lenovo IdeaPad S145-15API 
 	Kernel: 5.15.0-76-generic 
 	Shell: bash 5.1.16 
-	Terminal: konsole 
 	CPU: AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx (8) @ 2.300GHz 
 	GPU: AMD ATI Radeon Vega Series / Radeon Vega Mobile Series 
 	Memory: 3762MiB / 5794MiB 
