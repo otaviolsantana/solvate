@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://user-images.githubusercontent.com/69423088/253824433-a6b55273-b084-4283-a0b6-b8d40bc52890.png" width="500px"/>
+<img src="https://user-images.githubusercontent.com/69423088/253824433-a6b55273-b084-4283-a0b6-b8d40bc52890.png" width="250px"/>
 </div>
 
 # _**Solvate Suite**_ 2023.07
@@ -44,3 +44,9 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
 	CPU: AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx (8) @ 2.300GHz 
 	GPU: AMD ATI Radeon Vega Series / Radeon Vega Mobile Series 
 	Memory: 3762MiB / 5794MiB 
+
+**CITATION**
+
+If you use _Solvate Suite_, please cite:
+
+“Solvate Suite Part I: A Complete and Modular Command-Line User Interface for Tool Integration in Molecular Simulation Studies of Liquid Systems”
