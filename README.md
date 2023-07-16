@@ -1,4 +1,6 @@
-https://github.com/otaviolsantana/solvate/issues/1#issue-1806700818
+<div align="center">
+<img src="https://user-images.githubusercontent.com/69423088/253824433-a6b55273-b084-4283-a0b6-b8d40bc52890.png" width="500px"/>
+</div>
 
 # _**Solvate Suite**_ 2023.07
 
