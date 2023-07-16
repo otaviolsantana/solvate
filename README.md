@@ -8,8 +8,8 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
 
 **INSTALLATION**
 
-	To configure the suite, adjust “solvate.profile” and execute “solvate.config” script.
-
+	The suite is distributed pre-compiled for Linux systems, being only necessary to configure it. For this, adjust and load the “solvate.profile” file and run the “solvate.config” script.
+ 
 **CONTENTS**
 
 	- solvate           : Main program
