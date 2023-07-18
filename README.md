@@ -32,8 +32,8 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
 **CONTENTS**
 
 	- solvate           : Main program
-	- solvate.config    : Script to configure suite
 	- solvate.profile   : Script with suite definitions
+	- solvate.config    : Script to configure suite
 	- solvate/modules   : Folder with program modules and sub-modules
 	- solvate/nodes     : Folder with program dependencies
 	- solvate/suite     : Folder with program links
