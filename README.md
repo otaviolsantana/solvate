@@ -29,7 +29,7 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
   
 	Then, adjust and load the “solvate. profile/config” files and run the “solvate.config” script:
 
-		chmod +x solvate.config && ./solvate.config
+		cd solvate && chmod +x solvate.config && ./solvate.config
  
 **CONTENTS**
 
