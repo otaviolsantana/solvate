@@ -27,7 +27,9 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
  
 		git clone https://github.com/otaviolsantana/solvate.git
   
-	Then, adjust and load the “solvate. profile/config” files and run the “solvate.config” script.
+	Then, adjust and load the “solvate. profile/config” files and run the “solvate.config” script:
+
+		chmod +x solvate.config && ./solvate.config
  
 **CONTENTS**
 
