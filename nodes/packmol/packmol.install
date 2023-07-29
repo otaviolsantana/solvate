@@ -1,0 +1,89 @@
+#!/bin/bash
+
+# Configuring instalation
+
+if [[ $HOME_SOLVATE == "" ]]; then
+   echo
+   echo " --------------------------------------------"
+   echo " Please define HOME_SOLVATE directory in your"
+   echo " PATH environmental variable in the .bashrc"
+   echo " file."
+   echo " --------------------------------------------"
+   echo
+   exit
+fi
+
+if [[ $HOME_PROGRAM == "" ]]; then
+   echo
+   echo " --------------------------------------------"
+   echo " Please define HOME_PROGRAM directory in your"
+   echo " PATH environmental variable in the .bashrc"
+   echo " file."
+   echo " --------------------------------------------"
+   echo
+   exit
+fi
+
+# Getting admin permission
+
+if [[ $(which kdialog) != "" ]]; then
+   clear
+   while ! kdialog --title "PackMol instalation" --password "Admin password:" | sudo -S cat /dev/null >/dev/null; do
+      if $(kdialog --warningyesno "Incorret password. Try again."); then
+         return;
+      else
+         exit;
+      fi
+   done
+   echo
+else
+   sudo echo
+fi
+
+# Instaling PackMol
+
+tar xfz packmol.tgz
+CompilerList="
+$1
+gfortran
+f77
+fort77
+ifc
+ifort
+"
+IFS=$'\n'
+
+CompilerLocated="FALSE"
+for SearchCompiler in $CompilerList; do 
+  Compiler=`which $SearchCompiler`
+  if [[ "$Compiler" != "" && $CompilerLocated == "FALSE" ]]; then
+    makefile=`cat Makefile.default`
+    echo "# configure generated Makefile" > Makefile
+    for line in $makefile; do
+      echo ${line//"FORTRAN = AUTO"/"FORTRAN = $Compiler"} >> Makefile
+    done
+    CompilerLocated="TRUE"
+  fi
+done
+if [ $CompilerLocated == "FALSE" ]; then
+   echo
+   echo " ERROR: Could not find any fortran Compiler."
+   echo "        To use your own Compiler, run this script with: "
+   echo "        ./configure /path/to/Compiler/YourCompiler"
+   echo "        Otherwise, install one of the following compilers:"
+   echo "             gfortran, f77, fort77, ifc, ifort"
+   echo "        and run this configure script again."
+   echo
+   exit
+fi
+
+make >& packmol.log
+rm *.f *.i Makefile*
+mkdir -p bin
+mv packmol bin/
+sudo mv -f bin $HOME_PROGRAM/packmol ; sudo -K
+
+# Configuring PackMol
+
+rm -rf $HOME_SOLVATE/suite/packmol
+ln -sf $HOME_PROGRAM/packmol $HOME_SOLVATE/suite/packmol
