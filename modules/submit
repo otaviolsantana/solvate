@@ -50,18 +50,18 @@ elif [[ -z $1 ]]; then
    echo -e "\033[1;31m submit \033[1;32m<program> <input.ext> <-options> <-ntasks I> \033[0m"
    echo
    echo -e "\033[1;33m PARAMETERS                                          \033[0m"
-   echo -e "\033[1;21m      program    [gsn/orca/xtb/gmx program]          \033[0m"
-   echo -e "\033[1;21m      input.ext  [Input GJF/COM/INP/XYZ/GRO file]    \033[0m"
+   echo -e "\033[1;21m      program   [gsn/orca/xtb/gmx program]           \033[0m"
+   echo -e "\033[1;21m      input.ext [Input GJF/COM/INP/XYZ/GRO file]     \033[0m"
    echo
    echo -e "\033[1;33m OPTIONS/DEFAULTS                                    \033[0m"
-   echo -e "\033[1;21m     -options    [Program specific options]          \033[0m"
-   echo -e "\033[1;21m     -queue  T   [Name of available queue]           \033[0m"
-   echo -e "\033[1;21m     -ntasks I   [Number of processors][-prc]        \033[0m"
-   echo -e "\033[1;21m     -preserv    [Preserv the submission job file]   \033[0m"
-   echo -e "\033[1;21m     -debug      [Check generated job before submit] \033[0m"
+   echo -e "\033[1;21m     -options   [Program specific options]           \033[0m"
+   echo -e "\033[1;21m     -queue  T  [Name of available queue]            \033[0m"
+   echo -e "\033[1;21m     -ntasks I  [Number of processors][-prc]         \033[0m"
+   echo -e "\033[1;21m     -preserv   [Preserv the submission job file]    \033[0m"
+   echo -e "\033[1;21m     -debug     [Check generated job before submit]  \033[0m"
   #echo
   #echo -e "\033[1;33m ADDITIONAL                                          \033[0m"
-  #echo -e "\033[1;21m     -batch  T   [Name of system batch]              \033[0m"
+  #echo -e "\033[1;21m     -batch  T  [Name of system batch]               \033[0m"
    echo
    echo -e "\033[1;33m AVAILABLE SYSTEM BATCH                              \033[0m"
    if [[ $MACHINE == "PBS" ]]; then
@@ -213,7 +213,7 @@ while [ "$1" != "" ]; do
             echo ' ERROR: the option "-ntasks" requires a non-empty argument.'
             exit
          fi;;
-      -prs|-PRS|-pres|-PRES|-preserv|-PRESERV)
+      -bck|-BCK|-bak|-BAK|-prv|-PRV|-pres|-PRES|-preserv|-PRESERV)
          CFGSAVE="YES";;
       -deb|-DEB|-dbg|-DBG|-debug|-DEBUG|-chk|-CHK|-check|-CHECK)
          CFGDEBG="YES";;
