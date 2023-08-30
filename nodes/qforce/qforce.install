@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Configuring instalation
+
+if [[ $HOME_SOLVATE == "" ]]; then
+   echo
+   echo " --------------------------------------------"
+   echo " Please define HOME_SOLVATE directory in your"
+   echo " PATH environmental variable in the .bashrc"
+   echo " file."
+   echo " --------------------------------------------"
+   echo
+   exit
+fi
+
+if [[ $HOME_PROGRAM == "" ]]; then
+   echo
+   echo " --------------------------------------------"
+   echo " Please define HOME_PROGRAM directory in your"
+   echo " PATH environmental variable in the .bashrc"
+   echo " file."
+   echo " --------------------------------------------"
+   echo
+   exit
+fi
+
+PROGPYT=$(which python3.10)
+WORKDIR=$(pwd)
+PROGDIR=/opt/chemprogs
+
+# Getting admin permission
+
+if [[ $(which kdialog) != "" ]]; then
+   clear
+   while ! kdialog --title "QForce instalation" --password "Admin password:" | sudo -S cat /dev/null >/dev/null; do
+      if $(kdialog --warningyesno "Incorret password. Try again."); then
+         return;
+      else
+         exit;
+      fi
+   done
+   echo
+else
+   sudo echo
+fi
+
+# Instaling QForce
+
+if [[ ! -f qforce.zip ]]; then
+   wget https://github.com/selimsami/qforce/archive/refs/heads/master.zip ; mv -f master.zip qforce.zip
+fi
+
+unzip -o qforce.zip
+cd $WORKDIR/qforce-master
+$PROGPYT setup.py install
+chmod ug+rx bin bin/*
+chown root:users bin bin/*
+sudo mv -f bin $HOME_PROGRAM/qforce ; sudo -K
+rm -rf $WORKDIR/qforce-master
+
+# Configuring QForce
+
+rm -rf $HOME_SOLVATE/suite/qforce
+ln -sf $HOME_PROGRAM/qforce $HOME_SOLVATE/suite/qforce
