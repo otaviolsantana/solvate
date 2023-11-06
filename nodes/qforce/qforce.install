@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Configuring instalation
+
+if [[ $HOME_SOLVATE == "" ]]; then
+   echo
+   echo " --------------------------------------------"
+   echo " Please define HOME_SOLVATE directory in your"
+   echo " PATH environmental variable in the .bashrc"
+   echo " file."
+   echo " --------------------------------------------"
+   echo
+   exit
+fi
+
+PROGPYT=$(which python3.10)
+WORKDIR=$(pwd)
+
+# Instaling QForce
+
+if [[ ! -f qforce.zip ]]; then
+   wget https://github.com/selimsami/qforce/archive/refs/heads/master.zip ; mv -f master.zip qforce.zip
+fi
+
+unzip -o qforce.zip
+cd qforce-master
+$PROGPYT setup.py install
+chmod ug+rx bin bin/*
+mv -f bin qforce
+
+# Configuring QForce
+
+rm -rf $HOME_SOLVATE/suite/qforce
+ln -sf qforce $HOME_SOLVATE/suite/qforce

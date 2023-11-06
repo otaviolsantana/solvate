@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Updating qForce
+
+wget https://github.com/selimsami/qforce/archive/refs/heads/master.zip ; mv -f master.zip qforce.zip # git clone https://github.com/selimsami/qforce.git
