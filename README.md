@@ -44,9 +44,12 @@ Under construction...
 
    ***Visualization Programs***
 
-     - Avogadro
      - JMol
      - VMD
+
+   ***Scripts Interpreter***
+
+     - Python 3.1
 
 **TESTED MACHINE CONFIGURATION**
 
@@ -70,4 +73,4 @@ SOLVATE is a free software: you can redistribute it under the terms of the BSD 3
 
 **LINKS**
 
-PackMol: [https://m3g.github.io/packmol/download.shtml] | Q-Force: [https://qforce.readthedocs.io/en/latest/index.html] | xTB: [https://xtb-docs.readthedocs.io/en/latest/] | CREST: [https://crest-lab.github.io/crest-docs/] | ORCA: [https://orcaforum.kofo.mpg.de/app.php/portal] | GROMACS:  [https://www.gromacs.org] | Avogadro: [https://avogadro.cc/] | JMol: [https://jmol.sourceforge.net/] | VMD: [https://www.ks.uiuc.edu/Research/vmd/]
+PackMol: [https://m3g.github.io/packmol/download.shtml] | Q-Force: [https://qforce.readthedocs.io/en/latest/index.html] | xTB: [https://xtb-docs.readthedocs.io/en/latest/] | CREST: [https://crest-lab.github.io/crest-docs/] | ORCA: [https://orcaforum.kofo.mpg.de/app.php/portal] | GROMACS:  [https://www.gromacs.org] | JMol: [https://jmol.sourceforge.net/] | VMD: [https://www.ks.uiuc.edu/Research/vmd/]
