@@ -38,7 +38,7 @@ Under construction...
    ***Electronic Structure and Molecular Dynamics Simulation Programs***
 
      - xTB v6.6.1
-     - CREST 
+     - CREST v2.12
      - ORCA 5.0
      - GROMACS 2023.3
 
