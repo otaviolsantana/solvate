@@ -38,6 +38,7 @@ Under construction...
    ***Electronic Structure and Molecular Dynamics Simulation Programs***
 
      - xTB v6.6.1
+     - CREST 
      - ORCA 5.0
      - GROMACS 2023.3
 
@@ -65,4 +66,4 @@ If you use _Solvate Suite_, please cite:
 
 **LINKS**
 
-PackMol: [https://m3g.github.io/packmol/download.shtml] | Q-Force: [https://qforce.readthedocs.io/en/latest/index.html] | xTB: [https://xtb-docs.readthedocs.io/en/latest/] | ORCA: [https://orcaforum.kofo.mpg.de/app.php/portal] | GROMACS:  [https://www.gromacs.org] | Avogadro: [https://avogadro.cc/] | JMol: [https://jmol.sourceforge.net/] | VMD: [https://www.ks.uiuc.edu/Research/vmd/]
+PackMol: [https://m3g.github.io/packmol/download.shtml] | Q-Force: [https://qforce.readthedocs.io/en/latest/index.html] | xTB: [https://xtb-docs.readthedocs.io/en/latest/] | CREST: [https://crest-lab.github.io/crest-docs/] | ORCA: [https://orcaforum.kofo.mpg.de/app.php/portal] | GROMACS:  [https://www.gromacs.org] | Avogadro: [https://avogadro.cc/] | JMol: [https://jmol.sourceforge.net/] | VMD: [https://www.ks.uiuc.edu/Research/vmd/]
