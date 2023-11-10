@@ -47,14 +47,7 @@ Under construction...
      - JMol
      - VMD
 
-PackMol:  [https://m3g.github.io/packmol/download.shtml]
-Q-Force:  [https://qforce.readthedocs.io/en/latest/index.html]
-xTB:      [https://xtb-docs.readthedocs.io/en/latest/]
-ORCA:     [https://orcaforum.kofo.mpg.de/app.php/portal]
-GROMACS:  [https://www.gromacs.org]
-Avogadro: [https://avogadro.cc/]
-JMol:     [https://jmol.sourceforge.net/]
-VMD:      [https://www.ks.uiuc.edu/Research/vmd/]
+PackMol: [https://m3g.github.io/packmol/download.shtml] | Q-Force: [https://qforce.readthedocs.io/en/latest/index.html] | xTB: [https://xtb-docs.readthedocs.io/en/latest/] | ORCA: [https://orcaforum.kofo.mpg.de/app.php/portal] | GROMACS:  [https://www.gromacs.org] | Avogadro: [https://avogadro.cc/] | JMol: [https://jmol.sourceforge.net/] | VMD: [https://www.ks.uiuc.edu/Research/vmd/]
 
 **TESTED MACHINE CONFIGURATION**
 
