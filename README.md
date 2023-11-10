@@ -31,6 +31,8 @@ Under construction...
 **DEPENDENCIES**
 
    * Simulation Box Creation
+	- solvate         : Main program
+     
 	- PackMol v20.14.2
           [https://m3g.github.io/packmol/download.shtml]      [https://github.com/m3g/packmol]
 	- Q-Force v1.0
