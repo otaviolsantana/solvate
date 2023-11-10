@@ -40,6 +40,7 @@ Under construction...
    ***Electronic Structure and Molecular Dynamics Simulation Programs***
 
      - xTB v6.6.1
+
        [https://xtb-docs.readthedocs.io/en/latest/]        [https://github.com/grimme-lab/xtb/releases/tag/v6.6.1]
 	- ORCA 5.0         : [https://orcaforum.kofo.mpg.de/app.php/portal]      [https://orcaforum.kofo.mpg.de/app.php/dlext/?cat=21]
 	- GROMACS 2023.3   : [https://www.gromacs.org]                           [https://manual.gromacs.org/2023.3/download.html]
