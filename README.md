@@ -47,8 +47,10 @@ Under construction...
      - JMol
      - VMD
 
-[https://m3g.github.io/packmol/download.shtml]       [https://github.com/m3g/packmol]
-[https://qforce.readthedocs.io/en/latest/index.html] [https://github.com/selimsami/qforce]
+PackMol: [https://m3g.github.io/packmol/download.shtml]
+	 [https://github.com/m3g/packmol]
+Q-Force: [https://qforce.readthedocs.io/en/latest/index.html]
+         [https://github.com/selimsami/qforce]
 [https://xtb-docs.readthedocs.io/en/latest/]         [https://github.com/grimme-lab/xtb/releases/tag/v6.6.1]
 [https://orcaforum.kofo.mpg.de/app.php/portal]       [https://orcaforum.kofo.mpg.de/app.php/dlext/?cat=21]
 [https://www.gromacs.org]                            [https://manual.gromacs.org/2023.3/download.html]
@@ -62,8 +64,7 @@ Under construction...
 	Kernel: 5.15.0-76-generic 
 	Shell: bash 5.1.16 
 	CPU: AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx (8) @ 2.300GHz 
-	GPU: AMD ATI Radeon Vega Series / Radeon Vega Mobile Series 
-	Memory: 3762MiB / 5794MiB 
+	Memory: 5794MiB 
 
 **CITATION**
 
