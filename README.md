@@ -47,14 +47,14 @@ Under construction...
      - JMol
      - VMD
 
-[https://m3g.github.io/packmol/download.shtml]      [https://github.com/m3g/packmol]
-[https://qforce.readthedocs.io/en/latest/index.html][https://github.com/selimsami/qforce]
-[https://xtb-docs.readthedocs.io/en/latest/]        [https://github.com/grimme-lab/xtb/releases/tag/v6.6.1]
-[https://orcaforum.kofo.mpg.de/app.php/portal]      [https://orcaforum.kofo.mpg.de/app.php/dlext/?cat=21]
-[https://www.gromacs.org]                           [https://manual.gromacs.org/2023.3/download.html]
-[https://avogadro.cc/]                              [https://sourceforge.net/projects/avogadro/]
-[https://jmol.sourceforge.net/]                     [https://jmol.sourceforge.net/download/]
-[https://www.ks.uiuc.edu/Research/vmd/]             [https://www.ks.uiuc.edu/Development/Download/]
+[https://m3g.github.io/packmol/download.shtml]       [https://github.com/m3g/packmol]
+[https://qforce.readthedocs.io/en/latest/index.html] [https://github.com/selimsami/qforce]
+[https://xtb-docs.readthedocs.io/en/latest/]         [https://github.com/grimme-lab/xtb/releases/tag/v6.6.1]
+[https://orcaforum.kofo.mpg.de/app.php/portal]       [https://orcaforum.kofo.mpg.de/app.php/dlext/?cat=21]
+[https://www.gromacs.org]                            [https://manual.gromacs.org/2023.3/download.html]
+[https://avogadro.cc/]                               [https://sourceforge.net/projects/avogadro/]
+[https://jmol.sourceforge.net/]                      [https://jmol.sourceforge.net/download/]
+[https://www.ks.uiuc.edu/Research/vmd/]              [https://www.ks.uiuc.edu/Development/Download/]
 
 **TESTED MACHINE CONFIGURATION**
 
