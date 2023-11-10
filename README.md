@@ -28,6 +28,22 @@ Under construction...
 	- solvate/nodes   : Folder with program dependencies
 	- solvate/suite   : Folder with program links
 
+**DEPENDENCIES**
+
+   * Simulation Box Creation
+	- PackMol v20.14.2 : [https://m3g.github.io/packmol/download.shtml]      [https://github.com/m3g/packmol]
+	- Q-Force v1.0     : [https://qforce.readthedocs.io/en/latest/index.html][https://github.com/selimsami/qforce]
+
+   * Electronic Structure and Molecular Dynamics Simulation Programs
+	- xTB v6.6.1       : [https://xtb-docs.readthedocs.io/en/latest/]        [https://github.com/grimme-lab/xtb/releases/tag/v6.6.1]
+	- ORCA 5.0         : [https://orcaforum.kofo.mpg.de/app.php/portal]      [https://orcaforum.kofo.mpg.de/app.php/dlext/?cat=21]
+	- GROMACS 2023.3   : [https://www.gromacs.org]                           [https://manual.gromacs.org/2023.3/download.html]
+
+   * Visualization Programs
+	- Avogadro         : [https://avogadro.cc/]                              [https://sourceforge.net/projects/avogadro/]
+	- JMol             : [https://jmol.sourceforge.net/]                     [https://jmol.sourceforge.net/download/]
+	- VMD              : [https://www.ks.uiuc.edu/Research/vmd/]             [https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD]
+
 **TESTED MACHINE CONFIGURATION**
 
 	OS: Kubuntu 22.04.2 LTS x86_64 
