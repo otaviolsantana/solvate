@@ -31,12 +31,11 @@ Under construction...
 **DEPENDENCIES**
 
    * Simulation Box Creation
-	- solvate         : Main program
-     
-	- PackMol v20.14.2
-          [https://m3g.github.io/packmol/download.shtml]      [https://github.com/m3g/packmol]
-	- Q-Force v1.0
- 	  [https://qforce.readthedocs.io/en/latest/index.html][https://github.com/selimsami/qforce]
+
+     - PackMol v20.14.2
+       [https://m3g.github.io/packmol/download.shtml]      [https://github.com/m3g/packmol]
+     - Q-Force v1.0
+       [https://qforce.readthedocs.io/en/latest/index.html][https://github.com/selimsami/qforce]
 
    * Electronic Structure and Molecular Dynamics Simulation Programs
 	- xTB v6.6.1       : [https://xtb-docs.readthedocs.io/en/latest/]        [https://github.com/grimme-lab/xtb/releases/tag/v6.6.1]
