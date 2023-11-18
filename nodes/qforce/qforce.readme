@@ -1,0 +1,27 @@
+A quick guide:
+
+   1. Install QFORCE and PYINSTALLER from the pip repository:
+
+      pip install qforce
+      pip install pyinstaller
+
+   2. Go to the QFORCE installation folder (/home/$USER/.local) and create the "hook-ase" and "hook-sip" folders.
+
+      -----------
+      ASE and SIP are libraries that are not found by default by the PYINSTALLER packager. This information was obtained by analyzing line by line of the debug. Inside these folders are simple Python scripts.
+      -----------
+      Script 1 hook-ase.py: 
+      from PyInstaller.utils.hooks import collect_all
+      datas, binaries, hiddenimports = collect_all('ase')
+
+      Script 2 hook-sip.py:
+      from PyInstaller.utils.hooks import collect_all
+      datas, binaries, hiddenimports = collect_all('sip')
+      -------------
+
+   3. Execute the command:
+
+      pyinstaller --onefile --additional-hooks-dir=hook-ase  --additional-hooks-dir=hook-sip --add-data '/home/daniel/QF/qforce/qforce/data:qforce/data'     --add-data '/home/daniel/QF/qforce/qforce/molecule:qforce/molecule'  --add-data '/home/daniel/QF/qforce/qforce/qm:qforce/qm' --add-data '/home/daniel/QF/qforce/qforce/tests:qforce/tests' qforce
+
+      -----------
+      Explanation: The --onefile command indicates that a single executable will be created. --additional-hooks-dir indicates that the library is being included manually, and --add-data indicates the inclusion of files that QFORCE needs to function.

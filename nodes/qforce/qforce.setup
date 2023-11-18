@@ -1,0 +1,125 @@
+#!/bin/bash
+
+# Configuring instalation
+
+if [[ $HOME_SOLVATE == "" ]]; then
+   echo
+   echo " --------------------------------------------"
+   echo " Please define HOME_SOLVATE directory in your"
+   echo " PATH environmental variable in the .bashrc"
+   echo " file."
+   echo " --------------------------------------------"
+   echo
+   exit
+fi
+
+PROGPYT=$(which python3.10)
+PROGPIP=$(which pip3.10)
+WORKDIR=$(pwd)
+INSTDIR=$HOME_SOLVATE/nodes/qforce
+
+# Getting admin permission
+
+clear
+while ! kdialog --title "QForce instalation" --password "Admin password:" | sudo -S cat /dev/null >/dev/null; do
+   if $(kdialog --warningyesno "Incorret password. Try again."); then
+      return;
+   else
+      exit;
+   fi
+done
+echo
+
+# Initializing instalation...
+
+clear
+echo "Initializing instalation..."
+cd $INSTDIR
+
+OPTION=`zenity --list --width=470 --height=260 \
+       --title="Installation assistant" \
+       --text="Choose an installation method:" \
+       --column="Nº" --column="Method" --column="Description" \
+         01 1/2  "Install precompiled binary." \
+         02 2/2  "Install from repository."`
+
+case $? in
+   0)
+      case $OPTION in
+         01)
+            echo "Installing precompiled binary..."
+            if zenity --question \
+                      --text="This option will install the precompiled binary. Do you want to proceed?"
+               then
+                # Installing QForce in a binary form
+                  cd $INSTDIR
+                  sudo cp qforce.bin    $HOME_SOLVATE/suite/qforce/qforce
+                  sudo chown root:users $HOME_SOLVATE/suite/qforce/qforce
+                  sudo chmod ug+rx      $HOME_SOLVATE/suite/qforce/qforce
+                  cd $WORKDIR
+                # Compiling QForce from scratch
+                  echo
+                  echo "Instalation of QFOrce completed."
+                  echo "To compile QFOrce from scratch, try: pyinstaller qforce.spec"
+                  echo
+               else
+                  echo "Canceling the installation..."
+            fi;;
+         02)
+            echo "Installing from repository."
+            if zenity --question \
+                      --text="This option will install from repository. Do you want to proceed?"
+               then
+                # Instaling dependencies
+                  sudo apt update
+                  sudo apt upgrade 
+                  sudo apt install wget build-essential libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-de
+                  if [[ $PROGPYT == "" ]]; then
+                     sudo unzip -o python_3.10.12.zip ; cd $WORKDIR/python_3.10.12
+                     sudo ./configure --enable-optimizations
+                     sudo make
+                     sudo make test
+                     sudo sudo make install ; cd $WORKDIR/
+                     sudo rm -rf $WORKDIR/python_3.10.12
+                  fi
+                  if [[ $PROGPIP == "" ]]; then
+                     sudo unzip -o pip_23.1.2.zip ; cd $WORKDIR/pip_23.1.2
+                     sudo $PROGPYT $WORKDIR/'pip-23.1.2/setup.py' install ; cd $WORKDIR/
+                     sudo rm -rf $WORKDIR/pip_23.1.2
+                  fi
+                  $PROGPYT -m $PROGPIP install --upgrade pip setuptools wheel
+                  $PROGPYT -m $PROGPIP install scipy           # --prefix=$WORKDIR/dependencies/scipy          
+                  $PROGPYT -m $PROGPIP install numpy           # --prefix=$WORKDIR/dependencies/numpy          
+                  $PROGPYT -m $PROGPIP install ase             # --prefix=$WORKDIR/dependencies/ase            
+                  $PROGPYT -m $PROGPIP install matplotlib      # --prefix=$WORKDIR/dependencies/matplotlib     
+                  $PROGPYT -m $PROGPIP install seaborn         # --prefix=$WORKDIR/dependencies/seaborn        
+                  $PROGPYT -m $PROGPIP install networkx        # --prefix=$WORKDIR/dependencies/networkx       
+                  $PROGPYT -m $PROGPIP install "pulp<2.2"      # --prefix=$WORKDIR/dependencies/pulp     
+                  $PROGPYT -m $PROGPIP install  numba -U       # --prefix=$WORKDIR/dependencies/numba 
+                  $PROGPYT -m $PROGPIP install "pycolt>=0.5.3" # --prefix=$WORKDIR/dependencies/pycolt
+                  $PROGPYT -m $PROGPIP install "numpy==1.23"   # --prefix=$WORKDIR/dependencies/numpy
+                # Instaling QForce
+                  if [[ ! -f qforce.zip ]]; then
+                     wget https://github.com/selimsami/qforce/archive/refs/heads/master.zip ; mv -f master.zip qforce.zip # git clone https://github.com/selimsami/qforce.git
+                  fi
+                  unzip -o qforce.zip
+                  cd qforce-master
+                  $PROGPYT setup.py install
+                  chmod ug+rx bin bin/*
+                  mv -f bin qforce
+                # Configuring QForce
+                  rm -rf $HOME_SOLVATE/suite/qforce
+                  ln -sf qforce $HOME_SOLVATE/suite/qforce
+               else
+                  echo "Canceling the installation..."
+            fi;;
+      esac;;
+   1)
+      echo "Canceling the installation...";; # zenity --warning --text="No options selected!";;
+  -1)
+      echo "Canceling the installation...";; # zenity --warning --text="No options selected!";;
+esac
+
+# Finalização da instalação...
+
+echo "Finishing the installation..." # zenity --warning --text="Finishing the installation..."
