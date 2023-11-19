@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Configuring instalation
+
+if [[ $HOME_SOLVATE == "" ]]; then
+   echo
+   echo " --------------------------------------------"
+   echo " Please define HOME_SOLVATE directory in your"
+   echo " PATH environmental variable in the .bashrc"
+   echo " file."
+   echo " --------------------------------------------"
+   echo
+   exit
+fi
+
+# Getting admin permission
+
+clear
+while ! kdialog --title "QForce instalation" --password "Admin password:" | sudo -S cat /dev/null >/dev/null; do
+   if $(kdialog --warningyesno "Incorret password. Try again."); then
+      return;
+   else
+      exit;
+   fi
+done
+echo
+
+# Defining folders
+
+INSTDIR=$HOME_SOLVATE/nodes/qforce
+WORKDIR=$(pwd)
+
+# Installing QForce in a binary form
+
+cd $INSTDIR
+
+if [[ -f qforce.tgz.part1 ]]; then
+   sudo cat qforce.tgz.part* > qforce.tgz
+fi
+if [[ -f qforce.tgz ]]; then
+   sudo tar xzf qforce.tgz && sudo rm qforce.tgz
+fi
+if [[ -f qforce.bin ]]; then
+   sudo cp qforce.bin    $HOME_SOLVATE/suite/qforce/qforce
+   sudo chown root:users $HOME_SOLVATE/suite/qforce/qforce
+   sudo chmod ug+rx      $HOME_SOLVATE/suite/qforce/qforce
+fi
+
+cd $WORKDIR
+
+# Compiling QForce from scratch
+
+echo
+echo "Instalation of QFOrce completed."
+echo
