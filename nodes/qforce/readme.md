@@ -1,6 +1,6 @@
 # _**Q-Force**_
 
-**Quantum Mechanically augmented molecular force ﬁelds**
+**_Quantum Mechanically Augmented Molecular Force Fields_**
 
 See the documentation. [https://qforce.readthedocs.io/en/latest/]
 
