@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Configuring instalation
+
+if [[ $HOME_SOLVATE == "" ]]; then
+   echo
+   echo " --------------------------------------------"
+   echo " Please define HOME_SOLVATE directory in your"
+   echo " PATH environmental variable in the .bashrc"
+   echo " file."
+   echo " --------------------------------------------"
+   echo
+   exit
+fi
+
+# Defining folders
+
+INSTDIR=$HOME_SOLVATE/nodes/qforce
+WORKDIR=$(pwd)
+
+# Installing QForce in a binary form
+
+cd $INSTDIR
+
+if [[ -f qforce.tgz.part1 ]]; then
+   cat qforce.tgz.part* > qforce.tgz
+fi
+if [[ -f qforce.tgz ]]; then
+   tar xzf qforce.tgz && rm qforce.tgz
+fi
+if [[ -f qforce.bin ]]; then
+   mv -f qforce.bin $HOME_SOLVATE/suite/qforce/qforce
+   chown root:users $HOME_SOLVATE/suite/qforce/qforce
+   chmod ug+rx      $HOME_SOLVATE/suite/qforce/qforce
+fi
+
+cd $WORKDIR
+
+# Compiling QForce from scratch
+
+echo
+echo "Instalation of QFOrce completed."
+echo
