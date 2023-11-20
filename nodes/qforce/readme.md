@@ -2,8 +2,6 @@
 
 **_Quantum Mechanically Augmented Molecular Force Fields_**
 
-See the documentation. [https://qforce.readthedocs.io/en/latest/]
-
 If you use Q-Force, cite:
 
 Sami, S.; Menger, M. F. S. J.; Faraji, S.; Broer, R.; Havenith, R. W. A., _Q-Force: Quantum Mechanically Augmented Molecular Force Fields_. **Journal of Chemical Theory and Computation**, 17 (8), 4946-4960 (2021).
@@ -29,3 +27,7 @@ To install Q-Force from GitHub:
 To install Q-Force from binary form:
 
 	source qforce.install
+
+**Usage**
+
+See the documentation. [https://qforce.readthedocs.io/en/latest/]
