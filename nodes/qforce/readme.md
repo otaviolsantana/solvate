@@ -28,4 +28,4 @@ To install Q-Force from GitHub:
 
 To install Q-Force from binary form:
 
-	cd $HOME_SOLVATE/nodes/qforce && ./qforce.install
+	source qforce.install
