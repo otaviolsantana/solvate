@@ -1,4 +1,4 @@
-# _**Q-Force **_ (_version_ 0.6.12)
+# _**Q-Force**_ (_version_ 0.6.12)
 
 **_Quantum Mechanically Augmented Molecular Force Fields_**
 
