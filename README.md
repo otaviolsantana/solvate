@@ -56,16 +56,14 @@ Under construction...
 	OS: Kubuntu 22.04.2 LTS x86_64 
 	Kernel: 5.15.0-76-generic 
 	Shell: bash 5.1.16 
-	CPU: AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx (8) @ 2.300GHz 
-	Memory: 5794MiB 
+	CPU: AMD Ryzen 7
+	Memory: 6 GB 
 
 **CITATION**
 
 If you use _Solvate Suite_, please cite:
 
-“_Solvate Suite Part I: A Complete and Modular Command-Line User Interface for Tool Integration in Molecular Simulation Studies of Liquid Systems._”
-
-“_Solvate Suite Part II: A Complete and Modular Software for Microsolvation Molecular Modeling with a Sequential Hybrid and Multiscale Approach._”
+“_Solvate Suite: A Command-Line Interface for Molecular Simulations and Multiscale Microsolvation Modeling._”
 
 **LICENSE**
 
