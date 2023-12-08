@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Instaling PackMol
+
+tar xfz packmol.tgz ; chown chmod ug+x packmol
