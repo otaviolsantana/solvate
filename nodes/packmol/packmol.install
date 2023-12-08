@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Instaling PackMol
-
-tar xfz packmol.tgz ; chmod ug+x packmol # ; sudo chown root:users packmol ; sudo mv packmol /opt/chemprogs/packmol/
