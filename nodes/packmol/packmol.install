@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Instaling PackMol
-
-tar xfz packmol.tgz ; chmod ug+x packmol ; if [ ! -z $1 ]; then sudo chown root:users packmol ; sudo mv packmol $1/ ; fi
