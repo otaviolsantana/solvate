@@ -15,7 +15,7 @@ Under construction...
  
 		git clone https://github.com/otaviolsantana/solvate.git
   
-	Then, adjust the “solvate.profile” and “solvate.config” files, and run the “solvate.config” script:
+	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
 		cd solvate && chmod +x solvate.config && ./solvate.config
  
