@@ -1,0 +1,20 @@
+
+Just run the following command:
+
+ gmdff acetic.gro
+
+This will create:
+
+ acetic.gro
+ acetic.itp
+ acetic.zip
+
+To visualize the structure, try:
+
+ sview acetic.gro
+ jmol acetic.gro
+ vmd acetic.gro
+
+Please note that, in this example, the anion charge initially recorded in the ITP file does not have an integer value. 
+The GMDFF module corrected the residual charge in the new ITP file generated through the procedure.
+

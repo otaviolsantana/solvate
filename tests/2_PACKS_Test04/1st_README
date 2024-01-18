@@ -1,0 +1,21 @@
+
+Just run the following command:
+
+ packs protein.gro acetic.gro dmso.gro water.gro sodium.gro -prop [1:100:1000:1000:92] -it -bk
+
+This will create:
+
+ protein+acetic+dmso+water+sodium_mol2193.gro
+ protein+acetic+dmso+water+sodium_mol2193.top
+ protein+acetic+dmso+water+sodium_mol2193.zip
+
+To visualize the simulation box, try:
+
+ sview protein+acetic+dmso+water+sodium_mol2193.gro
+ jmol protein+acetic+dmso+water+sodium_mol2193.gro
+ vmd protein+acetic+dmso+water+sodium_mol2193.gro
+
+To test the simulation box, try:
+
+ mdrun protein+acetic+dmso+water+sodium_mol2193.gro -chk
+
