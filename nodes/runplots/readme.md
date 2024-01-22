@@ -6,4 +6,4 @@
 
 To install runPLOTS from binary form:
 
-	source runplots.install
+	source runplots.down
