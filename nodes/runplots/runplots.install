@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Configuring instalation
+
+if [[ $HOME_SOLVATE == "" ]]; then
+   echo
+   echo " --------------------------------------------"
+   echo " Please define HOME_SOLVATE directory in your"
+   echo " PATH environmental variable in the .bashrc"
+   echo " file."
+   echo " --------------------------------------------"
+   echo
+   exit
+fi
+
+# Defining folders
+
+INSTDIR=$HOME_SOLVATE/nodes/runplots
+WORKDIR=$(pwd)
+
+# Installing runPLOTS in a binary form
+
+cd $INSTDIR
+
+echo "Installing runPLOTS..."
+
+if [[ -f runplots.tgz.part01 ]]; then
+   cat runplots.tgz.part* > runplots.tgz
+fi
+if [[ -f runplots.tgz ]]; then
+   tar xzf runplots.tgz && rm runplots.tgz
+fi
+if [[ -f runplots ]]; then
+   mv -f runplots   $HOME_SOLVATE/modules/runplots
+  #chown root:users $HOME_SOLVATE/modules/runplots
+   chmod ug+rx      $HOME_SOLVATE/modules/runplots
+fi
+
+echo "Installing runPLOTX..."
+
+if [[ -f runplotx.tgz.part01 ]]; then
+   cat runplotx.tgz.part* > runplotx.tgz
+fi
+if [[ -f runplotx.tgz ]]; then
+   tar xzf runplotx.tgz && rm runplotx.tgz
+fi
+if [[ -f runplotx ]]; then
+   mv -f runplotx   $HOME_SOLVATE/modules/runplotx
+  #chown root:users $HOME_SOLVATE/modules/runplotx
+   chmod ug+rx      $HOME_SOLVATE/modules/runplotx
+fi
+
+cd $WORKDIR
+
+# Compiling runPLOTS from scratch
+
+echo
+echo "Instalation of runPlots/runPlotX completed."
+echo
