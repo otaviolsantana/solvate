@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Downloading lastest version of runPLOTS
+
+git clone https://github.com/otaviolsantana/solvate-runplots.git ; cd solvate-runplots/ ; source runplots.install
+
