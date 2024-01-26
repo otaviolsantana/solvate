@@ -1,6 +1,6 @@
 **PACKS :: Simulation Box Creation**
 
-The PACKS module mediates the creation of the simulation box, through the iterative use of the PackMol program. It can be used from the command:
+The PACKS module mediates the creation of the simulation box, through the iterative use of the _PackMol_ program. It can be used from the command:
 
 	packs file1.ext file2.ext {...} -options
 
