@@ -8,7 +8,7 @@ The suite is distributed pre-compiled for Linux systems, being only necessary to
   
 Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
-	cd solvate && chmod +x solvate.config && ./solvate.config
+	cd solvate ; chmod +x solvate.config ; ./solvate.config
  
 **CONTENTS**
 
