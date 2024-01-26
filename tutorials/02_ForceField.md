@@ -13,3 +13,8 @@ where _ext_ is one of the extensions recognized by the _Solvate Suite_ (com/log 
 3. In the case of internally parameterized solvent molecules, the program selects the appropriate parameters and writes them to a force field file (itp), as well as converting the input file to the appropriate format (gro).
 4. In the case of small molecules, the module sequentially executes the _q-Force_ program to generate parameters from a quantum chemical calculation.
 5. If the input file matches that of the simulation box, the program combines the force field files into a single and independent topology file. This results in only two files for starting the simulation: the simulation box (gro) and the topology files (top, with all the force field parameters).
+
+For examples, see:
+[https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test01]
+[https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test02]
+[https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test03]
