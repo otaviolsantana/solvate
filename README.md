@@ -47,9 +47,12 @@ Under construction...
      - JMol
      - VMD
 
-   ***Scripts Interpreter***
+   ***Scripts Interpreter and Libraries***
 
-     - Python 3.1
+     - Python 3.10
+     - MatPlotLib 3.5
+     - Tqdm 4.65
+     - PyQt5 5.15
 
 **TESTED MACHINE CONFIGURATION**
 
@@ -58,12 +61,6 @@ Under construction...
 	Shell: bash 5.1.16 
 	CPU: AMD Ryzen 7
 	Memory: 6 GB 
-
-**CITATION**
-
-If you use _Solvate Suite_, please cite:
-
-“_Solvate Suite: A Command-Line Interface for Molecular Simulations and Multiscale Microsolvation Modeling._”
 
 **LICENSE**
 
