@@ -53,14 +53,6 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
      - Tqdm 4.65
      - PyQt5 5.15
 
-**TESTED MACHINE CONFIGURATION**
-
-	OS: Kubuntu 22.04.2 LTS x86_64 
-	Kernel: 5.15.0-76-generic 
-	Shell: bash 5.1.16 
-	CPU: AMD Ryzen 7
-	Memory: 6 GB 
-
 **CITATION**
 
 Under construction...
