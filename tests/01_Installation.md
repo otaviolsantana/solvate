@@ -2,11 +2,11 @@
 
 **INSTALLATION**
 
-	The suite is distributed pre-compiled for Linux systems, being only necessary to configure it. To do this, download the program with the command:
+The suite is distributed pre-compiled for Linux systems, being only necessary to configure it. To do this, download the program with the command:
  
 		git clone https://github.com/otaviolsantana/solvate.git
   
-	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
+Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
 		cd solvate && chmod +x solvate.config && ./solvate.config
  
