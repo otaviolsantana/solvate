@@ -44,7 +44,3 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
      - MatPlotLib 3.5
      - Tqdm 4.65
      - PyQt5 5.15
-
-**LINKS**
-
-PackMol: [https://m3g.github.io/packmol/download.shtml] | Q-Force: [https://qforce.readthedocs.io/en/latest/index.html] | xTB: [https://xtb-docs.readthedocs.io/en/latest/] | CREST: [https://crest-lab.github.io/crest-docs/] | ORCA: [https://orcaforum.kofo.mpg.de/app.php/portal] | GROMACS:  [https://www.gromacs.org] | JMol: [https://jmol.sourceforge.net/] | VMD: [https://www.ks.uiuc.edu/Research/vmd/]
