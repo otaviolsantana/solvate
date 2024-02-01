@@ -10,7 +10,7 @@ Under construction...
 
 **INSTALLATION**
 
-The suite is distributed pre-compiled for Linux systems, being only necessary to configure it. To do this, download the program with the command:
+The suite is distributed pre-compiled for Linux systems, being only necessary to configure it. To do this, install _git_ package in your system, and download the program suite with the command:
  
 	git clone https://github.com/otaviolsantana/solvate.git
   
