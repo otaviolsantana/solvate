@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Instaling Q-Force
+
+cat qforce.tgz.part* > qforce.tgz ; tar xfz qforce.tgz ; rm -rf qforce.tgz ; chmod ug+x qforce ; if [ ! -z $1 ]; then sudo chown root:users qforce ; sudo mv qforce $1/ ; fi
