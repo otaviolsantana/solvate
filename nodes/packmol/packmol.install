@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Instaling PackMol
+
+tar xfz packmol.tgz ; chmod ug+x packmol solvate.tcl
+
+if [ ! -z $1 ]; then
+   sudo chown root:users packmol solvate.tcl
+   sudo mv -f packmol $1/
+   sudo mv -f solvate.tcl $1/
+fi
