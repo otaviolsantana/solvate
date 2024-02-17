@@ -1,0 +1,5 @@
+[ moleculetype ]'
+ION      1'
+
+[ atoms ]'
+     1    opls_412      1    ION     CA      1      2.00000000    40.0800 ; qtot 2  [ 2.0000000 ]

@@ -1,0 +1,5 @@
+[ moleculetype ]
+ION      1
+
+[ atoms ]
+     1    opls_401      1    ION     CL      1     -1.00000000    35.4530 ; qtot -1 [ -1.000000 ]
