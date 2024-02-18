@@ -1,0 +1,11 @@
+[ moleculetype ]
+CNT      3
+
+[ atoms ]
+     1    opls_154      1    CNT     OA      1     -0.50000000    15.9994
+     2    opls_155      1    CNT     HA      2     -0.50000000     1.0079 ; qtot -1 [ -1.000000 ]
+
+[ bonds ]
+     1     2     1   0.09833    427084
+
+[ angles ]

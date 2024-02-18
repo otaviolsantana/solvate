@@ -1,0 +1,5 @@
+[ moleculetype ]
+ION      1
+
+[ atoms ]
+     1    opls_409      1    ION     RB      1      1.00000000    85.4678 ; qtot 1  [ 1.0000000 ]

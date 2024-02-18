@@ -1,0 +1,6 @@
+Charge=( 0 ) Mult=( 1 ) :: Model for CS2 [CARBONDISULPHIDE]
+    3
+    1SLT   C1      1   1.155   1.155   1.155
+    1SLT   S1      2   1.155   1.155   1.000
+    1SLT   S2      3   1.155   1.155   1.310
+   1.35500   1.35500   1.51000
