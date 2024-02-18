@@ -1,5 +1,0 @@
-[ moleculetype ]
-ION      1
-
-[ atoms ]
-     1    opls_408      1    ION      K      1      1.00000000     0.0000 ; qtot 1  [ 1.0000000 ]

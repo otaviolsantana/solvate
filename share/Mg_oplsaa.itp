@@ -1,5 +1,0 @@
-[ moleculetype ]
-ION      1
-
-[ atoms ]
-     1    opls_411      1    ION     MG      1      2.00000000    24.3050 ; qtot 2  [ 2.0000000 ]
