@@ -13,6 +13,9 @@ Under construction...
 The suite is distributed pre-compiled for Linux systems, being only necessary to configure it. To do this, install _git_ package in your system, and download the program suite with the command:
  
 	git clone https://github.com/otaviolsantana/solvate.git
+or
+
+	wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip
   
 Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
@@ -26,6 +29,7 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
 	- solvate/modules : Folder with program modules and sub-modules
 	- solvate/nodes   : Folder with program dependencies
 	- solvate/suite   : Folder with program links
+	- solvate/share   : Folder with force field parameters
 
 **DEPENDENCIES**
 
