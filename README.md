@@ -26,10 +26,12 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
 	- solvate         : Main program
 	- solvate.profile : Script with suite definitions
 	- solvate.config  : Script to configure suite
-	- solvate/modules : Folder with program modules and sub-modules
-	- solvate/nodes   : Folder with program dependencies
-	- solvate/suite   : Folder with program links
-	- solvate/share   : Folder with force field parameters
+	- solvate/modules : Program modules and sub-modules
+	- solvate/nodes   : Program dependencies
+	- solvate/share   : Program force field parameters
+	- solvate/suite   : Program links
+	- solvate/suite   : Program test exemples
+	- solvate/suite   : Program tutorials
 
 **DEPENDENCIES**
 
