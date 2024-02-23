@@ -30,7 +30,7 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
 	- solvate/nodes     : Program dependencies
 	- solvate/share     : Program force field parameters
 	- solvate/suite     : Program links
-	- solvate/tests     : Program test exemples
+	- solvate/tests     : Program tests
 	- solvate/tutorials : Program tutorials
 
 **DEPENDENCIES**
