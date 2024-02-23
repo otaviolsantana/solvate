@@ -29,7 +29,7 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
 	- solvate/modules   : Program modules and sub-modules
 	- solvate/nodes     : Program dependencies
 	- solvate/share     : Program force field parameters
-	- solvate/suite     :  Program links
+	- solvate/suite     : Program links
 	- solvate/tests     : Program test exemples
 	- solvate/tutorials : Program tutorials
 
