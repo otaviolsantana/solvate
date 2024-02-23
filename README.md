@@ -23,15 +23,15 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
  
 **CONTENTS**
 
-	- solvate         : Main program
-	- solvate.profile : Script with suite definitions
-	- solvate.config  : Script to configure suite
-	- solvate/modules : Program modules and sub-modules
-	- solvate/nodes   : Program dependencies
-	- solvate/share   : Program force field parameters
-	- solvate/suite   : Program links
-	- solvate/suite   : Program test exemples
-	- solvate/suite   : Program tutorials
+	- solvate           : Main program
+	- solvate.profile   : Script with suite definitions
+	- solvate.config    : Script to configure suite
+	- solvate/modules   : Program modules and sub-modules
+	- solvate/nodes     : Program dependencies
+	- solvate/share     : Program force field parameters
+	- solvate/suite     :  Program links
+	- solvate/tests     : Program test exemples
+	- solvate/tutorials : Program tutorials
 
 **DEPENDENCIES**
 
