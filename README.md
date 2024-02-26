@@ -6,7 +6,7 @@
 
 **OVERVIEW**
 
-This is a repository of _Solvate Suite_. The modules of the main program interfaces with various widely used open-source software in the scientific community (such as _ORCA_, _xTB_, _GROMACS_, _PackMol_, and _Q-Force_), enabling the sequential treatment of all stages of molecular modeling involving explicit interaction of the species of interest with the solvent (in principle, any solvent) using molecular simulation procedures and electronic structure calculations in a hybrid approach (explicit/implicit solvent).
+This is a repository of _Solvate Suite_. The modules of the main program interfaces with various widely used software in the scientific community (such as _ORCA_, _xTB_, _GROMACS_, _PackMol_, and _Q-Force_), enabling the sequential treatment of all stages of molecular modeling involving explicit interaction of the species of interest with the any solvent using molecular simulation procedures and electronic structure calculations in a hybrid approach (explicit/implicit solvent).
 
 (1) The first problem that the program aims to solve is the creation of the simulation box, considering several user-specified criteria (such as the number of solvent molecules, shape and density of the simulation box, solute/solvent concentration, or proportion between solvent mixtures), as well as the construction of the system's topology and force field parameters (in the case of simulation methods based on classical dynamics).
 
