@@ -5,14 +5,14 @@
 
 # Determining system batch
 
-TEST_SLUR=`echo $(which sbatch)`     # Slurm System
+TEST_SLUR=`echo $(which sbatch)`     # SLURM System
 TEST_PBSS=`echo $(which qsub)`       # Torque/PBS (Portable Batch System)
+TEST_SGES=`echo $(which sge_submit)` # Grid Engine (SGE)
 TEST_LSFS=`echo $(which bsub)`       # LSF (Load Sharing Facility)
 TEST_HTCO=`echo $(which bsubmit)`    # HTCondor System
 TEST_LLSB=`echo $(which llsubmit)`   # IBM Batch System
-TEST_SGES=`echo $(which sge_submit)` # Grid Engine (SGE)
 
-if [[ `echo $TEST_SLUR`   != "" ]]; then # Slurm System
+if [[ `echo $TEST_SLUR`   != "" ]]; then # SLURM System
    MACHINE="SLM" && BATDESC="Slurm System [sbatch]"
 elif [[ `echo $TEST_PBSS` != "" ]]; then # Torque/PBS (Portable Batch System)
    MACHINE="PBS" && BATDESC="Torque/PBS (Portable Batch System) [qbub]"
@@ -20,10 +20,10 @@ elif [[ `echo $TEST_LSFS` != "" ]]; then # LSF (Load Sharing Facility)
    MACHINE="LSF" && BATDESC="LSF (Load Sharing Facility) [bsub]"
 elif [[ `echo $TEST_HTCO` != "" ]]; then # HTCondor System
    MACHINE="HTC" && BATDESC="HTCondor System [bsubmit]"
-elif [[ `echo $TEST_LLSB` != "" ]]; then # IBM Batch System
-   MACHINE="IBM" && BATDESC="IBM Batch System [llsubmit]"
 elif [[ `echo $TEST_SGES` != "" ]]; then # SGE (Sun Grid Engine)
    MACHINE="SGE" && BATDESC="SGE (Sun Grid Engine) [sge_submit]"
+elif [[ `echo $TEST_LLSB` != "" ]]; then # IBM Batch System
+   MACHINE="IBM" && BATDESC="IBM Batch System [llsubmit]"
 else                                     # Local Machine
    MACHINE="LOC" && BATDESC="Local Machine"
 fi
@@ -246,7 +246,7 @@ fi
 
 # Defining functions...
 
-EXEC_SLM() # Slurm System
+EXEC_SLM() # 1: SLURM System
 {
    clear
 
@@ -287,7 +287,7 @@ EXEC_SLM() # Slurm System
    fi
 }
 
-EXEC_PBS() # Torque/PBS (Portable Batch System)
+EXEC_PBS() # 2: Torque/PBS (Portable Batch System)
 {
    clear
  # - SPECIFIC --------------------------------------------------------------------------------------
@@ -354,7 +354,58 @@ EXEC_PBS() # Torque/PBS (Portable Batch System)
    fi
 }
 
-EXEC_LOC() # Local Machine
+EXEC_SGE() # 3: Grid Engine (SGE)
+{
+   echo "#!/bin/bash                                           "   > $JOBNAME.job
+   echo "#$ -pe parallel_environment $CNTASKS                  "  >> $JOBNAME.job
+   echo "#$ -q queue_name $TPQUEUE                             "  >> $JOBNAME.job
+   echo "#$ -N $JOBNAME                                        "  >> $JOBNAME.job
+   echo '                                                      '  >> $JOBNAME.job
+   echo "time $PROGEXE $INPNAME $WORKCFG > $PRGSJOB 2>&1       "  >> $JOBNAME.job
+
+
+   if [[ $CFGDEBG != "YES" ]]; then
+      sge_submit  $JOBNAME.job ; echo ; if [ $CFGSAVE = "NO" ]; then rm -f $JOBNAME.job ; fi
+   else
+      echo ; echo '»DEBUG: Verify generated job file!' # ; echo # ; exit
+   fi
+}
+
+EXEC_LSF() # 4: LSF (Load Sharing Facility)
+{
+   echo "#!/bin/bash                                        "   > $JOBNAME.job
+   echo "#BSUB -n $CNTASKS                                  "  >> $JOBNAME.job
+   echo "#BSUB -q $TPQUEUE                                  "  >> $JOBNAME.job
+   echo "#BSUB -J $JOBNAME                                  "  >> $JOBNAME.job
+   echo '                                                   '  >> $JOBNAME.job
+   echo "time $PROGEXE $INPNAME $WORKCFG > $PRGSJOB 2>&1    "  >> $JOBNAME.job
+
+
+   if [[ $CFGDEBG != "YES" ]]; then
+      bsub < $JOBNAME.job ; echo ; if [ $CFGSAVE = "NO" ]; then rm -f $JOBNAME.job ; fi
+   else
+      echo ; echo '»DEBUG: Verify generated job file!' # ; echo # ; exit
+   fi
+}
+
+EXEC_HTC() # 5: HTCondor System
+{
+   echo "#!/bin/bash                                        "   > $JOBNAME.job
+   echo "#BSUB -n $CNTASKS                                  "  >> $JOBNAME.job
+   echo "#BSUB -q $TPQUEUE                                  "  >> $JOBNAME.job
+   echo "#BSUB -J $JOBNAME                                  "  >> $JOBNAME.job
+   echo '                                                   '  >> $JOBNAME.job
+   echo "time $PROGEXE $INPNAME $WORKCFG > $PRGSJOB 2>&1    "  >> $JOBNAME.job
+
+
+   if [[ $CFGDEBG != "YES" ]]; then
+      bsubmit  $JOBNAME.job ; echo ; if [ $CFGSAVE = "NO" ]; then rm -f $JOBNAME.job ; fi
+   else
+      echo ; echo '»DEBUG: Verify generated job file!' # ; echo # ; exit
+   fi
+}
+
+EXEC_LOC() # ?: Local Machine
 {
    $PROGEXE $INPNAME $WORKCFG &
 }
@@ -365,7 +416,15 @@ if [[ $MACHINE = "SLM" ]]; then   # Slurm System
    EXEC_SLM
 elif [[ $MACHINE = "PBS" ]]; then # Torque/PBS (Portable Batch System)
    EXEC_PBS
-else # Local machine
+elif [[ $MACHINE = "SGE" ]]; then # SGE (Sun Grid Engine)
+   EXEC_SGE
+elif [[ $MACHINE = "LSF" ]]; then # LSF (Load Sharing Facility)
+   EXEC_LSF
+elif [[ $MACHINE = "HTC" ]]; then # HTCondor System
+   EXEC_HTC
+elif [[ $MACHINE = "IBM" ]]; then # IBM Batch System
+   echo "IBM Batch System detected: configure your job creation and submission"
+else                              # Local Machine
    EXEC_LOC
 fi
 

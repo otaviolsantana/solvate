@@ -3,7 +3,7 @@
 # SOLVATE Definitions
 
 export HOME_SOLVATE=~/.bin/solvate
-export PATH=$PATH:$HOME_SOLVATE:$HOME_SOLVATE/modules
+export PATH=$PATH:$HOME_SOLVATE:$HOME_SOLVATE/modules:$HOME_SOLVATE/share
 
 # SOLVATE + Suite Programs
 
