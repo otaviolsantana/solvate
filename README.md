@@ -6,42 +6,27 @@
 
 **OVERVIEW**
 
-This is a repository of _Solvate Suite_. The modules of the main program interfaces with various widely used software in the scientific community (such as _ORCA_, _xTB_, _GROMACS_, _PackMol_, and _Q-Force_), enabling the sequential treatment of all stages of molecular modeling involving explicit interaction of the species of interest with the any solvent using molecular simulation procedures and electronic structure calculations in a hybrid approach (explicit/implicit solvent).
-
-(1) The first problem that the program aims to solve is the creation of the simulation box (PACKS module), considering several user-specified criteria (such as the number of solvent molecules, shape and density of the simulation box, solute/solvent concentration, or proportion between solvent mixtures), as well as the construction of the system's force field and topology parameters (GMDFF module, in the case of simulation methods based on classical dynamics).
-
-(2) The second problem is submitting the simulation with a minimal adjusted set of parameters (MDRUN module; all parameters can be altered by the user during runtime).
-
-(3) The third is the analysis of simulated properties (DATAS module; properties analyzed include pressure, temperature, density, short-range interaction, total potential energy, and radial distribution function), including statistical analysis (such as stochastic average values, standard error, and standard deviation, via STATS module), graphical analysis (PLOTS module), and extraction of properties by different criteria (such as block analysis and pressure filter, via TRAJS module).
-
-(4) TheThe fourth involves extraction of a determined number of microsolvation clusters identified from the simulation trajectory file (MICRO module) and explicit treatment of the solvent based on the maximum connectivity criterion (HBOND module, for hydrogen bonds) or multiple layers of solventization (GCALC module, for geometry optimization with treatment of possible imaginary frequencies). The treatment (by semi-empirical and DFT Quantum Chemistry methods) of microsolvation clusters for the calculation of free energy considers three criteria: in the fixed geometry extracted from the simulation, in a completely optimized cluster structure, or in a relaxed solvent cavity and completely optimized solute geometry. In any case, the procedure removes all imaginary frequencies (which have a significant weight in the composition of free energy), and uses the quasi-harmonic correction (to handle low-frequency intermolecular modes), followed by the use of extrapolation methods for free energy to the theory level specified by the user (which also allows extrapolation of the basis set restriction in the implicit solvent methods when considering microsolvation clusters with at least the first solvation layer).
-
-(5) The fifth and final step involves managing the significant number of files generated throughout the modeling process (FILES module).
+Under construction...
 
 **INSTALLATION**
 
-The suite is distributed pre-compiled for Linux systems, being only necessary to configure it. To do this, install _git_ package in your system, and download the program suite with the command:
+	The suite is distributed pre-compiled for Linux systems, being only necessary to configure it.
+	To do this, download the program with the command:
  
-	git clone https://github.com/otaviolsantana/solvate.git
-or
-
-	wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip
+		git clone https://github.com/otaviolsantana/solvate.git
   
-Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
+	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
-	cd solvate && chmod +x solvate.config && ./solvate.config
+		cd solvate && chmod +x solvate.config && ./solvate.config
  
 **CONTENTS**
 
-	- solvate           : Main program
-	- solvate.profile   : Script with suite definitions
-	- solvate.config    : Script to configure suite
-	- solvate/modules   : Program modules and sub-modules
-	- solvate/nodes     : Program dependencies
-	- solvate/share     : Program force field parameters
-	- solvate/suite     : Program links
-	- solvate/tests     : Program tests
-	- solvate/tutorials : Program tutorials
+	- solvate         : Main program
+	- solvate.profile : Script with suite definitions
+	- solvate.config  : Script to configure suite
+	- solvate/modules : Folder with program modules and sub-modules
+	- solvate/nodes   : Folder with program dependencies
+	- solvate/suite   : Folder with program links
 
 **DEPENDENCIES**
 
@@ -69,9 +54,19 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
      - Tqdm 4.65
      - PyQt5 5.15
 
+**TESTED MACHINE CONFIGURATION**
+
+	OS: Kubuntu 22.04.2 LTS x86_64 
+	Kernel: 5.15.0-76-generic 
+	Shell: bash 5.1.16 
+	CPU: AMD Ryzen 7
+	Memory: 6 GB 
+
 **CITATION**
 
-Under construction...
+If you use _Solvate Suite_, please cite:
+
+“_Solvate Suite: A Command-Line Interface for Molecular Simulations and Multiscale Microsolvation Modeling._”
 
 **LICENSE**
 
