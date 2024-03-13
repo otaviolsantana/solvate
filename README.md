@@ -33,12 +33,16 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
  
 **CONTENTS**
 
-	- solvate         : Main program
-	- solvate.profile : Script with suite definitions
-	- solvate.config  : Script to configure suite
-	- solvate/modules : Folder with program modules and sub-modules
-	- solvate/nodes   : Folder with program dependencies
-	- solvate/suite   : Folder with program links
+	- solvate           : Main program
+	- solvate.profile   : Script with suite definitions
+	- solvate.config    : Script to configure suite
+	- solvate/manual    : Program Suite Manual
+	- solvate/modules   : Folder with program modules and sub-modules
+	- solvate/nodes     : Folder with program dependencies
+	- solvate/share     : Folder with program force fields
+	- solvate/suite     : Folder with program links
+	- solvate/tests     : Folder with program tests
+	- solvate/tutorials : Folder with program tutorials
 
 **DEPENDENCIES**
 
@@ -65,20 +69,6 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
      - MatPlotLib 3.5
      - Tqdm 4.65
      - PyQt5 5.15
-
-**TESTED MACHINE CONFIGURATION**
-
-	OS: Kubuntu 22.04.2 LTS x86_64 
-	Kernel: 5.15.0-76-generic 
-	Shell: bash 5.1.16 
-	CPU: AMD Ryzen 7
-	Memory: 6 GB 
-
-**CITATION**
-
-If you use _Solvate Suite_, please cite:
-
-“_Solvate Suite: A Command-Line Interface for Molecular Simulations and Multiscale Microsolvation Modeling._”
 
 **LICENSE**
 
