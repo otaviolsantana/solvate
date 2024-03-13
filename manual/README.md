@@ -1,5 +1,17 @@
 # _**Solvate Suite**_: User Manual - Quick Guide
 
+<div align="center">
+<img src="https://github.com/otaviolsantana/solvate/assets/69423088/cf13d12e-1b75-411c-a058-0317c1b7d890" width="750px"/>
+</div>
+
+<div align="center">
+<img src="https://github.com/otaviolsantana/solvate/assets/69423088/f4d64def-8bed-440c-86b1-bf35764036bd" width="750px"/>
+</div>
+
+<div align="center">
+<img src="https://github.com/otaviolsantana/solvate/assets/69423088/948efc7e-f83f-4539-916c-69ab189da808" width="750px"/>
+</div>
+
 **OVERVIEW**
 
 This is a manual of _Solvate Suite_. The modules of the main program interfaces with various widely used software in the scientific community (such as ORCA, xTB, GROMACS, PackMol, and Q-Force), enabling the sequential treatment of all stages of molecular modeling involving explicit interaction of the species of interest with the any solvent using molecular simulation procedures and electronic structure calculations in a hybrid approach (explicit/implicit solvent).
