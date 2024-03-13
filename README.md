@@ -36,13 +36,13 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
 	- solvate           : Main program
 	- solvate.profile   : Script with suite definitions
 	- solvate.config    : Script to configure suite
-	- solvate/manual    : Program Suite Manual
-	- solvate/modules   : Folder with program modules and sub-modules
-	- solvate/nodes     : Folder with program dependencies
-	- solvate/share     : Folder with program force fields
-	- solvate/suite     : Folder with program links
-	- solvate/tests     : Folder with program tests
-	- solvate/tutorials : Folder with program tutorials
+	- solvate/manual    : Program user manual (Quick Guide)
+	- solvate/modules   : Suite modules and sub-modules
+	- solvate/nodes     : Pré-compiled dependencies
+	- solvate/share     : Parameterized solvents and counterions
+	- solvate/suite     : Interfaced installed program links
+	- solvate/tests     : Files for program tests
+	- solvate/tutorials : Program tutorials
 
 **DEPENDENCIES**
 
