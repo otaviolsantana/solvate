@@ -33,7 +33,7 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
 
  	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
-		cd solvate && chmod +x solvate.config && ./solvate.config
+	   cd solvate && chmod +x solvate.config && ./solvate.config
  
 **CONTENTS**
 
