@@ -16,6 +16,6 @@ where _ext_ is one of the extensions recognized by the _Solvate Suite_ (com/log 
 
 For examples, see:
 
-* [TESTE #1](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test01)
-* [TESTE #2](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test02)
-* [TESTE #3](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test03)
+* [Example #1: Preparing a protein PDB file](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test01)
+* [Example #2: Creating the Q-Force force field parameters](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test02)
+* [Example #3: Handling force field parameters from external servers](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test03)
