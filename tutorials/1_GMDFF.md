@@ -16,8 +16,6 @@ where _ext_ is one of the extensions recognized by the _Solvate Suite_ (com/log 
 
 For examples, see:
 
-[https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test01]
-
-[https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test02]
-
-[https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test03]
+* [TESTE #1](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test01)
+* [TESTE #2](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test02)
+* [TESTE #3](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test03)
