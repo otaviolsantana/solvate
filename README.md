@@ -25,11 +25,13 @@ This is a repository of _Solvate Suite_. The modules of the main program interfa
 	The suite is distributed pre-compiled for Linux systems, being only necessary to configure it.
 	To do this, download the program with the command:
  
-		git clone https://github.com/otaviolsantana/solvate.git
-  	or
-   		wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip ; unzip main.zip
-  
-	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
+	   git clone https://github.com/otaviolsantana/solvate.git
+
+   	or
+
+   	   wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip ; unzip main.zip
+
+ 	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
 		cd solvate && chmod +x solvate.config && ./solvate.config
  
