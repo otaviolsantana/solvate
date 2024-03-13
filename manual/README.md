@@ -28,6 +28,8 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 
 ## USER MANUAL - QUICK GUIDE
 
+**CREATION OF SIMULATION BOX**
+
 1. The first stage of using the program consists of creating the simulation box. This is done using the following 
    command:
 
@@ -72,3 +74,13 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
    file from a single command line.
 
    For examples, visit the [GMDFF](https://github.com/otaviolsantana/solvate/blob/main/tutorials/1_GMDFF.md) and [PACKS](https://github.com/otaviolsantana/solvate/blob/main/tutorials/2_PACKS.md) tutorials page.
+
+**SUBMISSION OF SIMULATIONS**
+
+2. From the MDRUN module, the submission of simulations with the ORCA and GROMACS programs is performed using the same 
+   set of parameters. In the case of ORCA, the execution options are set directly in the `.inp` input file at run time 
+   from the command line. In the case of GROMACS, the options are adjusted and saved in a specific `.mdp` settings 
+   file.
+
+        solvate solute.ext solvent.ext -nm N
+
