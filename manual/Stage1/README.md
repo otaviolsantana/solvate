@@ -1,31 +1,3 @@
-<div align="center">
-<img src="https://user-images.githubusercontent.com/69423088/253824433-a6b55273-b084-4283-a0b6-b8d40bc52890.png" width="250px"/>
-</div>
-
-## OVERVIEW
-
-This is a user manual for _Solvate Suite_, a set of programs for building initial simulation box configuration, force field and topology files for molecular dynamics simulations of molecular systems in solution.
-
-**PROGRAM STUCTURE**
-
-* **(1st Stage)** Creation of Simulation Box
-
-<div align="center">
-<img src="https://github.com/otaviolsantana/solvate/assets/69423088/cf13d12e-1b75-411c-a058-0317c1b7d890" width="750px"/>
-</div>
-
-* **(2nd Stage)** Submission of Simulations & Analysis of Simulated Properties
-
-<div align="center">
-<img src="https://github.com/otaviolsantana/solvate/assets/69423088/f4d64def-8bed-440c-86b1-bf35764036bd" width="750px"/>
-</div>
-
-* **(3rd Stage)** Selection and Treatment of Microsolvation Clusters
-
-<div align="center">
-<img src="https://github.com/otaviolsantana/solvate/assets/69423088/948efc7e-f83f-4539-916c-69ab189da808" width="750px"/>
-</div>
-
 ## USER MANUAL - QUICK GUIDE
 
 **CREATION OF SIMULATION BOX**
@@ -74,13 +46,3 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
    file from a single command line.
 
    For examples, visit the [GMDFF](https://github.com/otaviolsantana/solvate/blob/main/tutorials/1_GMDFF.md) and [PACKS](https://github.com/otaviolsantana/solvate/blob/main/tutorials/2_PACKS.md) tutorials page.
-
-**SUBMISSION OF SIMULATIONS**
-
-2. From the MDRUN module, the submission of simulations with the ORCA and GROMACS programs is performed using the same 
-   set of parameters. In the case of ORCA, the execution options are set directly in the `.inp` input file at run time 
-   from the command line. In the case of GROMACS, the options are adjusted and saved in a specific `.mdp` settings 
-   file.
-
-        solvate solute.ext solvent.ext -nm N
-
