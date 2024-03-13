@@ -1,5 +1,3 @@
-## USER MANUAL - QUICK GUIDE
-
 <div align="center">
 <img src="https://user-images.githubusercontent.com/69423088/253824433-a6b55273-b084-4283-a0b6-b8d40bc52890.png" width="250px"/>
 </div>
@@ -28,7 +26,7 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 <img src="https://github.com/otaviolsantana/solvate/assets/69423088/948efc7e-f83f-4539-916c-69ab189da808" width="750px"/>
 </div>
 
-## TUTORIAL
+## USER MANUAL - QUICK GUIDE
 
 1. The first stage of using the program consists of creating the simulation box. This is done using the following 
    command:
@@ -72,3 +70,5 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
    the program automatically runs the GMDFF module, which prepares the force field files as well as the system 
    topology file. This means that, in the general case, it is possible to create the simulation box and its topology 
    file from a single command line.
+
+   For examples, visit the [GMDFF](https://github.com/otaviolsantana/solvate/blob/main/tutorials/1_GMDFF.md) and [PACKS](https://github.com/otaviolsantana/solvate/blob/main/tutorials/2_PACKS.md) tutorials page.
