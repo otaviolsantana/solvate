@@ -6,19 +6,23 @@
 
 **OVERVIEW**
 
-This is a repository of _Solvate Suite_. The modules of the main program interfaces with various widely used open-source software in the scientific community (such as _ORCA_, _xTB_, _GROMACS_, _PackMol_, and _Q-Force_), enabling the sequential treatment of all stages of molecular modeling involving explicit interaction of the species of interest with the solvent (in principle, any solvent) using molecular simulation procedures and electronic structure calculations in a hybrid approach (explicit/implicit solvent).
+This is the repository for the _Solvate Suite_, a comprehensive software package designed to address various challenges in molecular modeling. The suite's modules interface with widely used open-source software such as _ORCA_, _xTB_, _GROMACS_, _PackMol_, and _Q-Force_, facilitating the sequential treatment of all stages of molecular modeling involving explicit interaction of the species of interest with the solvent, employing both molecular simulation procedures and electronic structure calculations in a hybrid approach (explicit/implicit solvation).
 
-(1) The first problem that the program aims to solve is the creation of the simulation box, considering several user-specified criteria (such as the number of solvent molecules, shape and density of the simulation box, solute/solvent concentration, or proportion between solvent mixtures), as well as the construction of the system's topology and force field parameters (in the case of simulation methods based on classical dynamics).
+The _suite_ comprises multiple modules, each dedicated to addressing key aspects of molecular modeling:
 
-(2) The second problem is submitting the simulation with a minimal adjusted set of parameters (some of which can be altered by the user during runtime; alternatively, the user can perform this step with their own simulation parameters).
+(1) **PACKS** - Creation of Simulation Box: This module allows users to create the simulation box according to specified criteria, including the number of solvent molecules, shape and density of the box, solute/solvent concentration, or proportions between solvent mixtures. It also determines force field parameters and constructs the system's topology for classical dynamics-based simulation methods.
 
-(3) The third is the analysis of simulated properties (pressure, temperature, density, short-range interaction, total potential energy, and radial distribution function), including statistical analysis (such as stochastic average values, standard error, and standard deviation), graphical analysis, and extraction of properties by different criteria (such as block analysis and pressure filter).
+(2) **MDRUN** - Submission of Simulations: From this module the user can run simulations with a minimum set of adjusted parameters. These parameters can be modified during runtime or users can use their own simulation parameters.
 
-(4) The fourth involves selecting a user-determined number of hydrogen-bonded structures or microsolvation clusters and solvent molecules per cluster identified from the simulation trajectory file based on the maximum connectivity criterion (hydrogen bonds) or minimum energy criterion (hydrogen bonds and microsolvation clusters).
+(3) **DATAS** - Analysis of Simulated Properties: This module analyzes various simulated properties such as pressure, temperature, density, short-range interaction, total potential energy, and radial distribution function. It includes statistical analysis, graphical representation, and property extraction based on different criteria like block analysis and pressure filter.
 
-(5) The fifth involves the treatment (by semi-empirical Quantum Chemistry methods) of microsolvation clusters for the calculation of free energy, considering three criteria: in the fixed geometry extracted from the simulation, in a completely optimized cluster structure, or in a relaxed solvent cavity and completely optimized solute geometry. In any case, the procedure removes all imaginary frequencies (which have a significant weight in the composition of free energy), and uses the quasi-harmonic correction (to handle low-frequency intermolecular modes), followed by the use of extrapolation methods for free energy to the theory level specified by the user (which also allows extrapolation of the basis set restriction in the implicit solvent methods when considering microsolvation clusters with at least the first solvation layer).
+(4) **MICRO** - Selection of Hydrogen-Bonded Structures and Microsolvation Clusters: Users can select a predetermined number of hydrogen-bonded structures or microsolvation clusters, along with solvent molecules per cluster, identified from the simulation trajectory file based on connectivity or energy criteria.
 
-(6) The sixth and final step involves managing the significant number of files generated throughout the modeling process.
+(5) **GCALC** - Treatment of Microsolvation Clusters: This module conducts semi-empirical Quantum Chemistry calculations on microsolvation clusters to calculate free energy. The module provides various treatment options, including: fixed geometry from simulation, completely optimized cluster structure, or relaxed solvent cavity with optimized solute geometry. The procedure eliminates imaginary frequencies, employs quasi-harmonic correction, and utilizes extrapolation methods for free energy calculations to the user-specified theory level.
+
+(6) **FILES** - Management of Generated Files: The suite manages the significant number of files generated throughout the modeling process, ensuring efficient organization and storage.
+
+Overall, the _Solvate Suite_ provides a comprehensive solution for molecular modeling tasks, addressing various complexities encountered in explicit solvent simulations.
 
 **INSTALLATION**
 
