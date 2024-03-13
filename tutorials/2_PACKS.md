@@ -8,10 +8,7 @@ where _ext_ is one of the extensions recognized by _Solvate Suite_ (com/log [Gau
 
 For examples, see:
 
-[https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test01]
-
-[https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test02]
-
-[https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test03]
-
-[https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test04]
+* [Example #1](https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test01)
+* [Example #2](https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test02)
+* [Example #3](https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test03)
+* [Example #4](https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test04)
