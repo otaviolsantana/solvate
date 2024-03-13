@@ -10,17 +10,17 @@ This is the repository for the _Solvate Suite_, a comprehensive software package
 
 The _suite_ comprises multiple modules, each dedicated to addressing key aspects of molecular modeling:
 
-(1) **PACKS** - Creation of Simulation Box: This module allows users to create the simulation box according to specified criteria, including the number of solvent molecules, shape and density of the box, solute/solvent concentration, or proportions between solvent mixtures. It also determines force field parameters and constructs the system's topology for classical dynamics-based simulation methods.
+(1) **Creation of Simulation Box**: This module allows users to create the simulation box according to specified criteria, including the number of solvent molecules, shape and density of the box, solute/solvent concentration, or proportions between solvent mixtures. It also determines force field parameters and constructs the system's topology for classical dynamics-based simulation methods.
 
-(2) **MDRUN** - Submission of Simulations: From this module the user can run simulations with a minimum set of adjusted parameters. These parameters can be modified during runtime or users can use their own simulation parameters.
+(2) **Submission of Simulations**: From this module the user can run simulations with a minimum set of adjusted parameters. These parameters can be modified during runtime or users can use their own simulation parameters.
 
-(3) **DATAS** - Analysis of Simulated Properties: This module analyzes various simulated properties such as pressure, temperature, density, short-range interaction, total potential energy, and radial distribution function. It includes statistical analysis, graphical representation, and property extraction based on different criteria like block analysis and pressure filter.
+(3) **Analysis of Simulated Properties**: This module analyzes various simulated properties such as pressure, temperature, density, short-range interaction, total potential energy, and radial distribution function. It includes statistical analysis, graphical representation, and property extraction based on different criteria like block analysis and pressure filter.
 
-(4) **MICRO** - Selection of Hydrogen-Bonded Structures and Microsolvation Clusters: Users can select a predetermined number of hydrogen-bonded structures or microsolvation clusters, along with solvent molecules per cluster, identified from the simulation trajectory file based on connectivity or energy criteria.
+(4) **Selection of Hydrogen-Bonded Structures and Microsolvation Clusters**: Users can select a predetermined number of hydrogen-bonded structures or microsolvation clusters, along with solvent molecules per cluster, identified from the simulation trajectory file based on connectivity or energy criteria.
 
-(5) **GCALC** - Treatment of Microsolvation Clusters: This module conducts semi-empirical Quantum Chemistry calculations on microsolvation clusters to calculate free energy. The module provides various treatment options, including: fixed geometry from simulation, completely optimized cluster structure, or relaxed solvent cavity with optimized solute geometry. The procedure eliminates imaginary frequencies, employs quasi-harmonic correction, and utilizes extrapolation methods for free energy calculations to the user-specified theory level.
+(5) **Treatment of Microsolvation Clusters**: This module conducts semi-empirical Quantum Chemistry calculations on microsolvation clusters to calculate free energy. The module provides various treatment options, including: fixed geometry from simulation, completely optimized cluster structure, or relaxed solvent cavity with optimized solute geometry. The procedure eliminates imaginary frequencies, employs quasi-harmonic correction, and utilizes extrapolation methods for free energy calculations to the user-specified theory level.
 
-(6) **FILES** - Management of Generated Files: The suite manages the significant number of files generated throughout the modeling process, ensuring efficient organization and storage.
+(6) **Management of Generated Files**: The suite manages the significant number of files generated throughout the modeling process, ensuring efficient organization and storage.
 
 Overall, the _Solvate Suite_ provides a comprehensive solution for molecular modeling tasks, addressing various complexities encountered in explicit solvent simulations.
 
