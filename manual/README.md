@@ -1,23 +1,8 @@
-<div align="center">
-<img src="https://user-images.githubusercontent.com/69423088/253824433-a6b55273-b084-4283-a0b6-b8d40bc52890.png" width="250px"/>
-</div>
-
-# _**Solvate Suite**_
+# _**Solvate Suite**_: User Manual - Quick Guide
 
 **OVERVIEW**
 
-Under construction...
-
-**INSTALLATION**
-
-	The suite is distributed pre-compiled for Linux systems, being only necessary to configure it.
-	To do this, download the program with the command:
- 
-		git clone https://github.com/otaviolsantana/solvate.git
-  
-	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
-
-		cd solvate && chmod +x solvate.config && ./solvate.config
+This is a manual of _Solvate Suite_. The modules of the main program interfaces with various widely used software in the scientific community (such as ORCA, xTB, GROMACS, PackMol, and Q-Force), enabling the sequential treatment of all stages of molecular modeling involving explicit interaction of the species of interest with the any solvent using molecular simulation procedures and electronic structure calculations in a hybrid approach (explicit/implicit solvent).
  
 **CONTENTS**
 
