@@ -36,4 +36,6 @@
    list can be accessed from the help menu of the MDRUN and DATAS modules (just type the program name on the command 
    line, without additional options).
 
+   * For examples, visit the MDRUN and DATAS tutorials page. (under construction...)
+
    « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_PACKS.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | Next topic »
