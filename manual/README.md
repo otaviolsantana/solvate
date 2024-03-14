@@ -28,5 +28,5 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 
 ## USER MANUAL - QUICK GUIDE
 
-1. [Creation of Simulation Box](https://github.com/otaviolsantana/solvate/blob/main/manual/Stage1/)
-2. [Submission of Simulations](https://github.com/otaviolsantana/solvate/blob/main/manual/Stage2/)
+1. [Creation of Simulation Box]([https://github.com/otaviolsantana/solvate/blob/main/manual/Stage1/](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_PACKS.md))
+2. [Submission of Simulations]([https://github.com/otaviolsantana/solvate/blob/main/manual/Stage2/](https://github.com/otaviolsantana/solvate/blob/main/manual/2nd_MDRUN.md)https://github.com/otaviolsantana/solvate/blob/main/manual/2nd_MDRUN.md)
