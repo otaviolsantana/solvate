@@ -59,4 +59,4 @@
 
    * For examples, visit the MDRUN and DATAS tutorials page. (under construction...)
 
-   « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_PACKS.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | Next topic »
+   « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_Stage.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | [Next topic](https://github.com/otaviolsantana/solvate/blob/main/manual/3rd_Stage.md) »
