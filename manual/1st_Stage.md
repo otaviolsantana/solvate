@@ -50,4 +50,4 @@
 
    * For examples, visit the [GMDFF](https://github.com/otaviolsantana/solvate/blob/main/tutorials/1_GMDFF.md) and [PACKS](https://github.com/otaviolsantana/solvate/blob/main/tutorials/2_PACKS.md) tutorials page.
 
-   « Previous topic | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | [Next topic](https://github.com/otaviolsantana/solvate/blob/main/manual/2nd_MDRUN.md) »
+   « Previous topic | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | [Next topic](https://github.com/otaviolsantana/solvate/blob/main/manual/2nd_Stage.md) »
