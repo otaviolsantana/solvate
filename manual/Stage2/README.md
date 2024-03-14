@@ -21,10 +21,10 @@
 
         mdrun simbox.gro -npt -prs 1.0 -tmp 298.15 -tot 1.0
 
-   In the balancing steps, the trajectory is saved every 100 steps (in a .trr file), in order to save disk space. 
-   After achieving balance (which is evaluated based on the analysis of the properties obtained with the DATAS module 
-   - see next topic), production can proceed. In this step, the trajectory is saved at each step of the simulation (in 
-   an .xtc file). Production is run with the following command:
+   In the equilibration steps, the trajectory is saved every 100 steps (in a `.trr` file), in order to save disk 
+   space. After achieving equilibration (which is evaluated based on the analysis of the properties obtained with the 
+   DATAS module; see next topic), production can proceed. In this step, the trajectory is saved at each step of the 
+   simulation (in an .xtc file). Production is run with the following command:
 
         mdrun simbox.gro -prd -prs 1.0 -tmp 298.15 -tot 5.0
 
