@@ -32,4 +32,4 @@
    list can be accessed from the help menu of the _mdrun_ program (just type the program name on the command line, 
    without additional options).
 
-   « [Previous topic](https://github.com/otaviolsantana/solvate/edit/main/manual/1st_PACKS.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | Next topic »
+   « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_PACKS.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | Next topic »
