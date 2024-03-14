@@ -1,6 +1,6 @@
 ## USER MANUAL - QUICK GUIDE
 
-**SUBMISSION OF SIMULATIONS**
+**SUBMISSION OF SIMULATIONS** & **ANALYSIS OF SIMULATED PROPERTIES**
 
 2. From the MDRUN module, the execution of simulations with the ORCA and GROMACS programs is carried out using the 
    same set of command lines. In the case of ORCA, the simulation execution options are set directly in the `.inp` 
@@ -22,9 +22,13 @@
         mdrun simbox.gro -npt -prs 1.0 -tmp 298.15 -tot 1.0
 
    In the equilibration steps, the trajectory is saved every 100 steps (in a `.trr` file), in order to save disk 
-   space. After achieving equilibration (which is evaluated based on the analysis of the properties obtained with the 
-   DATAS module; see next topic), production can proceed. In this step, the trajectory is saved at each step of the 
-   simulation (in an .xtc file). Production is run with the following command:
+   space. To evaluate the balance, the properties obtained in the simulation with the DATAS module are analyzed using 
+   the following command:
+
+        datas simbox.log
+
+   After achieving equilibration, the production step can proceed. In this step, the trajectory is saved at each step 
+   of the simulation (in an .xtc file). Production is run with the following command:
 
         mdrun simbox.gro -prd -prs 1.0 -tmp 298.15 -tot 5.0
 
