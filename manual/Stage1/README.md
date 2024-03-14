@@ -45,6 +45,9 @@
    topology file. This means that, in the general case, it is possible to create the simulation box and its topology 
    file from a single command line.
 
-   For examples, visit the [GMDFF](https://github.com/otaviolsantana/solvate/blob/main/tutorials/1_GMDFF.md) and [PACKS](https://github.com/otaviolsantana/solvate/blob/main/tutorials/2_PACKS.md) tutorials page.
+   Several aditional options for adjusting packaging parameters are available. The complete list can be accessed from 
+   the help menu of the _packs_ program (just type the program name on the command line, without additional options).
+
+   * For examples, visit the [GMDFF](https://github.com/otaviolsantana/solvate/blob/main/tutorials/1_GMDFF.md) and [PACKS](https://github.com/otaviolsantana/solvate/blob/main/tutorials/2_PACKS.md) tutorials page.
 
    « Previous topic | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | [Next topic](https://github.com/otaviolsantana/solvate/edit/main/manual/Stage2/) »
