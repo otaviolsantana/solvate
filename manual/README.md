@@ -20,7 +20,7 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 <img src="https://github.com/otaviolsantana/solvate/assets/69423088/f4d64def-8bed-440c-86b1-bf35764036bd" width="750px"/>
 </div>
 
-* **(3rd Stage)** Selection & Treatment of Microsolvation Clusters
+* **(3rd Stage)** Clusters Selection & Microsolvation Treatment
 
 <div align="center">
 <img src="https://github.com/otaviolsantana/solvate/assets/69423088/948efc7e-f83f-4539-916c-69ab189da808" width="750px"/>
@@ -30,4 +30,4 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 
 1. [Creation of Simulation Box & Force Field Parameters](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_Stage.md)
 2. [Submission of Simulations & Analysis of Simulated Properties](https://github.com/otaviolsantana/solvate/blob/main/manual/2nd_Stage.md)
-3. [Selection & Treatment of Microsolvation Clusters](https://github.com/otaviolsantana/solvate/blob/main/manual/3rd_Stage.md)
+3. [Clusters Selection & Microsolvation Treatment](https://github.com/otaviolsantana/solvate/blob/main/manual/3rd_Stage.md)
