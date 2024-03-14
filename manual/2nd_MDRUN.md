@@ -2,12 +2,17 @@
 
 **SUBMISSION OF SIMULATIONS** & **ANALYSIS OF SIMULATED PROPERTIES**
 
-2. From the MDRUN module, the execution of simulations with the ORCA and GROMACS programs is carried out using the 
-   same set of command lines. In the case of ORCA, the simulation execution options are set directly in the `.inp` 
-   input file at run time on the command line. In the case of GROMACS, the options are adjusted and saved in its own 
+2. From the MDRUN module, the execution of simulations with the _ORCA_ and _GROMACS_ programs is carried out using the 
+   same set of command lines. In the case of _ORCA_, the simulation execution options are set directly in the `.inp` 
+   input file at run time on the command line. In the case of _GROMACS_, the options are adjusted and saved in its own 
    `.mdp` settings file. In the latter case, there are a greater number of simulation execution options, such as type 
    of barostat and thermostat, time constant for pressure and temperature coupling, isothermal compressibility and 
-   saving frequency, among others. For example, the initialization (energy minimization and optimization) of the 
+   saving frequency, among others. Initially, it is possible to check whether the options automatically configured 
+   after packaging are appropriate, before starting the simulation:
+
+        mdrun simbox.gro -chk
+
+   For example, the initialization (energy minimization and optimization) of the 
    simulation box, for a pressure of 1.0 bar and 298.15 K temperature, is executed with the command:
 
         mdrun simbox.gro -ini -prs 1.0 -tmp 298.15
@@ -36,9 +41,20 @@
 
         mdrun simbox.gro -prd -prs 1.0 -tmp 298.15 -tot 5.0
 
-   Several options for adjusting simulation parameters are available for the ORCA and GROMACS programs. The complete 
-   list can be accessed from the help menu of the MDRUN and DATAS modules (just type the program name on the command 
-   line, without additional options).
+   After production, data extraction can be carried out with trajectory truncation. There are several options 
+   available, which include the possibility of performing RMSD and RDF analysis of the truncated trajectory. The 
+   simplest procedure is to execute the command:
+
+        datas simbox.log -ext
+
+   Finally, after extraction, it is possible to remove several unnecessary files in the microsolvation treatment, 
+   which can be done with the command:
+
+        mdrun simbox.gro -cls
+
+   Several options for adjusting simulation parameters, as well as analyzing properties and extracting data, are 
+   available for the _ORCA_ and _GROMACS_ programs. The complete list can be accessed in the help menu of the MDRUN 
+   and DATAS modules (just type the name of the program in the command line, without additional options).
 
    * For examples, visit the MDRUN and DATAS tutorials page. (under construction...)
 
