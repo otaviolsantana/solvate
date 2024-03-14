@@ -1,6 +1,6 @@
 ## USER MANUAL - QUICK GUIDE
 
-**SUBMISSION OF SIMULATIONS** & **ANALYSIS OF SIMULATED PROPERTIES**
+**SELECTION** & **TREATMENT OF MICROSOLVATION CLUSTERS**
 
 2. From the MDRUN module, the execution of simulations with the _ORCA_ and _GROMACS_ programs is carried out using the 
    same set of command lines. In the case of _ORCA_, the simulation execution options are set directly in the `.inp` 
@@ -57,6 +57,6 @@
    available for the _ORCA_ and _GROMACS_ programs. The complete list can be accessed in the help menu of the MDRUN 
    and DATAS modules (just type the name of the program in the command line, without additional options).
 
-   * For examples, visit the MDRUN and DATAS tutorials page. (under construction...)
+   * For examples, visit the MICRO, HBOND, and GCALC tutorials page. (under construction)
 
-   « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_PACKS.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | Next topic »
+   « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/manual/2nd_Stage.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | Next topic »
