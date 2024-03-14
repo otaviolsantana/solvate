@@ -33,7 +33,7 @@
         mdrun simbox.gro -prd -prs 1.0 -tmp 298.15 -tot 5.0
 
    Several options for adjusting simulation parameters are available for the ORCA and GROMACS programs. The complete 
-   list can be accessed from the help menu of the _mdrun_ program (just type the program name on the command line, 
-   without additional options).
+   list can be accessed from the help menu of the MDRUN and DATAS modules (just type the program name on the command 
+   line, without additional options).
 
    « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_PACKS.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | Next topic »
