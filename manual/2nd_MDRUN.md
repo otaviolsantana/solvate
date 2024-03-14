@@ -13,7 +13,7 @@
         mdrun simbox.gro -ini -prs 1.0 -tmp 298.15
 
    After energy minimization, temperature equilibration can be carried out in an NVT ensemble. For example, running 
-   1.0 ns for equilibration on the NVT ensemble is executed with the command:
+   1.0 ns for equilibration on the NVT ensemble can be executed with the command:
 
         mdrun simbox.gro -nvt -tmp 298.15 -tot 1.0
 
@@ -21,14 +21,18 @@
 
         mdrun simbox.gro -npt -prs 1.0 -tmp 298.15 -tot 1.0
 
-   In the equilibration steps, the trajectory is saved every 100 steps (in a `.trr` file), in order to save disk 
-   space. To evaluate the balance, the properties obtained in the simulation with the DATAS module are analyzed using 
+   The equilibration steps involve saving the trajectory every 100 steps (in a `.trr` file) to conserve disk space. To 
+   assess the equilibrium, the properties acquired during the simulation can be analyzed using the DATAS module with 
    the following command:
 
         datas simbox.log
 
+   Properties such as pressure (in this case NPT), temperature, density, and potential energy are evaluated 
+   graphically and statistically (descriptive statistics include the calculation of standard error, standard deviation 
+   and drift of properties; RMSD and RDF analysis are also available).
+
    After achieving equilibration, the production step can proceed. In this step, the trajectory is saved at each step 
-   of the simulation (in an .xtc file). Production is run with the following command:
+   of the simulation (in an `.xtc` file). Production is run with the following command:
 
         mdrun simbox.gro -prd -prs 1.0 -tmp 298.15 -tot 5.0
 
