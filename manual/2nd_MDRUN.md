@@ -12,13 +12,14 @@
 
         mdrun simbox.gro -chk
 
-   For example, the initialization (energy minimization and optimization) of the 
-   simulation box, for a pressure of 1.0 bar and 298.15 K temperature, is executed with the command:
+   Before starting the simulation, it is necessary to carry out an initialization step for the initial box, which 
+   includes energy minimization and box optimization. For example, to initialize the simulation box at a pressure of 
+   1.0 bar and a temperature of 298.15 K, you can use the following command:
 
         mdrun simbox.gro -ini -prs 1.0 -tmp 298.15
 
-   After energy minimization, temperature equilibration can be carried out in an NVT ensemble. For example, running 
-   1.0 ns for equilibration on the NVT ensemble can be executed with the command:
+   After initialization, temperature equilibration can be performed in an NVT ensemble. For example, running 1.0 ns 
+   for equilibration in the NVT ensemble can be executed with the following command:
 
         mdrun simbox.gro -nvt -tmp 298.15 -tot 1.0
 
