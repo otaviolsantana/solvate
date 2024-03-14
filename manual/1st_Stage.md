@@ -1,6 +1,6 @@
 ## USER MANUAL - QUICK GUIDE
 
-**CREATION OF SIMULATION BOX**
+**CREATION OF SIMULATION BOX** & **FORCE FIELD PARAMETERS**
 
 1. The first stage of using the program consists of creating the simulation box. This is done using the following 
    command:
