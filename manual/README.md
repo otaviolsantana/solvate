@@ -8,7 +8,7 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 
 **PROGRAM STUCTURE**
 
-* **(1st Stage)** Creation of Simulation Box
+* **(1st Stage)** Creation of Simulation Box & Force Field Parameters
 
 <div align="center">
 <img src="https://github.com/otaviolsantana/solvate/assets/69423088/cf13d12e-1b75-411c-a058-0317c1b7d890" width="750px"/>
@@ -20,7 +20,7 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 <img src="https://github.com/otaviolsantana/solvate/assets/69423088/f4d64def-8bed-440c-86b1-bf35764036bd" width="750px"/>
 </div>
 
-* **(3rd Stage)** Selection and Treatment of Microsolvation Clusters
+* **(3rd Stage)** Selection & Treatment of Microsolvation Clusters
 
 <div align="center">
 <img src="https://github.com/otaviolsantana/solvate/assets/69423088/948efc7e-f83f-4539-916c-69ab189da808" width="750px"/>
@@ -28,5 +28,6 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 
 ## USER MANUAL - QUICK GUIDE
 
-1. [Creation of Simulation Box](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_PACKS.md)
-2. [Submission of Simulations](https://github.com/otaviolsantana/solvate/blob/main/manual/2nd_MDRUN.md)
+1. [Creation of Simulation Box & Force Field Parameters](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_PACKS.md)
+2. [Submission of Simulations & Analysis of Simulated Properties](https://github.com/otaviolsantana/solvate/blob/main/manual/2nd_MDRUN.md)
+3. Selection & Treatment of Microsolvation Clusters
