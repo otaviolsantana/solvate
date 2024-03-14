@@ -1,6 +1,6 @@
 ## USER MANUAL - QUICK GUIDE
 
-**SELECTION** & **TREATMENT OF MICROSOLVATION CLUSTERS**
+**CLUSTERS SELECTION** & **MICROSOLVATION TREATMENT**
 
 3. After extracting the trajectory, the truncated trajectory file `simbox.trj.xyz` is obtained. The MICRO module can 
    then select _N_ number of lower-energy clusters, each containing _M_ solvent molecules. The value of _M_ can be 
