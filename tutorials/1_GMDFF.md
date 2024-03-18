@@ -1,6 +1,4 @@
-# _**Solvate Suite**_
-
-**GMDFF :: Generation of Molecular Dynamics Force Fields**
+## *GMDFF* :: Generation of Molecular Dynamics Force Fields
 
 The GMDFF module mediates the creation of force field parameters (itp files), as well as making special adjustments for the construction of the topology (top file). It can be used using the command:
  
