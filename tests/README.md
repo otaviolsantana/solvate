@@ -1,33 +1,18 @@
-<div align="center">
-<img src="https://user-images.githubusercontent.com/69423088/253824433-a6b55273-b084-4283-a0b6-b8d40bc52890.png" width="250px"/>
-</div>
+## TEST SUITE
 
-## OVERVIEW
+Este é repositório de arquivos de teste de execução do suite de programas, integrado à página de [tutoriais](https://github.com/otaviolsantana/solvate/tree/main/tutorials).
 
-This is a user manual for _Solvate Suite_, a set of programs for building initial simulation box configuration, force field and topology files for molecular dynamics simulations of molecular systems in solution.
+**GMDFF**
 
-**PROGRAM STUCTURE**
+* Test #01: [Lysozyme protein](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test01). [GROMACS preparation]
+* Test #02: [CO2 molecule](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test02). [Q-Force procedure]
+* Test #03: [Acetic anion](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test03). [External force field]
+* Test #04: [Water molecule (SPC/E)](https://github.com/otaviolsantana/solvate/tree/main/tests/1_GMDFF_Test04). [Internal force field]
 
-* **(1st Stage)** Creation of Simulation Box & Force Field Parameters
 
-<div align="center">
-<img src="https://github.com/otaviolsantana/solvate/assets/69423088/cf13d12e-1b75-411c-a058-0317c1b7d890" width="750px"/>
-</div>
+**PACKS**
 
-* **(2nd Stage)** Submission of Simulations & Analysis of Simulated Properties
-
-<div align="center">
-<img src="https://github.com/otaviolsantana/solvate/assets/69423088/f4d64def-8bed-440c-86b1-bf35764036bd" width="750px"/>
-</div>
-
-* **(3rd Stage)** Clusters Selection & Microsolvation Treatment
-
-<div align="center">
-<img src="https://github.com/otaviolsantana/solvate/assets/69423088/948efc7e-f83f-4539-916c-69ab189da808" width="750px"/>
-</div>
-
-## USER MANUAL - QUICK GUIDE
-
-1. [Creation of Simulation Box & Force Field Parameters](https://github.com/otaviolsantana/solvate/blob/main/manual/1st_Stage.md)
-2. [Submission of Simulations & Analysis of Simulated Properties](https://github.com/otaviolsantana/solvate/blob/main/manual/2nd_Stage.md)
-3. [Clusters Selection & Microsolvation Treatment](https://github.com/otaviolsantana/solvate/blob/main/manual/3rd_Stage.md)
+* Test #01: [Dimethylamine molecule in water](https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test01). [ORCA example]
+* Test #02: [Dimethylamine ion in water with hidroxyl counter-ion](https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test02). [ORCA example]
+* Test #03: [Formamide molecule in water](https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test03). [GROMACS example]
+* Test #04: [Protein in a complex mixture](https://github.com/otaviolsantana/solvate/tree/main/tests/2_PACKS_Test04). [GROMACS example]
