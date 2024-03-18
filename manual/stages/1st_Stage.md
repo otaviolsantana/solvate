@@ -48,6 +48,6 @@
    Several additional options for adjusting packaging parameters are available. The complete list can be accessed from 
    the help menu of the _packs_ program (just type the program name on the command line, without additional options).
 
-   * For examples, visit the [GMDFF](https://github.com/otaviolsantana/solvate/blob/main/tutorials/1_GMDFF.md) and [PACKS](https://github.com/otaviolsantana/solvate/blob/main/tutorials/2_PACKS.md) tutorials page.
+   * For examples, visit the [GMDFF](https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/1_GMDFF.md) and [PACKS](https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/2_PACKS.md) tutorials page.
 
    « Previous topic | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | [Next topic](https://github.com/otaviolsantana/solvate/blob/main/manual/stages/2nd_Stage.md) »
