@@ -57,6 +57,6 @@
    available for the _ORCA_ and _GROMACS_ programs. The complete list can be accessed in the help menu of the MDRUN 
    and DATAS modules (just type the name of the program in the command line, without additional options).
 
-   * For examples, visit the MDRUN and DATAS tutorials page. (under construction...)
+   * For examples, visit the [MDRUN](https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/3_MDRUN.md) and DATAS tutorials page. (under construction...)
 
    « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/manual/stages/1st_Stage.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | [Next topic](https://github.com/otaviolsantana/solvate/blob/main/manual/stages/3rd_Stage.md) »
