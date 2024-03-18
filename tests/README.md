@@ -21,4 +21,4 @@ This is a repository of test files for executing the program suite, integrated i
 **MDRUN**
 
 * Test #01: [Submitting a simulation with ORCA](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/3_MDRUN_Test01). [ORCA example]
-* * Test #01: [Submitting a simulation with ORCA](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/3_MDRUN_Test02). [GROMACS example]
+* Test #02: [Submitting a simulation with ORCA](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/3_MDRUN_Test02). [GROMACS example]
