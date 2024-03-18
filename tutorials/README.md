@@ -1,4 +1,4 @@
-## TEST SUITE
+## TUTORIAL SUITE
 
 Este é repositório de arquivos de teste de execução do suite de programas, integrado à página de [tutoriais](https://github.com/otaviolsantana/solvate/tree/main/tutorials).
 
