@@ -16,3 +16,9 @@ This is a repository of test files for executing the program suite, integrated i
 * Test #02: [Dimethylamine ion in water with hidroxyl counter-ion](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test02). [ORCA example]
 * Test #03: [Formamide molecule in water](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test03). [GROMACS example]
 * Test #04: [Protein in a complex mixture](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test04). [GROMACS example]
+
+
+**MDRUN**
+
+* Test #01: [Submitting a simulation with ORCA](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/3_MDRUN_Test01). [ORCA example]
+* * Test #01: [Submitting a simulation with ORCA](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/3_MDRUN_Test02). [GROMACS example]
