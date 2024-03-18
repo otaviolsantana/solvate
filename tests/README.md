@@ -1,6 +1,6 @@
 ## TEST SUITE
 
-Este é repositório de arquivos de teste de execução do suite de programas, integrado à página de [tutoriais](https://github.com/otaviolsantana/solvate/tree/main/tutorials).
+This is a repository of test files for executing the program suite, integrated into the [tutorials](https://github.com/otaviolsantana/solvate/tree/main/tutorials) page.
 
 **GMDFF**
 
