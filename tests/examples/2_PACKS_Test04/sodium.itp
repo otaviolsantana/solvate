@@ -1,0 +1,5 @@
+[ moleculetype ]
+MF5      1
+
+[ atoms ]
+     1    opls_407      1    MF5     NA      1      1.00000000    22.9897 ; qtot 1  [ 1.0000000 ]

@@ -1,0 +1,16 @@
+
+Just run the following command:
+
+   packs dimethylamine.inp water.inp -nm 250 -it -bk
+
+This will create:
+
+   dimethylamine+water_mol250.inp
+   dimethylamine+water_mol250.zip
+
+To visualize the simulation box, try:
+
+   sview dimethylamine+water_mol250.inp
+   jmol dimethylamine+water_mol250.inp
+   vmd dimethylamine+water_mol250.inp
+

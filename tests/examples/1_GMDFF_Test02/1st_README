@@ -1,0 +1,17 @@
+
+Just run the following command:
+
+   gmdff CO2.inp
+
+This will create:
+
+   CO2.gro
+   CO2.itp
+   CO2.zip
+
+To visualize the structure, try:
+
+   sview CO2.inp
+   jmol CO2.inp
+   vmd CO2.inp
+
