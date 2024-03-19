@@ -1,0 +1,17 @@
+
+Just run the following command:
+
+   gmdff lysozyme.pdb
+
+This will create:
+
+   lysozyme.gro
+   lysozyme.itp
+   lysozyme.zip
+
+To visualize the structure, try:
+
+   sview lysozyme.pdb
+   jmol lysozyme.pdb
+   vmd lysozyme.pdb
+

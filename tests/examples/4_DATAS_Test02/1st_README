@@ -1,0 +1,5 @@
+
+Consider the result of “test #2” from the MDRUN module, in which the file “protein+water-Cl_mol2500.log” was created. From this file, to analyze the result:
+
+   datas protein+water-Cl_mol2500.log
+

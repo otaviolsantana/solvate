@@ -1,0 +1,8 @@
+
+Consider the result of “test #3” from the PACKS module, in which the files “protein+water-Cl_mol2500.gro” and “protein+water-Cl_mol2500.top” was created. From these files, to run the simulation under 1.0 bar and 298.15 K, totaling 10 ps for each step (just a quick test):
+
+   mdrun protein+water-Cl_mol2500.gro -ini -prs 1.0 -tmp 298.15            # Initialization: minimization and box optimization
+   mdrun protein+water-Cl_mol2500.gro -nvt -tmp 298.15 -tot 0.010          # NVT equilibration
+   mdrun protein+water-Cl_mol2500.gro -npt -prs 1.0 -tmp 298.15 -tot 0.010 # NPT equilibration
+   mdrun protein+water-Cl_mol2500.gro -prd -prs 1.0 -tmp 298.15 -tot 0.010 # NPT production
+

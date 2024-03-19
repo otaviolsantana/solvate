@@ -1,0 +1,16 @@
+
+Just run the following command:
+
+   gmdff spce_oplsaa.wtr
+
+This will create:
+
+   spce.gro
+   spce.itp
+
+To visualize the structure, try:
+
+   sview spce.gro
+   jmol spce.gro
+   vmd spce.gro
+
