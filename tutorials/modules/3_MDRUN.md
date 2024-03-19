@@ -4,7 +4,7 @@ The MDRUN module manages the execution of simulations, through a unified interfa
 
 	mdrun simbox.ext -options
 
-where _ext_ is one of the extensions recognized by _Solvate Suite_ (inp [ORCA], gro [GROMACS]), and “-options” a set of options for the configuration of the simulation execution. The list of options can be seen from the application menu, which is accessible from the command line by typing the module name, without any other parameters.
+where _ext_ is one of the extensions recognized by _Solvate Suite_ (`inp` [ORCA] or `gro` [GROMACS]), and “-options” a set of the configurations for the simulation execution. The list of options can be seen from the application menu, which is accessible from the command line by typing the module name, without any other parameters.
 
 For examples, see:
 
