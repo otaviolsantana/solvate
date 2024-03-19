@@ -1,0 +1,5 @@
+
+Consider the result of “test #1” of the MDRUN module, in which the file “dimethylamine+água_mol250.out” was created. From this file, to analyze the result:
+
+   datas dimethylamine+water_mol250.out
+
