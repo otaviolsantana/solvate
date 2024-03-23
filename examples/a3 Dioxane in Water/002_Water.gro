@@ -1,0 +1,6 @@
+Charge=( 0 ) Mult=( 1 ) Config=( NONE ) Press=( 1.0 ) Temp=( 298.15 ) Solvent=( WATER )
+    3
+    2SVT   OW      1   1.054   1.044   1.077
+    2SVT   HW1     2   1.151   1.048   1.077
+    2SVT   HW2     3   1.026   1.137   1.077
+   1.35100   1.33700   1.27700

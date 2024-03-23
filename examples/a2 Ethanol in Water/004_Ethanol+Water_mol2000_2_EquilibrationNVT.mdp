@@ -1,0 +1,69 @@
+;     Etapa 1: Equilibração no NVT 
+;#########################################
+; Controle do tempo de simulação
+;#########################################
+continuation             = no
+;define                  = -DPOSRES
+integrator               = MD
+nsteps                   = 1000000
+dt                       = 0.001
+
+;#########################################
+; Controle de saída
+;#########################################
+nstxout                 = 0
+nstxout-compressed      = 10000
+nstenergy               = 1   
+nstlog                  = 100    
+
+;#########################################
+; Parâmetros de ligação 
+;#########################################
+constraint-algorithm     = LINCS
+constraints              = H-bonds
+
+;#########################################
+; Parâmetros de não ligados
+;#########################################
+cutoff_scheme            = Verlet
+nstlist                  = 10
+rlist                    = 1.8
+verlet-buffer-tolerance  = -1
+rcoulomb                 = 1.7
+rcoulomb_switch          = 1.3
+rvdw                     = 1.7
+rvdw_switch              = 1.3
+dispcorr                 = EnerPres
+
+;#########################################
+; Parâmetros eletrostáticos
+;#########################################
+coulombtype              = PME
+pme-order                = 4 
+fourierspacing           = 0.12
+vdw_modifier             = Potential-shift
+vdwtype                  = Cut-off
+
+;#########################################
+; Parâmetros da caixa 
+;#########################################
+pbc                      = XYZ
+comm-mode                = Linear
+comm-grps                = System
+refcoord_scaling         = COM
+
+;#########################################
+; Termostato 
+;#########################################
+tcoupl                   = V-rescale
+ref_t                    = 298.15
+tau_t                    = 0.5
+tc-grps                  = System
+energygrps               = SLT SVT
+
+;#########################################
+; Generate initial velocities
+;#########################################
+gen-vel                  = yes
+gen-temp                 = 298.15
+gen-seed                 = 4537566

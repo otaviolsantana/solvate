@@ -1,0 +1,15 @@
+;     Etapa 1: Minimização 
+;#########################################
+; Controle de minimização
+;#########################################
+integrator      = steep  
+emtol           = 1.0    
+emstep          = 0.0001 
+nsteps          = 500000 
+nstlist         = 1      
+cutoff-scheme   = Verlet 
+ns_type         = grid   
+coulombtype     = PME    
+rcoulomb        = 1.7    
+rvdw            = 1.7    
+pbc             = xyz     
