@@ -25,6 +25,7 @@ The _suite_ comprises multiple modules, each dedicated to addressing key aspects
 Overall, the _Solvate Suite_ provides a comprehensive solution for molecular modeling tasks, addressing various complexities encountered in explicit solvent simulations.
 
 For a quick overview on how to use the program, visit the [user manual](https://github.com/otaviolsantana/solvate/tree/main/manual) page.
+For more detailed instructions on using the program, including simulation examples, click [here](https://github.com/otaviolsantana/solvate/tree/main/examples).
 
 **INSTALLATION**
 
