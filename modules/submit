@@ -1,0 +1,453 @@
+#!/bin/bash
+#
+# SUBMIT launch script.
+#
+
+# Determining system batch
+
+TEST_SLUR=`echo $(which sbatch)`     # SLURM System
+TEST_PBSS=`echo $(which qsub)`       # Torque/PBS (Portable Batch System)
+TEST_SGES=`echo $(which sge_submit)` # Grid Engine (SGE)
+TEST_LSFS=`echo $(which bsub)`       # LSF (Load Sharing Facility)
+TEST_HTCO=`echo $(which bsubmit)`    # HTCondor System
+TEST_LLSB=`echo $(which llsubmit)`   # IBM Batch System
+
+if [[ `echo $TEST_SLUR`   != "" ]]; then # SLURM System
+   MACHINE="SLM" && BATDESC="Slurm System [sbatch]"
+elif [[ `echo $TEST_PBSS` != "" ]]; then # Torque/PBS (Portable Batch System)
+   MACHINE="PBS" && BATDESC="Torque/PBS (Portable Batch System) [qbub]"
+elif [[ `echo $TEST_LSFS` != "" ]]; then # LSF (Load Sharing Facility)
+   MACHINE="LSF" && BATDESC="LSF (Load Sharing Facility) [bsub]"
+elif [[ `echo $TEST_HTCO` != "" ]]; then # HTCondor System
+   MACHINE="HTC" && BATDESC="HTCondor System [bsubmit]"
+elif [[ `echo $TEST_SGES` != "" ]]; then # SGE (Sun Grid Engine)
+   MACHINE="SGE" && BATDESC="SGE (Sun Grid Engine) [sge_submit]"
+elif [[ `echo $TEST_LLSB` != "" ]]; then # IBM Batch System
+   MACHINE="IBM" && BATDESC="IBM Batch System [llsubmit]"
+else                                     # Local Machine
+   MACHINE="LOC" && BATDESC="Local Machine"
+fi
+
+# Showing the program help
+
+if [[ `echo $1 | grep -ia "\-ver"` != "" ]]; then
+
+   infov "SUBMIT :: Sub-Module"
+   exit
+
+elif [[ -z $1 ]]; then
+
+   FILES1=`ls *.com *.gjf *.inp *.xyz *.gro`
+   FILES2=`ls *.sh`
+
+   clear
+   echo
+   echo -e "\033[1;34m --------------------------------------------------- \033[0m"
+   echo -e "\033[1;31m submit \033[1;32m<program> <input.ext> <-options> <-ntasks I> \033[0m"
+   echo
+   echo -e "\033[1;33m PARAMETERS                                          \033[0m"
+   echo -e "\033[1;21m      program   [gsn/orca/xtb/gmx program]           \033[0m"
+   echo -e "\033[1;21m      input.ext [Input GJF/COM/INP/XYZ/GRO file]     \033[0m"
+   echo
+   echo -e "\033[1;33m OPTIONS/DEFAULTS                                    \033[0m"
+   echo -e "\033[1;21m     -options   [Program specific options]           \033[0m"
+   echo -e "\033[1;21m     -queue  T  [Name of available queue]            \033[0m"
+   echo -e "\033[1;21m     -ntasks I  [Number of processors]    [-prc]     \033[0m"
+   echo -e "\033[1;21m     -qmemor I  [Amount of memory (in GB)][-mem]     \033[0m"
+   echo -e "\033[1;21m     -preserve  [Preserve the submission job file]   \033[0m"
+   echo -e "\033[1;21m     -debug     [Check generated job before submit]  \033[0m"
+  #echo
+  #echo -e "\033[1;33m ADDITIONAL                                          \033[0m"
+  #echo -e "\033[1;21m     -batch  T  [Name of system batch]               \033[0m"
+   echo
+   echo -e "\033[1;33m AVAILABLE SYSTEM BATCH                              \033[0m"
+   if [[ $MACHINE == "PBS" ]]; then
+      echo "     »Torque/PBS (Portable Batch System) [qbub]"
+   elif [[ $MACHINE == "LSF" ]]; then
+      echo "     »LSF (Load Sharing Facility) [bsub]"
+   elif [[ $MACHINE == "SLM" ]]; then
+      echo "     »Slurm System [sbatch]"
+   elif [[ $MACHINE == "HTC" ]]; then
+      echo "     »HTCondor System [bsubmit]"
+   elif [[ $MACHINE == "IBM" ]]; then
+      echo "     »IBM Batch System [llsubmit]"
+   elif [[ $MACHINE == "SGE" ]]; then
+      echo "     »Grid Engine (SGE) [sge_submit]"
+   elif [[ $MACHINE == "LOC" ]]; then
+      echo "     »Local Machine"
+   else
+      echo "     »NOT DEFINED"
+   fi
+   echo
+   echo -e "\033[1;33m WARNING                                             \033[0m"
+   echo -e "\033[1;21m      This is an open-source script that may require \033[0m"
+   echo -e "\033[1;21m      adjustments depending on the available queue   \033[0m"
+   echo -e "\033[1;21m      system                                         \033[0m"
+   echo -e "\033[1;34m --------------------------------------------------- \033[0m"
+   echo
+
+   infos -compact
+
+   if [[ $FILES1 != "" ]]; then
+      echo
+      echo " Input(s):"
+      echo
+      echo " » "$FILES1
+      echo
+   else
+      echo
+   fi
+
+   if [[ $FILES2 != "" ]]; then
+      echo
+      echo " Script(s):"
+      echo
+      echo " » "$FILES2
+      echo
+   else
+      echo
+   fi
+
+   exit
+
+fi
+
+# Determining system configuration
+
+NUMMACS=1 # <<< For a job running on a cluster, modify this !!
+MAXCPUS=`lscpu | grep -ia "CPU(s):" | grep -ia -v list | grep -ia -v numa | head -n1 | awk '{print $2}'`
+MAXPROC=$((NUMMACS*MAXCPUS))
+
+if [[ `free -m | grep -ia "Mem" | head -n1 | awk '{print $2}'` != "" ]]; then
+   MAXMEMO=$(echo "`free -m | grep -ia "Mem" | head -n1 | awk '{print $2}'` / 1000" | bc)
+else
+   MAXMEMO="8"
+fi
+
+# Determining the type of job execution
+
+if [[ $# -eq 1 || `echo $1 | grep -ia ".sh"` != "" ]]; then
+   JOBTYPE="SCRIPT"
+else
+   JOBTYPE="PROGRAM"
+fi
+
+# Verify if program and input files exist
+
+if [[ $JOBTYPE = "SCRIPT" ]]; then
+   if [[ ! -f $1 ]]; then
+      echo
+      echo " ------------------------------"
+      echo " Script: "$1
+      echo " Submit: Script file not found!"
+      echo " ------------------------------"
+      echo
+      exit
+   fi
+else
+   if [[ `echo $(which $1)` = "" ]]; then
+      echo
+      echo " -------------------------------"
+      echo "  Prog.: "$1
+      echo "  Input: "$2
+      echo " Submit: Program file not found!"
+      echo " -------------------------------"
+      echo
+      exit
+   elif [[ ! -f $2 && `echo $1 | grep '\.'` != "" ]]; then
+      echo
+      echo " -----------------------------"
+      echo "  Prog.: "$1
+      echo "  Input: "$2
+      echo " Submit: Input file not found!"
+      echo " -----------------------------"
+      echo
+      exit
+   else
+      ls -1 $2* 1> /dev/null 2>&1 && echo "YES" > $2.tst 
+      if [ -f $2.tst ]; then
+         rm $2.tst
+         PATTERN="YES"
+      else
+         echo
+         echo " - ERROR: Pattern files “"$2"” not found! [SUBMIT]"
+         echo
+         exit
+      fi
+
+   fi
+fi
+
+# Setting environment variables
+
+if [[ $JOBTYPE = "SCRIPT" ]]; then
+   JOBNAME=`echo $1 | awk -F"." '{print $1}'`
+   PRGSJOB=$JOBNAME".jobout"
+   PROGEXE=$PWD/$1
+   INPNAME=""
+   WORKCFG="-local"
+else
+   JOBNAME=`echo $2 | awk -F"." '{print $1}'` # `echo $2 | sed -E 's/\.(gjf|com|inp|xyz|gro|pdb|...|log)//'`
+   PRGSJOB=$JOBNAME".jobout"                  # PRGSJOB=$JOBNAME".job"$PROGEXE
+   PROGEXE=$1
+   INPNAME=$2
+   WORKCFG=`echo $@ | sed "s/$PROGEXE//g" | sed "s/$INPNAME//g"`' '"-local" # | sed s/\-preserve/\/`
+fi
+
+# Setting execution parameters
+
+TPQUEUE="" # Default values
+CNTASKS="4"
+CFGMEMO="8"
+CFGSAVE="NO"
+CFGDEBG="NO"
+while [ "$1" != "" ]; do
+   case "$(echo $1 | tr [:upper:] [:lower:])" in
+      -prc|-PRC|-proc|-PROC|-procs|-PROCS|-nproc|-NPROC|-nprocs|-NPROCS|-nPROC|-nPROCS|-ntasks|-NTASKS|-paral|-PARAL|-parallel|-PARALLEL)
+         if [ -n "$2" ]; then
+            CNTASKS="$2"
+            shift 2
+            continue
+         else
+            echo ' ERROR: the option “-ntasks” requires a non-empty argument.'
+            exit
+         fi;;
+      -mem|-MEM|-nmem|-NMEM|-memor|-qmemor|-QMEMOR|-MEMOR|-memory|-MEMORY)
+         if [ -n "$2" ]; then
+            CFGMEMO="$2"
+            shift 2
+            continue
+         else
+            echo ' ERROR: the option “-qmemor” requires a non-empty argument.'
+            exit
+         fi;;
+      -job|-JOB|-queue|-QUEUE|-q|-Q)
+         if [ -n "$2" ]; then
+            TPQUEUE="$2"
+            shift 2
+            continue
+         else
+            echo ' ERROR: the option “-queue” requires a non-empty argument.'
+            exit
+         fi;;
+      -bck|-BCK|-bak|-BAK|-prv|-PRV|-pres|-PRES|-preserve|-PRESERVE)
+         CFGSAVE="YES";;
+      -deb|-DEB|-dbg|-DBG|-debug|-DEBUG|-chk|-CHK|-check|-CHECK)
+         CFGDEBG="YES";;
+   esac
+   shift
+done
+if [[ $CNTASKS != "" && $(echo "$CNTASKS > $MAXPROC" | bc) -eq 1 ]]; then
+   CNTASKS=$MAXPROC
+fi
+if [[ $CFGMEMO != "" && $(echo "$CFGMEMO > $MAXMEMO" | bc) -eq 1 ]]; then
+   CFGMEMO=$MAXMEMO
+fi
+
+# Defining functions...
+
+EXEC_SLM() # 1: SLURM System
+{
+   clear
+
+  #WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO
+
+   echo '#!/bin/bash'                                           > $JOBNAME.job
+   echo ''                                                     >> $JOBNAME.job
+   echo '#SBATCH --job-name='$JOBNAME''                        >> $JOBNAME.job
+   echo '#SBATCH --ntasks='$CNTASKS''                          >> $JOBNAME.job
+   echo '#SBATCH --time=300:00:00'                             >> $JOBNAME.job
+ # if [[ $PROGEXE = 'rungmx' ]]; then
+ #    echo '#SBATCH --job-name='$JOBNAME''                     >> $JOBNAME.job
+ #    echo '#SBATCH --ntasks=1'                                >> $JOBNAME.job
+ #    echo '#SBATCH --cpus-per-task='$CNTASKS''                >> $JOBNAME.job
+ #  # echo '#SBATCH --ntasks-per-node='$CNTASKS''              >> $JOBNAME.job
+ #  # echo '#SBATCH --mincpus='$CNTASKS''                      >> $JOBNAME.job
+ #    echo '#SBATCH --time=300:00:00'                          >> $JOBNAME.job
+ # else
+ #    echo '#SBATCH --job-name='$JOBNAME''                     >> $JOBNAME.job
+ #    echo '#SBATCH --ntasks='$CNTASKS''                       >> $JOBNAME.job
+ #    echo '#SBATCH --time=300:00:00'                          >> $JOBNAME.job
+ # fi
+   echo ''                                                     >> $JOBNAME.job
+   echo 'echo "## Job started at"' $(date +'%d-%m-%Y as %T')'' >> $JOBNAME.job
+   echo 'echo "## Job execution node:  $(hostname -s)"'        >> $JOBNAME.job
+   echo 'echo "## Job number of tasks: $SLURM_NTASKS"'         >> $JOBNAME.job
+   echo 'echo "## Submission folder:   $SLURM_SUBMIT_DIR"'     >> $JOBNAME.job
+   echo ''                                                     >> $JOBNAME.job
+  #echo 'export OMP_NUM_THREADS='$CNTASKS''                    >> $JOBNAME.job
+  #echo ''                                                     >> $JOBNAME.job
+   echo "time $PROGEXE $INPNAME $WORKCFG > $PRGSJOB 2>&1"      >> $JOBNAME.job
+   echo ''                                                     >> $JOBNAME.job
+
+   if [[ $CFGDEBG != "YES" ]]; then
+      sbatch $JOBNAME.job; echo ; if [ $CFGSAVE = "NO" ]; then rm -f $JOBNAME.job ; fi
+   else
+      echo ; echo '»DEBUG: Verify generated job file!' # ; echo # ; exit
+   fi
+}
+
+EXEC_PBS() # 2: Torque/PBS (Portable Batch System)
+{
+   clear
+ # - SPECIFIC --------------------------------------------------------------------------------------
+   if [[ $TPQUEUE   == "serial" ]]; then
+      DIRECTIVE="NO"
+   elif [[ $TPQUEUE == "umagpu" ]]; then
+      DIRECTIVE="NO"
+   elif [[ $TPQUEUE == "duasgpus" ]]; then
+      DIRECTIVE="NO"
+   elif [[ $TPQUEUE == "testegpu" ]]; then
+      DIRECTIVE="NO"
+ # - SPECIFIX --------------------------------------------------------------------------------------
+   elif [[ $TPQUEUE == "testes" ]]; then
+      DIRECTIVE="YES" ; CNODES=1 ; NTASKS=2   ; CNTASKS=$NTASKS
+   elif [[ $TPQUEUE == "par16" ]]; then
+      DIRECTIVE="YES" ; CNODES=1 ; NTASKS=16  ; CNTASKS=$NTASKS
+   elif [[ $TPQUEUE == "par128" ]]; then
+      DIRECTIVE="YES" ; CNODES=1 ; NTASKS=128 ; CNTASKS=$NTASKS
+   elif [[ $TPQUEUE == "expressa" ]]; then
+      DIRECTIVE="YES" ; CNODES=2 ; NTASKS=128 ; CNTASKS=$NTASKS
+   elif [[ $TPQUEUE == "memshort" ]]; then
+      DIRECTIVE="YES" ; CNODES=2 ; NTASKS=128 ; CNTASKS=$NTASKS
+   elif [[ $TPQUEUE == "memlong" ]]; then
+      DIRECTIVE="YES" ; CNODES=2 ; NTASKS=128 ; CNTASKS=$NTASKS
+   elif [[ $TPQUEUE == "paralela" ]]; then
+      DIRECTIVE="YES" ; CNODES=2 ; NTASKS=128 ; CNTASKS=$NTASKS
+ # - DEFAULTS --------------------------------------------------------------------------------------
+   elif [[ `qstat -q | grep "par16"` != "" ]]; then    # Default queue for LOVELACE
+      DIRECTIVE="YES" ; CNODES=1 ; NTASKS=16  ; CNTASKS=$NTASKS ; TPQUEUE="par16"
+   elif [[ `qstat -q | grep "parice"` != "" ]]; then   # Default queue for ICE
+      DIRECTIVE="YES" ; CNODES=1 ; NTASKS=12  ; CNTASKS=$NTASKS ; TPQUEUE="parice"
+ # - ERROR -----------------------------------------------------------------------------------------
+   else
+      echo ; echo "ERROR: Queue not definied" ; echo ; exit
+   fi
+ 
+   echo "#!/usr/bin/bash"                                       > $JOBNAME.job
+   echo "#PBS -N $JOBNAME"                                     >> $JOBNAME.job
+   echo "#PBS -q $TPQUEUE"                                     >> $JOBNAME.job
+   if [[ $DIRECTIVE == "YES" ]]; then
+   echo "#PBS -l nodes=$CNODES:ppn=$NTASKS"                    >> $JOBNAME.job
+   fi
+   echo "#PBS -o $JOBNAME.jobexe"                              >> $JOBNAME.job
+   echo "#PBS -e $JOBNAME.joblog"                              >> $JOBNAME.job
+   echo "#PBS -m ae"                                           >> $JOBNAME.job
+   echo "#PBS -V"                                              >> $JOBNAME.job
+   echo ''                                                     >> $JOBNAME.job
+   echo 'echo "## Job started at"' $(date +'%d-%m-%Y as %T')'' >> $JOBNAME.job
+   echo 'echo "## Job execution node:  $(hostname -s)"'        >> $JOBNAME.job
+   echo 'echo "## Job number of tasks: $PBS_NUM_PPN"'          >> $JOBNAME.job
+   echo 'echo "## Submission folder:   $PBS_O_WORKDIR"'        >> $JOBNAME.job
+   echo ''                                                     >> $JOBNAME.job
+  #echo "export OMP_NUM_PROCS=$NTASKS"                         >> $JOBNAME.job
+  #echo ''                                                     >> $JOBNAME.job
+   echo 'qstat -u $USER | grep -v ada: | sed '/^$/d''          >> $JOBNAME.job
+   echo 'cd $PBS_O_WORKDIR'                                    >> $JOBNAME.job
+   echo "time $PROGEXE $INPNAME $WORKCFG > $PRGSJOB 2>&1"      >> $JOBNAME.job
+   echo ''                                                     >> $JOBNAME.job
+
+   if [[ $CFGDEBG != "YES" ]]; then
+      qsub $JOBNAME.job; echo ; if [ $CFGSAVE = "NO" ]; then rm -f $JOBNAME.job ; fi
+   else
+      echo ; echo '»DEBUG: Verify generated job file!' # ; echo # ; exit
+   fi
+}
+
+EXEC_SGE() # 3: Grid Engine (SGE)
+{
+   echo "#!/bin/bash                                           "   > $JOBNAME.job
+   echo "#$ -pe parallel_environment $CNTASKS                  "  >> $JOBNAME.job
+   echo "#$ -q queue_name $TPQUEUE                             "  >> $JOBNAME.job
+   echo "#$ -N $JOBNAME                                        "  >> $JOBNAME.job
+   echo '                                                      '  >> $JOBNAME.job
+   echo "time $PROGEXE $INPNAME $WORKCFG > $PRGSJOB 2>&1       "  >> $JOBNAME.job
+
+
+   if [[ $CFGDEBG != "YES" ]]; then
+      sge_submit  $JOBNAME.job ; echo ; if [ $CFGSAVE = "NO" ]; then rm -f $JOBNAME.job ; fi
+   else
+      echo ; echo '»DEBUG: Verify generated job file!' # ; echo # ; exit
+   fi
+}
+
+EXEC_LSF() # 4: LSF (Load Sharing Facility)
+{
+   echo "#!/bin/bash                                        "   > $JOBNAME.job
+   echo "#BSUB -n $CNTASKS                                  "  >> $JOBNAME.job
+   echo "#BSUB -q $TPQUEUE                                  "  >> $JOBNAME.job
+   echo "#BSUB -J $JOBNAME                                  "  >> $JOBNAME.job
+   echo '                                                   '  >> $JOBNAME.job
+   echo "time $PROGEXE $INPNAME $WORKCFG > $PRGSJOB 2>&1    "  >> $JOBNAME.job
+
+
+   if [[ $CFGDEBG != "YES" ]]; then
+      bsub < $JOBNAME.job ; echo ; if [ $CFGSAVE = "NO" ]; then rm -f $JOBNAME.job ; fi
+   else
+      echo ; echo '»DEBUG: Verify generated job file!' # ; echo # ; exit
+   fi
+}
+
+EXEC_HTC() # 5: HTCondor System
+{
+   echo "#!/bin/bash                                        "   > $JOBNAME.job
+   echo "#BSUB -n $CNTASKS                                  "  >> $JOBNAME.job
+   echo "#BSUB -q $TPQUEUE                                  "  >> $JOBNAME.job
+   echo "#BSUB -J $JOBNAME                                  "  >> $JOBNAME.job
+   echo '                                                   '  >> $JOBNAME.job
+   echo "time $PROGEXE $INPNAME $WORKCFG > $PRGSJOB 2>&1    "  >> $JOBNAME.job
+
+
+   if [[ $CFGDEBG != "YES" ]]; then
+      bsubmit  $JOBNAME.job ; echo ; if [ $CFGSAVE = "NO" ]; then rm -f $JOBNAME.job ; fi
+   else
+      echo ; echo '»DEBUG: Verify generated job file!' # ; echo # ; exit
+   fi
+}
+
+EXEC_LOC() # ?: Local Machine
+{
+   $PROGEXE $INPNAME $WORKCFG &
+}
+
+# Creating and executing the job
+
+if [[ $MACHINE = "SLM" ]]; then   # Slurm System
+   EXEC_SLM
+elif [[ $MACHINE = "PBS" ]]; then # Torque/PBS (Portable Batch System)
+   EXEC_PBS
+elif [[ $MACHINE = "SGE" ]]; then # SGE (Sun Grid Engine)
+   EXEC_SGE
+elif [[ $MACHINE = "LSF" ]]; then # LSF (Load Sharing Facility)
+   EXEC_LSF
+elif [[ $MACHINE = "HTC" ]]; then # HTCondor System
+   EXEC_HTC
+elif [[ $MACHINE = "IBM" ]]; then # IBM Batch System
+   echo "IBM Batch System detected: configure your job creation and submission"
+else                              # Local Machine
+   EXEC_LOC
+fi
+
+# Showing execution information
+
+if [[ $MACHINE != "LOC" ]]; then
+
+   echo
+   echo " Creating and executing the job..."
+   echo " ========================================================="
+   echo " Sys. Batch:" $BATDESC
+   echo " ---------------------------------------------------------"
+   echo "   Job Name:" $JOBNAME
+   if [[ $JOBTYPE = "SCRIPT" ]]; then
+      echo "     Script:" $PROGEXE
+   else
+      echo "    Program:" $PROGEXE
+      echo "      Input:" $INPNAME
+   fi
+   echo "    Options:" $WORKCFG
+   echo "     Procs.:" $CNTASKS "(Max.:" $MAXPROC")"
+   echo "     Memory:" $CFGMEMO "(Max.:" $MAXMEMO"GB)"
+   echo " ========================================================="
+   echo
+
+fi
