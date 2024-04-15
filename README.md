@@ -87,7 +87,7 @@ If you use _Solvate Suite_, please cite:
 
 	Solvate Suite: A Command-Line Interface for Molecular Simulations and Multiscale Microsolvation Modeling
 	J. Chem. Inf. Model. 2024, XXXX, XXX, XXX-XXX
-	[https://doi.org/10.1021/acs.jcim.3c01899]
+	https://doi.org/10.1021/acs.jcim.3c01899
 
 **LICENSE**
 
