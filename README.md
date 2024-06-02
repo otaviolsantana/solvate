@@ -30,13 +30,11 @@ For more detailed instructions on using the program, including simulation exampl
 **INSTALLATION**
 
 	The suite is distributed pre-compiled for Linux systems, being only necessary to configure it.
-	To do this, download the program with the command:
- 
-   	   wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip ; unzip main.zip
+	To do this, download the program with the commands:
 
-   	or
-
-	   git clone https://github.com/otaviolsantana/solvate.git
+   	   wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip
+   	   unzip main.zip
+       	   mv -f solvate-main solvate
 
  	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
