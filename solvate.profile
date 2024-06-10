@@ -17,7 +17,7 @@ source $HOME_SOLVATE/suite/vmd.profile
 
 source $HOME_SOLVATE/suite/packmol.profile
 source $HOME_SOLVATE/suite/qforce.profile
-#ource $HOME_SOLVATE/suite/openmpi.profile
+source $HOME_SOLVATE/suite/openmpi.profile
 
 # Some useful aliases
 
@@ -40,6 +40,7 @@ alias   msolv=$(which solvate);    alias microsolv=$(which solvate); alias micro
 #--------------------------------# #------------------------------#  #-------------------------------------#
 #lias   babel="runbabel"
 #--------------------------------#
+alias   optim="oniom"
 alias      sv="sview"
 #--------------------------------#
 alias    info="infos"
