@@ -78,6 +78,19 @@ For more detailed instructions on using the program, including simulation exampl
      - Tqdm 4.65
      - PyQt5 5.15
 
+**CHANGELOG**
+
+	- Inclusion of parameters for simulation configuration through the MDPAR submodule.
+	- Expansion of the list of parameterized solvents via SOLVS submodule.
+	- Integration of the MICRO, GCALC, and ONIOM modules to automate the microsolvation procedure.
+	- Addition of SAC and SOC optimization procedures in the treatment of microsolvation.
+	- Implementation of the search for similarities in the SOC procedure.
+ 	- RMSD cutoff estimate for the SOC procedure via the RMSDE submodule.
+ 	- Data extraction from SUMMY and SUPPY modules with concentration and temperature correction.
+   	- Minimization of structural RMSD from files with multiple structures (trj.xyz).
+  	- Microssolvation clusters extraction with reorientation of structures relative to the solute.
+ 	- Bug fixes...
+
 **CITATION**
 
 If you use _Solvate Suite_, please cite:
