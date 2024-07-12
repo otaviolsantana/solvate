@@ -21,3 +21,5 @@ To visualize the simulation box, try:
    jmol protein+water-Cl_mol2500.gro
    vmd protein+water-Cl_mol2500.gro
 
+
+Note that in this example, protein force field files are created throughout the packaging process.
