@@ -1,7 +1,7 @@
 
 Just run the following command:
 
-   packs protein.gro water.gro -ci Cl.gro -nm 2500 -it -bk
+   packs protein.pdb water.gro -ci Cl.gro -nm 2500 -it -bk
 
 to use the local files, or
 
