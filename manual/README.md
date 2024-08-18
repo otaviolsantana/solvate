@@ -23,7 +23,7 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 * **(3rd Stage)** Clusters Selection & Microsolvation Treatment
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/f6da204a-ab45-4e5a-8daf-c32c475bacf2" width="750px"/>
+<img src="https://github.com/user-attachments/assets/d7bafa50-0c79-437f-9cae-d975455dbbb6" width="750px"/>
 </div>
 
 ## USER MANUAL :: QUICK GUIDE
