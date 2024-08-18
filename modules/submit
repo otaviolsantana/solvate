@@ -43,7 +43,7 @@ elif [[ -z $1 ]]; then
    clear
    echo
    echo -e "\033[1;34m --------------------------------------------------- \033[0m"
-   echo -e "\033[1;31m submit \033[1;32m<program> <input.ext> <-options> <-ntasks I> \033[0m"
+   echo -e "\033[1;31m submit \033[1;32m⟨program⟩ ⟨input.ext⟩ ⟨-options⟩ ⟨-ntasks I⟩ \033[0m"
    echo
    echo -e "\033[1;33m PARAMETERS                                          \033[0m"
    echo -e "\033[1;21m      program   [gsn/orca/xtb/gmx program]           \033[0m"
