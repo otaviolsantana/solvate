@@ -26,7 +26,7 @@ This is a user manual for _Solvate Suite_, a set of programs for building initia
 <img src="https://github.com/user-attachments/assets/af0406bd-35f7-4bd5-87ca-1dba22bdf998" width="750px"/>
 </div>
 
-## USER MANUAL :: QUICK GUIDE
+## QUICK GUIDE
 
 1. [Creation of Simulation Box & Force Field Parameters](https://github.com/otaviolsantana/solvate/blob/main/manual/stages/1st_Stage.md).
 2. [Submission of Simulations & Analysis of Simulated Properties](https://github.com/otaviolsantana/solvate/blob/main/manual/stages/2nd_Stage.md).
