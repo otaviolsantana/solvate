@@ -88,7 +88,7 @@ For more detailed instructions on using the program, including simulation exampl
  	- Data extraction from SUMMY and SUPPY modules with concentration and temperature correction.
    	- Minimization of structural RMSD from files with multiple structures (trj.xyz).
   	- Microssolvation clusters extraction with reorientation of structures relative to the solute.
-	- Integration of the MICRO, GCALC, and ONIOM modules via MSRUN submodule to automate microsolvation.
+	- Integration of the MICRO, GCALC, and ONIOM modules via MSRUN to automate microsolvation.
  	- Bug fixes...
 
 **CITATION**
