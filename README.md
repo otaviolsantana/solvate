@@ -78,7 +78,7 @@ For more detailed instructions on using the program, including simulation exampl
 
 **CHANGELOG**
 
- _Solvate Suite 2024.07_
+ _Solvate Suite 2024.08_
  
 	- Inclusion of parameters for simulation configuration through the MDPAR submodule.
 	- Expansion of the list of parameterized solvents via SOLVS submodule.
@@ -88,6 +88,7 @@ For more detailed instructions on using the program, including simulation exampl
  	- Data extraction from SUMMY and SUPPY modules with concentration and temperature correction.
    	- Minimization of structural RMSD from files with multiple structures (trj.xyz).
   	- Microssolvation clusters extraction with reorientation of structures relative to the solute.
+	- Integration of the MICRO, GCALC, and ONIOM modules via MSRUN submodule to automate microsolvation.
  	- Bug fixes...
 
 **CITATION**
