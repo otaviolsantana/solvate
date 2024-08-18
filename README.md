@@ -16,11 +16,9 @@ The _suite_ comprises multiple modules, each dedicated to addressing key aspects
 
 (3) **Analysis of Simulated Properties**: This module analyzes various simulated properties such as pressure, temperature, density, short-range interaction, total potential energy, and radial distribution function. It includes statistical analysis, graphical representation, and property extraction based on different criteria like block analysis and pressure filter.
 
-(4) **Selection of Hydrogen-Bonded Structures and Microsolvation Clusters**: Users can select a predetermined number of hydrogen-bonded structures or microsolvation clusters, along with solvent molecules per cluster, identified from the simulation trajectory file based on connectivity or energy criteria.
+(4) **Treatment of Microsolvation Clusters**: Users can select a predefined number of hydrogen-bonded structures or microsolvation clusters, along with the corresponding solvent molecules per cluster, identified from the simulation trajectory file based on connectivity or energy criteria. The subsequent modules conduct semi-empirical quantum chemistry calculations to choose microsolvation clusters for the calculation of mean free energy. These modules offer various treatment options, including fixed geometries from the simulation, fully optimized cluster structures, or a relaxed solvent cavity with optimized solute geometry. The procedure eliminates imaginary frequencies, applies quasi-harmonic corrections, and utilizes extrapolation methods for free energy calculations at a user-specified level of theory.
 
-(5) **Treatment of Microsolvation Clusters**: This module conducts semi-empirical Quantum Chemistry calculations on microsolvation clusters to calculate free energy. The module provides various treatment options, including: fixed geometry from simulation, completely optimized cluster structure, or relaxed solvent cavity with optimized solute geometry. The procedure eliminates imaginary frequencies, employs quasi-harmonic correction, and utilizes extrapolation methods for free energy calculations to the user-specified theory level.
-
-(6) **Management of Generated Files**: The suite manages the significant number of files generated throughout the modeling process, ensuring efficient organization and storage.
+(5) **Management of Generated Files**: The suite manages the significant number of files generated throughout the modeling process, ensuring efficient organization and storage.
 
 Overall, the _Solvate Suite_ provides a comprehensive solution for molecular modeling tasks, addressing various complexities encountered in explicit solvent simulations.
 
@@ -84,7 +82,6 @@ For more detailed instructions on using the program, including simulation exampl
  
 	- Inclusion of parameters for simulation configuration through the MDPAR submodule.
 	- Expansion of the list of parameterized solvents via SOLVS submodule.
-	- Integration of the MICRO, GCALC, and ONIOM modules to automate the microsolvation procedure.
 	- Addition of SAC and SOC optimization procedures in the treatment of microsolvation.
 	- Implementation of the search for similarities in the SOC procedure.
  	- RMSD cutoff estimate for the SOC procedure via the RMSDE submodule.
