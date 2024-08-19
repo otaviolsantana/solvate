@@ -78,7 +78,7 @@ For more detailed instructions on using the program, including simulation exampl
 
 **CHANGELOG**
 
- _Solvate Suite 2024.08_
+* _Solvate Suite 2024.08_
  
 	- Inclusion of parameters for simulation configuration through the MDPAR submodule.
 	- Expansion of the list of parameterized solvents via SOLVS submodule.
