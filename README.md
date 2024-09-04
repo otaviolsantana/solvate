@@ -22,8 +22,7 @@ The _suite_ comprises multiple modules, each dedicated to addressing key aspects
 
 Overall, the _Solvate Suite_ provides a comprehensive solution for molecular modeling tasks, addressing various complexities encountered in explicit solvent simulations.
 
-For a concise overview on using the program, visit the [quick guide](https://github.com/otaviolsantana/solvate/tree/main/manual) page.
-For more detailed instructions on using the program, including test examples, click [here](https://github.com/otaviolsantana/solvate/tree/main/tutorials). Additional examples can also be found in the _Zenodo_ repository: [part 1](https://doi.org/10.5281/zenodo.8110727) and [part 2](https://doi.org/10.5281/zenodo.10073747). For comprehensive instructions, visit the _manual page_ (under construction).
+For a concise program overview, visit the [quick guide](https://github.com/otaviolsantana/solvate/tree/main/manual) page. For more detailed instructions on using the program, including test examples, visit the [tutorial](https://github.com/otaviolsantana/solvate/tree/main/tutorials) page. Additional examples can also be found in the _Zenodo_ repository: [part 1](https://doi.org/10.5281/zenodo.8110727) and [part 2](https://doi.org/10.5281/zenodo.10073747). If you would like detailed instructions, please visit the _manual page_ (under construction).
 
 **INSTALLATION**
 
