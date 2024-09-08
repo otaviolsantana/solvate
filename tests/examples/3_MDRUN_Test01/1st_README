@@ -1,7 +1,0 @@
-
-Consider the result of “test #1” from the PACKS module, in which the file “dimethylamine+water_mol250.inp” was created. From this file, to run the simulation under 298.15 K, totaling 10 ps for each step (just a quick test):
-
-   mdrun dimethylamine+water_mol250.inp -ini -tmp 298.15            # Initialization: minimization and box optimization
-   mdrun dimethylamine+water_mol250.inp -nvt -tmp 298.15 -tot 0.010 # NVT equilibration
-   mdrun dimethylamine+water_mol250.inp -prd -tmp 298.15 -tot 0.010 # NPT production
-
