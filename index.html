@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <title>Solvate Suite</title>
+</head>
+
+<body>
+
+    <header
+        style="background-image: url('figures/background.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="header">
+            <a href="" style="color: #00000000;">
+                <img src="figures/logo.png" alt="Logo">
+                <span class="logo-text">SOLVATE SUITE</span>
+            </a>    
+        </div>
+    </header>
+    
+        <nav id="menu">
+            <a href="#" style="color: #000;" onclick="showContent('home')">Home</a>
+            <li class="dropdown">
+                <div>
+                    <a href="#" style="color: #000;">Download</a>
+                    <div class="dropdown-content">
+                        <a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip"
+                        style="color: #000; font-size: 18px;">Solvate Suite (Release)</a>
+                        <a href="https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip"
+                        style="color: #000; font-size: 18px;">Solvate Suite (Beta)</a>
+                    </div>
+                </div>
+            </li>
+            <a href="#" style="color: #000;" onclick="showContent('installation')">Installation</a>
+            <li class="dropdown">
+                <div>
+                    <a href="#" style="color: #000;">Applications</a>
+                    <div class="dropdown-content">
+                        <a href=" "
+                        style="color: #000; font-size: 18px; ">NMR(Under construction)</a>
+                        <a href=" "
+                        style="color: #000; font-size: 18px; ">Free energy of solvation(Under construction)</a>
+                        <a href=" "
+                        style="color: #000; font-size: 18px;">pKa (Under construction)</a>
+                        <a href="https://github.com/otaviolsantana/solvate/tree/main/manual" target="_blank" 
+                        style="color: #000; font-size: 18px;">Manuals</a>
+                    </div>
+                </div>
+            </li>
+            <a href="#" style="color: #000;" onclick="showContent('group')">Group</a>
+<!--             <a href="#" style="color: #000;" onclick="showContent('contact')">Publications</a> -->
+        </nav>
+        
+    <div class="container">
+        <main id="main-content" style="flex: 1; min-height: 100vh;">
+            <!--############################################################################-->
+            <!-- CONTEÚDO PARA A ABA HOME                                                   -->
+            <!--############################################################################--> 
+            <div id="home" class="content">
+                <p style="text-align: center; font-size: 30px; font-weight: bold;">WELCOME TO THE
+                    SOLVATE SUITE HOME PAGE!</p>
+                <p style="font-size: 23px;">                                                     
+                    The study and modeling of liquid systems are essential for understanding a wide
+                    range of chemical and biological processes. Solutions and solvents play fundamenta
+                    l roles in chemical reactions, biomolecular interactions, and material behavior. To
+                    address these complex dynamics, we present the Solvate Suite, a comprehensive and 
+                    modular command-line interface specifically developed for molecular simulation and
+                    microsolvation modeling.
+                </p>
+                <p style="font-size: 23px;">
+                    The Solvate Suite excels in analyzing solute-solvent interactions and the behavior
+                    of liquids under various simulated conditions. It integrates efficiently with 
+                    computational chemistry software such as ORCA, GROMACS, PACKMOL, QFORCE, and others,
+                    facilitating computational experiments in liquid systems by automating the creation 
+                    of simulation boxes and topologies with adjustable parameters.
+                </p>
+                <p style="font-size: 23px;">
+                    Additionally, the Solvate Suite offers advanced features for graphical and statistical
+                    analysis of simulated properties, as well as for extracting trajectory configurations
+                    with multiple filters. Among its innovative functionalities is a multiscale approach 
+                    to microsolvation modeling, utilizing balanced dynamics to identify favorable solute-solvent 
+                    interactions. This approach enables precise optimization of clusters and accurate calculation 
+                    of free energy, free from contamination by imaginary frequencies. The Solvate Suite’s ability 
+                    to explore and accurately model liquid systems is crucial for driving significant advances in 
+                    chemistry, biology, and materials.
+                </p>
+                    <br>
+                <p style="font-size: 20px; font-weight: bold;"> If you use Solvate Suite, please cite:<br>   
+                <p style="font-size: 20px;">
+                    Solvate Suite: A Command-Line Interface for Molecular Simulations and Multiscale 
+                    Microsolvation Modeling Otávio L. Santana, Daniel G. Silva, Sidney R. Santana
+                    J. Chem. Inf. Model. 2024, 64, 9, 3767–3778. <br><br>
+                    DOI: <a href="https://doi.org/10.1021/acs.jcim.3c01899" target="_blank"> https://doi.org/10.1021/acs.jcim.3c01899 </a>
+                </p>    
+            </div>
+            <!--############################################################################-->
+            <!-- CONTEÚDO PARA ABA INSTALATION                                              -->
+            <!--############################################################################-->            
+            <div id="installation" class="content" style="display: none;">
+                <p style="font-size: 25px; text-align: center; font-weight: bold;">
+                    SOLVATE SUITE INSTALLATION GUIDE
+                </p>
+                <p style="font-size: 23px">
+                    This comprehensive command-line interface integrates with widely used scientific
+                    software, facilitating the automation and optimization of computational experiments
+                    for liquid systems. To get started with Solvate Suite, follow these steps to ensure
+                    a smooth installation process:
+                    <br><br>
+                </p>
+
+                <p style="font-weight: bold;font-size: 23px;">DEPENDENCIES </p>
+                <table class="ts1" style="font-size: 23px;">
+                    <tr> <!-- 1º LINHA -->
+                        <td class="align-top-right" style="width: 23%;font-size: 23px;"> <!-- 1º COLUNA -->
+                            Operating System:
+                        </td>
+                        <td class="align-top-justify" style="font-size: 23px;"> <!-- 2º COLUNA -->
+                            Linux-based.
+                        </td>
+                    </tr>
+
+                    <tr> <!-- 2º LINHA -->
+                        <td class="align-top-right" style="width: 18%;font-size: 23px;"> <!-- 1º COLUNA -->
+                            Required Software:
+                        </td>
+                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
+                            •Simulation box and force field parameters<br>
+                            <a href="https://m3g.github.io/packmol/" target="_blank" class="no-underline">- Packmol</a>
+                            <br>
+                            <a href="https://qforce.readthedocs.io/en/latest/" target="_blank" class="no-underline">-
+                                Q-force</a> <br><br>
+                            •Electronic Structure and Molecular Dynamics Simulation Programs<br>
+                            <a href="https://xtb-docs.readthedocs.io/en/latest/#" target="_blank" class="no-underline">-
+                                xTB v6.6.1</a> <br>
+                            <a href="https://crest-lab.github.io/crest-docs/" target="_blank" class="no-underline">-
+                                CREST v2.12</a> <br>
+                            <a href="https://orcaforum.kofo.mpg.de/" target="_blank" class="no-underline">- ORCA 5.0</a>
+                            <br>
+                            <a href="https://www.gromacs.org/" target="_blank" class="no-underline">- GROMACS 2023.3
+                            </a> <br><br>
+                            •Visualization Programs<br>
+                            <a href="https://jmol.sourceforge.net/" target="_blank" class="no-underline">- Jmol </a>
+                            <br>
+                            <a href="https://www.ks.uiuc.edu/Research/vmd/" target="_blank" class="no-underline">- VMD
+                            </a> <br><br>
+                            •Scripts Interpreter and Libraries<br>
+                            <a href="https://www.python.org/" target="_blank" class="no-underline">- Python 3.10 </a>
+                            <br>
+                            <a href="https://matplotlib.org/" target="_blank" class="no-underline">- MatPlotLib 3.5 </a>
+                            <br>
+                            <a href="https://pypi.org/project/tqdm/" target="_blank" class="no-underline">- Tqdm 4.65
+                            </a> <br>
+                            <a href="https://pypi.org/project/PyQt5/" target="_blank" class="no-underline">- PyQt5 5.15
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+                <p style="font-weight: bold;font-size: 23px;">SETTING UP SOLVATE SUITE</p>
+                <p style="font-size: 23px">
+
+                <div class="text">
+                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify; font-size: 23px">
+                        <tr>
+                            <td>
+                                <p style="font-size: 23px">
+                                ❶. Download the latest version of 
+                                <a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip" 
+                                target="_blank" class="no-underline">Solvate Suite</a> or run the command below in your terminal:
+                                </p>   
+
+                                <!-- COMANDO  -->
+                                <div class="text">
+                                    <table class="comand">
+                                        <tr>
+                                            <td>
+                                                $ wget
+                                                https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                    <br>
+                <div class="text">
+                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
+                        <tr>
+                            <td>
+                                <p style="font-size: 23px">
+                                    ❷. Unzip the main.zip file with your
+                                    preferred zip manager or use the unzip
+                                    command line:
+                                </p>
+
+                                <div class="text">
+                                    <table class="comand">
+                                        <tr>
+                                            <td>
+                                                $ unzip main.zip
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p style="font-size: 23px">
+                                    Note that a directory named solvate-main will be extracted. Inside this directory,
+                                    you will find all the binaries and configuration files for Solvate Suite. Since this
+                                    is a precompiled version, you will only need to adjust a few settings to ensure that
+                                    Solvate Suite functions correctly. <br><br>
+
+                                    If you prefer, rename the directory to solvate and move it to your desired
+                                    installation location.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                    <br>
+                <div class="text">
+                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
+                        <tr>
+                            <td>
+
+                                <p style="font-size: 23px">
+                                    ❸. Using your preferred text editor, open
+                                    the solvate.config file and add the
+                                    paths to the directories containing the programs you want Solvate Suite to manage.
+                                    Note that you should specify the path to the installation directory of the programs,
+                                    not directly to the executable.
+                                    <br><br>
+                                    In your script, locate the section below and fill it in with the paths to the
+                                    directories of your programs. <br><br>
+                                    
+                                    Replace /opt/solvate with the path you set for the Solvate Suite directory.<br><br>
+                                    line 15: INI_SVT=/opt/solvate <br><br>                                    
+            
+                                    Replace /opt/"program" with the path to the directory where the corresponding program is located. <br>
+                                    <br>
+                                    line 29: DIR_GSN=/opt/gsn              &nbsp;&nbsp;&nbsp;&nbsp; # Gaussian  <br>
+                                    line 30: DIR_GVW=/opt/gvw              &nbsp;&nbsp;&nbsp;&nbsp; # GaussView <br>
+                                    line 31: DIR_ORC=/opt/orca             &nbsp;&nbsp;&nbsp;&nbsp; # ORCA      <br>
+                                    line 32: DIR_XTB=/opt/xtb              &nbsp;&nbsp;&nbsp;&nbsp; # xTB       <br>
+                                    line 33: DIR_GMX=/opt/gmx              &nbsp;&nbsp;&nbsp;&nbsp; # GROMACS   <br>
+                                    line 34: DIR_VMD=/opt/vmd              &nbsp;&nbsp;&nbsp;&nbsp; # VMD       <br>
+                                    line 35: DIR_MPI=/opt/openmpi          &nbsp;&nbsp;&nbsp;&nbsp; # OpenMPI   <br>
+                                    line 36: DIR_PCK=/opt/packmol          &nbsp;&nbsp;&nbsp;&nbsp; # PackMol   <br>
+                                    line 37: DIR_QFC=/opt/qforce           &nbsp;&nbsp;&nbsp;&nbsp; # Q-Force   <br>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                    <br>
+                <div class="text">
+                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
+                        <tr>
+                            <td>
+                                <p style="font-size: 23px">
+                                    ❹. In the solvate.profile file, you need to
+                                    modify the line <br><br>
+                                    <span class="emph">export HOME_SOLVATE='Solvate Suite Directory'</span>.<br><br>
+                                    For example, if Solvate Suite is installed in /home/bin/solvate,
+                                    you should change the line to<br><br>
+                                    <span class="emph">export HOME_SOLVATE='/home/bin/solvate'</span>. <br><br>
+
+                                    This section is found in the first lines of the solvate.profile file.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                    <br>
+                <div class="text">
+                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
+                        <tr>
+                            <td>
+
+                                <p style="font-size: 23px">
+                                    ❺. Make the solvate.config file executable
+                                    with the following command:
+                                </p>
+
+                                <div class="text">
+                                    <table class="comand">
+                                        <tr>
+                                            <td>
+                                                $ chmod +x solvate.config
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p style="font-size: 23px">
+                                    Then, run the file with:
+                                </p>
+                                <div class="text">
+                                    <table class="comand">
+                                        <tr>
+                                            <td>
+                                                $ ./solvate.config
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <p style="font-size: 23px">
+                                    Finally, add the following lines to your bash file, located at
+                                    /home/$USER/.bashrc:
+                                </p>
+
+                                <div class="text">
+                                    <table class="comand" style="line-height: 1.2">
+                                        <tr>
+                                            <td>
+                                                # Solvate Suite <br>
+                                                export HOME_SOLVATE='Solvate Suite Directory' <br>
+                                                source $HOME_SOLVATE/solvate.profile
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <p style="font-size: 23px">
+                                    Note that the path to be added should be the same as the one you specified in
+                                    step ❹, under HOME_SOLVATE.
+                                </p>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+                <br><br>
+
+            <!--############################################################################-->
+            <!-- CONTEÚDO PARA ABA GROUP                                                    -->
+            <!--############################################################################--> 
+            <div id="group" class="content" style="display: none; transform: translateX(18%)">
+                <table class="ts1" style="font-size: 23px; width: 100%;">
+                    <tr> <!-- 1º LINHA -->
+                        <td class="align-top-center" style="width: 23%;font-size: 20px;"> <!-- 1º COLUNA -->
+                            <img style="width: 150px;" src="figures/otavio.gif">  
+                        </td>
+                        <td class="align-top-justify" style="font-size: 20px;width: 80% !important"> <!-- 2º COLUNA -->
+                            <span style="font-size: 25px; font-weight: bold"> Otávio Luís de Santana </span>
+                            <br><br>
+                            
+                            Coordinator of the Solvate Suite Project, holds a Bachelor's degree in Physics (1996),
+                            a Master's degree (1998, CAPES 6), and a Ph.D. (2004, CAPES 6) in Chemistry from the 
+                            Universidade Federal de Pernambuco. Currently, he is an Associate Professor at the
+                            Universidade Federal da Paraíba, with extensive experience in Theoretical and Computational Chemistry.
+                            His main research areas include the modeling of chemical reactions, calculations of 
+                            reduction potentials and acid dissociation constants, as well as the study of hydrogen
+                            complexes and solvation effects.
+                            
+                            <br><br>
+                            
+                            E-mail: otavio.santana@academico.ufpb.br <br>
+                            Lattes: <a href="http://lattes.cnpq.br/4568073180485131" target="_blank" 
+                            style="font-size: 20px;"> http://lattes.cnpq.br/4568073180485131</a>
+                        </td>
+                    </tr>
+                    
+                    <tr> <!-- 2º LINHA -->
+                        <td class="align-top-center" style="font-size: 20px;padding: 10px"> <!-- 1º COLUNA -->
+                            <img style="width: 150px;" src="figures/sidney.gif">  
+                        </td>
+                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
+                            <span style="font-size: 25px; font-weight: bold"> Sidney Ramos de Santana </span> 
+                            <br><br>
+                            I hold a Bachelor's degree in Chemistry from the Universidade Federal de Pernambuco (1999), a 
+                            Master's degree in Chemistry (2002), and a Ph.D. in Materials Science (2006) from the same 
+                            institution. I have extensive experience in Physical Chemistry, Theoretical and Computational 
+                            Chemistry, with a focus on the Physical Chemistry of Materials through Computational Simulation. 
+                            My main areas of expertise include computational simulation using molecular dynamics methodology, 
+                            ab initio calculations of NMR properties, reactivity, homogeneous and heterogeneous catalysis, 
+                            as well as studies on the thermodynamics and kinetics of organic and inorganic systems. 
+                            Currently, I am an Assistant Professor in the Departamento de Química e Física (DQF) at 
+                            the Centro de Ciências Agrárias (CCA) of the Universidade Federal da Paraíba (UFPB), 
+                            Campus II, in Areia - PB.
+                            <br><br>
+                            
+                            E-mail: otavio.santana@academico.ufpb.br <br>
+                            Lattes: <a href="http://lattes.cnpq.br/0885124583236694" target="_blank" 
+                            style="font-size: 20px;"> http://lattes.cnpq.br/0885124583236694</a>
+                        </td>
+                    </tr> 
+                    
+                    <tr> <!-- 3º LINHA -->
+                        <td class="align-top-center" style="font-size: 20px;padding: 10px"> <!-- 1º COLUNA -->
+                            <img style="width: 180px;" src="figures/daniel.jpg">  
+                        </td>
+                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
+                            <span style="font-size: 25px; font-weight: bold"> Daniel Gabriel da Silva </span> 
+                            <br><br>
+                            He holds a degree in Chemistry from Instituto Federal de Educação, Ciência e Tecnologia
+                            da Paraíba (IFPB) and a Master’s in Physical Chemistry from Universidade Federal da Paraíba (UFPB).
+                            During his undergraduate studies, he was a scholar of the Programa Institucional de Bolsas de
+                            Iniciação à Docência (CAPES) and volunteered as a student researcher in the Programa Institucional 
+                            de Bolsas de Iniciação em Desenvolvimento Tecnológico e Inovação (PIBITI). In his Master’s program, 
+                            he was a CNPq (National Council for Scientific and Technological Development) scholar in the Programa
+                            de Pós-Graduação em Química (PPGQ), where he conducted theoretical studies on the modeling of the solvation 
+                            process in electron transfer reactions. He is currently a PhD student in PPGQ-UFPB.
+                            <br><br>
+                            
+                            E-mail: daniel.gabriel@academico.ufpb.br <br>
+                            Lattes: <a href="http://lattes.cnpq.br/7996074940245743" target="_blank" 
+                            style="font-size: 20px;"> http://lattes.cnpq.br/7996074940245743</a>
+                        </td>
+                    </tr>
+                    
+                    <tr> <!-- 4º LINHA -->
+                        <td class="align-top-center" style="font-size: 20px;padding: 10px"> <!-- 1º COLUNA -->
+                            <img style="width: 180px;" src="figures/lucas.jpeg">  
+                        </td>
+                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
+                            <span style="font-size: 25px; font-weight: bold"> Lucas Caetano de Oliveira Custódio </span> 
+                            <br><br>
+                            
+                            He holds a degree in Chemistry from Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB),
+                            completed in 2018. He is currently a master’s student in the Department of Chemistry at Universidade Federal
+                            da Paraíba (UFPB), where he is developing strategies for describing chemical shift in solvatized systems in
+                            apolar solvents. He has experience in the field of Chemistry, with an emphasis on Chemistry Education.
+                            <br><br>
+                            
+                            E-mail: lucascaetano95@gmail.com <br>
+                            Lattes: <a href="http://lattes.cnpq.br/8529557516187542" target="_blank" 
+                            style="font-size: 20px;"> http://lattes.cnpq.br/8529557516187542</a>
+                        </td>
+                    </tr>                      
+                    
+                    <tr> <!-- 5º LINHA -->
+                        <td class="align-top-center" style="font-size: 20px;padding: 10px"> <!-- 1º COLUNA -->
+                            <img style="width: 163px;" src="figures/rafael.gif">  
+                        </td>
+                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
+                            <span style="font-size: 25px; font-weight: bold"> Rafael Augusto Gomes de Morais </span> 
+                            <br><br>
+                            
+                            He is an undergraduate student in Chemical Engineering at Universidade Federal da Paraíba (UFPB)
+                            and is currently a volunteer in the scientific initiation project titled "Use of Hybrid Methods 
+                            for the Determination of pKa of Primary, Secondary, and Tertiary Amines in Water and DMSO," 
+                            under the supervision of Professor Dr. Otávio Luís de Santana. In this project, he is developing 
+                            computational modeling techniques for the determination of pKa values.
+                            <br><br>
+                            
+                            E-mail: lucascaetano95@gmail.com <br>
+                            Lattes: <a href="http://lattes.cnpq.br/8529557516187542" target="_blank" 
+                            style="font-size: 20px;"> http://lattes.cnpq.br/8529557516187542</a>
+                        </td>
+                    </tr>                       
+                    
+                    
+                    
+ 
+                </table>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+
+            <!-- Conteúdo para Contact -->
+            <div id="contact" class="content" style="display: none;">
+
+            </div>
+        </main>
+
+
+
+    <footer style="width: 100%">
+        <p>
+            Dr. Otávio Luís de Santana |
+            Ms. Daniel Gabriel da Silva |
+            Lucas Caetano Custódio de Oliveira |
+            Copyright © 2024 | All rights reserved.
+        </p>
+    </footer>
+
+<script type="text/javascript">
+    function showContent(section) {
+        // Oculta todos os conteúdos
+        const contents = document.querySelectorAll('#main-content .content');
+        contents.forEach(content => content.style.display = 'none');
+
+        // Mostra o conteúdo da seção clicada
+        document.getElementById(section).style.display = 'block';
+    }
+</script>
+
+
+</body>
+
+</html>

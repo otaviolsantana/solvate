@@ -1,0 +1,403 @@
+<style>
+
+/* HTML e Body configurados para ocupar toda a altura da página */
+html,
+body {
+    /* Define a altura para 100% da tela */
+    height: 100%;
+    /* Remove a margem padrão do navegador */
+    margin: 0;
+    /* Remove o padding padrão do navegador */
+    padding: 0;
+}
+
+/*###########################################################################*/
+/*TEXTO                                                                      */
+/*###########################################################################*/
+/* Estilo para recuo da primeira linha do parágrafo */
+.indent {
+    /* Define um recuo de 50px na primeira linha do parágrafo */
+    text-indent: 50px;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+/*Destaque utilizando o comando <span class=emph> </span>*/
+.emph {
+    font-family: "Courier New", sans-serif;
+    text-align: justify;
+    color:rgb(0, 0, 255)
+}
+
+
+
+/*###########################################################################*/
+
+/* Estilo do body para utilizar o flexbox, permitindo layout flexível */
+body {
+    /* Ativa o flexbox, permitindo a organização flexível dos elementos filhos */
+    display: flex;
+    /* Define a direção do layout flexbox como coluna (de cima para baixo) */
+    flex-direction: column;
+    /* Garante que o body ocupe no mínimo 100% da altura da tela */
+    min-height: 100%;
+}
+
+/*###########################################################################*/
+/* ESTILO PARA O MENU DE NAVEGAÇÃO                                            */
+/*###########################################################################*/
+nav#menu {
+    /* Define a cor de fundo do menu de navegação */
+    background-color: #e26702;
+    /* Adiciona 10px de padding ao redor do menu */
+    padding: 5px;
+    /* Ativa o flexbox no menu para organizar os links */
+    display: flex;
+    /* Centraliza os links no menu */
+    justify-content: center;
+}
+
+/* Estilo dos links no menu de navegação */
+nav#menu a {
+    /* Define a cor do texto dos links como branco */
+    color: white;
+    /* Adiciona 60px de margem lateral entre os links */
+    margin: 0 auto;
+    /* Remove a sublinha dos links */
+    text-decoration: none;
+    /* Deixa o texto dos links em negrito */
+    font-weight: bold;
+    /* Define o tamanho da fonte dos links como 30px */
+    font-size: 25px;
+}
+
+/* Estilo dos links ao passar o mouse por cima */
+nav#menu a:hover {
+    /* Adiciona sublinha ao texto quando o mouse passa por cima */
+    text-decoration: underline;
+}
+
+/*###########################################################################*/
+/* ESTILO DO CONTEÚDO PRINCIPAL                                              */
+/*###########################################################################*/
+
+/*----------------------------------------------*/
+/* ESTILO PARA O CONTÊINER DO CONTEÚDO PRINCIPAL*/
+/*----------------------------------------------*/
+main {
+    /* Define uma imagem de fundo para o main */
+    background-image: url('figures/background.jpg');
+    /* Faz a imagem de fundo cobrir todo o espaço disponível */
+    background-size: cover;
+    /* Centraliza o texto horizontalmente */
+    text-align: center;
+    /* Define a cor do texto como branco */
+    color: white;
+    /* Faz o main ocupar o espaço restante disponível no container flex */
+    flex: 1;
+
+    /* Tamanho à cima/esquerda/direita */
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 389px;
+}
+
+/*-------------------------------------------*/
+/* Estilo dos parágrafos dentro do main      */
+/*-------------------------------------------*/
+main p {
+    /* Adiciona 30px de margem inferior entre os parágrafos */
+    margin-bottom: 20px;
+    /* Define a cor do texto como preto */
+    color: #000;
+    /* Alinha o texto de forma justificada */
+    text-align: justify;
+    /* Define o tamanho da fonte como 20px */
+    font-size: 20px;
+/*     border: 1px solid #ccc; */
+    
+}
+
+#installation {
+    transform: translateX(17%); /* Aplica a transformação de deslocamento */
+}
+
+#home {
+    transform: translateX(17%); /* Aplica a transformação de deslocamento */
+}
+
+
+
+/*########################################################################*/
+/* TABELAS                                                                */
+/*########################################################################*/
+
+/*-------------------------------------------------*/
+/* TABELA 1 - TAMANHO NO LIMITE DA MARGEM DA PÁGINA*/
+/*-------------------------------------------------*/
+.ts1 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.ts1 td {
+    font-size: 18px;
+    padding: 10px;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+/*--------------------------------------------------------*/
+/* TABELA 2 - CENTRALIZADA, TAMANHO AUTOMÁTICO e SEM BORDA*/
+/*--------------------------------------------------------*/
+.ts2 {
+    margin: 0 auto;
+    table-layout: auto !important;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.ts2 td {
+    vertical-align: top;
+    line-height: 0.5;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: #000;
+}
+
+/*-----------------------------------------*/
+/* TABELA 3 - TABELA 1X1 PARA COMANDOS     */
+/*-----------------------------------------*/
+.comand {
+    background-color: #e3eaf1;
+    border-collapse: collapse;
+    font-family: "Courier New";
+    line-height: 0.5;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.comand td {
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: justify;
+    color: rgb(0, 0, 255);
+}
+
+
+/*---------------------------------------------------*/
+/* CÉLULA COM BORDA ACIMA E PREENCHIMENTO AZUL       */
+/*---------------------------------------------------*/
+
+/*EX.: <td class=up-down-border> texto </td> */
+.up-down-border {
+    background-color: #b8d8f8;
+    vertical-align: middle;                
+    border: none !important;
+    border-bottom: 2px solid #000 !important;      
+    border-top: 2px solid #000 !important;         
+    text-align: center;                 
+}
+
+/*---------------------------------------------------*/
+/* CÉLULA COM BORDA ABAIXO SEM PREENCHIMENTO          */
+/*---------------------------------------------------*/
+
+/*EX.: <td class=down-border> texto </td> */
+.down-border {
+    vertical-align: middle;                
+    border: none !important;       
+    text-align: center; 
+    border-bottom: 1px solid #000 !important;
+}
+
+/*---------------------------------------------------*/
+/* CÉLULA SEM BORDA ACIMA SEM PREENCHIMENTO          */
+/*---------------------------------------------------*/
+
+/*EX.: <td class=no-border> texto </td> */
+.no-border {
+    vertical-align: middle;                
+    border: none !important;       
+    text-align: center;                 
+}
+
+/*-----------------------------------------*/
+/* ALINHAMENTO DE TEXTO NAS CÉLULAS        */
+/*-----------------------------------------*/
+.align-top-right {
+    vertical-align: top;
+    line-height: 1.3;
+    text-align: right;
+}
+
+.align-top-justify {
+    vertical-align: top;
+    line-height: 1.3;
+    text-align: justify;
+}
+
+.align-top-center {
+    vertical-align: top;
+    line-height: 1.3;
+    text-align: center;
+}
+
+
+
+
+/*###########################################################################*/
+/*ESTILO PARA O RODAPÉ                                                       */
+/*###########################################################################*/
+footer {
+    /* Define a cor de fundo do rodapé */
+    background-color: #dddfde;
+    /* Define a cor do texto como preto */
+    color: rgb(0, 0, 0);
+    /* Alinha o texto do rodapé de forma justificada */
+    text-align: justify;
+    /* Adiciona 1px de padding ao redor do conteúdo */
+    padding: 1px;
+    /* Empurra o rodapé para o final da página */
+/*    margin-top: auto;*/
+    /* Limpa flutuações para garantir que o rodapé fique abaixo de todo o conteúdo */
+    clear: both;
+    font-size: 20px;
+}
+
+/* Estilo para a aba 'Home' */
+.home-footer {
+    margin-top: 430pt; /* Espaçamento do rodapé para a aba Home */
+}
+
+/* Estilo para a aba 'Installations' */
+.install-footer {
+    margin-top: 40pt; /* Espaçamento do rodapé para a aba Installations */
+}
+
+/* Estilo para a aba 'Installations' */
+.group-footer {
+    margin-top: 40pt; /* Espaçamento do rodapé para a aba Installations */
+}
+
+/* Estilo para a aba 'Installations' */
+.publications-footer {
+    margin-top: 40pt; /* Espaçamento do rodapé para a aba Installations */
+}
+
+
+/*###########################################################################*/
+/*ESTILO PARA A LOGO E TEXTO COM IMAGEM DE FUNDO                             */
+/*###########################################################################*/
+
+header {
+    /* Define a cor de fundo de fallback */
+    background-color: #dddfde;
+    /* Adiciona padding ao redor do conteúdo */
+    padding: 50px 50px;
+    /* Flexbox para organizar o conteúdo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Adiciona a imagem de fundo */
+    background-image: url('figures/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Estilo da logo no cabeçalho */
+.header img {
+    /* Define a largura da logo */
+    width: 100px;
+    /* Adiciona 10px de espaço à direita da logo */
+    margin-right: 10px;
+}
+
+/* Estilo do texto ao lado da logo */
+.header .logo-text {
+    /* Define a cor do texto */
+    color: #ffffff;
+    /* Define o tamanho da fonte */
+    font-size: 44px;
+    /* Define o texto em negrito */
+    font-weight: bold;
+    /* Define o espaçamento entre linhas como 1 */
+    line-height: 1;
+    /* Permite ajustes de posição relativos à posição padrão */
+    position: relative;
+    /* Move o texto 35px para cima */
+    top: -48px;
+}
+/*###########################################################################*/
+/* MENU SUSPENSO AO PASSAR O MOUSE SOBRE ITENS DO MENU PRINCIPAL             */
+/*###########################################################################*/
+/* Estilo para listas não ordenadas (ul) */
+ul {
+  /* Usa flexbox para organizar os itens da lista em uma linha */
+  display: flex;
+  /* Adiciona um espaço de 2rem entre os itens da lista */
+  gap: 2rem;
+}
+
+/* Estilo para o contêiner do menu suspenso (dropdown) */
+.dropdown {
+  /* Define a posição como relativa para que os elementos filhos possam ser posicionados absolutamente em relação a ele */
+  position: relative;
+  /* Exibe o contêiner como um bloco em linha para permitir que se alinhe com outros elementos inline */
+  display: inline-block;
+}
+
+/* Estilo para o conteúdo do menu suspenso */
+.dropdown-content {
+  /* Oculta o conteúdo do menu por padrão */
+  display: none;
+  /* Posiciona o conteúdo de forma absoluta em relação ao contêiner pai com a classe dropdown */
+  position: absolute;
+  /* Define a cor de fundo do menu suspenso */
+  background-color: #f9f9f9;
+  /* Define a largura mínima do menu suspenso */
+  min-width: 160px;
+  /* Adiciona uma sombra ao redor do menu suspenso para criar um efeito de profundidade */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  /* Define a camada do menu suspenso para garantir que ele apareça acima de outros elementos */
+  z-index: 1;
+  /* Ajusta a largura mínima para se adaptar ao conteúdo */
+  white-space: nowrap;
+    /* Centraliza o menu suspenso em relação ao item do menu principal */
+  left: 50%;
+  /* Move o menu suspenso para cima por metade da sua altura para alinhamento vertical */
+  transform: translateX(-50%);
+}
+
+/* Estilo para os links dentro do conteúdo do menu suspenso */
+.dropdown-content a {
+  /* Define a cor do texto dos links */
+  color: black;
+  /* Adiciona padding ao redor do texto dos links */
+  padding: 12px 16px;
+  /* Remove a sublinha padrão dos links */
+  text-decoration: none;
+  /* Exibe cada link como um bloco para que ocupe toda a largura disponível do menu suspenso */
+  display: block;
+}
+
+/* Estilo para links dentro do menu suspenso ao passar o mouse por cima */
+.dropdown-content a:hover {
+  /* Define a cor de fundo do link quando o mouse passa por cima */
+  background-color: #f1f1f1;
+}
+
+/* Estilo para exibir o menu suspenso quando o contêiner com a classe dropdown é hoverado */
+.dropdown:hover .dropdown-content {
+  /* Exibe o menu suspenso */
+  display: block;
+}
+
+
+</style>
