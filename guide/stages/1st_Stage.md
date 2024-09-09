@@ -1,4 +1,4 @@
-## USER MANUAL - QUICK GUIDE
+## QUICK GUIDE
 
 **CREATION OF SIMULATION BOX** & **FORCE FIELD PARAMETERS**
 
@@ -50,4 +50,4 @@
 
    * For examples, visit the [GMDFF](https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/1_GMDFF.md) and [PACKS](https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/2_PACKS.md) tutorials page.
 
-   « Previous topic | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/manual) | [Next topic](https://github.com/otaviolsantana/solvate/blob/main/manual/stages/2nd_Stage.md) »
+   « Previous topic | [GUIDE](https://github.com/otaviolsantana/solvate/tree/main/guide) | [Next topic](https://github.com/otaviolsantana/solvate/blob/main/guide/stages/2nd_Stage.md) »
