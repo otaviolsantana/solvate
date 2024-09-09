@@ -12,7 +12,7 @@ The _suite_ comprises multiple modules, each dedicated to addressing key aspects
 
 (1) **Creation of Simulation Box**: This module allows users to create the simulation box according to specified criteria, including the number of solvent molecules, shape and density of the box, solute/solvent concentration, or proportions between solvent mixtures. It also determines force field parameters and constructs the system's topology for classical dynamics-based simulation methods.
 
-(2) **Submission of Simulations**: From this module the user can run simulations with a minimum set of adjusted parameters. These parameters can be modified during runtime or users can use their own simulation parameters.
+(2) **Submission of Simulations**: From this module, the user can run simulations with a minimum set of adjusted parameters. These parameters can be modified during runtime or users can use their own simulation parameters.
 
 (3) **Analysis of Simulated Properties**: This module analyzes various simulated properties such as pressure, temperature, density, short-range interaction, total potential energy, and radial distribution function. It includes statistical analysis, graphical representation, and property extraction based on different criteria like block analysis and pressure filter.
 
