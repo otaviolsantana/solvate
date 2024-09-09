@@ -4,7 +4,7 @@
 
 ## OVERVIEW
 
-This is a user quick for _Solvate Suite_, a set of programs for building initial simulation box configuration, force field, and topology files for molecular dynamics simulations of molecular systems in solution.
+This is a quick guide for _Solvate Suite_, a set of programs for building initial simulation box configuration, force field, and topology files for molecular dynamics simulations of molecular systems in solution.
 
 **PROGRAM STRUCTURE**
 
