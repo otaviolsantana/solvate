@@ -26,15 +26,15 @@ For a concise program overview, visit the [quick guide](https://github.com/otavi
 
 **INSTALLATION**
 
-	The suite is distributed pre-compiled for Linux systems, being only necessary to configure it.
-	To do this, download the program with the commands:
+The suite is distributed pre-compiled for Linux systems, being only necessary to configure it.
+To do this, download the program with the commands:
 
-   	   wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip
-   	   unzip main.zip && mv -f solvate-main solvate
+	wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip
+	unzip main.zip && mv -f solvate-main solvate
 
- 	Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
+Then, adjust the “profile” and “config” files, and run the “solvate.config” script:
 
-	   cd solvate && chmod +x solvate.config && ./solvate.config
+	cd solvate && chmod +x solvate.config && ./solvate.config
  
 **CONTENTS**
 
