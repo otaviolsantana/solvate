@@ -52,4 +52,4 @@
 
 * For examples, visit the MICRO, HBOND, and GCALC tutorials page. (under construction)
 
-   « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/guide/stages/2nd_Stage.md) | [MANUAL](https://github.com/otaviolsantana/solvate/tree/main/guide) | Next topic »
+   « [Previous topic](https://github.com/otaviolsantana/solvate/blob/main/guide/stages/2nd_Stage.md) | [GUIDE](https://github.com/otaviolsantana/solvate/tree/main/guide) | Next topic »
