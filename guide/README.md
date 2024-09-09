@@ -28,6 +28,6 @@ This is a quick guide for _Solvate Suite_, a set of programs for building initia
 
 ## QUICK GUIDE
 
-1. [Creation of Simulation Box & Force Field Parameters](https://github.com/otaviolsantana/solvate/blob/main/manual/stages/1st_Stage.md).
-2. [Submission of Simulations & Analysis of Simulated Properties](https://github.com/otaviolsantana/solvate/blob/main/manual/stages/2nd_Stage.md).
-3. [Clusters Selection & Microsolvation Treatment](https://github.com/otaviolsantana/solvate/blob/main/manual/stages/3rd_Stage.md).
+1. [Creation of Simulation Box & Force Field Parameters](https://github.com/otaviolsantana/solvate/blob/main/guide/stages/1st_Stage.md).
+2. [Submission of Simulations & Analysis of Simulated Properties](https://github.com/otaviolsantana/solvate/blob/main/guide/stages/2nd_Stage.md).
+3. [Clusters Selection & Microsolvation Treatment](https://github.com/otaviolsantana/solvate/blob/main/guide/stages/3rd_Stage.md).
