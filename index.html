@@ -39,13 +39,11 @@
                     <a href="#" style="color: #000;">Applications</a>
                     <div class="dropdown-content">
                         <a href=" "
-                        style="color: #000; font-size: 18px; ">NMR(Under construction)</a>
+                        style="color: #000; font-size: 18px;">NMR (Under construction)</a>
                         <a href=" "
-                        style="color: #000; font-size: 18px; ">Free energy of solvation(Under construction)</a>
+                        style="color: #000; font-size: 18px;">Free energy of solvation (Under construction)</a>
                         <a href=" "
-                        style="color: #000; font-size: 18px;">pKa (Under construction)</a>
-                        <a href="https://github.com/otaviolsantana/solvate/tree/main/manual" target="_blank" 
-                        style="color: #000; font-size: 18px;">Manuals</a>
+                        style="color: #000; font-size: 18px;">Reduction Potentials & pKa (Under construction)</a>
                     </div>
                 </div>
             </li>
@@ -80,7 +78,7 @@
                     systems, driving meaningful advances in chemistry, biology, and materials science.
                 </p>
                     <br>
-                <p style="font-size: 20px; font-weight: bold;"> If you use <i>Solvate Suite</i>, please cite:<br>   
+                <p style="font-size: 20px; font-weight: bold;"> If you use <b>Solvate Suite</b>, please cite:<br>   
                 <p style="font-size: 20px;">
                     <i>Solvate Suite</i>: A Command-Line Interface for Molecular Simulations and Multiscale 
                     Microsolvation Modeling Otávio L. Santana, Daniel G. Silva, Sidney R. Santana
@@ -98,12 +96,12 @@
                 <p style="font-size: 23px">
                     This comprehensive command-line interface integrates with widely used scientific
                     software, facilitating the automation and optimization of computational experiments
-                    for liquid systems. To get started with Solvate Suite, follow these steps to ensure
+                    for liquid systems. To get started with <b>Solvate Suite</b>, follow these steps to ensure
                     a smooth installation process:
                     <br><br>
                 </p>
 
-                <p style="font-weight: bold;font-size: 23px;">DEPENDENCIES </p>
+                <p style="font-weight: bold;font-size: 23px;">DEPENDENCIES</p>
                 <table class="ts1" style="font-size: 23px;">
                     <tr> <!-- 1º LINHA -->
                         <td class="align-top-right" style="width: 23%;font-size: 23px;"> <!-- 1º COLUNA -->
@@ -161,7 +159,7 @@
                                 <p style="font-size: 23px">
                                 ❶. Download the latest version of 
                                 <a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip" 
-                                target="_blank" class="no-underline">Solvate Suite</a> or run the command below in your terminal:
+                                target="_blank" class="no-underline"><b>Solvate Suite</b></a> or run the command below in your terminal:
                                 </p>   
 
                                 <!-- COMANDO  -->
@@ -202,9 +200,9 @@
 
                                 <p style="font-size: 23px">
                                     Note that a directory named solvate-main will be extracted. Inside this directory,
-                                    you will find all the binaries and configuration files for Solvate Suite. Since this
-                                    is a precompiled version, you will only need to adjust a few settings to ensure that
-                                    Solvate Suite functions correctly. <br><br>
+                                    you will find all the binaries and configuration files for <b>Solvate Suite</b>. Since 
+                                    this is a precompiled version, you will only need to adjust a few settings to ensure 
+                                    the suite functions correctly. <br><br>
 
                                     If you prefer, rename the directory to solvate and move it to your desired
                                     installation location.
@@ -222,52 +220,87 @@
                                 <p style="font-size: 23px">
                                     ❸. Using your preferred text editor, open
                                     the solvate.config file and add the
-                                    paths to the directories containing the programs you want Solvate Suite to manage.
+                                    paths to the directories containing the programs you want <b>Solvate Suite</b> to manage.
                                     Note that you should specify the path to the installation directory of the programs,
                                     not directly to the executable.
                                     <br><br>
                                     In your script, locate the section below and fill it in with the paths to the
                                     directories of your programs. <br><br>
                                     
-                                    Replace /opt/solvate with the path you set for the Solvate Suite directory.<br><br>
-                                    line 15: INI_SVT=/opt/solvate <br><br>                                    
-            
-                                    Replace /opt/"program" with the path to the directory where the corresponding program is located. <br>
-                                    <br>
-                                    line 29: DIR_GSN=/opt/gsn              &nbsp;&nbsp;&nbsp;&nbsp; # Gaussian  <br>
-                                    line 30: DIR_GVW=/opt/gvw              &nbsp;&nbsp;&nbsp;&nbsp; # GaussView <br>
-                                    line 31: DIR_ORC=/opt/orca             &nbsp;&nbsp;&nbsp;&nbsp; # ORCA      <br>
-                                    line 32: DIR_XTB=/opt/xtb              &nbsp;&nbsp;&nbsp;&nbsp; # xTB       <br>
-                                    line 33: DIR_GMX=/opt/gmx              &nbsp;&nbsp;&nbsp;&nbsp; # GROMACS   <br>
-                                    line 34: DIR_VMD=/opt/vmd              &nbsp;&nbsp;&nbsp;&nbsp; # VMD       <br>
-                                    line 35: DIR_MPI=/opt/openmpi          &nbsp;&nbsp;&nbsp;&nbsp; # OpenMPI   <br>
-                                    line 36: DIR_PCK=/opt/packmol          &nbsp;&nbsp;&nbsp;&nbsp; # PackMol   <br>
-                                    line 37: DIR_QFC=/opt/qforce           &nbsp;&nbsp;&nbsp;&nbsp; # Q-Force   <br>
+                                    Replace “/opt/solvate” with the path you set for the <b>Solvate Suite</b> directory.<br><be>
+
+                                    <div class="text">
+                                        <table class="comand">
+                                            <tr>
+                                                <td>
+                                                    INI_SVT=/opt/solvate
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    Replace “/opt/program” with the path to the directory where the corresponding program is located.<br>
+                                    <be>
+
+                                    <div class="text">
+                                        <table class="comand">
+                                            <tr>
+                                                <td>
+                                                    DIR_GSN=/opt/gsn     # Gaussian 
+                                                    DIR_GVW=/opt/gvw     # GaussView
+                                                    DIR_ORC=/opt/orca    # ORCA     
+                                                    DIR_XTB=/opt/xtb     # xTB      
+                                                    DIR_GMX=/opt/gmx     # GROMACS  
+                                                    DIR_VMD=/opt/vmd     # VMD      
+                                                    DIR_MPI=/opt/openmpi # OpenMPI  
+                                                    DIR_PCK=/opt/packmol # PackMol  
+                                                    DIR_QFC=/opt/qforce  # Q-Force  
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
                                 </p>
                             </td>
                         </tr>
                     </table>
                 </div>
-                    <br>
+                <br>
                 <div class="text">
                     <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
                         <tr>
                             <td>
                                 <p style="font-size: 23px">
-                                    ❹. In the solvate.profile file, you need to
-                                    modify the line <br><br>
-                                    <span class="emph">export HOME_SOLVATE='Solvate Suite Directory'</span>.<br><br>
-                                    For example, if Solvate Suite is installed in /home/bin/solvate,
-                                    you should change the line to<br><br>
-                                    <span class="emph">export HOME_SOLVATE='/home/bin/solvate'</span>. <br><br>
+                                    ❹. In the solvate.profile file, you need to modify the line:<br><br>
+                                    <div class="text">
+                                        <table class="comand">
+                                            <tr>
+                                                <td>
+                                                    export HOME_SOLVATE=“Solvate Suite Directory”
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    For example, if <b>Solvate Suite</b> is installed in “/opt/solvate”, you should change the line to:<br><br>
+                                    <div class="text">
+                                        <table class="comand">
+                                            <tr>
+                                                <td>
+                                                    export HOME_SOLVATE='/opt/solvate'
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <span class="emph">export HOME_SOLVATE='/opt/solvate'</span>. <br><br>
 
                                     This section is found in the first lines of the solvate.profile file.
+
                                 </p>
                             </td>
                         </tr>
                     </table>
                 </div>
-                    <br>
+                <br>
                 <div class="text">
                     <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
                         <tr>
@@ -309,8 +342,8 @@
                                     <table class="comand" style="line-height: 1.2">
                                         <tr>
                                             <td>
-                                                # Solvate Suite <br>
-                                                export HOME_SOLVATE='Solvate Suite Directory' <br>
+                                                # Solvate Suite<br>
+                                                export HOME_SOLVATE=“Solvate Suite Directory”<br>
                                                 source $HOME_SOLVATE/solvate.profile
                                             </td>
                                         </tr>
@@ -343,7 +376,7 @@
                             <span style="font-size: 25px; font-weight: bold"> Otávio Luís de Santana </span>
                             <br><br>
                             
-                            Coordinator of the Solvate Suite Project, holds a Bachelor's degree in Physics (1996),
+                            Coordinator of the <b>Solvate Suite</b> Project, holds a Bachelor's degree in Physics (1996),
                             a Master's degree (1998, CAPES 6), and a Ph.D. (2004, CAPES 6) in Chemistry from the 
                             Universidade Federal de Pernambuco. Currently, he is an Associate Professor at the
                             Universidade Federal da Paraíba, with extensive experience in Theoretical and Computational Chemistry.
