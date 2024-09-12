@@ -331,8 +331,8 @@ header {
     line-height: 1;
     /* Permite ajustes de posição relativos à posição padrão */
     position: relative;
-    /* Move o texto 35px para cima */
-    top: -48px;
+    /* Move o texto para cima */
+    top: -40px;
 }
 /*###########################################################################*/
 /* MENU SUSPENSO AO PASSAR O MOUSE SOBRE ITENS DO MENU PRINCIPAL             */
