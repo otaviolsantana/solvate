@@ -262,12 +262,12 @@ footer {
     /* Alinha o texto do rodapé de forma justificada */
     text-align: justify;
     /* Adiciona 1px de padding ao redor do conteúdo */
-    padding: 1px;
+    padding: 0.5px;
     /* Empurra o rodapé para o final da página */
-/*    margin-top: auto;*/
+    /* margin-top: auto;*/
     /* Limpa flutuações para garantir que o rodapé fique abaixo de todo o conteúdo */
     clear: both;
-    font-size: 20px;
+    font-size: 10px;
 }
 
 /* Estilo para a aba 'Home' */
