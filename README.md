@@ -6,7 +6,7 @@
 
 **OVERVIEW**
 
-This is the repository for the _Solvate Suite Home Page_ brunch. Click [here](https://otaviolsantana.github.io/solvate/) to visit the program site.
+This is the repository for the _Solvate Suite_ home page. Click [here](https://otaviolsantana.github.io/solvate/) to visit the program site.
 
 **CITATION**
 
