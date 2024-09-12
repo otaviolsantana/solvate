@@ -267,7 +267,7 @@ footer {
     /* margin-top: auto;*/
     /* Limpa flutuações para garantir que o rodapé fique abaixo de todo o conteúdo */
     clear: both;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 /* Estilo para a aba 'Home' */
