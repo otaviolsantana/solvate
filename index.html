@@ -89,7 +89,6 @@
             <!--############################################################################-->
             <!-- CONTEÚDO PARA ABA INSTALLATION                                             -->
             <!--############################################################################-->
-
             <div id="installation" class="content" style="display: none;">
                 <p style="text-align: center; font-size: 30px; font-weight: bold;">SOLVATE SUITE INSTALLATION GUIDE</p>
                 <p style="font-size: 23px">
@@ -363,12 +362,10 @@
                     </table>
                 </div>
             </div>
-            <br><br>
 
             <!--############################################################################-->
             <!-- CONTEÚDO PARA ABA MANUAL                                                   -->
             <!--############################################################################-->
-
             <div id="manual" class="content" style="display: none;">
                 <p style="text-align: center; font-size: 30px; font-weight: bold;">SOLVATE SUITE USER MANUAL</p>
                 <p style="font-size: 23px">
@@ -377,12 +374,10 @@
                 </p>
 
             </div>
-            <br><br>
 
             <!--############################################################################-->
             <!-- CONTEÚDO PARA ABA GROUP                                                    -->
             <!--############################################################################-->
-
             <div id="group" class="content" style="display: none; transform: translateX(18%)">
                 <table class="ts1" style="font-size: 23px; width: 100%;">
                     <tr> <!-- 1º LINHA -->
@@ -506,7 +501,6 @@
 
             <!-- Conteúdo para Contact -->
             <div id="contact" class="content" style="display: none;">
-
             </div>
         </main>
 
@@ -520,7 +514,8 @@
     </footer>
 
 <script type="text/javascript">
-    function showContent(section) {
+    function showContent(section)
+    {
         // Oculta todos os conteúdos
         const contents = document.querySelectorAll('#main-content .content');
         contents.forEach(content => content.style.display = 'none');
