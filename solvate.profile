@@ -21,7 +21,7 @@ source $HOME_SOLVATE/suite/qforce.profile
 source $HOME_SOLVATE/suite/openmpi.profile
 source $HOME_SOLVATE/suite/intel.profile
 
-# Some useful aliases
+# Some useful aliases...
 
 #--------------------------------# #------------------------------#  #-------------------------------------#
 alias   msolv=$(which solvate);    alias microsolv=$(which solvate); alias micro=$HOME_SOLVATE/modules/micro
