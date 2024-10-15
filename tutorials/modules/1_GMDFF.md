@@ -18,3 +18,7 @@ For examples, see:
 * Example #2: [Creating the Q-Force force field parameters](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/1_GMDFF_Test02)
 * Example #3: [Handling force field parameters from external servers](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/1_GMDFF_Test03)
 * Example #4: [Handling force field parameters from internal database](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/1_GMDFF_Test04)
+
+See also:
+
+* PACKS:  [Simulation Box Creation](https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/2_PACKS.md).
