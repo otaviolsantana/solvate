@@ -12,3 +12,7 @@ For examples, see:
 * Example #2: [Creating a box for ORCA with a solute and solvent mixture](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test02)
 * Example #3: [Creating a box for GROMACS with a solute and water molecules](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test03)
 * Example #4: [Creating a box for GROMACS with a solute and a solvent mixture](https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test04)
+
+See also:
+
+* GMDFF:  [Generation of Molecular Dynamics Force Fields](https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/1_GMDFF.md).
