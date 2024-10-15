@@ -1,0 +1,464 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+   <head>
+      <!-- Meta Tags -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="Solvate Suite - A Command-Line Interface for Molecular Simulations Modeling">
+      <meta name="keywords" content="Molecular Simulations; Initial Configuration; Multiscale Calculations">
+      <meta name='copyright' content="Copyright 2024  |  All Rights Reserved">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Title -->
+      <title>Solvate Suite - A Command-Line Interface for Molecular Simulations Modeling</title>
+      <!-- Favicon -->
+      <link rel="icon" href="images/favicon.png">
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Nice Select CSS -->
+      <link rel="stylesheet" href="css/nice-select.css">
+      <!-- Font Awesome CSS -->
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <!-- icofont CSS -->
+      <link  rel="stylesheet" href="css/icofont.css">
+      <!-- Slicknav -->
+      <link rel="stylesheet" href="css/slicknav.min.css">
+      <!-- Owl Carousel CSS -->
+      <link rel="stylesheet" href="css/owl-carousel.css">
+      <!-- Datepicker CSS -->
+      <link rel="stylesheet" href="css/datepicker.css">
+      <!-- Animate CSS -->
+      <link rel="stylesheet" href="css/animate.min.css">
+      <!-- Magnific Popup CSS -->
+      <link rel="stylesheet" href="css/magnific-popup.css">
+      <!-- Medipro CSS -->
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/responsive.css">
+   </head>
+
+   <body>
+      <!-- Preloader -->
+      <div class="preloader">
+          <div class="loader">
+              <div class="loader-outter"></div>
+              <div class="loader-inner"></div>
+              <div class="indicator"> 
+                  <svg width="16px" height="12px">
+                      <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                      <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                  </svg>
+              </div>
+          </div>
+      </div>
+      <!-- End Preloader -->
+
+      <!-- Header Area -->
+      <header class="header" >
+         <!-- Header Inner -->
+         <div class="header-inner">
+            <div class="container">
+               <div class="inner">
+                  <div class="row">
+                     <div class="col-lg-3 col-md-3 col-12">
+                        <!-- Start Logo -->
+                        <div class="logo">
+                           <a href="index.html"><img src="images/logo.png" alt="#"></a>
+                        </div>
+                        <!-- End Logo -->
+                        <!-- Mobile Nav -->
+                        <div class="mobile-nav"></div>
+                        <!-- End Mobile Nav -->
+                     </div>
+                     <div class="col-lg-7 col-md-9 col-12">
+                        <!-- Main Menu -->
+                        <div class="main-menu">
+                           <nav class="navigation">
+                              <ul class="nav menu">
+                                 <li class="active"><a href="index.html">Home</a></li>
+                                 <li><a href="instructions.html">Download<i class="icofont-rounded-down"></i></a>
+                                    <ul class="dropdown">
+                                       <li><a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip">Release Version</a></li>
+                                       <li><a href="https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip">Beta Version</a></li>
+                                       <li><a href="instructions.html">Instalation instructions</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="more.html">Tutorials<i class="icofont-rounded-down"></i></a>
+                                    <ul class="dropdown">
+                                       <li><a href="guide.html"    >Quick User Guide & Start Instructions</a></li>
+                                       <li><a href="tutorial1.html">Creation of Simulation Box & Force Field Parameters</a></li>
+                                       <li><a href="tutorial2.html">Submission of Simulations & Analysis of Data</a></li>
+                                       <li><a href="tutorial3.html">Clusters Selection & Microsolvation Treatment</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="publications.html">Applications<i class="icofont-rounded-down"></i></a>
+                                    <ul class="dropdown">
+                                       <li><a href="publications.html">List of Publications...</a></li>
+                                       <li><a href="application1.html">Solvation Free Energy</a></li>
+                                       <li><a href="application2.html">Reduction Potentials & pKa</a></li>
+                                       <li><a href="application3.html">NMR Prediction</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="group.html">Group</a></li>
+                              </ul>
+                           </nav>
+                        </div>
+                        <!--/ End Main Menu -->
+                     </div>
+                     <div class="col-lg-2 col-12">
+                        <div class="get-quote">
+                           <a href="manual.html" class="btn">Manual</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--/ End Header Inner -->
+      </header>
+      <!-- End Header Area -->
+
+      <!-- Slider Area -->
+      <section class="slider">
+         <div class="hero-slider">
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('images/slider1.jpg')">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-7">
+                        <div class="text">
+                           <h1>The <span>Solvate Suite</span> provides optimized strategies for initial simulation box configuration!</h1>
+                           <p>The user can configure several aspects of the simulation box through simple command lines, preparing the initial configuration in just a few seconds.</p>
+                           <div class="button">
+                              <a href="more.html"         class="btn">Learn More</a>
+                              <a href="instructions.html" class="btn primary">Install Now</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- End Single Slider -->
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('images/slider2.jpg')">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-7">
+                        <div class="text">
+                           <h1>The <span>Solvate Suite</span> provides diverse configuration strategies for fast equilibration!</h1>
+                           <p>The user can configure several aspects of the simulation execution through terminal, performing the entire theoretical experiment with a few command lines.</p>
+                           <div class="button">
+                              <a href="more.html"         class="btn">Learn More</a>
+                              <a href="instructions.html" class="btn primary">Install Now</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Start End Slider -->
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('images/slider3.jpg')">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-7">
+                        <div class="text">
+                           <h1>The <span>Solvate Suite</span> provides diverse pre-configured options for simulation analysis!</h1>
+                           <p>The user can execute several analyses of the molecular simulation through simple command lines, including statistical and graphical analysis.</p>
+                           <div class="button">
+                              <a href="more.html"         class="btn">Learn More</a>
+                              <a href="instructions.html" class="btn primary">Install Now</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- End Single Slider -->
+         </div>
+      </section>
+      <!--/ End Slider Area -->
+
+      <!-- Start Schedule Area -->
+      <section class="schedule">
+         <div class="container">
+            <div class="schedule-inner">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6 col-12">
+                     <!-- single-schedule -->
+                     <div class="single-schedule first">
+                        <div class="inner">
+                           <div class="icon">
+                              <i class="icofont-prescription"></i>
+                           </div>
+                           <div class="single-content">
+                              <span>1st Step</span>
+                              <h4>Create Initial Configuration</h4>
+                              <p>Configure several aspects of the simulation box through simple command lines in just a few seconds</p>
+                              <a href="step1.html">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-12">
+                     <!-- single-schedule -->
+                     <div class="single-schedule middle">
+                        <div class="inner">
+                           <div class="icon">
+                              <i class="icofont-ui-clock"></i>
+                           </div>
+                           <div class="single-content">
+                              <span>2nd Step</span>
+                              <h4>Execute Simulation</h4>
+                              <ul class="time-sidual">
+                                 <li class="day">NVT Equilibration <span>Low freq. dump</span></li>
+                                 <li class="day">NPT Equilibration <span>Low freq. dump</span></li>
+                                 <li class="day">NPT Production    <span>Normal freq. dump</span></li>
+                              </ul>
+                              <a href="step2.html">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-12 ">
+                     <!-- single-schedule -->
+                     <div class="single-schedule last">
+                        <div class="inner">
+                           <div class="icon">
+                              <i class="icofont icofont-eye-alt"></i>
+                           </div>
+                           <div class="single-content">
+                              <span>3rd Step</span>
+                              <h4>Perform Result Analysis</h4>
+                              <p>Execute statistical and graphical analysis of the molecular simulation through simple command lines</p>
+                              <a href="step3.html">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/End Start schedule Area -->
+
+      <!-- Start Features -->
+      <section class="Feautes section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="section-title">
+                     <h2>The Suite is Always Up To Date</h2>
+                     <img src="images/section.png" alt="#">
+                     <p>The <b>Solvate Suite</b> is updated regularly, and the released version is also the Bleeding Edge of the entire suite.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-4 col-12">
+                  <!-- Start Single features -->
+                  <div class="single-features">
+                     <div class="signle-icon">
+                        <i class="icofont-prescription"></i>
+                     </div>
+                     <h3>Initial Configuration</h3>
+                     <p>Configure several aspects of the simulation box through simple command lines in just a few seconds.</p>
+                  </div>
+                  <!-- End Single features -->
+               </div>
+               <div class="col-lg-4 col-12">
+                  <!-- Start Single features -->
+                  <div class="single-features">
+                     <div class="signle-icon">
+                        <i class="icofont-ui-clock"></i>
+                     </div>
+                     <h3>Execute Simulation</h3>
+                     <p>Execute all kinds of simulation stages, from equilibration to production of the molecular dynamics.</p>
+                  </div>
+                  <!-- End Single features -->
+               </div>
+               <div class="col-lg-4 col-12">
+                  <!-- Start Single features -->
+                  <div class="single-features last">
+                     <div class="signle-icon">
+                        <i class="icofont icofont-eye-alt"></i>
+                     </div>
+                     <h3>Result Analysis</h3>
+                     <p>Execute statistical and graphical analysis of the molecular simulation through simple command lines.</p>
+                  </div>
+                  <!-- End Single features -->
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/ End Features -->
+
+      <!-- Start Fun-facts -->
+      <div id="fun-facts" class="fun-facts section overlay">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Start Single Fun -->
+                  <div class="single-fun">
+                     <i class="icofont icofont-home"></i>
+                     <div class="content">
+                        <span class="counter">1</span>
+                        <p>Research Institutions</p>
+                     </div>
+                  </div>
+                  <!-- End Single Fun -->
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Start Single Fun -->
+                  <div class="single-fun">
+                     <i class="icofont icofont-user-alt-3"></i>
+                     <div class="content">
+                        <span class="counter">2</span>
+                        <p>Suite Developers</p>
+                     </div>
+                  </div>
+                  <!-- End Single Fun -->
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Start Single Fun -->
+                  <div class="single-fun">
+                     <i class="icofont-prescription"></i>
+                     <div class="content">
+                        <span class="counter">58</span>
+                        <p>Suite Modules</p>
+                     </div>
+                  </div>
+                  <!-- End Single Fun -->
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Start Single Fun -->
+                  <div class="single-fun">
+                     <i class="icofont-simple-smile"></i>
+                     <div class="content">
+                        <span class="counter">1</span>
+                        <p>Published Articles</p>
+                     </div>
+                  </div>
+                  <!-- End Single Fun -->
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--/ End Fun-facts -->
+
+      <!-- Start Why choose -->
+      <section class="why-choose section" >
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="section-title">
+                     <h2>Why To Use The Suite?</h2>
+                     <img src="images/section.png" alt="#">
+                     <p><b>Solvate Suite</b> is a simple, fast, intuitive, and modular set of programs dedicated to treating all stages of the molecular simulation of liquid systems.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6 col-12">
+                  <!-- Start Choose Left -->
+                  <div class="choose-left">
+                     <h3>Resources</h3>
+                     <div class="row">
+                        <ul class="list">
+                        <li><i class="fa fa-caret-right"></i>Multiple interfaces for various computational tools, all through a single 
+                        intuitive command line tool, which allows you to speed up various stages of computational processing.</li>
+                        <li><i class="fa fa-caret-right"></i>Varieties of features for simulation preparation and execution, analysis of 
+                        intermediate results, selection of microsolvation clusters and calculation of average properties..</li>
+                        <li><i class="fa fa-caret-right"></i>Diverse possibilities for adjusting calculation settings, making simple
+                        the process of adjusting between predictive power and computational cost.</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- End Choose Left -->
+               </div>
+               <div class="col-lg-6 col-12">
+                  <!-- Start Choose Rights -->
+                  <div class="choose-right">
+                     <div class="video-image">
+                        <!-- Video Animation -->
+                        <div class="promo-video">
+                           <div class="waves-block">
+                              <div class="waves wave-1"></div>
+                              <div class="waves wave-2"></div>
+                              <div class="waves wave-3"></div>
+                           </div>
+                        </div>
+                        <!-- End Video Animation -->
+                        <!-- Short Tutorial -->
+                        <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                        <!-- End Short Tutorial -->
+                     </div>
+                  </div>
+                  <!-- End Choose Rights -->
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/ End Why choose -->
+
+      <!-- Footer Area -->
+      <footer id="footer" class="footer ">
+         <!-- Copyright -->
+         <div class="copyright">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-12 col-md-12 col-12">
+                     <div class="copyright-content">
+                        <p>© Copyright 2024  |  All Rights Reserved</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--/ End Copyright -->
+      </footer>
+      <!--/ End Footer Area -->
+
+      <!-- jquery Min JS -->
+      <script src="js/jquery.min.js"></script>
+      <!-- jquery Migrate JS -->
+      <script src="js/jquery-migrate-3.0.0.js"></script>
+      <!-- jquery Ui JS -->
+      <script src="js/jquery-ui.min.js"></script>
+      <!-- Easing JS -->
+      <script src="js/easing.js"></script>
+      <!-- Color JS -->
+      <script src="js/colors.js"></script>
+      <!-- Popper JS -->
+      <script src="js/popper.min.js"></script>
+      <!-- Bootstrap Datepicker JS -->
+      <script src="js/bootstrap-datepicker.js"></script>
+      <!-- Jquery Nav JS -->
+      <script src="js/jquery.nav.js"></script>
+      <!-- Slicknav JS -->
+      <script src="js/slicknav.min.js"></script>
+      <!-- ScrollUp JS -->
+      <script src="js/jquery.scrollUp.min.js"></script>
+      <!-- Niceselect JS -->
+      <script src="js/niceselect.js"></script>
+      <!-- Tilt Jquery JS -->
+      <script src="js/tilt.jquery.min.js"></script>
+      <!-- Owl Carousel JS -->
+      <script src="js/owl-carousel.js"></script>
+      <!-- counterup JS -->
+      <script src="js/jquery.counterup.min.js"></script>
+      <!-- Steller JS -->
+      <script src="js/steller.js"></script>
+      <!-- Wow JS -->
+      <script src="js/wow.min.js"></script>
+      <!-- Magnific Popup JS -->
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <!-- Counter Up CDN JS -->
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Main JS -->
+      <script src="js/main.js"></script>
+   </body>
+</html>
