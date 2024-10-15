@@ -1,531 +1,463 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html class="no-js" lang="zxx">
+   <head>
+      <!-- Meta Tags -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="Solvate Suite - A Command-Line Interface for Molecular Simulations Modeling">
+      <meta name="keywords" content="Molecular Simulations; Initial Configuration; Multiscale Calculations">
+      <meta name='copyright' content="Copyright 2024  |  All Rights Reserved">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Title -->
+      <title>Solvate Suite - A Command-Line Interface for Molecular Simulations Modeling</title>
+      <!-- Favicon -->
+      <link rel="icon" href="images/favicon.png">
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Nice Select CSS -->
+      <link rel="stylesheet" href="css/nice-select.css">
+      <!-- Font Awesome CSS -->
+      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <!-- icofont CSS -->
+      <link  rel="stylesheet" href="css/icofont.css">
+      <!-- Slicknav -->
+      <link rel="stylesheet" href="css/slicknav.min.css">
+      <!-- Owl Carousel CSS -->
+      <link rel="stylesheet" href="css/owl-carousel.css">
+      <!-- Datepicker CSS -->
+      <link rel="stylesheet" href="css/datepicker.css">
+      <!-- Animate CSS -->
+      <link rel="stylesheet" href="css/animate.min.css">
+      <!-- Magnific Popup CSS -->
+      <link rel="stylesheet" href="css/magnific-popup.css">
+      <!-- Medipro CSS -->
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/responsive.css">
+   </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <title>Solvate Suite</title>
-</head>
+   <body>
+      <!-- Preloader -->
+      <div class="preloader">
+          <div class="loader">
+              <div class="loader-outter"></div>
+              <div class="loader-inner"></div>
+              <div class="indicator"> 
+                  <svg width="16px" height="12px">
+                      <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                      <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                  </svg>
+              </div>
+          </div>
+      </div>
+      <!-- End Preloader -->
 
-<body>
-
-    <header
-        style="background-image: url('figures/background.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        <div class="header">
-            <a href="" style="color: #00000000;">
-                <img src="figures/logo.png" alt="Logo"><span class="logo-text">SOLVATE SUITE</span>
-            </a>    
-        </div>
-    </header>
-
-    <nav id="menu">
-        <a href="#" style="color: #000;" onclick="showContent('home')">Home</a>
-        <li class="dropdown">
-            <div>
-                <a href="#" style="color: #000;">Download</a>
-                <div class="dropdown-content">
-                    <a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip"
-                    style="color: #000; font-size: 18px;">Solvate Suite (Release)</a>
-                    <a href="https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip"
-                    style="color: #000; font-size: 18px;">Solvate Suite (Beta)</a>
-                    <a href="#" style="color: #000; font-size: 18px;
-                    "onclick="showContent('installation')">Installation instructions</a>
-                </div>
+      <!-- Header Area -->
+      <header class="header" >
+         <!-- Header Inner -->
+         <div class="header-inner">
+            <div class="container">
+               <div class="inner">
+                  <div class="row">
+                     <div class="col-lg-3 col-md-3 col-12">
+                        <!-- Start Logo -->
+                        <div class="logo">
+                           <a href="index.html"><img src="images/logo.png" alt="#"></a>
+                        </div>
+                        <!-- End Logo -->
+                        <!-- Mobile Nav -->
+                        <div class="mobile-nav"></div>
+                        <!-- End Mobile Nav -->
+                     </div>
+                     <div class="col-lg-7 col-md-9 col-12">
+                        <!-- Main Menu -->
+                        <div class="main-menu">
+                           <nav class="navigation">
+                              <ul class="nav menu">
+                                 <li class="active"><a href="index.html">Home</a></li>
+                                 <li><a href="#">Download<i class="icofont-rounded-down"></i></a>
+                                    <ul class="dropdown">
+                                       <li><a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip">Release Version</a></li>
+                                       <li><a href="https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip">Beta Version</a></li>
+                                       <li><a href="instructions.html">Instalation instructions</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="#">Tutorials<i class="icofont-rounded-down"></i></a>
+                                    <ul class="dropdown">
+                                       <li><a href="tutorial0.html">GUIDE: User Quick Start Instructions</a></li>
+                                       <li><a href="tutorial1.html">GMDFF: Generation of Force Fields Parameters</a></li>
+                                       <li><a href="tutorial2.html">PACKS: Simulation Box Creation</a></li>
+                                       <li><a href="tutorial3.html">MDRUN: Submission of Simulations</a></li>
+                                       <li><a href="tutorial4.html">DATAS: Analysis of Simulated Properties</a></li>
+                                       <li><a href="tutorial5.html">MSRUN: Clusters Selection & Microsolvation</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="#">Applications<i class="icofont-rounded-down"></i></a>
+                                    <ul class="dropdown">
+                                       <li><a href="application1.html">Solvation Free Energy</a></li>
+                                       <li><a href="application2.html">Reduction Potentials & pKa</a></li>
+                                       <li><a href="application3.html">NMR Prediction</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="group.html">Group</a></li>
+                              </ul>
+                           </nav>
+                        </div>
+                        <!--/ End Main Menu -->
+                     </div>
+                     <div class="col-lg-2 col-12">
+                        <div class="get-quote">
+                           <a href="manual.html" class="btn">Manual</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </li>
-        <a href="#" style="color: #000;" onclick="showContent('manual')">Manual</a>
-        <!-- <a href="#" style="color: #000;" onclick="showContent('installation')">Installation</a> -->
-        <li class="dropdown">
-            <div>
-                <a href="#" style="color: #000;">Applications</a>
-                <div class="dropdown-content">
-                    <a href=" "
-                    style="color: #000; font-size: 18px;">Solvation free energy (Under construction)</a>
-                    <a href=" "
-                    style="color: #000; font-size: 18px;">Reduction Potentials & pKa (Under construction)</a>
-                    <a href=" "
-                    style="color: #000; font-size: 18px;">NMR Prediction (Under construction)</a>
-                </div>
+         </div>
+         <!--/ End Header Inner -->
+      </header>
+      <!-- End Header Area -->
+
+      <!-- Slider Area -->
+      <section class="slider">
+         <div class="hero-slider">
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('images/slider1.jpg')">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-7">
+                        <div class="text">
+                           <h1>The <span>Solvate Suite</span> provides optimized strategies for initial simulation box configuration!</h1>
+                           <p>The user can configure several aspects of the simulation box through simple command lines, preparing the initial configuration in just a few seconds.</p>
+                           <div class="button">
+                              <a href="https://github.com/otaviolsantana/solvate/blob/main/guide/stages/1st_Stage.md" target="top" class="btn">Learn More</a>
+                              <a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip" class="btn primary">Download</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </li>
-        <a href="#" style="color: #000;" onclick="showContent('group')">Group</a>
-        <!-- <a href="#" style="color: #000;" onclick="showContent('publications')">Publications</a> -->
-    </nav>
-
-    <div class="container">
-        <main id="main-content" style="flex: 1; min-height: 100vh;">
-            <!--############################################################################-->
-            <!-- CONTEÚDO PARA A ABA HOME                                                   -->
-            <!--############################################################################--> 
-            <div id="home" class="content">
-                <p style="text-align: center; font-size: 30px; font-weight: bold;">WELCOME TO THE SOLVATE SUITE HOME PAGE!</p>
-                <p style="font-size: 23px;">                                                     
-                    The modeling and study of liquid systems are essential for understanding a broad spectrum of chemical and biological processes. 
-                    Solutions and solvents play fundamental roles in chemical reactions, biomolecular interactions, and material behavior. To address 
-                    these complex dynamics, we introduce the <b>Solvate Suite</b>, a comprehensive, modular command-line interface designed specifically 
-                    for molecular simulations of liquid systems and microsolvation modeling.
-                </p>
-                <p style="font-size: 23px;">
-                    The <b>Solvate Suite</b> specializes in analyzing solute-solvent interactions and the behavior of liquids under various simulated 
-                    conditions. Seamlessly integrating with computational chemistry tools such as ORCA, GROMACS, PACKMOL, QFORCE, and others, it streamlines 
-                    computational experiments involving liquid systems by automating the creation of simulation boxes and topologies with customizable parameters.
-                </p>
-                <p style="font-size: 23px;">
-                    Additionally, the <b>Solvate Suite</b> offers advanced graphical and statistical analysis features and tools to extract trajectory 
-                    configurations using multiple filters. One of its standout features is a multiscale approach to microsolvation modeling, which utilizes 
-                    equilibrated dynamics to identify favorable solute-solvent interactions. This enables precise optimization of clusters and accurate free 
-                    energy calculations, free from the contamination of imaginary frequencies. The suite is a powerful tool for exploring and modeling liquid 
-                    systems, driving meaningful advances in chemistry, biology, and materials science.
-                </p>
-                    <br>
-                <p style="font-size: 20px; font-weight: bold;"> If you use <b>Solvate Suite</b>, please cite:<br>   
-                <p style="font-size: 20px;">
-                    <i>Solvate Suite</i>: A Command-Line Interface for Molecular Simulations and Multiscale 
-                    Microsolvation Modeling Otávio L. Santana, Daniel G. Silva, Sidney R. Santana
-                    J. Chem. Inf. Model. 2024, 64, 9, 3767–3778. <br>
-                    <span style="font-size: 15px;">
-                        DOI: <a href="https://doi.org/10.1021/acs.jcim.3c01899" target="_blank"> https://doi.org/10.1021/acs.jcim.3c01899 </a>
-                    </span>    
-                </p>    
+            <!-- End Single Slider -->
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('images/slider2.jpg')">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-7">
+                        <div class="text">
+                           <h1>The <span>Solvate Suite</span> provides diverse configuration strategies for fast equilibration!</h1>
+                           <p>The user can configure several aspects of the simulation execution through terminal, performing the entire theoretical experiment with a few command lines.</p>
+                           <div class="button">
+                              <a href="https://github.com/otaviolsantana/solvate/blob/main/guide/stages/2nd_Stage.md" target="top" class="btn">Learn More</a>
+                              <a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip" class="btn primary">Download</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-
-            <!--############################################################################-->
-            <!-- CONTEÚDO PARA ABA INSTALLATION                                             -->
-            <!--############################################################################-->
-            <div id="installation" class="content" style="display: none;">
-                <p style="text-align: center; font-size: 30px; font-weight: bold;">SOLVATE SUITE INSTALLATION GUIDE</p>
-                <p style="font-size: 23px">
-                    This versatile command-line interface integrates seamlessly with widely used scientific software, enabling the automation and 
-                    optimization of computational experiments for liquid systems. To begin using <b>Solvate Suite</b>, follow these steps for a 
-                    smooth and efficient installation process:
-                    <br><br>
-                </p>
-
-                <p style="font-weight: bold;font-size: 23px;">DEPENDENCIES</p>
-                <table class="ts1" style="font-size: 23px;">
-                    <tr> <!-- 1º LINHA -->
-                        <td class="align-top-right" style="width: 23%;font-size: 23px;"> <!-- 1º COLUNA -->
-                            Operating System:
-                        </td>
-                        <td class="align-top-justify" style="font-size: 23px;"> <!-- 2º COLUNA -->
-                            Linux-based.
-                        </td>
-                    </tr>
-
-                    <tr> <!-- 2º LINHA -->
-                        <td class="align-top-right" style="width: 18%;font-size: 23px;"> <!-- 1º COLUNA -->
-                            Required Software:
-                        </td>
-                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
-                            • Simulation box and force field parameters<br>
-                            <a href="https://m3g.github.io/packmol/" target="_blank" class="no-underline">
-                                - Packmol </a>
-                            <br>
-                            <a href="https://qforce.readthedocs.io/en/latest/" target="_blank" class="no-underline">
-                                - Q-force </a>
-                            <br><br>
-                            • Electronic Structure and Molecular Dynamics Programs<br>
-                            <a href="https://xtb-docs.readthedocs.io/en/latest/#" target="_blank" class="no-underline">
-                                - xTB v6.6.1 </a>
-                            <br>
-                            <a href="https://crest-lab.github.io/crest-docs/" target="_blank" class="no-underline">
-                                - CREST v2.12 </a>
-                            <br>
-                            <a href="https://orcaforum.kofo.mpg.de/" target="_blank" class="no-underline">
-                                - ORCA 5.0 </a>
-                            <br>
-                            <a href="https://www.gromacs.org/" target="_blank" class="no-underline">
-                                - GROMACS 2023.3 </a>
-                            <br><br>
-                            • Visualization Programs<br>
-                            <a href="https://jmol.sourceforge.net/" target="_blank" class="no-underline">
-                                - Jmol </a>
-                            <br>
-                            <a href="https://www.ks.uiuc.edu/Research/vmd/" target="_blank" class="no-underline">
-                                - VMD </a>
-                            <br><br>
-                            • Scripts Interpreter and Libraries<br>
-                            <a href="https://www.python.org/" target="_blank" class="no-underline">
-                                - Python 3.10 </a>
-                            <br>
-                            <a href="https://matplotlib.org/" target="_blank" class="no-underline">
-                                - MatPlotLib 3.5 </a>
-                            <br>
-                            <a href="https://pypi.org/project/tqdm/" target="_blank" class="no-underline">
-                                - Tqdm 4.65 </a>
-                            <br>
-                            <a href="https://pypi.org/project/PyQt5/" target="_blank" class="no-underline">
-                                - PyQt5 5.15</a>
-                            <br>
-                        </td>
-                    </tr>
-                </table>
-
-                <p style="font-weight: bold;font-size: 23px;">SETTING UP SOLVATE SUITE</p>
-                <p style="font-size: 23px">
-
-                <div class="text">
-                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify; font-size: 23px">
-                        <tr>
-                            <td>
-                                <p style="font-size: 23px">
-                                ❶. Download the latest version of 
-                                <a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip" target="_blank" class="no-underline">
-                                <b>Solvate Suite</b></a> or run the command below in your terminal:
-                                </p>   
-
-                                <!-- COMANDO  -->
-                                <div class="text">
-                                    <table class="comand">
-                                        <tr>
-                                            <td>
-                                                wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <br>
-                <div class="text">
-                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
-                        <tr>
-                            <td>
-                                <p style="font-size: 23px">
-                                    ❷. Unzip the main.zip file with your preferred zip manager or use the unzip command line:
-                                </p>
-
-                                <div class="text">
-                                    <table class="comand">
-                                        <tr>
-                                            <td>
-                                                unzip main.zip
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-
-                                <p style="font-size: 23px">
-                                    Note that a directory named solvate-main will be extracted. Inside this directory,
-                                    you will find all the binaries and configuration files for <b>Solvate Suite</b>. Since this is a precompiled version, you will only need to adjust a few settings to ensure the suite functions correctly. <br><br>
-
-                                    If you prefer, rename the directory to solvate and move it to your desired
-                                    installation location.
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                    <br>
-                <div class="text">
-                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
-                        <tr>
-                            <td>
-
-                                <p style="font-size: 23px">
-                                    ❸. Using your preferred text editor, open the solvate.config file and add the
-                                    paths to the directories containing the programs you want <b>Solvate Suite</b> to manage. Note that you should specify the path to the installation directory of the programs, not directly to the executable. <br><br>
-
-                                    In your script, locate the section below and fill it in with the paths to the
-                                    directories of your programs. <br><br>
-                                    
-                                    Replace “/opt/solvate” with the path you set for the <b>Solvate Suite</b> directory.<br><br>
-
-                                    <div class="text">
-                                        <table class="comand">
-                                            <tr>
-                                                <td>
-                                                    INI_SVT=/opt/solvate
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-
-                                    <br>
-                                    Replace “/opt/program” with the path to the directory where the corresponding program is located.<br><br>
-
-                                    <div class="text">
-                                        <table class="comand" style="line-height: 1.2">
-                                            <tr>
-                                                <td>
-                                                    DIR_GSN=/opt/gsn     # Gaussian  <br>
-                                                    DIR_GVW=/opt/gvw     # GaussView <br>
-                                                    DIR_ORC=/opt/orca    # ORCA      <br>
-                                                    DIR_XTB=/opt/xtb     # xTB       <br>
-                                                    DIR_GMX=/opt/gmx     # GROMACS   <br>
-                                                    DIR_VMD=/opt/vmd     # VMD       <br>
-                                                    DIR_MPI=/opt/openmpi # OpenMPI   <br>
-                                                    DIR_PCK=/opt/packmol # PackMol   <br>
-                                                    DIR_QFC=/opt/qforce  # Q-Force   
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <br>
-                <div class="text">
-                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
-                        <tr>
-                            <td>
-                                <p style="font-size: 23px">
-                                    ❹. In the solvate.profile file, you need to modify the line:<br><br>
-                                    <div class="text">
-                                        <table class="comand">
-                                            <tr>
-                                                <td>
-                                                    export HOME_SOLVATE=“Solvate Suite Directory”
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-
-                                    <br>
-                                    For example, if <b>Solvate Suite</b> is installed in “/opt/solvate”, you should change the line to:<br><br>
-
-                                    <div class="text">
-                                        <table class="comand">
-                                            <tr>
-                                                <td>
-                                                    export HOME_SOLVATE='/opt/solvate'
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-
-                                    <br>
-                                    This section is found in the first lines of the solvate.profile file.
-
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <br>
-                <div class="text">
-                    <table class="ts1" style="border: 1px solid #ccc; text-align: justify;">
-                        <tr>
-                            <td>
-
-                                <p style="font-size: 23px">
-                                    ❺. Make the solvate.config file executable
-                                    with the following command:
-                                </p>
-
-                                <div class="text">
-                                    <table class="comand">
-                                        <tr>
-                                            <td>
-                                                chmod +x solvate.config
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-
-                                <p style="font-size: 23px">
-                                    Then, run the file with:
-                                </p>
-                                <div class="text">
-                                    <table class="comand">
-                                        <tr>
-                                            <td>
-                                                ./solvate.config
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <p style="font-size: 23px">
-                                    Finally, add the following lines to your bash file, located at
-                                    /home/$USER/.bashrc:
-                                </p>
-
-                                <div class="text">
-                                    <table class="comand" style="line-height: 1.2">
-                                        <tr>
-                                            <td>
-                                                # Solvate Suite<br>
-                                                export HOME_SOLVATE=“Solvate Suite Directory”<br>
-                                                source $HOME_SOLVATE/solvate.profile
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-
-                                <p style="font-size: 23px">
-                                    Note that the path to be added should be the same as the one you specified in
-                                    step ❹, under HOME_SOLVATE.
-                                </p>
-
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+            <!-- Start End Slider -->
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('images/slider3.jpg')">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-7">
+                        <div class="text">
+                           <h1>The <span>Solvate Suite</span> provides diverse pre-configured options for simulation analysis!</h1>
+                           <p>The user can execute several analyses of the molecular simulation through simple command lines, including statistical and graphical analysis.</p>
+                           <div class="button">
+                              <a href="https://github.com/otaviolsantana/solvate/blob/main/guide/stages/3rd_Stage.md" target="top" class="btn">Learn More</a>
+                              <a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip" class="btn primary">Download</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
+            <!-- End Single Slider -->
+         </div>
+      </section>
+      <!--/ End Slider Area -->
 
-            <!--############################################################################-->
-            <!-- CONTEÚDO PARA ABA MANUAL                                                   -->
-            <!--############################################################################-->
-            <div id="manual" class="content" style="display: none;">
-                <p style="text-align: center; font-size: 30px; font-weight: bold;">SOLVATE SUITE USER MANUAL</p>
-                <p style="font-size: 23px">
-                    This comprehensive a user manual of the <b>Solvate Suite</b>. Under construction...
-                    <br><br>
-                </p>
+      <!-- Start Schedule Area -->
+      <section class="schedule">
+         <div class="container">
+            <div class="schedule-inner">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6 col-12">
+                     <!-- single-schedule -->
+                     <div class="single-schedule first">
+                        <div class="inner">
+                           <div class="icon">
+                              <i class="icofont-prescription"></i>
+                           </div>
+                           <div class="single-content">
+                              <span>1st Step</span>
+                              <h4>Create Initial Configuration</h4>
+                              <p>Configure several aspects of the simulation box through simple command lines in just a few seconds</p>
+                              <a href="https://github.com/otaviolsantana/solvate/blob/main/guide/stages/1st_Stage.md" target="top">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-12 col-12">
+                     <!-- single-schedule -->
+                     <div class="single-schedule middle">
+                        <div class="inner">
+                           <div class="icon">
+                              <i class="icofont-ui-clock"></i>
+                           </div>
+                           <div class="single-content">
+                              <span>2nd Step</span>
+                              <h4>Execute Simulation</h4>
+                              <ul class="time-sidual">
+                                 <li class="day">NVT Equilibration <span>Low freq. dump</span></li>
+                                 <li class="day">NPT Equilibration <span>Low freq. dump</span></li>
+                                 <li class="day">NPT Production    <span>Normal freq. dump</span></li>
+                              </ul>
+                              <a href="https://github.com/otaviolsantana/solvate/blob/main/guide/stages/2nd_Stage.md" target="top">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-12 ">
+                     <!-- single-schedule -->
+                     <div class="single-schedule last">
+                        <div class="inner">
+                           <div class="icon">
+                              <i class="icofont icofont-eye-alt"></i>
+                           </div>
+                           <div class="single-content">
+                              <span>3rd Step</span>
+                              <h4>Perform Result Analysis</h4>
+                              <p>Execute statistical and graphical analysis of the molecular simulation through simple command lines</p>
+                              <a href="https://github.com/otaviolsantana/solvate/blob/main/guide/stages/3rd_Stage.md" target="top">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
+         </div>
+      </section>
+      <!--/End Start schedule Area -->
 
-            <!--############################################################################-->
-            <!-- CONTEÚDO PARA ABA GROUP                                                    -->
-            <!--############################################################################-->
-            <div id="group" class="content" style="display: none; transform: translateX(18%)">
-                <table class="ts1" style="font-size: 23px; width: 100%;">
-                    <tr> <!-- 1º LINHA -->
-                        <td class="align-top-center" style="width: 23%;font-size: 20px;"> <!-- 1º COLUNA -->
-                            <img style="width: 150px;" src="figures/otavio.gif">  
-                        </td>
-                        <td class="align-top-justify" style="font-size: 20px;width: 80% !important"> <!-- 2º COLUNA -->
-                            <span style="font-size: 25px; font-weight: bold"> Otávio Luís de Santana </span>
-                            <br><br>
-                            
-                            Coordinator of the <i>Solvate Suite Project</i>, holds a Bachelor's degree in Physics (1996),
-                            a Master's degree (1998, CAPES 6), and a Ph.D. (2004, CAPES 6) in Chemistry from the 
-                            Universidade Federal de Pernambuco. Currently, he is an Associate Professor at the
-                            Universidade Federal da Paraíba, with extensive experience in Theoretical and Computational Chemistry.
-                            His main research areas include the modeling of chemical reactions, calculations of 
-                            reduction potentials and acid dissociation constants, as well as the study of hydrogen
-                            complexes and solvation effects.
-                            
-                            <br><br>
-                            
-                            E-mail: otavio.santana@academico.ufpb.br <br>
-                            Lattes: <a href="http://lattes.cnpq.br/4568073180485131" target="_blank" 
-                            style="font-size: 20px;"> http://lattes.cnpq.br/4568073180485131</a>
-                        </td>
-                    </tr>
-                    
-                    <tr> <!-- 2º LINHA -->
-                        <td class="align-top-center" style="font-size: 20px;padding: 10px"> <!-- 1º COLUNA -->
-                            <img style="width: 150px;" src="figures/sidney.gif">  
-                        </td>
-                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
-                            <span style="font-size: 25px; font-weight: bold"> Sidney Ramos de Santana </span> 
-                            <br><br>
-                            I hold a Bachelor's degree in Chemistry from the Universidade Federal de Pernambuco (1999), a 
-                            Master's degree in Chemistry (2002), and a Ph.D. in Materials Science (2006) from the same 
-                            institution. I have extensive experience in Physical Chemistry, Theoretical and Computational 
-                            Chemistry, with a focus on the Physical Chemistry of Materials through Computational Simulation. 
-                            My main areas of expertise include computational simulation using molecular dynamics methodology, 
-                            ab initio calculations of NMR properties, reactivity, homogeneous and heterogeneous catalysis, 
-                            as well as studies on the thermodynamics and kinetics of organic and inorganic systems. 
-                            Currently, I am an Assistant Professor in the Departamento de Química e Física (DQF) at 
-                            the Centro de Ciências Agrárias (CCA) of the Universidade Federal da Paraíba (UFPB), 
-                            Campus II, in Areia - PB.
-                            <br><br>
-                            
-                            E-mail: sidney.santana@academico.ufpb.br <br>
-                            Lattes: <a href="http://lattes.cnpq.br/0885124583236694" target="_blank" 
-                            style="font-size: 20px;"> http://lattes.cnpq.br/0885124583236694</a>
-                        </td>
-                    </tr> 
-                    
-                    <tr> <!-- 3º LINHA -->
-                        <td class="align-top-center" style="font-size: 20px;padding: 10px"> <!-- 1º COLUNA -->
-                            <img style="width: 180px;" src="figures/daniel.jpg">  
-                        </td>
-                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
-                            <span style="font-size: 25px; font-weight: bold"> Daniel Gabriel da Silva </span> 
-                            <br><br>
-                            He holds a degree in Chemistry from Instituto Federal de Educação, Ciência e Tecnologia
-                            da Paraíba (IFPB) and a Master’s in Physical Chemistry from Universidade Federal da Paraíba (UFPB).
-                            During his undergraduate studies, he was a scholar of the Programa Institucional de Bolsas de
-                            Iniciação à Docência (CAPES) and volunteered as a student researcher in the Programa Institucional 
-                            de Bolsas de Iniciação em Desenvolvimento Tecnológico e Inovação (PIBITI). In his Master’s program, 
-                            he was a CNPq (National Council for Scientific and Technological Development) scholar in the Programa
-                            de Pós-Graduação em Química (PPGQ), where he conducted theoretical studies on the modeling of the solvation 
-                            process in electron transfer reactions. He is currently a PhD student in PPGQ-UFPB.
-                            <br><br>
-                            
-                            E-mail: daniel.gabriel@academico.ufpb.br <br>
-                            Lattes: <a href="http://lattes.cnpq.br/7996074940245743" target="_blank" 
-                            style="font-size: 20px;"> http://lattes.cnpq.br/7996074940245743</a>
-                        </td>
-                    </tr>
-                    
-                    <tr> <!-- 4º LINHA -->
-                        <td class="align-top-center" style="font-size: 20px;padding: 10px"> <!-- 1º COLUNA -->
-                            <img style="width: 180px;" src="figures/lucas.jpeg">  
-                        </td>
-                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
-                            <span style="font-size: 25px; font-weight: bold"> Lucas Caetano de Oliveira Custódio </span> 
-                            <br><br>
-                            
-                            He holds a degree in Chemistry from Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB),
-                            completed in 2018. He is currently a master’s student in the Department of Chemistry at Universidade Federal
-                            da Paraíba (UFPB), where he is developing strategies for describing chemical shift in solvatized systems in
-                            apolar solvents. He has experience in the field of Chemistry, with an emphasis on Chemistry Education.
-                            <br><br>
-                            
-                            E-mail: lucascaetano95@gmail.com <br>
-                            Lattes: <a href="http://lattes.cnpq.br/8529557516187542" target="_blank" 
-                            style="font-size: 20px;"> http://lattes.cnpq.br/8529557516187542</a>
-                        </td>
-                    </tr>                      
-                    
-                    <tr> <!-- 5º LINHA -->
-                        <td class="align-top-center" style="font-size: 20px;padding: 10px"> <!-- 1º COLUNA -->
-                            <img style="width: 163px;" src="figures/rafael.gif">  
-                        </td>
-                        <td class="align-top-justify" style="font-size: 20px;"> <!-- 2º COLUNA -->
-                            <span style="font-size: 25px; font-weight: bold"> Rafael Augusto Gomes de Morais </span> 
-                            <br><br>
-                            
-                            He is an undergraduate student in Chemical Engineering at Universidade Federal da Paraíba (UFPB)
-                            and is currently a volunteer in the scientific initiation project titled "Use of Hybrid Methods 
-                            for the Determination of pKa of Primary, Secondary, and Tertiary Amines in Water and DMSO," 
-                            under the supervision of Professor Dr. Otávio Luís de Santana. In this project, he is developing 
-                            computational modeling techniques for the determination of pKa values.
-                            <br><br>
-                            
-                            E-mail: rafael.augusto@academico.ufpb.br <br>
-                            Lattes: <a href="http://lattes.cnpq.br/8529557516187542" target="_blank" 
-                            style="font-size: 20px;"> http://lattes.cnpq.br/1393523652379279</a>
-                        </td>
-                    </tr>                       
-                    
-                    
-                    
- 
-                </table>
+      <!-- Start Features -->
+      <section class="Feautes section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="section-title">
+                     <h2>The Suite is Always Up To Date</h2>
+                     <img src="images/section-img.png" alt="#">
+                     <p>The <b>Solvate Suite</b> is updated regularly, and the released version is also the Bleeding Edge of the entire suite.</p>
+                  </div>
+               </div>
             </div>
-        </main>
+            <div class="row">
+               <div class="col-lg-4 col-12">
+                  <!-- Start Single features -->
+                  <div class="single-features">
+                     <div class="signle-icon">
+                        <i class="icofont-prescription"></i>
+                     </div>
+                     <h3>Initial Configuration</h3>
+                     <p>Configure several aspects of the simulation box through simple command lines in just a few seconds.</p>
+                  </div>
+                  <!-- End Single features -->
+               </div>
+               <div class="col-lg-4 col-12">
+                  <!-- Start Single features -->
+                  <div class="single-features">
+                     <div class="signle-icon">
+                        <i class="icofont-ui-clock"></i>
+                     </div>
+                     <h3>Execute Simulation</h3>
+                     <p>Execute all kinds of simulation stages, from equilibration to production of the molecular dynamics.</p>
+                  </div>
+                  <!-- End Single features -->
+               </div>
+               <div class="col-lg-4 col-12">
+                  <!-- Start Single features -->
+                  <div class="single-features last">
+                     <div class="signle-icon">
+                        <i class="icofont icofont-eye-alt"></i>
+                     </div>
+                     <h3>Result Analysis</h3>
+                     <p>Execute statistical and graphical analysis of the molecular simulation through simple command lines.</p>
+                  </div>
+                  <!-- End Single features -->
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/ End Features -->
 
-        <footer style="width: 100%">
-        <p>
-            Dr. Otávio Luís de Santana |
-            Ms. Daniel Gabriel da Silva |
-            Lucas Caetano Custódio de Oliveira |
-            Copyright © 2024 | All rights reserved.
-        </p>
-        </footer>
+      <!-- Start Fun-facts -->
+      <div id="fun-facts" class="fun-facts section overlay">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Start Single Fun -->
+                  <div class="single-fun">
+                     <i class="icofont icofont-home"></i>
+                     <div class="content">
+                        <span class="counter">1</span>
+                        <p>Research Institutions</p>
+                     </div>
+                  </div>
+                  <!-- End Single Fun -->
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Start Single Fun -->
+                  <div class="single-fun">
+                     <i class="icofont icofont-user-alt-3"></i>
+                     <div class="content">
+                        <span class="counter">2</span>
+                        <p>Suite Developers</p>
+                     </div>
+                  </div>
+                  <!-- End Single Fun -->
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Start Single Fun -->
+                  <div class="single-fun">
+                     <i class="icofont-prescription"></i>
+                     <div class="content">
+                        <span class="counter">58</span>
+                        <p>Suite Modules</p>
+                     </div>
+                  </div>
+                  <!-- End Single Fun -->
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <!-- Start Single Fun -->
+                  <div class="single-fun">
+                     <i class="icofont-simple-smile"></i>
+                     <div class="content">
+                        <span class="counter">1</span>
+                        <p>Published Articles</p>
+                     </div>
+                  </div>
+                  <!-- End Single Fun -->
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--/ End Fun-facts -->
 
-<script type="text/javascript">
-    function showContent(section)
-    {
-        // Oculta todos os conteúdos
-        const contents = document.querySelectorAll('#main-content .content');
-        contents.forEach(content => content.style.display = 'none');
+      <!-- Start Why choose -->
+      <section class="why-choose section" >
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="section-title">
+                     <h2>Why To Use The Suite?</h2>
+                     <img src="images/section-img.png" alt="#">
+                     <p><b>Solvate Suite</b> is a simple, fast, intuitive, and modular set of programs dedicated to treating all stages of the molecular simulation of liquid systems.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6 col-12">
+                  <!-- Start Choose Left -->
+                  <div class="choose-left">
+                     <h3>Advantages</h3>
+                     <div class="row">
+                        <ul class="list">
+                        <li><i class="fa fa-caret-right"></i>Multiple interfaces for various computational tools, all through a single 
+                        intuitive command line tool, which allows you to speed up various stages of computational processing.</li>
+                        <li><i class="fa fa-caret-right"></i>The suite has features for simulation preparation and execution, analysis of 
+                        intermediate results, selection of microsolvation clusters and calculation of average properties..</li>
+                        <li><i class="fa fa-caret-right"></i>Various possibilities for adjusting calculation settings, making simple
+                        the process of adjusting between predictive power and computational cost.</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- End Choose Left -->
+               </div>
+               <div class="col-lg-6 col-12">
+                  <!-- Start Choose Rights -->
+                  <div class="choose-right">
+                     <div class="video-image">
+                        <!-- Video Animation -->
+                        <div class="promo-video">
+                           <div class="waves-block">
+                              <div class="waves wave-1"></div>
+                              <div class="waves wave-2"></div>
+                              <div class="waves wave-3"></div>
+                           </div>
+                        </div>
+                        <!--/ End Video Animation -->
+                        <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4" class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                     </div>
+                  </div>
+                  <!-- End Choose Rights -->
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/ End Why choose -->
 
-        // Mostra o conteúdo da seção clicada
-        document.getElementById(section).style.display = 'block';
-    }
-</script>
+      <!-- Footer Area -->
+      <footer id="footer" class="footer ">
+         <!-- Copyright -->
+         <div class="copyright">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-12 col-md-12 col-12">
+                     <div class="copyright-content">
+                        <p>© Copyright 2024  |  All Rights Reserved</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--/ End Copyright -->
+      </footer>
+      <!--/ End Footer Area -->
 
-</body>
-
+      <!-- jquery Min JS -->
+      <script src="js/jquery.min.js"></script>
+      <!-- jquery Migrate JS -->
+      <script src="js/jquery-migrate-3.0.0.js"></script>
+      <!-- jquery Ui JS -->
+      <script src="js/jquery-ui.min.js"></script>
+      <!-- Easing JS -->
+      <script src="js/easing.js"></script>
+      <!-- Color JS -->
+      <script src="js/colors.js"></script>
+      <!-- Popper JS -->
+      <script src="js/popper.min.js"></script>
+      <!-- Bootstrap Datepicker JS -->
+      <script src="js/bootstrap-datepicker.js"></script>
+      <!-- Jquery Nav JS -->
+      <script src="js/jquery.nav.js"></script>
+      <!-- Slicknav JS -->
+      <script src="js/slicknav.min.js"></script>
+      <!-- ScrollUp JS -->
+      <script src="js/jquery.scrollUp.min.js"></script>
+      <!-- Niceselect JS -->
+      <script src="js/niceselect.js"></script>
+      <!-- Tilt Jquery JS -->
+      <script src="js/tilt.jquery.min.js"></script>
+      <!-- Owl Carousel JS -->
+      <script src="js/owl-carousel.js"></script>
+      <!-- counterup JS -->
+      <script src="js/jquery.counterup.min.js"></script>
+      <!-- Steller JS -->
+      <script src="js/steller.js"></script>
+      <!-- Wow JS -->
+      <script src="js/wow.min.js"></script>
+      <!-- Magnific Popup JS -->
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <!-- Counter Up CDN JS -->
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Main JS -->
+      <script src="js/main.js"></script>
+   </body>
 </html>
