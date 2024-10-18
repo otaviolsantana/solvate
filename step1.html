@@ -86,7 +86,6 @@
                                  </li>
                                  <li><a href="more.html">Tutorials<i class="icofont-rounded-down"></i></a>
                                     <ul class="dropdown">
-                                       <li><a href="guide.html"    >Quick User Guide & Start Instructions</a></li>
                                        <li><a href="tutorial1.html">Creation of Simulation Box & Force Field Parameters</a></li>
                                        <li><a href="tutorial2.html">Submission of Simulations & Analysis of Data</a></li>
                                        <li><a href="tutorial3.html">Clusters Selection & Microsolvation Treatment</a></li>
@@ -124,15 +123,21 @@
          <div class="container">
             <div class="row">
                <div class="choose-left">
-                  <h3>Solvate Suite: Quick User Guide</h3>
+                  <h3>Step #1 Tutorial: Creating the Initial Configuration</h3>
                </div>
                <div class="text">
                   <p style="font-size: 23px">
-                  This is a quick guide for <b>Solvate Suite</b>, a set of programs for building initial simulation box configuration, force 
-                  field, and topology files for molecular dynamics simulations of molecular systems in solution. Click on the button below to 
-                  view the corresponding tutorial.</p></br>
-                  <h4><a href="https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/1_GMDFF.md" target="top" class="btn">
-                  Creation of Simulation Box & Force Field Parameters</a></h4></br>
+                  The <b>Solvate Suite</b> provides optimized strategies for initial simulation box configuration. This includes creating or adjusting force field parameters and creating the initial simulation box. The generation of molecular dynamics force fields is made by GMDFF module, that generates force field parameters (itp files) and makes specific adjustments to the topology (top file) based on various input formats, such as files from <i>Gaussian</i>, <i>ORCA</i>, <i>xTB</i>, and <i>GROMACS</i>. The construction of the initial simulation box is performed by the PACKS module, through the iterative use of the <i>PackMol</i> program.</p></br>
+                  <p style="font-size: 23px">
+                  Click on the buttons below to start the corresponding tutorial.</p></br>
+                  <h4>
+                  <a href="https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/1_GMDFF.md" target="top" class="btn">
+                  Force Field Parameters</a>
+                  <a href="https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/2_PACKS.md" target="top" class="btn">
+                  Creation of Simulation Box</a>
+                  <a href="step2.html" class="btn primary">
+                  Next Step »</a>
+                  </h4></br>
                </div>
             </div>
          </div>
