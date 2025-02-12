@@ -58,7 +58,7 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
 
    ***Electronic Structure and Molecular Dynamics Simulation Programs***
 
-     - xTB v6.6.1
+     - xTB v6.0
      - CREST v2.12
      - ORCA 5.0
      - GROMACS 2023.3
