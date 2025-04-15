@@ -90,6 +90,11 @@ Then, adjust the “profile” and “config” files, and run the “solvate.co
 	- Integration of the MICRO, GCALC, and ONIOM modules via MSRUN to automate microsolvation.
  	- Bug fixes...
 
+* _Solvate Suite 2025.04_
+ 
+	- Inclusion of resources for deleting clusters before and after optimization.
+ 	- Bug fixes...
+
 **CITATION**
 
 If you use _Solvate Suite_, please cite:
