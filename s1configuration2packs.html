@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction &#8212; Solvate Suite - Comprehensive Manual</title>
+    <title>1.3. PACKS &#8212; Solvate Suite - Comprehensive Manual</title>
   
   
   
@@ -57,10 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'manual';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's1configuration2packs';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Configuration" href="s1configuration.html" />
+    <link rel="next" title="2. Simulation" href="s2simulation.html" />
+    <link rel="prev" title="1.2. GMDFF" href="s1configuration1gmdff.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -143,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="manual.html">
   
   
   
@@ -174,18 +173,18 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="manual.html">
                     Introduction
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="s1configuration.html">1. <strong>Configuration</strong></a><ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="s1configuration.html">1. <strong>Configuration</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="s1configuration1gmdff.html">1.2. <strong>GMDFF</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="s1configuration2packs.html">1.3. <strong>PACKS</strong></a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. <strong>PACKS</strong></a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s2simulation.html">2. <strong>Simulation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s2simulation1mdrun.html">2.2. <strong>MDRUN</strong></a></li>
@@ -279,7 +278,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmanual.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fs1configuration2packs.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -309,7 +308,7 @@
       
       
       
-      <li><a href="_sources/manual.md" target="_blank"
+      <li><a href="_sources/s1configuration2packs.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -393,7 +392,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>PACKS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -403,7 +402,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-box-creation">1.3.1. Simulation Box Creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">1.3.2. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">1.3.3. Quickstart Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -415,32 +416,65 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<p>Welcome to the comprehensive <strong>Solvate Suite Manual</strong>!</p>
-<p><a class="reference external" href="https://otaviolsantana.github.io/solvate/" title="Solvate Suite Homepage"><em>Solvate Suite</em></a> is a modular and integrated toolkit designed to streamline the preparation and processing of molecular systems with explicit solvents, bridging molecular dynamics simulations with quantum chemistry calculations. This package was conceived to meet the needs of researchers working at the interface between classical mechanics and electronic structure methods, especially in contexts that require a more realistic modeling of solvated environments — such as reaction mechanisms in solution, spectroscopic studies, and thermochemical properties.</p>
-<p>With a flexible and highly customizable approach, <em>Solvate Suite</em> allows you to:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="packs">
+<h1><span class="section-number">1.3. </span><strong>PACKS</strong><a class="headerlink" href="#packs" title="Link to this heading">#</a></h1>
+<section id="simulation-box-creation">
+<h2><span class="section-number">1.3.1. </span>Simulation Box Creation<a class="headerlink" href="#simulation-box-creation" title="Link to this heading">#</a></h2>
+<p>The PACKS module mediates the creation of the simulation box, through the iterative use of the PackMol program. It can be used from the command:</p>
+<blockquote>
+<div><p>packs file1.ext file2.ext {…} ⟨-options⟩</p>
+</div></blockquote>
+<p>where <em>ext</em> is one of the extensions recognized by Solvate Suite (com/log [Gaussian], inp/out [ORCA], xyz/xtb [xTB], gro/pdb [GROMACS]), fileN the files with the structures of the solute and solvent molecules, and “-options” a set of options for the configuration of the box to be created.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">packs</span></code> in the terminal and press Enter to see the full list of execution options for the module.</p>
+</div>
+</section>
+<section id="execution-options">
+<h2><span class="section-number">1.3.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>packs ⟨solute⟩ {⟨solvent⟩} ⟨-options⟩</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> ⟨solute⟩ = File with solute  geometry (.com/log/inp/out/xyz/xtb/gro/pdb)
+⟨solvent⟩ = File with solvent geometry (.com/log/inp/out/xyz/xtb/gro/pdb)
+
+  -------------------------------------------------------------------------------------------------
+     Nmol = Number of solvent molecules in the packing step.           [Default: 0][=Determine]    [-nm]
+     Npck = Number of packing layers.                                  [Default: 2]                [-np]
+     dCel = Dimensions of the simulation cell (in nanometers).         [Default: Not defined]      [-dc]
+     gCel = Gap between solute and cell edges (in nanometers).         [Default: Not defined]      [-dg]
+     bCon = Molal concentration of the simulation cell (in mol·kg⁻¹).  [Default: Not defined]      [-bc]
+     cCon = Molar concentration of the simulation cell (in mol·L⁻¹).   [Default: Not defined]      [-cc]
+     Prop = Proportion between solvent molecules. [N1:N2:...]          [Default: Not defined]      [-pr]
+     Dens = Density of the simulation cell (in g·mL⁻¹).                [Default: 1.0]              [-ds]⁽*⁾
+     cIon = File with counterion to be added for charge neutrality.    [Default: None]             [-ci]
+    Shape = Packaging format (sphere|cube|box).                        [Default: Sphere/Cube]      [-sp]
+   Tolera = Minimum distance tolerated in packing (in Å).              [Default: Not defined]      [-to]
+   Repack : Resubmit the packing procedure with new parameters.        [Default: No]               [-rp]
+    Force : Run in forced mode (no warning messages).                  [Default: No]               [-fm]
+   Normal : Run in normal mode (normal packing configuration).         [Default: No]               [-cv]
+   Iterat : Run in iterative mode (to adjust tolerance).               [Default: No]               [-it]
+  Include : Insert external force field into generated topologie.      [Default: No]               [-in]⁽†⁾
+   FField = Force field parameters.      [OPL|GRO|CHM|AMB|LPG|QFC|ATB] [Default: OPLS/AA]          [-ff]⁽†⁾
+   Backup : Save original input files.                                 [Default: No]               [-bk]
+  Solvent = Solvent to be used in C-PCM/ALPB solvation model.          [Default: Auto]             [-sv]
+     List : Lists the set of solvents in the database.                 [Default: No]               [-ls]
+    Check : Checks the consistency of simulation box settings.         [Default: No]               [-ck]
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Configurable options in automated mode. ⁽†⁾ GROMACS only
+</pre></div>
+</div>
+</section>
+<section id="quickstart-examples">
+<h2><span class="section-number">1.3.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
+<p>For examples, see:</p>
 <ul class="simple">
-<li><p>Generate solvation boxes with different solvents and force fields (OPLS-AA, GROMOS, CHARMM, among others);</p></li>
-<li><p>Integrate data from molecular dynamics simulations with input files for electronic structure calculations (DFT, semiempirical, MP2, etc.);</p></li>
-<li><p>Automate repetitive steps such as snapshot extraction, and input preparation for software like Gaussian, ORCA, and xTB;</p></li>
-<li><p>Perform statistical and structural analyses of solvent environments around target species.</p></li>
-</ul>
-<p>This manual was written to guide users — from beginners to advanced — through the efficient use of <em>Solvate Suite</em>’s features. Throughout the chapters, you will find step-by-step instructions, practical examples, useful tips, and conceptual explanations that help you understand not only the “how”, but also the “why” of each step.</p>
-<p>Get ready to accelerate your computational workflow and explore complex systems with greater control, reproducibility, and speed.</p>
-<p>Click <a class="reference external" href="https://otaviolsantana.github.io/solvate/" title="Solvate Suite Homepage">here</a> to return to the <em>Solvate Suite</em> homepage.</p>
-<section id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong><em>Solvate Suite</em>: A Command-Line Interface for Molecular Simulations and Multiscale Microsolvation Modeling</strong>
-Otávio L. Santana; Daniel G. Silva; Sidney R. Santana
-<em>J. Chem. Inf. Model. 2024, 64, 9, 3767–3778</em></p></li>
+<li><p>Example #1: <a class="reference external" href="https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test01" title="Example #1 with ORCA program">Creating a box for ORCA with a solute and water molecules</a></p></li>
+<li><p>Example #2: <a class="reference external" href="https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test02" title="Example #2 with ORCA program">Creating a box for ORCA with a solute and solvent mixture</a></p></li>
+<li><p>Example #3: <a class="reference external" href="https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test03" title="Example #3 with GROMACS program">Creating a box for GROMACS with a solute and water molecules</a></p></li>
+<li><p>Example #4: <a class="reference external" href="https://github.com/otaviolsantana/solvate/tree/main/tests/examples/2_PACKS_Test04" title="Example #4 with GROMACS program">Creating a box for GROMACS with a solute and a solvent mixture</a></p></li>
 </ul>
 </section>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -473,12 +507,21 @@ Otávio L. Santana; Daniel G. Silva; Sidney R. Santana
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="s1configuration1gmdff.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span><strong>GMDFF</strong></p>
+      </div>
+    </a>
     <a class="right-next"
-       href="s1configuration.html"
+       href="s2simulation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span><strong>Configuration</strong></p>
+        <p class="prev-next-title"><span class="section-number">2. </span><strong>Simulation</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -498,7 +541,9 @@ Otávio L. Santana; Daniel G. Silva; Sidney R. Santana
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-box-creation">1.3.1. Simulation Box Creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">1.3.2. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">1.3.3. Quickstart Examples</a></li>
 </ul>
   </nav></div>
 
