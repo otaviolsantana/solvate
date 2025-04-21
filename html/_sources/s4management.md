@@ -1,4 +1,0 @@
-# **Management**
-
-## File Management
-
