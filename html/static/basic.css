@@ -10,6 +10,9 @@
  */
 
 /* -- main layout ----------------------------------------------------------- */
+p {
+    text-align: justify;
+}
 
 div.clearer {
     clear: both;
