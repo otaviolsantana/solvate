@@ -29,4 +29,4 @@ This is a repository of test files for executing the program suite, integrated i
 **BONDS & GCALC**
 
 * Test #01: [Microsolvation at H-bonds level](https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/5_HBOND_Test01.zip). [BONDS example]
-* Test #02: [Microsolvation at H-bonds level](https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/5_GCALC_Test01.zip). [GCALC example]
+* Test #02: [Microsolvation at first solvation shell](https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/5_GCALC_Test01.zip). [GCALC example]
