@@ -424,14 +424,14 @@ document.write(`
 <blockquote>
 <div><p>gmdff input.ext</p>
 </div></blockquote>
-<p>where <em>ext</em> is one of the extensions recognized by the <em>Solvate Suite</em> (com/log [Gaussian], inp/out [ORCA], xyz/xtb [xTB], gro/pdb [GROMACS]).</p>
+<p>where <em>ext</em> is one of the extensions recognized by the <em>Solvate Suite</em> (com/log [<em>Gaussian</em>], inp/out [<em>ORCA</em>], xyz/xtb [<em>xTB</em>], gro/pdb [<em>GROMACS</em>]).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Simply type <code class="docutils literal notranslate"><span class="pre">gmdff</span></code> in the terminal and press Enter to see the full list of execution options for the module.</p>
 </div>
 <p>There are 4 scenarios in which this module can be used:</p>
 <ul class="simple">
-<li><p>In the case of biomolecule PDB files, the program performs structure preparation (removal of heteroatoms and addition of hydrogens, without adjusting protonation based on pH, which may require additional preparations to be carried out by the user), followed by conversion to the GROMACS format (gro file) and creation of the force field parameters in a single file (itp).</p></li>
+<li><p>In the case of biomolecule PDB files, the program performs structure preparation (removal of heteroatoms and addition of hydrogens, without adjusting protonation based on pH, which may require additional preparations to be carried out by the user), followed by conversion to the <em>GROMACS</em> format (gro file) and creation of the force field parameters in a single file (itp).</p></li>
 <li><p>In the case of force fields obtained by external servers (such as LigParGen and ATB) the module removes any residual charges, a necessary step for building simulation boxes that are, in fact, electrically neutral. This is done by homogeneously compensating for any residual charge between all atoms in the structure.</p></li>
 <li><p>In the case of internally parameterized solvent molecules, the program selects the appropriate parameters and writes them to a force field file (itp), as well as converting the input file to the appropriate format (gro).</p></li>
 <li><p>In the case of small molecules, the module sequentially executes the q-Force program to generate parameters from a quantum chemical calculation.</p></li>
