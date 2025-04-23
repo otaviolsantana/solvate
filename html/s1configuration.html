@@ -198,8 +198,8 @@
 <li class="toctree-l2"><a class="reference internal" href="s3microsolvation1msrun.html">3.1. <strong>MSRUN</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="s3microsolvation2micro.html">3.2. <strong>MICRO</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="s3microsolvation3gcalc.html">3.3. <strong>GCALC</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3microsolvation4oniom.html">3.4. <strong>ONIOM</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3microsolvation5queue.html">3.5. <strong>QUEUE</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3microsolvation4queue.html">3.4. <strong>QUEUE</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3microsolvation5oniom.html">3.5. <strong>ONIOM</strong></a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s4management.html">4. <strong>Management</strong></a><ul>
@@ -415,6 +415,37 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Although the PACKS module manages the use of GMDFF, enabling the generation of force field parameters during the packing process, it is recommended to run the GMDFF module beforehand. Regardless, the PACKS module will verify the consistency of the parameters at the end of the packing procedure.</p>
 </div>
+<p>The first stage of using the suite consists of creating the simulation box. This is done using the following command:</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -nm <em>N</em></p>
+</div></blockquote>
+<p>where <em>N</em> corresponds to the number of solvent molecules. The program accepts input and output file formats of <em>Gaussian</em> (<code class="docutils literal notranslate"><span class="pre">com</span></code>, <code class="docutils literal notranslate"><span class="pre">gjf</span></code> and <code class="docutils literal notranslate"><span class="pre">log</span></code>), <em>ORCA</em> (<code class="docutils literal notranslate"><span class="pre">inp</span></code> and <code class="docutils literal notranslate"><span class="pre">out</span></code>), xTB (<code class="docutils literal notranslate"><span class="pre">xyz</span></code> and <code class="docutils literal notranslate"><span class="pre">xtb</span></code>), <em>GROMACS</em> (<code class="docutils literal notranslate"><span class="pre">gro</span></code>) and PDB (<code class="docutils literal notranslate"><span class="pre">pdb</span></code>), common formats in Computational Chemistry. In the case of ionic solutes, it is possible to include counter-ions with the command:</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -ci couterion.ext -nm <em>N</em></p>
+</div></blockquote>
+<p>The program determines the number of counterions needed to neutralize the charge in the simulation box. In these cases, the number <em>N</em> of molecules includes the incorporated counterions. The <em>Solvate</em> program also makes it possible to create simulation boxes with solvent mixtures, in which case it is necessary to inform the proportion between the molecules:</p>
+<blockquote>
+<div><p>packs solute.ext solvent1.ext solvent2.ext … -pr [<em>N1</em>:<em>N2</em>:<em>N3</em>…]</p>
+</div></blockquote>
+<p>The initial box can also be created based on the molar concentration <em>M</em> of the solute (a situation in which there is more than one solute molecule in the box):</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -cc <em>M</em></p>
+</div></blockquote>
+<p>or based on molal concentration <em>M</em>:</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -bc <em>M</em></p>
+</div></blockquote>
+<p>The box density <em>D</em> is automatically adjusted based on the density of the solvent used (if it is part of the program’s database), or defined manually by the user:</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -nm <em>N</em> -ds <em>D</em></p>
+</div></blockquote>
+<p>The list of parameterized solvents is obtained from the command:</p>
+<blockquote>
+<div><p>packs -list</p>
+</div></blockquote>
+<p>Any of the parameterized solvents can be provided as input to the program in the simulation box creation step.</p>
+<p>Several additional options for adjusting packaging parameters are available. The complete list can be accessed from the help menu of the PACKS module (just type the program name on the command line, without additional options).</p>
+<p>If the simulation box is prepared for the <em>GROMACS</em> program (which is determined by the extension of the input files) the program automatically runs the GMDFF module, which prepares the force field files as well as the system topology file. This means that, in the general case, it is possible to create the simulation box and its topology file from a single command line. In these cases, however, it is recommended to run the GMDFF module first, in order to prepare all the necessary force field files required for executing the PACKS module.</p>
 <p><img alt="image" src="images/stage1.png" /></p>
 <div class="toctree-wrapper compound">
 </div>

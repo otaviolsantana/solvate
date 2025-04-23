@@ -198,8 +198,8 @@
 <li class="toctree-l2"><a class="reference internal" href="s3microsolvation1msrun.html">3.1. <strong>MSRUN</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="s3microsolvation2micro.html">3.2. <strong>MICRO</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="s3microsolvation3gcalc.html">3.3. <strong>GCALC</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3microsolvation4oniom.html">3.4. <strong>ONIOM</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3microsolvation5queue.html">3.5. <strong>QUEUE</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3microsolvation4queue.html">3.4. <strong>QUEUE</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3microsolvation5oniom.html">3.5. <strong>ONIOM</strong></a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s4management.html">4. <strong>Management</strong></a><ul>
@@ -410,12 +410,12 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="simulation">
 <h1><span class="section-number">2. </span><strong>Simulation</strong><a class="headerlink" href="#simulation" title="Link to this heading">#</a></h1>
 <p><strong>EXECUTING MD SIMULATIONS</strong></p>
-<p>In the <strong>second stage</strong>, the <em>Solvate Suite</em> provides a group of modules to manage the MD simulations. From the MDRUN module, the simulations with the <em>ORCA</em> and <em>GROMACS</em> programs are executed using the same set of command lines. In the case of <em>ORCA</em>, the simulation execution options are set directly in the .inp input file at run time on the command line. In the case of <em>GROMACS</em>, the options are adjusted and saved in its own .mdp settings file. In the latter case, there are more simulation execution options, such as the type of barostat and thermostat, time constant for pressure and temperature coupling, isothermal compressibility, and saving frequency, among others.</p>
+<p>In the <strong>second stage</strong>, the <em>Solvate Suite</em> provides a group of modules to manage the MD simulations. From the MDRUN module, the simulations with the <em>ORCA</em> and <em>GROMACS</em> programs are executed using the same set of command lines. In the case of <em>ORCA</em>, the simulation execution options are set directly in the input (<code class="docutils literal notranslate"><span class="pre">inp</span></code> file) at run time on the command line. In the case of <em>GROMACS</em>, the options are adjusted and saved in its own input settings (<code class="docutils literal notranslate"><span class="pre">mdp</span></code> file). In the latter case, there are more simulation execution options, such as the type of barostat and thermostat, time constant for pressure and temperature coupling, isothermal compressibility, and saving frequency, among others.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The modular design allows users to run each stepd of the workflow separately, enabling detailed control and progress evaluation at any point in the simulation.</p>
 </div>
-<p>Initially, it is possible to check whether the options automatically configured after packaging are appropriate, before starting the simulation:</p>
+<p>For <em>GROMACS</em>, it is possible to check whether the options automatically configured after packaging are appropriate to start the simulation:</p>
 <blockquote>
 <div><p>mdrun simbox.gro -chk</p>
 </div></blockquote>
@@ -431,12 +431,12 @@ document.write(`
 <blockquote>
 <div><p>mdrun simbox.gro -npt -prs 1.0 -tmp 298.15 -tot 1.0</p>
 </div></blockquote>
-<p>The equilibration steps involve saving the trajectory every 100 steps (in a .trr file) to conserve disk space. To assess the equilibrium, the properties acquired during the simulation can be analyzed using the DATAS module with the following command:</p>
+<p>The equilibration steps involve saving the trajectory every 100 steps (in a <code class="docutils literal notranslate"><span class="pre">trr</span></code> file) to conserve disk space. To assess the equilibrium, the properties acquired during the simulation can be analyzed using the DATAS module with the following command:</p>
 <blockquote>
 <div><p>datas simbox.log</p>
 </div></blockquote>
 <p>Properties such as pressure (in this case NPT), temperature, density, and potential energy are evaluated graphically and statistically (descriptive statistics include the calculation of standard error, standard deviation and drift of properties; RMSD and RDF analysis are also available).</p>
-<p>After achieving equilibration, the production step can proceed. In this step, the trajectory is saved at each step of the simulation (in an .xtc file). Production is run with the following command:</p>
+<p>After achieving equilibration, the production step can proceed. In this step, the trajectory is saved at each step of the simulation (in an <code class="docutils literal notranslate"><span class="pre">xtc</span></code> file). Production is run with the following command:</p>
 <blockquote>
 <div><p>mdrun simbox.gro -prd -prs 1.0 -tmp 298.15 -tot 5.0</p>
 </div></blockquote>
