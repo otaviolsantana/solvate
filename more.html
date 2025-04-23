@@ -78,7 +78,13 @@
                            <nav class="navigation">
                               <ul class="nav menu">
                                  <li class="active"><a href="index.html">Home</a></li>
-                                 <li><a href="more.html">More</a></li>
+                                 <li><a href="more.html">More<i class="icofont-rounded-down"></i></a>
+                                    <ul class="dropdown">
+                                       <li><a href="more.html#step1">Setting Up the Simulation</a></li>
+                                       <li><a href="more.html#step2">Running the Simulation</a></li>
+                                       <li><a href="more.html#step3">Analyzing the Simulation</a></li>
+                                    </ul>
+                                 </li>
                                  <li><a href="download.html">Download<i class="icofont-rounded-down"></i></a>
                                     <ul class="dropdown">
                                        <li><a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/site.zip">Release Version</a></li>
@@ -187,12 +193,10 @@
                   <p style="font-size: 23px">
                   The <b>Solvate Suite</b> provides optimized strategies for initial simulation box configuration. This includes creating or adjusting force field parameters and creating the initial simulation box. The generation of molecular dynamics force fields is made by GMDFF module, that generates force field parameters (itp files) and makes specific adjustments to the topology (top file) based on various input formats, such as files from <i>Gaussian</i>, <i>ORCA</i>, <i>xTB</i>, and <i>GROMACS</i>. The construction of the initial simulation box is performed by the PACKS module, through the iterative use of the <i>PackMol</i> program.</p></br>
                   <p style="font-size: 23px">
-                  Click on the buttons below to start the corresponding tutorial.</p></br>
+                  Consult the program manual for an in-depth explanation..</p></br>
                   <h4>
-                  <a href="https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/1_GMDFF.md" target="top" class="btn">
-                  Force Field Parameters</a>
-                  <a href="https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/2_PACKS.md" target="top" class="btn">
-                  Creation of Simulation Box</a>
+                  <a href="#step1" class="btn primary">
+                  « Prev Step</a>
                   <a href="#step2" class="btn primary">
                   Next Step »</a>
                   </h4></br>
@@ -213,12 +217,10 @@
                   <p style="font-size: 23px">
                   The <b>Solvate Suite</b> provides diverse configuration strategies for fast equilibration. The simulation execution procedure from the command line is performed by the MDRUN module, which is a unified interface for the <i>ORCA</i> and <i>GROMACS</i> programs. Simulation management is performed entirely from the command line, without the need for manual editing of configuration files. This includes adjustments to input files and settings for executing various simulation steps, such as the initial simulation box optimization, equilibration, and production steps, with various thermostat and barostat types (when available).</p></br>
                   <p style="font-size: 23px">
-                  Click on the buttons below to start the corresponding tutorial.</p></br>
+                  Consult the program manual for an in-depth explanation..</p></br>
                   <h4>
                   <a href="#step1" class="btn primary">
                   « Prev Step</a>
-                  <a href="https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/3_MDRUN.md" target="top" class="btn">
-                  Submission of Simulations</a>
                   <a href="#step3" class="btn primary">
                   Next Step »</a>
                   </h4></br>
@@ -239,12 +241,12 @@
                   <p style="font-size: 23px">
                   The <b>Solvate Suite</b> provides diverse pre-configured options for simulation analysis. The user can execute several analyses of the molecular simulation through simple command lines, including statistical and graphical analysis. Data analysis is handled by the DATAS module, while results are displayed by the PLOTS graphic module. The analyses include temperature, pressure, density, and potential energy convergence over time, RMSD analysis for solute molecules, RDF analysis between specified atoms or centers of mass, and several trajectory extraction strategies using various filters.</p></br>
                   <p style="font-size: 23px">
-                  Click on the buttons below to start the corresponding tutorial.</p></br>
+                  Consult the program manual for an in-depth explanation..</p></br>
                   <h4>
                   <a href="#step2" class="btn primary">
                   « Prev Step</a>
-                  <a href="https://github.com/otaviolsantana/solvate/blob/main/tutorials/modules/4_DATAS.md" target="top" class="btn">
-                  Analysis of Data</a>
+                  <a href="#step3" class="btn primary">
+                  Next Step »</a>
                   </h4></br>
                </div>
             </div>
