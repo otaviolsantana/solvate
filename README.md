@@ -10,8 +10,8 @@ This is the repository for the _Solvate Suite_, a comprehensive software package
 
 For more information about the program, visit the [Solvate Suite](https://otaviolsantana.github.io/solvate) homepage. For a comprehensive overview of the package's uses, see the [user manual](https://otaviolsantana.github.io/solvate/html). To explore practical examples, check out the Zenodo repository:
 
-- [Part 1: Molecular Simulation Integration](https://doi.org/10.5281/zenodo.8110727)
-- [Part 2: Molecular Modeling of Microsolvation](https://doi.org/10.5281/zenodo.10073747)
+- Part 1: [Molecular Simulation Integration](https://doi.org/10.5281/zenodo.8110727)
+- Part 2: [Molecular Modeling of Microsolvation](https://doi.org/10.5281/zenodo.10073747)
 
 **CHANGELOG**
 
