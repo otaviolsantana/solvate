@@ -8,7 +8,7 @@
 
 This is the repository for the _Solvate Suite_, a comprehensive software package designed to address various challenges in molecular modeling. The suite's modules interface with widely used open-source software such as _ORCA_, _xTB_, _GROMACS_, _PackMol_, and _Q-Force_, facilitating the sequential treatment of all stages of molecular modeling involving explicit interaction of the species of interest with the solvent, employing both molecular simulation procedures and electronic structure calculations in a hybrid approach (explicit/implicit solvation).
 
-For more information about the program, visit the [Solvate Suite](https://otaviolsantana.github.io/solvate) homepage. For a comprehensive usage overview, refer to the [user manual](https://otaviolsantana.github.io/solvate/html). To explore practical examples, check out the Zenodo repository:
+For more information about the program, visit the [Solvate Suite](https://otaviolsantana.github.io/solvate) homepage. For a comprehensive overview of the package's uses, see the [user manual](https://otaviolsantana.github.io/solvate/html). To explore practical examples, check out the Zenodo repository:
 
 - [Part 1: Molecular Simulation Integration](https://doi.org/10.5281/zenodo.8110727)
 - [Part 2: Molecular Modeling of Microsolvation](https://doi.org/10.5281/zenodo.10073747)
