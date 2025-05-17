@@ -33,6 +33,11 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- Inclusion of resources for deleting clusters before and after optimization.
  	- Bug fixes...
 
+* _Solvate Suite 2025.07_ (Coming soon...)
+ 
+	- Inclusion of a feature in GMDFF for running Q-Force with user-customized parameters.
+ 	- Bug fixes...
+
 **CITATION**
 
 If you use _Solvate Suite_, please cite:
