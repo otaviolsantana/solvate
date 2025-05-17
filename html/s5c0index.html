@@ -404,6 +404,45 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solvs">5.1. <strong>SOLVS</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">5.2. <strong>MDPAR</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check">5.3. <strong>CHECK</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compt">5.4. <strong>COMPT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">5.5. <strong>CONFS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delta">5.6. <strong>DELTA</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gcopt">5.7. <strong>GCOPT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imags">5.8. <strong>IMAGS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molap">5.9. <strong>MOLAP</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rmsde">5.10. <strong>RMSDE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalc">5.11. <strong>SCALC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solvx">5.12. <strong>SOLVX</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stand">5.13. <strong>STAND</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statx">5.14. <strong>STATX</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subst">5.15. <strong>SUBST</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summy">5.16. <strong>SUMMY</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suppy">5.17. <strong>SUPPY</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sview">5.18. <strong>SVIEW</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pdbio">5.19. <strong>PDBIO</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pdb2x">5.20. <strong>PDB2X</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ionic">5.21. <strong>IONIC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grout">5.22. <strong>GROUT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">5.23. <strong>GRO2X</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">5.24. <strong>GROTC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outin">5.25. <strong>OUTIN</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infos">5.26. <strong>INFOS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">5.27. <strong>CLEAN</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit">5.28. <strong>SUBMIT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungsn">5.29. <strong>runGSN</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungvw">5.30. <strong>runGVW</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runorca">5.31. <strong>runORCA</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runxtb">5.32. <strong>runXTB</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runcrest">5.33. <strong>runCREST</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungmx">5.34. <strong>runGMX</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runbabel">5.35. <strong>runBABEL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runjmol">5.36. <strong>runJMOL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runrmsde">5.37. <strong>runRMSDE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runvmd">5.38. <strong>runVMD</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runpackmol">5.39. <strong>runPACKMOL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runcforce">5.40. <strong>runCFORCE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runqforce">5.41. <strong>runQFORCE</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -419,14 +458,592 @@ document.write(`
 <h1><span class="section-number">5. </span>Additional Modules<a class="headerlink" href="#additional-modules" title="Link to this heading">#</a></h1>
 <section id="solvs">
 <h2><span class="section-number">5.1. </span><strong>SOLVS</strong><a class="headerlink" href="#solvs" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>List of available solvents and ions for packaging</p></li>
+<ul>
+<li><p>List of available solvents and ions for packaging</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+solvs [&lt;solvent&gt;] [&lt;-option&gt;]
+
+OPTIONS/DEFAULTS
+   -field T   [Force field parameters]
+               ► ALL = All force fields
+               ● OPL = OPLS-AA/L all-atom force field
+               ○ LPG = OPLS-AA/L (from LigParGen)
+               ○ QFC = OPLS-AA/L (from Q-Force)
+               ● GRO = GROMOS96 54a7 force field
+               ○ ATB = GROMOS96 54a7 (from ATB)
+               ● CHM = CHARMM36 all-atom force field
+               ● AMB = AMBER-GS force field
+-------------------------------------------------------------
+</pre></div>
+</div>
+</li>
 </ul>
 </section>
 <section id="mdpar">
 <h2><span class="section-number">5.2. </span><strong>MDPAR</strong><a class="headerlink" href="#mdpar" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>List of available configuration files for MD simulations</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+mdpar [⟨-step N⟩]
+
+OPTIONS/DEFAULTS
+     -step N   [Step for extracting MDP parameters]
+               * 0/ALL = List all MDP files
+               * 1/OPT = Box Optimization
+               * 2/MIN = Energy Minimization
+               * 3/NVT = NVT Equilibration
+               * 4/NPT = NPT Equilibration
+               * 5/PRD = NPT Production
+-------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="check">
+<h2><span class="section-number">5.3. </span><strong>CHECK</strong><a class="headerlink" href="#check" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Monitoring of procedures progress</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
+check ⟨input.ext⟩ [⟨compt.ext⟩] [⟨-options⟩]
+
+PARAMETERS
+     input.ext [Input file]
+     compt.ext [Compacted file]
+               [Extensions: COM/INP/XYZ/LOG/OUT/XTB/TMP]
+
+OPTIONS
+    -ext       [Extract compacted internal file]
+               (ex.: check inpfile.zip cptfile.cpt -ext)
+    -del       [Deletes compacted internal file][zip only]
+               (ex.: check inpfile.zip cptfile.cpt -del)
+    -ren       [Renames compacted internal file][zip only]
+               (ex.: check inpfile.zip oldfile.cpt -ren newfile.cpt)
+--------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="compt">
+<h2><span class="section-number">5.4. </span><strong>COMPT</strong><a class="headerlink" href="#compt" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Compression of output files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------
+compt ⟨output.log/out/xtb⟩ [-chk]
+
+PARAMETERS
+    output.ext [Output LOG/OUT/XTB file]
+----------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="confs">
+<h2><span class="section-number">5.5. </span><strong>CONFS</strong><a class="headerlink" href="#confs" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Solute conformers extraction with energy analysis</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
+confs ⟨input.trj/try.xyz⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.ext [Output LOG/OUT/XTB file]
+
+OPTIONS
+    -for       [Force new extraction and override previous XTB file] [-fm]
+--------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="delta">
+<h2><span class="section-number">5.6. </span><strong>DELTA</strong><a class="headerlink" href="#delta" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Reaction free energy calculation (under development)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------------------------------------------------------------
+delta -ir ⟨list⟩ -ip ⟨list⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.ext [Output LOG/OUT/XTB file]
+
+OPTIONS
+    -reg [L]   [List of files .inf/dat for reactant molecules:stoichiometric coefficients] [-ir]
+               [reag1.inf/dat:c1,reag2.inf/dat:c2,...]
+    -prd [L]   [List of files .inf/dat for product  molecules:stoichiometric coefficients] [-ip]
+               [prod1.inf/dat:c1,prod2.inf/dat:c2,...]
+------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="gcopt">
+<h2><span class="section-number">5.7. </span><strong>GCOPT</strong><a class="headerlink" href="#gcopt" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>gCalc SOC optmization procedure</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------------------------------------------------
+gcopt ⟨slt.xyz/slt.slt/solute.gjf⟩ [⟨-options⟩] &amp;
+
+PARAMETERS
+    slt.xyz    [Input XYZ/SLT/GJF file]
+
+OPTIONS/DEFAULTS
+    -key K     [List of keywords]                      [Default: &quot;! M062X 6-31+G(d) Opt&quot;]
+    -svt A     [Solvent type for CPCM solvation]       [Default: None]
+    -prs p     [Pressure for thermochemistry (in bar)] [Default: 1.0]
+    -tmp T     [Temperature for thermochemistry (in K)][Default: 298.15]
+    -cut N     [Cut value for structural RMSD]         [Default: 0.075]
+    -opt       [Perform a single geometry optimization][Default: Yes]
+    -fgo       [Perform a full geometry optimization]  [Default: None]
+
+ADDITIONAL
+    -prc P     [Number of processors to be used]       [Default: 4]
+    -mem M     [Amount of memory to use in GB]         [Default: 8]
+-----------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="imags">
+<h2><span class="section-number">5.8. </span><strong>IMAGS</strong><a class="headerlink" href="#imags" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Imaginary mode distortion</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------
+imags &lt;output.log/out/xtb&gt; [-img fator]
+
+PARAMETERS
+    output.ext [Output LOG/OUT/XTB file]
+----------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="molap">
+<h2><span class="section-number">5.9. </span><strong>MOLAP</strong><a class="headerlink" href="#molap" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Structural alignment for RMSD minimization</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------------------------------
+molap ⟨reference.ext⟩ ⟨structure.ext⟩ [⟨trajectory.trj.xyz⟩] [⟨-options⟩]
+
+PARAMETERS
+     files.ext [Input  COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
+
+OPTIONS
+    -bak       [Save modified “structure” file with minimized RMSD (at system origin)]      [-bk]
+    -ref       [Save modified “structure” file with minimized RMSD (at “reference” center)] [-rf]
+    -str       [Save modified “structure” file with minimized RMSD (at “structure” center)] [-st]
+    -slt       [Reorientation relative to the central solute fragment]                      [-sf]
+-------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="rmsde">
+<h2><span class="section-number">5.10. </span><strong>RMSDE</strong><a class="headerlink" href="#rmsde" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Calculation of structural RMSD and solute energy</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------------------------------------------------------
+rmsde ⟨reference.ext⟩ ⟨structure.ext⟩ [⟨preoptimization.ext⟩] [⟨trajectory.trj.xyz⟩]
+
+PARAMETERS
+     input.ext [Output COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
+
+OPTIONS
+    -min       [Maximum structural superposition for RMSD minimization]              [-mr]
+    -bak       [Save RMSD information in the input “structure” file]                 [-bk]
+    -for       [Force new calculation and override previous output]                  [-fm]
+------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="scalc">
+<h2><span class="section-number">5.11. </span><strong>SCALC</strong><a class="headerlink" href="#scalc" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Chemical shifts calculator</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+scalc ⟨input.trj.xyz⟩ [⟨-options⟩]
+
+PARAMETERS
+ input.trj.xyz [Output TRJ file]
+
+OPTIONS
+    -ato A     [Atomic symbol of the species to be analyzed] [-at]
+    -ref N     [Reference value for chemical shifts (in ppm)] [-rf]
+    -eqv [L]   [List of equivalent atoms. (note: -eqv=[A1=A2:B1=B2=B3...])] [-eq]
+               +----------------------------------------------------------+
+    -out F     [Force reading specified ONIOM output file]                  [-of]
+    -out       [Force reading default ONIOM output file]                    [-of]
+               +----------------------------------------------------------+
+    -hbd       [Use BONDS data]                                             [-hb]
+    -gcc       [Use GCALC data]                                             [-gc]
+    -plt       [Plot the NMR spectrum]                                      [-pt]
+---------------------------------------------------------------------------
+* Note : Requires “gcc” file, and optionally “pcm” and “exp” files.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="solvx">
+<h2><span class="section-number">5.12. </span><strong>SOLVX</strong><a class="headerlink" href="#solvx" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Solvent identifier in clusters</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
+solvx ⟨file.trj.xyz⟩
+
+PARAMETERS
+  file.trj.xyz [Output TJR.XYZ file]
+------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="stand">
+<h2><span class="section-number">5.13. </span><strong>STAND</strong><a class="headerlink" href="#stand" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Modify input to standard orientation</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------------
+stand ⟨input.ext⟩ &amp;
+
+PARAMETERS
+     input.ext [Input GJF/COM/INP/XYZ/GRO]
+------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="statx">
+<h2><span class="section-number">5.14. </span><strong>STATX</strong><a class="headerlink" href="#statx" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Full statistical analysis directly from GMX program</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------
+statx ⟨output.log⟩
+
+PARAMETERS
+    output.log  [Output LOG file]
+---------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="subst">
+<h2><span class="section-number">5.15. </span><strong>SUBST</strong><a class="headerlink" href="#subst" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Modification of texts in editable files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------
+subst ⟨input.ext⟩ &quot;text1&quot; &quot;text2&quot;
+
+PARAMETERS
+    input.ext [Extensions: all]
+---------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="summy">
+<h2><span class="section-number">5.16. </span><strong>SUMMY</strong><a class="headerlink" href="#summy" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Extraction of properties from output files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------------
+summy ⟨output.log/out/xtb⟩
+
+PARAMETERS
+    output.ext  [Output LOG/OUT/XTB file]
+
+OPTIONS/DEFAULTS
+       -prs N   [Pressure configuration for thermodinamic calculation]
+       -tmp N   [Temperature configuration for thermodinamic calculation]
+       -fcc N   [Final concentration after compression (in mol·L⁻¹)]
+       -frq N   [Scale factor for frequencies (for zero-point energy correction)]
+       -qha &lt;N&gt; [Quasi-Harmonic Approximation (with optional cutoff frequency)]
+---------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="suppy">
+<h2><span class="section-number">5.17. </span><strong>SUPPY</strong><a class="headerlink" href="#suppy" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Extraction of supplementary data from output files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------------
+suppy ⟨output.log/out/xtb⟩
+
+PARAMETERS
+    output.ext  [Output LOG/OUT/XTB file]
+
+OPTIONS/DEFAULTS
+       -prs N   [Pressure configuration for thermodinamic calculation]
+       -tmp N   [Temperature configuration for thermodinamic calculation]
+       -fcc N   [Final concentration after compression (in mol·L⁻¹)]
+       -frq N   [Scale factor for frequencies (for zero-point energy correction)]
+       -qha &lt;N&gt; [Quasi-Harmonic Approximation (with optional cutoff frequency)]
+---------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="sview">
+<h2><span class="section-number">5.18. </span><strong>SVIEW</strong><a class="headerlink" href="#sview" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Visualization of input/output files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------
+sview ⟨input.ext⟩ [⟨-options⟩] &amp;
+
+PARAMETERS
+    input.ext  [Input file]⁽*⁾
+
+GENERAL OPTIONS
+    -try I     [Generate a try file with N truncated steps (.trj file)]
+    -vmd       [Force file open with VMD program]
+    -cpt       [Perform compression of input/output files for GVW program]
+
+JMOL OPTIONS
+    -noc       [Run without input convertion]
+
+VMD OPTIONS
+    -cpk       [Show solute with VDW representation]
+    -vdw       [Show solute with VDW representation]
+    -lico      [Activate Licorice for solvent shell]
+    -dyna      [Activate DynamicBonds for solvent shell]
+    -surf      [Activate QuickSurf for solvent shell]
+    -text      [Execute in a text mode]
+--------------------------------------------------------------------------------
+⁽*⁾ Conversions: COM/GJF/LOG/INP/OUT/XYZ/XTB/PDB/GRO/TRJ
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="pdbio">
+<h2><span class="section-number">5.19. </span><strong>PDBIO</strong><a class="headerlink" href="#pdbio" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>PDB processor for Biomolecular systems</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+pdbio ⟨input.pdb⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.pdb [Input PDB file]
+output.gro/itp [Output GRO/ITP file]
+
+OPTIONS/DEFAULTS
+    -ffp T     [Force field parameters]  [Default: OPLS]
+               * GRO = GROMOS96 54a7 force field
+               * OPL = OPLS-AA/L all-atom force field
+
+ADDITIONAL
+    -pdb       [Archives PDB input]
+    -gro       [Generate GRO geometry file]
+    -itp       [Produces ITP forcefield file]
+    -ion       [Don&#39;t do ITP files of ionic species]
+    -lap       [Override PDB input file]
+    -cls       [Wipe all PDB comment lines]
+    -bak       [Create a backup of auxiliary files]
+-------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="pdb2x">
+<h2><span class="section-number">5.20. </span><strong>PDB2X</strong><a class="headerlink" href="#pdb2x" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>PDB cleaner module</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------
+pdb2x ⟨input.pdb⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.pdb [Input PDB file]
+    output.ent [Output ENT file]
+--------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="ionic">
+<h2><span class="section-number">5.21. </span><strong>IONIC</strong><a class="headerlink" href="#ionic" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>PDB ions forcefield constructor</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
+ionic ⟨input.pdb⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.pdb [Input PDB file]
+output.gro/itp [Output GRO/ITP file]
+------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="grout">
+<h2><span class="section-number">5.22. </span><strong>GROUT</strong><a class="headerlink" href="#grout" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>GRO files processor module</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+grout ⟨input.gro/itp⟩ [⟨-options⟩]
+
+PARAMETERS
+ input.gro/itp [Input GRO/ITP file]
+output.gro/itp [Output GRO/ITP file]
+
+OPTIONS
+    -gro       [Archives GRO input/output]
+    -itp       [Produces a concatenated ITP forcefield file]
+    -pdb       [Converts a PDB file to GRO input geometry]
+-------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="gro2x">
+<h2><span class="section-number">5.23. </span><strong>GRO2X</strong><a class="headerlink" href="#gro2x" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>GRO cleaner module</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
+gro2x ⟨input.gro/itp⟩ [⟨-options⟩]
+
+PARAMETERS
+ input.gro/itp [Input GRO/ITP file]
+output.gro/itp [Output GRO/ITP file]
+------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="grotc">
+<h2><span class="section-number">5.24. </span><strong>GROTC</strong><a class="headerlink" href="#grotc" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>GRO total charge calculator</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------
+grotc ⟨input.gro⟩
+
+PARAMETERS
+ input.gro     [Input GRO file]
+-------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="outin">
+<h2><span class="section-number">5.25. </span><strong>OUTIN</strong><a class="headerlink" href="#outin" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>List of available configuration files for MD simulations</p></li>
+<li><p>Manipulation of input/output files</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="infos">
+<h2><span class="section-number">5.26. </span><strong>INFOS</strong><a class="headerlink" href="#infos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Displaying system information</p></li>
+</ul>
+</section>
+<section id="clean">
+<h2><span class="section-number">5.27. </span><strong>CLEAN</strong><a class="headerlink" href="#clean" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Run temporary file cleanup</p></li>
+</ul>
+</section>
+<section id="submit">
+<h2><span class="section-number">5.28. </span><strong>SUBMIT</strong><a class="headerlink" href="#submit" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Run the program in the system queue</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="rungsn">
+<h2><span class="section-number">5.29. </span><strong>runGSN</strong><a class="headerlink" href="#rungsn" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gaussian program interface</p></li>
+</ul>
+</section>
+<section id="rungvw">
+<h2><span class="section-number">5.30. </span><strong>runGVW</strong><a class="headerlink" href="#rungvw" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>GaussView program interface</p></li>
+</ul>
+</section>
+<section id="runorca">
+<h2><span class="section-number">5.31. </span><strong>runORCA</strong><a class="headerlink" href="#runorca" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>ORCA program interface</p></li>
+</ul>
+</section>
+<section id="runxtb">
+<h2><span class="section-number">5.32. </span><strong>runXTB</strong><a class="headerlink" href="#runxtb" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>xTB program interface</p></li>
+</ul>
+</section>
+<section id="runcrest">
+<h2><span class="section-number">5.33. </span><strong>runCREST</strong><a class="headerlink" href="#runcrest" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>CREST program interface</p></li>
+</ul>
+</section>
+<section id="rungmx">
+<h2><span class="section-number">5.34. </span><strong>runGMX</strong><a class="headerlink" href="#rungmx" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>GROMACS program interface</p></li>
+</ul>
+</section>
+<section id="runbabel">
+<h2><span class="section-number">5.35. </span><strong>runBABEL</strong><a class="headerlink" href="#runbabel" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>oBabel program interface</p></li>
+</ul>
+</section>
+<section id="runjmol">
+<h2><span class="section-number">5.36. </span><strong>runJMOL</strong><a class="headerlink" href="#runjmol" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Jmol program interface</p></li>
+</ul>
+</section>
+<section id="runrmsde">
+<h2><span class="section-number">5.37. </span><strong>runRMSDE</strong><a class="headerlink" href="#runrmsde" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Plots program interface</p></li>
+</ul>
+</section>
+<section id="runvmd">
+<h2><span class="section-number">5.38. </span><strong>runVMD</strong><a class="headerlink" href="#runvmd" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>VMD program interface</p></li>
+</ul>
+</section>
+<section id="runpackmol">
+<h2><span class="section-number">5.39. </span><strong>runPACKMOL</strong><a class="headerlink" href="#runpackmol" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Packmol program interface</p></li>
+</ul>
+</section>
+<section id="runcforce">
+<h2><span class="section-number">5.40. </span><strong>runCFORCE</strong><a class="headerlink" href="#runcforce" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>GMDFF program interface</p></li>
+</ul>
+</section>
+<section id="runqforce">
+<h2><span class="section-number">5.41. </span><strong>runQFORCE</strong><a class="headerlink" href="#runqforce" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Q-Force program interface</p></li>
 </ul>
 </section>
 </section>
@@ -488,6 +1105,45 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solvs">5.1. <strong>SOLVS</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">5.2. <strong>MDPAR</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check">5.3. <strong>CHECK</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compt">5.4. <strong>COMPT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">5.5. <strong>CONFS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delta">5.6. <strong>DELTA</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gcopt">5.7. <strong>GCOPT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imags">5.8. <strong>IMAGS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molap">5.9. <strong>MOLAP</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rmsde">5.10. <strong>RMSDE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalc">5.11. <strong>SCALC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solvx">5.12. <strong>SOLVX</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stand">5.13. <strong>STAND</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statx">5.14. <strong>STATX</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subst">5.15. <strong>SUBST</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summy">5.16. <strong>SUMMY</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suppy">5.17. <strong>SUPPY</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sview">5.18. <strong>SVIEW</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pdbio">5.19. <strong>PDBIO</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pdb2x">5.20. <strong>PDB2X</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ionic">5.21. <strong>IONIC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grout">5.22. <strong>GROUT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">5.23. <strong>GRO2X</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">5.24. <strong>GROTC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outin">5.25. <strong>OUTIN</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infos">5.26. <strong>INFOS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">5.27. <strong>CLEAN</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit">5.28. <strong>SUBMIT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungsn">5.29. <strong>runGSN</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungvw">5.30. <strong>runGVW</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runorca">5.31. <strong>runORCA</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runxtb">5.32. <strong>runXTB</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runcrest">5.33. <strong>runCREST</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungmx">5.34. <strong>runGMX</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runbabel">5.35. <strong>runBABEL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runjmol">5.36. <strong>runJMOL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runrmsde">5.37. <strong>runRMSDE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runvmd">5.38. <strong>runVMD</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runpackmol">5.39. <strong>runPACKMOL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runcforce">5.40. <strong>runCFORCE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runqforce">5.41. <strong>runQFORCE</strong></a></li>
 </ul>
   </nav></div>
 
