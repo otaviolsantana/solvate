@@ -433,10 +433,14 @@ document.write(`
 <p>There are 4 scenarios in which this module can be used:</p>
 <ul class="simple">
 <li><p>In the case of biomolecule PDB files, the program performs structure preparation (removal of heteroatoms and addition of hydrogens, without adjusting protonation based on pH, which may require additional preparations to be carried out by the user), followed by conversion to the <em>GROMACS</em> format (<code class="docutils literal notranslate"><span class="pre">gro</span></code> file) and creation of the force field parameters in a single input (<code class="docutils literal notranslate"><span class="pre">itp</span></code> file).</p></li>
-<li><p>In the case of small molecules, the module sequentially executes the q-Force program to generate parameters from a quantum chemical calculation.</p></li>
 <li><p>In the case of force fields obtained by external servers (such as LigParGen and ATB) the module removes any residual charges, a necessary step for building simulation boxes that are, in fact, electrically neutral. This is done by homogeneously compensating for any residual charge between all atoms in the structure.</p></li>
 <li><p>In the case of internally parameterized solvent molecules, the program selects the appropriate parameters and writes them to a force field input (<code class="docutils literal notranslate"><span class="pre">itp</span></code> file), as well as converting the input file to the appropriate format (<code class="docutils literal notranslate"><span class="pre">gro</span></code> file).</p></li>
+<li><p>In the case of small molecules, the module sequentially executes the <em>Q-Force</em> program to generate parameters from a quantum chemical calculation.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case of using the <em>Q-Force</em> program, the user can generate a default settings file with the <code class="docutils literal notranslate"><span class="pre">-chk</span></code> option. The edited file can then be read by the program with the <code class="docutils literal notranslate"><span class="pre">-cfg</span></code> option. Alternatively, the user can provide his own settings file with the <code class="docutils literal notranslate"><span class="pre">-cfg</span> <span class="pre">⟨file.ini⟩</span></code> command.</p>
+</div>
 <p>If the input file matches that of the simulation box, the program combines the force field files into a single and independent topology file. This results in only two files for starting the simulation: the simulation box (<code class="docutils literal notranslate"><span class="pre">gro</span></code> file) and the topology inputs (<code class="docutils literal notranslate"><span class="pre">top</span></code> file, with all the force field parameters).</p>
 </section>
 <section id="execution-options">
