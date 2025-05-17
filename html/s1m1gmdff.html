@@ -444,25 +444,30 @@ document.write(`
 <blockquote>
 <div><p>gmdff ⟨molecule.ext⟩ ⟨-options⟩</p>
 </div></blockquote>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------------------------------------
-   .ext = Input file extension (.com/log/inp/out/xyz/xtb/pdb/gro)
-        + ----------------------------------------------------------
-  -labs = Labels of individual molecular fragments.    [LAB:RES:FRG] [Default: Not defined]      [-lb]
-  -type = Type of residue.                             [SLT|SVT|CNT] [Default: Solute]           [-tp]
-  -cpcm = Solvent CPCM model.                                        [Default: None]             [-sv]
-  -nods = No dihedral scans.                                         [Default: Execute]          [-ns]
-  -list : Provides the complete list of parameterized solvents.      [Default: No]               [-ls]
-        + ----------------------------------------------------------
- -field = Force field parameters.      [OPL|GRO|CHM|AMB|LPG|QFC|ATB] [Default: OPLS/AA]          [-ff]
- -water = Model (conditional).         [SPC|SPCE||TIP3P|TIP4P|TIP5P] [Default: SPC/E]            [-wm]
- -inext : Insert external force field into generated topologie.      [Default: No]               [-in]
- -lists : Lists the set of solvents in the database.                 [Default: No]               [-ls]
- -local : Run in a local mode (QForce only).                         [Default: No]               [-lc]
- -backp : Save original input files.                                 [Default: No]               [-bk]
-        + ----------------------------------------------------------
-  -proc = Number of processors to be used.                           [Default: 4]                [-pc]
-  -nmem = Amount of memory in GB to be used.                         [Default: 8]                [-me]
--------------------------------------------------------------------------------------------------
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+     .ext = Input file extension (.com/log/inp/out/xyz/xtb/pdb/gro)
+          + ----------------------------------------------------------
+     -typ = Type of residue.                             [SLT|SVT|CNT] [Default: Solute]           [-tp][-type]
+
+          ● Q-Force Options
+     -chr = Molecular charge.                                          [Default: 0]                [-cm][-chrg]
+     -mul = Molecular multiplicity.                                    [Default: 1]                [-ml][-mult]
+     -pcm = Solvent for C-PCM model.                                   [Default: None]             [-sv][-cpcm]
+     -chk : Verify generated configuration file before submit.         [Default: No]               [-ck][-check]
+     -cfg = Execute with user defined input configurations.            [Default: No]               [-ic][-incfg]
+     -prc = Number of processors to be used.                           [Default: 4]                [-pc][-proc]
+     -mem = Amount of memory in GB to be used.                         [Default: 8]                [-me][-nmem]
+
+          ● Additional Options
+     -fld = Force field parameters.      [OPL|GRO|CHM|AMB|LPG|QFC|ATB] [Default: OPLS/AA]          [-ff][-field]
+     -wtr = Model (conditional).         [SPC|SPCE||TIP3P|TIP4P|TIP5P] [Default: SPC/E]            [-wm][-water]
+     -lst : Provides the complete list of parameterized solvents.      [Default: No]               [-ls][-lists]
+  -------------------------------------------------------------------------------------------------
+  Total CPUs: 12 (max. MPI-procs.) :: System Memory: 5 GB
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Repositories: https://traken.chem.yale.edu/ligpargen
+                    https://atb.uq.edu.au
+                    https://cgenff.com
 </pre></div>
 </div>
 </section>

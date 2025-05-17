@@ -427,9 +427,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">5.23. <strong>GRO2X</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">5.24. <strong>GROTC</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outin">5.25. <strong>OUTIN</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infos">5.26. <strong>INFOS</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">5.27. <strong>CLEAN</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit">5.28. <strong>SUBMIT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit">5.26. <strong>SUBMIT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infos">5.27. <strong>INFOS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">5.28. <strong>CLEAN</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungsn">5.29. <strong>runGSN</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungvw">5.30. <strong>runGVW</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runorca">5.31. <strong>runORCA</strong></a></li>
@@ -947,24 +947,107 @@ PARAMETERS
 <ul class="simple">
 <li><p>Manipulation of input/output files</p></li>
 </ul>
+<blockquote>
+<div><p>outin ⟨file_inp.ext⟩ ⟨file_out.ext⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+  FILE FORMATS                                                                                     [-ff]
+  -------------------------------------------------------------------------------------------------
+  .ext: com : Gaussian    (read/write)[gjf]
+        inp : ORCA        (read/write)
+        xyz : xTB         (read/write)
+        gro : GROMACS     (read/write)
+        pdb : PDB         (read/write)
+        log : Gaussian    (read)
+        out : ORCA        (read)
+        xtb : xTB         (read)
+        xtc : GROMACS     (read)
+        trj : XYZ/GRO/PDB (read)
+            + ----------------------------------------------------------
+        cpt : Data Comp   (write)[Compress calculated data]
+        dat : Calc Data   (write)[Extract calculated data (option: nogeom)]
+        sup : Supl Data   (write)[Extract supplementary data]
+        sep : Sepa Data   (write)[Separate input/output data]
+        job : Jobs Exec   (write)[Separate input/output jobs]
+        frq : Calc Frqs   (write)[Extract vibrational frequency data]
+        img = Imag Dist   (write)[Imaginary mode distortion (factor of distortion)]
+            + ----------------------------------------------------------
+        slt : SLTs Extn   (write)[Solute  extraction from trajectory frames]
+        svt : SVTs Extn   (write)[Solvent extraction from trajectory frames]
+  -------------------------------------------------------------------------------------------------
+
+  -------------------------------------------------------------------------------------------------
+  CONVERTION OPTIONS                                                                               [-co]
+  -------------------------------------------------------------------------------------------------
+       -key = “List of keywords” (for Gaussian or ORCA).                                           [-kw]
+       -add = “List of keywords/additional” (for Gaussian).                                        [-ad]
+       -svt = Include solvent type for implicit (with ALPB or PCM solvation method).               [-sv]
+       -nmr : Include configuration for NMR calculation (for ORCA).                                [-nm]
+            + ----------------------------------------------------------
+       -itr = Extract structure nº N of a trajectory.                              [Value: I]      [-it](●)(■)
+       -ntr = Number N of equaly spaced MD steps for truncated trajectory.         [Value: I]      [-nt](●)(■)
+       -str = Extract equaly spaced frames at every M steps from trajectory.       [Value: I]      [-st]   (■)
+       -ctr = Skipe I equilibration and extract J production MD steps (auto mode). [Value: [I:J]]  [-ct](●)(■)
+       -btr = Select frames from I trajectory sections into J% final steps.        [Value: [I:J]]  [-bt]   (■)
+       -ptr = Select frames aroud pressure P with tolerance ±D (in bar).           [Value: [P:D]]  [-pt]   (■)
+       -nsm = Number of solvent molecules in the clustering process.               [Value: I]      [-ns](●)(■)
+       -bmc = Molal conc. of the microsolvation cluster (in mol·kg⁻¹).             [Value: I]      [-bc](●)(■)
+       -grp : Extract short-ranged non-bonded potential energies.                                  [-gr]   (■)
+       -nbx : Don´t make corrections for “fragmented” molecules near the box edges.                [-nb]   (■)
+            + ----------------------------------------------------------
+       -prs = Include pressure configuration for thermodinamic calculation.        [Value: N]      [-pr]
+       -tmp = Include temperature configuration for thermodinamic calculation.     [Value: N]      [-tp]
+       -fcc = Final concentration after compression (in mol·L⁻¹).                  [Value: N]      [-cf]
+       -frq = Scale factor for frequencies (for zero-point energy correction).     [Value: N]      [-sf]
+       -qha = Quasi-Harmonic Approximation (with optional cutoff frequency).       [Value: &lt;N&gt;]    [-fq]
+  -------------------------------------------------------------------------------------------------
+  (*) I,J = Integers; N,P,D = Real. (○) xTB available. (●) ORCA available. (■) GROMACS available.
+</pre></div>
+</div>
+</section>
+<section id="submit">
+<h2><span class="section-number">5.26. </span><strong>SUBMIT</strong><a class="headerlink" href="#submit" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>Run the program in the system queue</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------
+submit ⟨program⟩ ⟨input.ext⟩ ⟨-options⟩ ⟨-ntasks I⟩
+
+PARAMETERS
+     program   [gsn/orca/xtb/gmx program]
+     input.ext [Input GJF/COM/INP/XYZ/GRO file]
+
+OPTIONS/DEFAULTS
+    -options   [Program specific options]
+    -queue  T  [Name of available queue]
+    -ntasks I  [Number of processors]    [-prc]
+    -qmemor I  [Amount of memory (in GB)][-mem]
+    -preserve  [Preserve the submission job file]
+    -debug     [Check generated job before submit]
+
+AVAILABLE SYSTEM BATCH
+    »Local Machine
+
+WARNING
+     This is an open-source script that may require
+     adjustments depending on the available queue
+     system
+---------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="infos">
-<h2><span class="section-number">5.26. </span><strong>INFOS</strong><a class="headerlink" href="#infos" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.27. </span><strong>INFOS</strong><a class="headerlink" href="#infos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Displaying system information</p></li>
 </ul>
 </section>
 <section id="clean">
-<h2><span class="section-number">5.27. </span><strong>CLEAN</strong><a class="headerlink" href="#clean" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.28. </span><strong>CLEAN</strong><a class="headerlink" href="#clean" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Run temporary file cleanup</p></li>
-</ul>
-</section>
-<section id="submit">
-<h2><span class="section-number">5.28. </span><strong>SUBMIT</strong><a class="headerlink" href="#submit" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Run the program in the system queue</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -1128,9 +1211,9 @@ PARAMETERS
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">5.23. <strong>GRO2X</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">5.24. <strong>GROTC</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outin">5.25. <strong>OUTIN</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infos">5.26. <strong>INFOS</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">5.27. <strong>CLEAN</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit">5.28. <strong>SUBMIT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit">5.26. <strong>SUBMIT</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infos">5.27. <strong>INFOS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">5.28. <strong>CLEAN</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungsn">5.29. <strong>runGSN</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungvw">5.30. <strong>runGVW</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runorca">5.31. <strong>runORCA</strong></a></li>
