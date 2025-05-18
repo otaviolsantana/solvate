@@ -386,6 +386,18 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>In the case of using the <em>Q-Force</em> program, the user can generate a default settings file with the <code class="docutils literal notranslate"><span class="pre">-chk</span></code> option. The edited file can then be read by the program with the <code class="docutils literal notranslate"><span class="pre">-cfg</span></code> option. Alternatively, the user can provide his own settings file with the <code class="docutils literal notranslate"><span class="pre">-cfg</span> <span class="pre">⟨file.ini⟩</span></code> command.</p>
 </div>
+<p>For <em>Q-Force</em>, it is possible to check whether the options are appropriate to start the force field creation:</p>
+<blockquote>
+<div><p>gmdff input.ext -chk</p>
+</div></blockquote>
+<p>In this case, a configuration file (ini) is generated with a default set of execution options, which can be edited by the user to apply custom configurations. This file can then be read using the following command:</p>
+<blockquote>
+<div><p>gmdff input.ext -cfg</p>
+</div></blockquote>
+<p>Alternatively, the user can provide a custom settings file via the following command:</p>
+<blockquote>
+<div><p>gmdff input.ext -cfg config.ini</p>
+</div></blockquote>
 <p>If the input file matches that of the simulation box, the program combines the force field files into a single and independent topology file. This results in only two files for starting the simulation: the simulation box (gro file) and the topology inputs (top file, with all the force field parameters).</p>
 </section>
 <section id="execution-options">
