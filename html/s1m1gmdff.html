@@ -366,9 +366,9 @@ document.write(`
 <h1><span class="section-number">1.1. </span>GMDFF<a class="headerlink" href="#gmdff" title="Link to this heading">#</a></h1>
 <section id="md-force-fields">
 <h2><span class="section-number">1.1.1. </span>MD Force Fields<a class="headerlink" href="#md-force-fields" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">GMDFF</span></code> module mediates the creation of force field parameters (itp files), as well as making special adjustments for the construction of the topology (top file). It can be used using the command:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">GMDFF</span></code> module mediates the creation of force field parameters (itp files), as well as making special adjustments for the construction of the topology (top file). The simplest usage consists of the following command:</p>
 <blockquote>
-<div><p>gmdff input.ext</p>
+<div><p>gmdff ⟨input.ext⟩</p>
 </div></blockquote>
 <p>where <em>ext</em> is one of the extensions recognized by the <em>Solvate Suite</em> (com/log [<em>Gaussian</em>], inp/out [<em>ORCA</em>], xyz/xtb [<em>xTB</em>], gro/pdb [<em>GROMACS</em>]).</p>
 <div class="admonition note">
@@ -388,22 +388,22 @@ document.write(`
 </div>
 <p>For <em>Q-Force</em>, it is possible to check whether the options are appropriate to start the force field creation:</p>
 <blockquote>
-<div><p>gmdff input.ext -chk</p>
+<div><p>gmdff ⟨input.ext⟩ -chk</p>
 </div></blockquote>
 <p>In this case, a configuration file (ini) is generated with a default set of execution options, which can be edited by the user to apply custom configurations. This file can then be read using the following command:</p>
 <blockquote>
-<div><p>gmdff input.ext -cfg</p>
+<div><p>gmdff ⟨input.ext⟩ -cfg</p>
 </div></blockquote>
 <p>Alternatively, the user can provide a custom settings file via the following command:</p>
 <blockquote>
-<div><p>gmdff input.ext -cfg config.ini</p>
+<div><p>gmdff ⟨input.ext⟩ -cfg config.ini</p>
 </div></blockquote>
 <p>If the input file matches that of the simulation box, the program combines the force field files into a single and independent topology file. This results in only two files for starting the simulation: the simulation box (gro file) and the topology inputs (top file, with all the force field parameters).</p>
 </section>
 <section id="execution-options">
 <h2><span class="section-number">1.1.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>gmdff ⟨molecule.ext⟩ ⟨-options⟩</p>
+<div><p>gmdff ⟨molecule.ext⟩ [⟨-options⟩]</p>
 </div></blockquote>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
      .ext = Input file extension (.com/log/inp/out/xyz/xtb/pdb/gro)

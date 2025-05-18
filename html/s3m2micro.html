@@ -366,15 +366,62 @@ document.write(`
 <h1><span class="section-number">3.2. </span>MICRO<a class="headerlink" href="#micro" title="Link to this heading">#</a></h1>
 <section id="clusters-extraction">
 <h2><span class="section-number">3.2.1. </span>Clusters Extraction<a class="headerlink" href="#clusters-extraction" title="Link to this heading">#</a></h2>
-<p>…</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module manages the extraction of microsolvation clusters. It is possible to select <em>N</em> low-energy clusters, each containing <em>M</em> solvent molecules. The value of <em>M</em> can be determined from a previous RDF analysis (using the DATAS module), defined based on the solute-solvent ratio (at a user-specified concentration), or calculated automatically (based on a cutoff distance corresponding to the diameter of the sphere surrounding the solvent molecule). The extraction is performed using the following command:</p>
+<blockquote>
+<div><p>micro ⟨simbox.trj.xyz⟩ -nc <em>N</em> -ns <em>M</em></p>
+</div></blockquote>
+<p>The extraction based on molal concentration <em>C</em> is performed using the command:</p>
+<blockquote>
+<div><p>micro ⟨simbox.trj.xyz⟩ -nc <em>N</em> -bc <em>C</em></p>
+</div></blockquote>
+<p>The extraction based on the number <em>S</em> of solvation shells (estimated from the solvent radius) is performed using the command:</p>
+<blockquote>
+<div><p>micro ⟨simbox.trj.xyz⟩ -nc <em>N</em> -nl <em>S</em></p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">micro</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
+</div>
 </section>
 <section id="execution-options">
 <h2><span class="section-number">3.2.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
-<p>…</p>
+<blockquote>
+<div><p>micro ⟨trajectory.trj.xyz⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+     auto : Execute an automated microsolvation clusterization from simulation files.              [-ms]
+          » Description
+            bCon = 1 mol·kg⁻¹ (for setting the number of solvent molecules)
+            Nstr = 1% of trajectory structures (1000 min, 10000 max)
+            cTRJ = All production steps
+          + ----------------------------------------------------------
+     -str = Number of clustered structures selected trajectory.        [Default: 1000] [Int.]      [-nc]⁽*⁾
+     -nsv = Number of solvent molecules in the clustering process.     [Default: 0]    [Int.]      [-ns]⁽*⁾
+     -sol = Number of solvent layers in the clustering process.        [Default: 1]    [Int.]      [-nl]⁽*⁾
+     -bco = Molal conc. of the microsolvation cluster (in mol·kg⁻¹).   [Default: 0.0]  [Real]      [-bc]⁽*⁾
+     -cfg = Nº of MD equilibration steps [:Nº of MD production steps]. [Default: 0:0]  [Auto]      [-ct]⁽*⁾
+     -chr = Value of microsolvated solute charge.                      [Default: 0]    [Int.]      [-ch]⁽*⁾
+     -mlt = Value of microsolvated solute multiplicity.                [Default: 1]    [Int.]      [-ml]⁽*⁾
+     -prs = Value of simulation pressure (in bar).                     [Default: 1.0]  [Real]      [-pr]⁽*⁾
+     -tmp = Value of simulation temperature (in K).                    [Default: 298]  [Real]      [-tp]⁽*⁾
+     -svt = Solvent to be used in ALPB solvation model.                [Default: Auto] [Text]      [-sv]⁽*⁾
+     -rtn : Retain the original orientation of the clusters.           [Default: No]               [-rt]⁽*⁾
+     -psv : Preserve the original trajectory file.                     [Default: No]               [-pv]⁽*⁾
+     -for : Execute in forced mode.                                    [Default: No]               [-fm]⁽*⁾
+          + ----------------------------------------------------------
+     -prc = Number of parallel CPU processes to run.                   [Default: 8]                [-pc]⁽*⁾
+     -mem = Amount of memmory to be used (in GB).                      [Default: 16]               [-mm]⁽*⁾
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Configurable options in automated mode.
+</pre></div>
+</div>
 </section>
 <section id="quickstart-examples">
 <h2><span class="section-number">3.2.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
-<p>…</p>
+<ul class="simple">
+<li><p>Example #1: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/6_MICRO_Test01.zip" title="Example #1 with a simulation with ORCA">Extracting clusters from a simulation with ORCA</a></p></li>
+<li><p>Example #2: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/6_MICRO_Test02.zip" title="Example #2 with a simulation with GROMACS">Extracting clusters from a simulation with GROMACS</a></p></li>
+</ul>
 </section>
 </section>
 

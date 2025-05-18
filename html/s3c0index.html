@@ -353,37 +353,25 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="microsolvation">
 <h1><span class="section-number">3. </span>Microsolvation<a class="headerlink" href="#microsolvation" title="Link to this heading">#</a></h1>
 <p><strong>SETTING UP THE MICROSOLVATION</strong></p>
-<p>In the <strong>third stage</strong>, after extracting the trajectory, the truncated trajectory file <code class="docutils literal notranslate"><span class="pre">simbox.try.xyz</span></code> is obtained. The MICRO module can then select <em>N</em> number of lower-energy clusters, each containing <em>M</em> solvent molecules. The value of <em>M</em> can be determined from a previous RDF analysis (using the DATAS module), set based on the solute-solvent ratio (at a concentration specified by the user), or calculated automatically (based on a cutoff distance corresponding to the diameter of the sphere encompassing the solvent molecule). The extraction is performed using the following command:</p>
+<p>In the <strong>third stage</strong>, after extracting the trajectory, the truncated trajectory file <em>simbox.try.xyz</em> is obtained. The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module can then select <em>N</em> number of lower-energy clusters, each containing <em>M</em> solvent molecules. The value of <em>M</em> can be determined from a previous RDF analysis (using the DATAS module), set based on the solute-solvent ratio (at a concentration specified by the user), or calculated automatically (based on a cutoff distance corresponding to the diameter of the sphere encompassing the solvent molecule). The extraction is performed using the following command structure:</p>
 <blockquote>
-<div><p>micro simbox.trj.xyz -nc <em>N</em> -ns <em>M</em></p>
+<div><p>micro ⟨simbox.trj.xyz⟩ [⟨-options⟩]</p>
 </div></blockquote>
-<p>The extraction based on molal concentration <em>C</em> is performed using the command:</p>
+<p>After this extraction, the selected clusters are saved in a file <em>solute.trj.xyz</em>. This file can be used to analyze hydrogen bonds with the <code class="docutils literal notranslate"><span class="pre">BONDS</span></code> module. Alternatively, one can treat microsolvation at the level of the first solvation shell with the <code class="docutils literal notranslate"><span class="pre">GCALC</span></code> module, simultaneously treating all types of short-range interactions present in the system under investigation, regardless of the nature of the solvent. These modules are executed in two steps. In the first, all clusters present in the input file are characterized, aiming to select several <em>C</em> clusters with the lowest energy. In the second step, the <em>C</em> clusters are prepared for optimization and the Gibbs free energy extrapolation, considering one of the treatment options to remove any imaginary frequencies. In each of them, the procedure uses the following command structure:</p>
 <blockquote>
-<div><p>micro simbox.trj.xyz -nc <em>N</em> -bc <em>C</em></p>
-</div></blockquote>
-<p>The extraction based on the number <em>S</em> of solvation shells (estimated from the solvent radius) is performed using the command:</p>
-<blockquote>
-<div><p>micro simbox.trj.xyz -nc <em>N</em> -nl <em>S</em></p>
-</div></blockquote>
-<p>After this extraction, the selected clusters are saved in a file named <code class="docutils literal notranslate"><span class="pre">solute.trj.xyz</span></code>. This file can be used to analyze hydrogen bonds with the BONDS module. Alternatively, one can treat microsolvation at the level of the first solvation shell with the GCALC module, simultaneously treating all types of short-range interactions present in the system under investigation, regardless of the nature of the solvent. These modules are executed in two steps. In the first, all clusters present in the input file are characterized, aiming to select several <em>C</em> clusters with the lowest energy, with the command:</p>
-<blockquote>
-<div><p>bonds solute.trj.xyz -ini -max <em>C</em></p>
+<div><p>bonds ⟨solute.trj.xyz⟩ [⟨-options⟩]</p>
 </div></blockquote>
 <p>or:</p>
 <blockquote>
-<div><p>gcalc solute.trj.xyz -ini -max <em>C</em></p>
+<div><p>gcalc ⟨solute.trj.xyz⟩ [⟨-options⟩]</p>
 </div></blockquote>
-<p>In the second step, the <em>C</em> clusters are prepared for optimization and the Gibbs free energy extrapolation, considering one of the treatment options to remove any imaginary frequencies:</p>
+<p>In the optimization step, the input files are saved in a separate jobrunning folder. In this folder, the module <code class="docutils literal notranslate"><span class="pre">QUEUE</span></code> can be executed to perform the optimization and the Gibbs free energy extrapolation in a queueing system:</p>
 <blockquote>
-<div><p>bonds solute.trj.xyz -opt -max <em>C</em></p>
+<div><p>queue [⟨-options⟩]</p>
 </div></blockquote>
-<p>or:</p>
+<p>This procedure sequentially executed the <code class="docutils literal notranslate"><span class="pre">ONION</span></code> module, which is the resource responsible for performing geometry optimization, frequency calculation, and obtaining the extrapolated Gibbs free energy:</p>
 <blockquote>
-<div><p>gcalc solute.trj.xyz -opt -max <em>C</em></p>
-</div></blockquote>
-<p>The default optimization mode is called FCA, with a lower computational cost. The input files are saved in a separate jobrunning folder at this stage. In this folder, the module QUEUE can be executed to perform the optimization and the Gibbs free energy extrapolation in a queueing system:</p>
-<blockquote>
-<div><p>queue -key “ONIOM KeyWords” -run</p>
+<div><p>oniom ⟨solute.gjf⟩ [⟨-options⟩]</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -393,7 +381,7 @@ document.write(`
 <blockquote>
 <div><p>msrun ⟨input.trj.xyz⟩ [⟨-options⟩]</p>
 </div></blockquote>
-<p>where <em>input.trj.xyz</em> can be the file <code class="docutils literal notranslate"><span class="pre">simbox.trj.xyz</span></code> (from extracted trajectory file with TRAJS module, which corresponds to the complete procedure by default), or the file <code class="docutils literal notranslate"><span class="pre">solute.trj.xyz</span></code> (from extracted clusters file with MICRO module, in which the partial procedure is executed, without MICRO reexecution). The settings provided via <code class="docutils literal notranslate"><span class="pre">⟨-options⟩</span></code> make it possible to adjust the execution of the MICRO, BONDS/GCALC and QUEUE modules independently.</p>
+<p>where <em>input.trj.xyz</em> can be the file <em>simbox.trj.xyz</em> (from extracted trajectory file with TRAJS module, which corresponds to the complete procedure by default), or the file <em>solute.trj.xyz</em> (from extracted clusters file with MICRO module, in which the partial procedure is executed, without MICRO reexecution). The settings provided via <em>-options</em> make it possible to adjust the execution of the MICRO, BONDS/GCALC, QUEUE, and ONIOM modules independently.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The list of options can be seen from the applications menu, which is accessible from the command line by typing the module name, without any other parameters.</p>

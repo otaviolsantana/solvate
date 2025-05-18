@@ -366,15 +366,51 @@ document.write(`
 <h1><span class="section-number">2.5. </span>TRAJS<a class="headerlink" href="#trajs" title="Link to this heading">#</a></h1>
 <section id="md-trajectories">
 <h2><span class="section-number">2.5.1. </span>MD Trajectories<a class="headerlink" href="#md-trajectories" title="Link to this heading">#</a></h2>
-<p>…</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">trajs</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
+</div>
 </section>
 <section id="execution-options">
 <h2><span class="section-number">2.5.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
-<p>…</p>
+<blockquote>
+<div><p>trajs ⟨trajectory.gro/xtc⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+     auto : Execute an automated trajectory extraction from simulation files.                      [-ta](●)(■)
+          » Description
+            btrj = 1000 blocks with 10% extraction
+          » NOTE: this option is recommended in queue systems.
+          + #1: Individual Options - (no data analysis) ------------------------------
+     -itr = I     : Extracts position structure #I from the trajectory.                            [-it](●)(■)⁽†⁾
+     -ntr = N     : Extract N equaly spaced MD steps for truncated trajectory.                     [-nt](●)(■)
+     -str = M     : Extract equaly spaced frames at every M steps from trajectory.                 [-st](●)(■)
+          + #2: Combinable Options - (with data analysis) ----------------------------
+     -ctr = [I:J] : Skip I equilibration steps and extract J production steps.                     [-ct](●)(■)⁽*⁾
+     -btr = [B:X] : Select frames from B trajectory blocks into X% final steps.                    [-bt]   (■)⁽*⁾
+     -ptr = [P:D] : Select configurations around pressure P with tolerance ±D (in bar).            [-pt]   (■)⁽*⁾
+          + #3: Output file formats - (GROMACS only) ---------------------------------
+     -xyz : Output in XYZ file format. [default]                                                   [-xy]   (■)
+     -pdb : Output in PDB file format.                                                             [-pd]   (■)
+     -gro : Output in GRO file format.                                                             [-gr]   (■)
+          + #4: Other Options --------------------------------------------------------
+     -prd : Select configuration production steps only and the corresponding properties.           [-pr](●)(■)⁽*⁾
+     -grp : Extract short-ranged non-bonded potential energies.                                    [-gr]   (■)⁽*⁾
+     -nbx : Don´t make corrections for “fragmented” molecules near the box edges.                  [-nb]   (■)
+     -bak : Save intermediate PDB and XVG files for alternative convertions.                       [-bk]   (■)
+     -deb : Save intermediate XVG file and create a reconstructed ENT file.                        [-db]   (■)
+     -for : Force new extraction and override previous PDB file.                                   [-fm](●)(■)
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Configurable options in automated mode. (●) ORCA available. (■) GROMACS available.
+  ⁽†⁾ Structure position, not configuration step.
+</pre></div>
+</div>
 </section>
 <section id="quickstart-examples">
 <h2><span class="section-number">2.5.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
-<p>…</p>
+<ul class="simple">
+<li><p>Under construction…</p></li>
+</ul>
 </section>
 </section>
 

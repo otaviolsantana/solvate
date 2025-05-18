@@ -368,7 +368,7 @@ document.write(`
 <h2><span class="section-number">2.2.1. </span>MD Analysis<a class="headerlink" href="#md-analysis" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">DATAS</span></code> module performs graphical and statistical analysis of simulated properties, through a unified interface for the <em>ORCA</em> and <em>GROMACS</em> programs. It can be used from the command:</p>
 <blockquote>
-<div><p>datas simbox.ext {-options}</p>
+<div><p>datas ⟨simbox.ext⟩ [⟨-options⟩]</p>
 </div></blockquote>
 <p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em> (out [<em>ORCA</em>], or log [<em>GROMACS</em>]), and “-options” a set of the configurations for the simulation execution.</p>
 <div class="admonition note">
@@ -377,16 +377,16 @@ document.write(`
 </div>
 <p>To assess the equilibrium, the properties acquired during the simulation can be analyzed with the following basic command structure:</p>
 <blockquote>
-<div><p>datas simbox.log</p>
+<div><p>datas ⟨simbox.ext⟩</p>
 </div></blockquote>
 <p>Properties such as pressure, temperature, density, and potential energy are evaluated graphically and statistically (descriptive statistics include the calculation of standard error, standard deviation and drift of properties; RMSD and RDF analysis are also available).</p>
 <p>After a production step, simulation data extraction can be performed with trajectory truncation. Several options are available, including the ability to perform RMSD and RDF analyses of the truncated trajectory. The simplest procedure is to run the command:</p>
 <blockquote>
-<div><p>datas simbox.log -ext</p>
+<div><p>datas ⟨simbox.ext⟩ -ext</p>
 </div></blockquote>
 <p>It is possible to apply a set of filters to the extraction of configurations. For example, it is possible to extract configurations whose pressure is around the target pressure <em>P</em>, within a narrow window of ±<em>D</em>:</p>
 <blockquote>
-<div><p>datas simbox.log -ext -ptr [<em>P</em>:<em>D</em>]</p>
+<div><p>datas ⟨simbox.ext⟩ -ext -ptr [<em>P</em>:<em>D</em>]</p>
 </div></blockquote>
 </section>
 <section id="execution-options">

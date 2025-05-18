@@ -368,7 +368,7 @@ document.write(`
 <h2><span class="section-number">2.1.1. </span>MD Execution<a class="headerlink" href="#md-execution" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">MDRUN</span></code> module manages the execution of simulations, through a unified interface for the <em>ORCA</em> and <em>GROMACS</em> programs. It can be used from the command:</p>
 <blockquote>
-<div><p>mdrun simbox.ext {-options}</p>
+<div><p>mdrun ⟨simbox.ext⟩ [⟨-options⟩]</p>
 </div></blockquote>
 <p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em> (<code class="docutils literal notranslate"><span class="pre">inp</span></code> [<em>ORCA</em>] or <code class="docutils literal notranslate"><span class="pre">gro</span></code> [<em>GROMACS</em>]), and “-options” a set of the configurations for the simulation execution.</p>
 <div class="admonition note">
@@ -381,27 +381,27 @@ document.write(`
 </div>
 <p>For <em>GROMACS</em>, it is possible to check whether the options automatically configured after packaging are appropriate to start the simulation:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -chk</p>
+<div><p>mdrun ⟨simbox.gro⟩ -chk</p>
 </div></blockquote>
 <p>In this case, a configuration file (mdp) is generated with a default set of execution options, which can be edited by the user to apply custom configurations. This file can then be read using the following command:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -cfg</p>
+<div><p>mdrun ⟨simbox.gro⟩ -cfg</p>
 </div></blockquote>
 <p>Alternatively, the user can provide a custom settings file via the following command:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -cfg config.mdp</p>
+<div><p>mdrun ⟨simbox.gro⟩ -cfg config.mdp</p>
 </div></blockquote>
 <p>Before starting the simulation, it is necessary to carry out an initialization step for the initial box, which includes energy minimization and box optimization. For example, to initialize the simulation box at a pressure of 1.0 bar and a temperature of 298.15 K, you can use the following command:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -ini -prs 1.0 -tmp 298.15</p>
+<div><p>mdrun ⟨simbox.gro⟩ -ini -prs 1.0 -tmp 298.15</p>
 </div></blockquote>
 <p>After initialization, temperature equilibration can be performed in an NVT ensemble. For example, running 1.0 ns for equilibration in the NVT ensemble can be executed with the following command:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -nvt -tmp 298.15 -tot 1.0</p>
+<div><p>mdrun ⟨simbox.gro⟩ -nvt -tmp 298.15 -tot 1.0</p>
 </div></blockquote>
 <p>and the pressure equilibration, in an NPT ensemble, with:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -npt -prs 1.0 -tmp 298.15 -tot 1.0</p>
+<div><p>mdrun ⟨simbox.gro⟩ -npt -prs 1.0 -tmp 298.15 -tot 1.0</p>
 </div></blockquote>
 <p>The equilibration steps involve saving the trajectory every 100 steps (in a trr file) to conserve disk space.</p>
 <div class="admonition note">
@@ -410,7 +410,7 @@ document.write(`
 </div>
 <p>After achieving equilibration, the production step can proceed. In this step, the trajectory is saved at each step of the simulation (in an xtc file). Production is run with the following command:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -prd -prs 1.0 -tmp 298.15 -tot 5.0</p>
+<div><p>mdrun ⟨simbox.gro⟩ -prd -prs 1.0 -tmp 298.15 -tot 5.0</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -418,7 +418,7 @@ document.write(`
 </div>
 <p>Finally, after extraction, it is possible to remove several files that are unnecessary for the final step of the microsolvation treatment, which can be done with the command:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -cls</p>
+<div><p>mdrun ⟨simbox.gro⟩ -cls</p>
 </div></blockquote>
 </section>
 <section id="execution-options">

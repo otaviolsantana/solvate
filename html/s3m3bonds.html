@@ -366,15 +366,106 @@ document.write(`
 <h1><span class="section-number">3.3. </span>BONDS<a class="headerlink" href="#bonds" title="Link to this heading">#</a></h1>
 <section id="h-bonds-treatment">
 <h2><span class="section-number">3.3.1. </span>H-Bonds Treatment<a class="headerlink" href="#h-bonds-treatment" title="Link to this heading">#</a></h2>
-<p>…</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">BONDS</span></code> module manages the H-bond clusters treatment. After extraction with MICRO module, the selected clusters are saved in a file <em>solute.trj.xyz</em>. This module are executed in two steps. In the first, all clusters present in the input file are characterized, aiming to select several <em>C</em> clusters with the lowest energy, with the command:</p>
+<blockquote>
+<div><p>bonds ⟨solute.trj.xyz⟩ -ini -max <em>C</em></p>
+</div></blockquote>
+<p>In the second step, the <em>C</em> clusters are prepared for optimization and the Gibbs free energy extrapolation, considering one of the treatment options to remove any imaginary frequencies:</p>
+<blockquote>
+<div><p>bonds ⟨solute.trj.xyz⟩ -opt -max <em>C</em></p>
+</div></blockquote>
+<p>In this step, the input files are saved in a separate jobrunning folder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">bonds</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
+</div>
 </section>
 <section id="execution-options">
 <h2><span class="section-number">3.3.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
-<p>…</p>
+<blockquote>
+<div><p>bonds ⟨solute.trj.xyz⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+     auto : Execute an automated microsolvation optimization.                                      [-ga]
+          » NOTE: this option is recommended in queue systems.
+          » HINT: -auto    [starts processing 100 clusters]
+                : -auto N  [starts processing N clusters]
+                : -auto +M [add M clusters to the previous analysis]
+  -------------------------------------------------------------------------------------------------
+  STEPS CONTROL                                                                                    [-sc]
+  -------------------------------------------------------------------------------------------------
+          ● Stage #1: Clusters Characterization                                                    [-s1]⁽▪⁾
+     -ini : Execute clusters characterization and selection.           [Default: Auto]             [-ic]
+            Characterization for structures selection.
+            Procedure performed at xTB-GFF level.
+
+          ● Stage #2: Clusters Treatment                                                           [-s2]⁽▪⁾
+     -opt : Optimization and free energy calculation. (FCA|FCO)        [Default: FCO]              [-op]
+            Calculation after structures selection.
+            Procedure performed at xTB-GFN2 level combined with DFT.
+          » FCA: [F]ull [C]luster [A]ccommodated geometry (with SPH).¹ «xTB level»
+          » FCO: [F]ull [C]luster [O]ptimized geometry (with CHM).²    «xTB level»
+  -------------------------------------------------------------------------------------------------
+  ADITIONAL OPTIONS                                                                                [-ao]
+  -------------------------------------------------------------------------------------------------
+          ● Selection Options
+     -max = Maximum number of structures into energy window.           [Default: 100]              [-nw]⁽*⁾
+     -add = Add M clusters to GFE procedure from INI step.             [Default: Not defined]      [-ad]⁽*⁾
+
+          ● System Options
+     -chr = Value of microsolvated solute charge.                      [Default: Auto]             [-ch]⁽*⁾
+     -mlt = Value of microsolvated solute multiplicity.                [Default: Auto]             [-ml]⁽*⁾
+     -prs = Pressure for thermochemistry calculation (in atm).         [Default: Auto]             [-ps]⁽*⁾
+     -tmp = Temperature for thermochemistry calculation (in K).        [Default: Auto]             [-tp]⁽*⁾
+
+          ● Solvation Options
+     -svt = Solvent type (for ALPB/CPCM solvation method).             [Default: Auto]             [-sv]⁽*⁾
+     -nis = No implicit solvation.                                     [Default: None]             [-ni]⁽*⁾
+
+          ● Configuration Options
+     -prc = Number of parallel CPU processes to run.                   [Default: 8]                [-pc]⁽*⁾
+     -mem = Amount of memmory to be used (in GB).                      [Default: 16]               [-mm]⁽*⁾
+
+          ● Additional Options
+     -key = “List of keywords” (for ONIOM program).                    [Default: None]             [-kw]⁽*⁾
+     -fcc = Final concentration after compression.                     [Default: 1.0 mol·kg⁻¹]     [-fc]⁽*⁾
+     -hbd : Include H-bonds at extrapolation (for ORCA final step).    [Default: No]               [-nm]⁽*⁾
+     -nmr : Config. for NMR calculation (for ORCA final step).         [Default: No]               [-nm]⁽*⁾
+     -for : Force reexecution stages.                                  [Default: No]               [-fm]⁽*⁾
+     -fil : Filter high energy clusters (above 100.0 kcal·mol⁻¹).      [Default: No]               [-fi]⁽*⁾
+          + ----------------------------------------------------------
+     -dat : Extract data for selected stage.                           [Default: No]               [-dt]⁽*⁾
+     -plt : Plot extracted data.                                       [Default: No]               [-pd]⁽*⁾
+     -bak : Save generated graphs (without iterative interface).       [Default: No]               [-bk]
+          + ----------------------------------------------------------
+     -exc = List of structural clusters to exclude. (inp) [i,j,k,...]  [Default: None]             [-ex]⁽†⁾
+     -clr = List of optimized clusters to clean.    (out) [i,j,k,...]  [Default: None]             [-cl]⁽‡⁾
+          + ----------------------------------------------------------
+     -del = Delete specified previous optimization.                    [Default: No]               [-dc]
+     -ext = Extract specified previous calculation.                    [Default: No]               [-ec]
+     -ren = Rename specified previous description. “DSC” / [OLD:NEW]   [Default: No]               [-rn]
+     -chk : Check all previous calculations. (= spec. to extract)      [Default: No]               [-ck]
+     -log : Summary of performed calculations.                         [Default: No]               [-lg]
+          + ----------------------------------------------------------
+     -out = Force reading specified ONIOM output file.                 [Default: No]               [-of]
+          : Force reading default ONIOM output file.                   [Default: No]               [-of]
+  -------------------------------------------------------------------------------------------------
+  Total CPUs: 12 (max. MPI-procs.) :: System Memory: 5 GB
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Configurable options in automated mode.
+  ⁽▪⁾ Try “-sN” to view stage N only.
+  ⁽†⁾ The “ith” cluster identified from trj.xyz input file.
+  ⁽‡⁾ The “ith” cluster identified through graphical analysis.
+  ⁽¹⁾ SPH = Single Point Hessian.
+  ⁽²⁾ CHM = Conventional Hessiam Method.
+</pre></div>
+</div>
 </section>
 <section id="quickstart-examples">
 <h2><span class="section-number">3.3.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
-<p>…</p>
+<ul class="simple">
+<li><p>Example #1: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/7_BONDS_Test01.zip" title="Example #1 with a simulation with ORCA">Treating clusters from a simulation with ORCA</a></p></li>
+</ul>
 </section>
 </section>
 

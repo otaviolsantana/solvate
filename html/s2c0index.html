@@ -360,11 +360,11 @@ document.write(`
 </div>
 <p>The second stage of using the suite consists of executing and analyzing the simulation. The execution can be done using the following command structure:</p>
 <blockquote>
-<div><p>mdrun simbox.ext ⟨-options⟩</p>
+<div><p>mdrun ⟨simbox.ext⟩ [⟨-options⟩]</p>
 </div></blockquote>
-<p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em> (inp [<em>ORCA</em>], or gro [<em>GROMACS</em>]), <em>simbox</em> the simulation box file in it’s initial configuration, and “-options” a set of options for the simulation control. After each step performed (minimization, equilibration, and production), the data can be analyzed using the following command structure:</p>
+<p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em> (inp [<em>ORCA</em>], or gro [<em>GROMACS</em>]), <em>simbox</em> is the simulation box file in it’s initial configuration, and “-options” a set of options for the simulation control. After each step performed (minimization, equilibration, and production), the data can be analyzed using the following command structure:</p>
 <blockquote>
-<div><p>datas simbox.ext ⟨-options⟩</p>
+<div><p>datas ⟨simbox.ext⟩ [⟨-options⟩]</p>
 </div></blockquote>
 <p>where “-options” is a set of options for the simulation data analysis.</p>
 <p>Several options for adjusting simulation parameters, as well as analyzing properties and extracting data, are available for the <em>ORCA</em> and <em>GROMACS</em> programs. The complete list can be accessed in the help menu of the MDRUN and DATAS modules.</p>
