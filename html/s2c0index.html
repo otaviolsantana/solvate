@@ -100,8 +100,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -171,14 +171,6 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    Introduction
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s1m1gmdff.html">1.1. GMDFF</a></li>
@@ -249,53 +241,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fs2c0index.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -408,45 +353,25 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="simulation">
 <h1><span class="section-number">2. </span>Simulation<a class="headerlink" href="#simulation" title="Link to this heading">#</a></h1>
 <p><strong>EXECUTING MD SIMULATIONS</strong></p>
-<p>In the <strong>second stage</strong>, the <em>Solvate Suite</em> provides a group of modules to manage the MD simulations. From the MDRUN module, the simulations with the <em>ORCA</em> and <em>GROMACS</em> programs are executed using the same set of command lines. In the case of <em>ORCA</em>, the simulation execution options are set directly in the input (<code class="docutils literal notranslate"><span class="pre">inp</span></code> file) at run time on the command line. In the case of <em>GROMACS</em>, the options are adjusted and saved in its own input settings (<code class="docutils literal notranslate"><span class="pre">mdp</span></code> file). In the latter case, there are more simulation execution options, such as the type of barostat and thermostat, time constant for pressure and temperature coupling, isothermal compressibility, and saving frequency, among others.</p>
+<p>In the <strong>second stage</strong>, the <em>Solvate Suite</em> provides a group of modules to manage the MD simulations. From the <code class="docutils literal notranslate"><span class="pre">MDRUN</span></code> module, the simulations with the <em>ORCA</em> and <em>GROMACS</em> programs are executed using the same set of command lines. In the case of <em>ORCA</em>, the simulation execution options are set directly in the input (inp file) at run time on the command line. In the case of <em>GROMACS</em>, the options are adjusted and saved in its own input settings (mdp file). In the latter case, there are more simulation execution options, such as the type of barostat and thermostat, time constant for pressure and temperature coupling, isothermal compressibility, and saving frequency, among others. In any case, the simulation properties can be extracted and analyzed from the <code class="docutils literal notranslate"><span class="pre">DATAS</span></code> module, which has resources for statistical and graphical analysis.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The modular design allows users to run each step of the workflow separately, enabling detailed control and progress evaluation at any point in the simulation.</p>
 </div>
-<p>For <em>GROMACS</em>, it is possible to check whether the options automatically configured after packaging are appropriate to start the simulation:</p>
+<p>The second stage of using the suite consists of executing and analyzing the simulation. The execution can be done using the following command structure:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -chk</p>
+<div><p>mdrun simbox.ext ⟨-options⟩</p>
 </div></blockquote>
-<p>Before starting the simulation, it is necessary to carry out an initialization step for the initial box, which includes energy minimization and box optimization. For example, to initialize the simulation box at a pressure of 1.0 bar and a temperature of 298.15 K, you can use the following command:</p>
+<p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em> (inp [<em>ORCA</em>], or gro [<em>GROMACS</em>]), <em>simbox</em> the simulation box file in it’s initial configuration, and “-options” a set of options for the simulation control. After each step performed (minimization, equilibration, and production), the data can be analyzed using the following command structure:</p>
 <blockquote>
-<div><p>mdrun simbox.gro -ini -prs 1.0 -tmp 298.15</p>
+<div><p>datas simbox.ext ⟨-options⟩</p>
 </div></blockquote>
-<p>After initialization, temperature equilibration can be performed in an NVT ensemble. For example, running 1.0 ns for equilibration in the NVT ensemble can be executed with the following command:</p>
-<blockquote>
-<div><p>mdrun simbox.gro -nvt -tmp 298.15 -tot 1.0</p>
-</div></blockquote>
-<p>and the pressure equilibration, in an NPT ensemble, with:</p>
-<blockquote>
-<div><p>mdrun simbox.gro -npt -prs 1.0 -tmp 298.15 -tot 1.0</p>
-</div></blockquote>
-<p>The equilibration steps involve saving the trajectory every 100 steps (in a <code class="docutils literal notranslate"><span class="pre">trr</span></code> file) to conserve disk space. To assess the equilibrium, the properties acquired during the simulation can be analyzed using the DATAS module with the following command:</p>
-<blockquote>
-<div><p>datas simbox.log</p>
-</div></blockquote>
-<p>Properties such as pressure (in this case NPT), temperature, density, and potential energy are evaluated graphically and statistically (descriptive statistics include the calculation of standard error, standard deviation and drift of properties; RMSD and RDF analysis are also available).</p>
-<p>After achieving equilibration, the production step can proceed. In this step, the trajectory is saved at each step of the simulation (in an <code class="docutils literal notranslate"><span class="pre">xtc</span></code> file). Production is run with the following command:</p>
-<blockquote>
-<div><p>mdrun simbox.gro -prd -prs 1.0 -tmp 298.15 -tot 5.0</p>
-</div></blockquote>
-<p>After production, data extraction can be carried out with trajectory truncation. There are several options available, which include the possibility of performing RMSD and RDF analysis of the truncated trajectory. The simplest procedure is to execute the command:</p>
-<blockquote>
-<div><p>datas simbox.log -ext</p>
-</div></blockquote>
-<p>Finally, after extraction, it is possible to remove several unnecessary files in the microsolvation treatment, which can be done with the command:</p>
-<blockquote>
-<div><p>mdrun simbox.gro -cls</p>
-</div></blockquote>
-<p>Several options for adjusting simulation parameters, as well as analyzing properties and extracting data, are available for the <em>ORCA</em> and <em>GROMACS</em> programs. The complete list can be accessed in the help menu of the MDRUN and DATAS modules (just type the name of the program in the command line, without additional options).</p>
+<p>where “-options” is a set of options for the simulation data analysis.</p>
+<p>Several options for adjusting simulation parameters, as well as analyzing properties and extracting data, are available for the <em>ORCA</em> and <em>GROMACS</em> programs. The complete list can be accessed in the help menu of the MDRUN and DATAS modules.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The list of options can be seen from the applications menu, which is accessible from the command line by typing the module name, without any other parameters.</p>
+</div>
 <p><strong>STAGE STRUCTURE</strong></p>
 <p><img alt="image" src="images/stage2.png" /></p>
 <div class="toctree-wrapper compound">

@@ -99,8 +99,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -170,14 +170,6 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    Introduction
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s1m1gmdff.html">1.1. GMDFF</a></li>
@@ -248,53 +240,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fs5c0index.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -438,11 +383,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungmx">5.34. <strong>runGMX</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runbabel">5.35. <strong>runBABEL</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runjmol">5.36. <strong>runJMOL</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runrmsde">5.37. <strong>runRMSDE</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runvmd">5.38. <strong>runVMD</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runpackmol">5.39. <strong>runPACKMOL</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runcforce">5.40. <strong>runCFORCE</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runqforce">5.41. <strong>runQFORCE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runvmd">5.37. <strong>runVMD</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runpackmol">5.38. <strong>runPACKMOL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runqforce">5.39. <strong>runQFORCE</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -460,7 +403,7 @@ document.write(`
 <h2><span class="section-number">5.1. </span><strong>SOLVS</strong><a class="headerlink" href="#solvs" title="Link to this heading">#</a></h2>
 <ul>
 <li><p>List of available solvents and ions for packaging</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------
 solvs [&lt;solvent&gt;] [&lt;-option&gt;]
 
 OPTIONS/DEFAULTS
@@ -473,7 +416,7 @@ OPTIONS/DEFAULTS
                ○ ATB = GROMOS96 54a7 (from ATB)
                ● CHM = CHARMM36 all-atom force field
                ● AMB = AMBER-GS force field
--------------------------------------------------------------
+----------------------------------------------------
 </pre></div>
 </div>
 </li>
@@ -483,18 +426,18 @@ OPTIONS/DEFAULTS
 <h2><span class="section-number">5.2. </span><strong>MDPAR</strong><a class="headerlink" href="#mdpar" title="Link to this heading">#</a></h2>
 <ul>
 <li><p>List of available configuration files for MD simulations</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------
 mdpar [⟨-step N⟩]
 
 OPTIONS/DEFAULTS
      -step N   [Step for extracting MDP parameters]
-               * 0/ALL = List all MDP files
-               * 1/OPT = Box Optimization
-               * 2/MIN = Energy Minimization
-               * 3/NVT = NVT Equilibration
-               * 4/NPT = NPT Equilibration
-               * 5/PRD = NPT Production
--------------------------------------------------------------
+               ● 0/ALL = List all MDP files
+               ○ 1/OPT = Box Optimization
+               ○ 2/MIN = Energy Minimization
+               ○ 3/NVT = NVT Equilibration
+               ○ 4/NPT = NPT Equilibration
+               ○ 5/PRD = NPT Production
+---------------------------------------------------
 </pre></div>
 </div>
 </li>
@@ -543,7 +486,7 @@ PARAMETERS
 <section id="confs">
 <h2><span class="section-number">5.5. </span><strong>CONFS</strong><a class="headerlink" href="#confs" title="Link to this heading">#</a></h2>
 <ul>
-<li><p>Solute conformers extraction with energy analysis</p>
+<li><p>Solute conformers extraction with energy analysis (under development)</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
 confs ⟨input.trj/try.xyz⟩ [⟨-options⟩]
 
@@ -1047,86 +990,74 @@ WARNING
 <section id="clean">
 <h2><span class="section-number">5.28. </span><strong>CLEAN</strong><a class="headerlink" href="#clean" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Run temporary file cleanup</p></li>
+<li><p>Cleaner for temporary files</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="rungsn">
 <h2><span class="section-number">5.29. </span><strong>runGSN</strong><a class="headerlink" href="#rungsn" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Gaussian program interface</p></li>
+<li><p><em>Gaussian</em> program interface</p></li>
 </ul>
 </section>
 <section id="rungvw">
 <h2><span class="section-number">5.30. </span><strong>runGVW</strong><a class="headerlink" href="#rungvw" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>GaussView program interface</p></li>
+<li><p><em>GaussView</em> program interface</p></li>
 </ul>
 </section>
 <section id="runorca">
 <h2><span class="section-number">5.31. </span><strong>runORCA</strong><a class="headerlink" href="#runorca" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>ORCA program interface</p></li>
+<li><p><em>ORCA</em> program interface</p></li>
 </ul>
 </section>
 <section id="runxtb">
 <h2><span class="section-number">5.32. </span><strong>runXTB</strong><a class="headerlink" href="#runxtb" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>xTB program interface</p></li>
+<li><p><em>xTB</em> program interface</p></li>
 </ul>
 </section>
 <section id="runcrest">
 <h2><span class="section-number">5.33. </span><strong>runCREST</strong><a class="headerlink" href="#runcrest" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>CREST program interface</p></li>
+<li><p><em>CREST</em> program interface</p></li>
 </ul>
 </section>
 <section id="rungmx">
 <h2><span class="section-number">5.34. </span><strong>runGMX</strong><a class="headerlink" href="#rungmx" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>GROMACS program interface</p></li>
+<li><p><em>GROMACS</em> program interface</p></li>
 </ul>
 </section>
 <section id="runbabel">
 <h2><span class="section-number">5.35. </span><strong>runBABEL</strong><a class="headerlink" href="#runbabel" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>oBabel program interface</p></li>
+<li><p><em>oBabel</em> program interface</p></li>
 </ul>
 </section>
 <section id="runjmol">
 <h2><span class="section-number">5.36. </span><strong>runJMOL</strong><a class="headerlink" href="#runjmol" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Jmol program interface</p></li>
-</ul>
-</section>
-<section id="runrmsde">
-<h2><span class="section-number">5.37. </span><strong>runRMSDE</strong><a class="headerlink" href="#runrmsde" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Plots program interface</p></li>
+<li><p><em>JMol</em> program interface</p></li>
 </ul>
 </section>
 <section id="runvmd">
-<h2><span class="section-number">5.38. </span><strong>runVMD</strong><a class="headerlink" href="#runvmd" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.37. </span><strong>runVMD</strong><a class="headerlink" href="#runvmd" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>VMD program interface</p></li>
 </ul>
 </section>
 <section id="runpackmol">
-<h2><span class="section-number">5.39. </span><strong>runPACKMOL</strong><a class="headerlink" href="#runpackmol" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.38. </span><strong>runPACKMOL</strong><a class="headerlink" href="#runpackmol" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Packmol program interface</p></li>
-</ul>
-</section>
-<section id="runcforce">
-<h2><span class="section-number">5.40. </span><strong>runCFORCE</strong><a class="headerlink" href="#runcforce" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>GMDFF program interface</p></li>
+<li><p><em>PackMol</em> program interface</p></li>
 </ul>
 </section>
 <section id="runqforce">
-<h2><span class="section-number">5.41. </span><strong>runQFORCE</strong><a class="headerlink" href="#runqforce" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.39. </span><strong>runQFORCE</strong><a class="headerlink" href="#runqforce" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Q-Force program interface</p></li>
+<li><p><em>Q-Force</em> program interface</p></li>
 </ul>
 </section>
 </section>
@@ -1222,11 +1153,9 @@ WARNING
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rungmx">5.34. <strong>runGMX</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runbabel">5.35. <strong>runBABEL</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runjmol">5.36. <strong>runJMOL</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runrmsde">5.37. <strong>runRMSDE</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runvmd">5.38. <strong>runVMD</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runpackmol">5.39. <strong>runPACKMOL</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runcforce">5.40. <strong>runCFORCE</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runqforce">5.41. <strong>runQFORCE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runvmd">5.37. <strong>runVMD</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runpackmol">5.38. <strong>runPACKMOL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runqforce">5.39. <strong>runQFORCE</strong></a></li>
 </ul>
   </nav></div>
 

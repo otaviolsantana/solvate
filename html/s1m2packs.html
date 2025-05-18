@@ -100,8 +100,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -171,14 +171,6 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    Introduction
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="s1c0index.html">1. Configuration</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="s1m1gmdff.html">1.1. GMDFF</a></li>
@@ -249,53 +241,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fs1m2packs.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -421,15 +366,45 @@ document.write(`
 <h1><span class="section-number">1.2. </span>PACKS<a class="headerlink" href="#packs" title="Link to this heading">#</a></h1>
 <section id="simulation-box-creation">
 <h2><span class="section-number">1.2.1. </span>Simulation Box Creation<a class="headerlink" href="#simulation-box-creation" title="Link to this heading">#</a></h2>
-<p>The PACKS module mediates the creation of the simulation box, through the iterative use of the PackMol program. It can be used from the command:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PACKS</span></code> module mediates the creation of the simulation box, through the iterative use of the <em>PackMol</em> program. It can be used from the command structure:</p>
 <blockquote>
-<div><p>packs file1.ext file2.ext {…} ⟨-options⟩</p>
+<div><p>packs input1.ext input2.ext {…} ⟨-options⟩</p>
 </div></blockquote>
-<p>where <em>ext</em> is one of the extensions recognized by Solvate Suite (com/log [<em>Gaussian</em>], inp/out [<em>ORCA</em>], xyz/xtb [xTB], gro/pdb [<em>GROMACS</em>]), fileN the files with the structures of the solute and solvent molecules, and “-options” a set of options for the configuration of the box to be created.</p>
+<p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em>, <em>inputN</em> the files with the structures of the solute and solvent molecules, and “-options” a set of options for the configuration of the box to be created. The program accepts input and output file formats of <em>Gaussian</em> (com, gjf and log), <em>ORCA</em> (inp and out), xTB (xyz and xtb), <em>GROMACS</em> (gro) and <em>PDB</em> (pdb), common formats in Computational Chemistry.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Simply type <code class="docutils literal notranslate"><span class="pre">packs</span></code> in the terminal and press Enter to see the full list of execution options for the module.</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">packs</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
 </div>
+<p>The most common use of this module is to create an initial configuration for a system with a single solute molecule surrounded by a number of solvent molecules of a single type:</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -nm <em>N</em></p>
+</div></blockquote>
+<p>where <em>N</em> corresponds to the number of solvent molecules. In the case of ionic solutes, it is possible to include counter-ions with the command:</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -ci couterion.ext -nm <em>N</em></p>
+</div></blockquote>
+<p>The program determines the number of counterions needed to neutralize the charge in the simulation box. In these cases, the number <em>N</em> of molecules includes the incorporated counterions. The <em>Solvate</em> program also makes it possible to create simulation boxes with solvent mixtures, in which case it is necessary to inform the proportion between the molecules:</p>
+<blockquote>
+<div><p>packs solute.ext solvent1.ext solvent2.ext … -pr [<em>N1</em>:<em>N2</em>:<em>N3</em>…]</p>
+</div></blockquote>
+<p>The initial box can also be created based on the molar concentration <em>M</em> of the solute (a situation in which there is more than one solute molecule in the box):</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -cc <em>M</em></p>
+</div></blockquote>
+<p>or based on molal concentration <em>M</em>:</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -bc <em>M</em></p>
+</div></blockquote>
+<p>The box density <em>D</em> is automatically adjusted based on the density of the solvent used (if it is part of the program’s database), or defined manually by the user:</p>
+<blockquote>
+<div><p>packs solute.ext solvent.ext -nm <em>N</em> -ds <em>D</em></p>
+</div></blockquote>
+<p>The list of parameterized solvents is obtained from the command:</p>
+<blockquote>
+<div><p>packs -list</p>
+</div></blockquote>
+<p>Any of the parameterized solvents can be provided as input to the program in the simulation box creation step.</p>
+<p>Several additional options for adjusting packaging parameters are available. The complete list can be accessed from the help menu of the PACKS module.</p>
 </section>
 <section id="execution-options">
 <h2><span class="section-number">1.2.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
