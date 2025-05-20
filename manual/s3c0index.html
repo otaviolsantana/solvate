@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Microsolvation &#8212; Solvate Suite - Comprehensive Manual</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="static/doctools.js?v=9a2dae69"></script>
+    <script src="static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="static/copybutton.js?v=f281be69"></script>
+    <script src="static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's3c0index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.1. MSRUN" href="s3m1msrun.html" />
+    <link rel="prev" title="2.5. TRAJS" href="s2m5trajs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="static/logo.png" class="logo__image only-light" alt="Solvate Suite - Comprehensive Manual - Home"/>
+    <script>document.write(`<img src="static/logo.png" class="logo__image only-dark" alt="Solvate Suite - Comprehensive Manual - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="s1m1gmdff.html">1.1. GMDFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s1m2packs.html">1.2. PACKS</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="s2m1mdrun.html">2.1. MDRUN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s2m3stats.html">2.3. STATS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s2m4plots.html">2.4. PLOTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s2m5trajs.html">2.5. TRAJS</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. <strong>Microsolvation</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="s3m1msrun.html">3.1. MSRUN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3m2micro.html">3.2. MICRO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3m3bonds.html">3.3. BONDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3m4gcalc.html">3.4. GCALC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3m5queue.html">3.5. QUEUE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3m6oniom.html">3.6. ONIOM</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="s4c0index.html">4. <strong>Management</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="s4m1files.html">4.1. FILES</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="s5c0index.html">5. <strong>Additional Modules</strong></a></li>
+<li class="toctree-l1"><a class="reference external" href="https://otaviolsantana.github.io/solvate/">Solvate Suite Homepage</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/s3c0index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Microsolvation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="microsolvation">
+<h1><span class="section-number">3. </span><strong>Microsolvation</strong><a class="headerlink" href="#microsolvation" title="Link to this heading">#</a></h1>
+<p><strong>SETTING UP THE MICROSOLVATION</strong></p>
+<p>In the <strong>third stage</strong>, after extracting the trajectory, the truncated trajectory file <em>simbox.try.xyz</em> is obtained. The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module can then select <em>N</em> number of lower-energy clusters, each containing <em>M</em> solvent molecules. The value of <em>M</em> can be determined from a previous RDF analysis (using the DATAS module), set based on the solute-solvent ratio (at a concentration specified by the user), or calculated automatically (based on a cutoff distance corresponding to the diameter of the sphere encompassing the solvent molecule). The extraction is performed using the following command structure:</p>
+<blockquote>
+<div><p>micro ⟨simbox.trj.xyz⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<p>After this extraction, the selected clusters are saved in a file <em>solute.trj.xyz</em>. This file can be used to analyze hydrogen bonds with the <code class="docutils literal notranslate"><span class="pre">BONDS</span></code> module. Alternatively, one can treat microsolvation at the level of the first solvation shell with the <code class="docutils literal notranslate"><span class="pre">GCALC</span></code> module, simultaneously treating all types of short-range interactions present in the system under investigation, regardless of the nature of the solvent. These modules are executed in two steps. In the first, all clusters present in the input file are characterized, aiming to select several <em>C</em> clusters with the lowest energy. In the second step, the <em>C</em> clusters are prepared for optimization and the Gibbs free energy extrapolation, considering one of the treatment options to remove any imaginary frequencies. In each of them, the procedure uses the following command structure:</p>
+<blockquote>
+<div><p>bonds ⟨solute.trj.xyz⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<p>or:</p>
+<blockquote>
+<div><p>gcalc ⟨solute.trj.xyz⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<p>In the optimization step, the input files are saved in a separate jobrunning folder. In this folder, the module <code class="docutils literal notranslate"><span class="pre">QUEUE</span></code> can be executed to perform the optimization and the Gibbs free energy extrapolation in a queueing system:</p>
+<blockquote>
+<div><p>queue [⟨-options⟩]</p>
+</div></blockquote>
+<p>This procedure sequentially executed the <code class="docutils literal notranslate"><span class="pre">ONION</span></code> module, which is the resource responsible for performing geometry optimization, frequency calculation, and obtaining the extrapolated Gibbs free energy:</p>
+<blockquote>
+<div><p>oniom ⟨solute.gjf⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Several additional options for treating clusters are available. The complete list can be accessed in the help menu of the MICRO, BONDS/GCALC, and QUEUE modules (just type the program name on the command line, without additional options). Finally, all the processes can be automated through the MSRUN module. For examples, visit the MICRO, BONDS/GCALC, and QUEUE tutorials page.</p>
+</div>
+<p>Once all the necessary settings for executing the microsolvation treatment are known, the MSRUN module makes it possible to perform the entire procedure from a single command:</p>
+<blockquote>
+<div><p>msrun ⟨input.trj.xyz⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<p>where <em>input.trj.xyz</em> can be the file <em>simbox.trj.xyz</em> (from extracted trajectory file with TRAJS module, which corresponds to the complete procedure by default), or the file <em>solute.trj.xyz</em> (from extracted clusters file with MICRO module, in which the partial procedure is executed, without MICRO reexecution). The settings provided via <em>-options</em> make it possible to adjust the execution of the MICRO, BONDS/GCALC, QUEUE, and ONIOM modules independently.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The list of options can be seen from the applications menu, which is accessible from the command line by typing the module name, without any other parameters.</p>
+</div>
+<p><strong>STAGE STRUCTURE</strong></p>
+<p><img alt="image" src="images/stage3.png" /></p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="s2m5trajs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>TRAJS</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="s3m1msrun.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>MSRUN</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Otávio L. Santana & Daniel G. Silva | All Rights Reserved
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
