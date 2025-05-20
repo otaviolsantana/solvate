@@ -398,7 +398,23 @@ document.write(`
 <blockquote>
 <div><p>gmdff ⟨input.ext⟩ -cfg config.ini</p>
 </div></blockquote>
-<p>If the input file matches that of the simulation box, the program combines the force field files into a single and independent topology file. This results in only two files for starting the simulation: the simulation box (gro file) and the topology inputs (top file, with all the force field parameters).</p>
+<p>Several force field parameters (OPLS/AA, GROMOS, CHARMM and AMBER) for a wide range of solvents are part of the program database, coming from several sources (GROMACS repository, LigParGen, ATB and Q-Force). The complete list of parameters can be displayed from the command:</p>
+<blockquote>
+<div><p>gmdff -lst</p>
+</div></blockquote>
+<p>It is possible to display only the parameters of a specific force field, such as OPLS/AA:</p>
+<blockquote>
+<div><p>gmdff -lst opls</p>
+</div></blockquote>
+<p>Once you have identified the desired parameters, you can obtain them from the command:</p>
+<blockquote>
+<div><p>gmdff ⟨solvent_forcefield⟩</p>
+</div></blockquote>
+<p>For example, the TIP3P parameters in the OPLS/AA force field are obtained from:</p>
+<blockquote>
+<div><p>gmdff tip3p_oplsaa.wtr</p>
+</div></blockquote>
+<p>Finally, if the input file matches that of the simulation box, the program combines the force field files into a single and independent topology file. This results in only two files for starting the simulation: the simulation box (gro file) and the topology inputs (top file, with all the force field parameters).</p>
 </section>
 <section id="execution-options">
 <h2><span class="section-number">1.1.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
@@ -421,11 +437,12 @@ document.write(`
 
           ● Additional Options
      -fld = Force field parameters.      [OPL|GRO|CHM|AMB|LPG|QFC|ATB] [Default: OPLS/AA]          [-ff][-field]
-     -wtr = Model (conditional).         [SPC|SPCE||TIP3P|TIP4P|TIP5P] [Default: SPC/E]            [-wm][-water]
+     -wtr = Model (conditional).         [SPC|SPCE||TIP3P|TIP4P|TIP5P] [Default: SPC/E]            [-wm][-water]⁽†⁾
      -lst : Provides the complete list of parameterized solvents.      [Default: No]               [-ls][-lists]
   -------------------------------------------------------------------------------------------------
   Total CPUs: 12 (max. MPI-procs.) :: System Memory: 5 GB
   -------------------------------------------------------------------------------------------------
+  ⁽†⁾ If the input file matches the water molecule.
   ⁽*⁾ Repositories: https://traken.chem.yale.edu/ligpargen
                     https://atb.uq.edu.au
                     https://cgenff.com
