@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.5. TRAJS &#8212; Solvate Suite - Comprehensive Manual</title>
+    <title>1.1. PACKS &#8212; Solvate Suite - Comprehensive Manual</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 's2m5trajs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's1m1packs';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Microsolvation" href="s3c0index.html" />
-    <link rel="prev" title="2.4. PLOTS" href="s2m4plots.html" />
+    <link rel="next" title="1.2. GMDFF" href="s1m2gmdff.html" />
+    <link rel="prev" title="1. Configuration" href="s1c0index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,18 +172,18 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s1m1packs.html">1.1. PACKS</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. PACKS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s1m2gmdff.html">1.2. GMDFF</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s2m1mdrun.html">2.1. MDRUN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m3stats.html">2.3. STATS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m4plots.html">2.4. PLOTS</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. TRAJS</a></li>
-</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l2"><a class="reference internal" href="s2m5trajs.html">2.5. TRAJS</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Microsolvation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s3m1msrun.html">3.1. MSRUN</a></li>
@@ -254,7 +254,7 @@
       
       
       
-      <li><a href="_sources/s2m5trajs.md" target="_blank"
+      <li><a href="_sources/s1m1packs.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +338,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TRAJS</h1>
+    <h1>PACKS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -348,9 +348,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-trajectories">2.5.1. MD Trajectories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">2.5.2. Execution Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">2.5.3. Quickstart Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-box-creation">1.1.1. Simulation Box Creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">1.1.2. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">1.1.3. Quickstart Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -362,58 +362,93 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="trajs">
-<h1><span class="section-number">2.5. </span>TRAJS<a class="headerlink" href="#trajs" title="Link to this heading">#</a></h1>
-<section id="md-trajectories">
-<h2><span class="section-number">2.5.1. </span>MD Trajectories<a class="headerlink" href="#md-trajectories" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">TRAJS</span></code> module performs the extraction of simulated trajectory from <em>GROMACS</em> program. It can be used from the command:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="packs">
+<h1><span class="section-number">1.1. </span>PACKS<a class="headerlink" href="#packs" title="Link to this heading">#</a></h1>
+<section id="simulation-box-creation">
+<h2><span class="section-number">1.1.1. </span>Simulation Box Creation<a class="headerlink" href="#simulation-box-creation" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">PACKS</span></code> module mediates the creation of the simulation box, through the iterative use of the <em>PackMol</em> program. The module can be run from the main program or directly from the command:</p>
 <blockquote>
-<div><p>trajs ⟨simbox.gro⟩ [⟨-options⟩]</p>
+<div><p>packs ⟨input1.ext⟩ ⟨input2.ext⟩ {…} [⟨-options⟩]</p>
 </div></blockquote>
+<p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em>, <em>inputN</em> the files with the structures of the solute and solvent molecules, and “-options” a set of options for the configuration of the box to be created. The program accepts input and output file formats of <em>Gaussian</em> (com, gjf and log), <em>ORCA</em> (inp and out), xTB (xyz and xtb), <em>GROMACS</em> (gro) and <em>PDB</em> (pdb), common formats in Computational Chemistry.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Simply type <code class="docutils literal notranslate"><span class="pre">trajs</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">packs</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
 </div>
+<p>The most common use of this module is to create an initial configuration for a system with a single solute molecule surrounded by a number of solvent molecules of a single type:</p>
+<blockquote>
+<div><p>packs ⟨solute.ext⟩ ⟨solvent.ext⟩ -mol <em>N</em></p>
+</div></blockquote>
+<p>where <em>N</em> corresponds to the number of solvent molecules. In the case of ionic solutes, it is possible to include counter-ions with the command:</p>
+<blockquote>
+<div><p>packs ⟨solute.ext⟩ ⟨solvent.ext⟩ -mol <em>N</em> -cnt couterion.ext</p>
+</div></blockquote>
+<p>The program determines the number of counterions needed to neutralize the charge in the simulation box. In these cases, the number <em>N</em> of molecules includes the incorporated counterions. The <em>Solvate</em> program also makes it possible to create simulation boxes with solvent mixtures, in which case it is necessary to inform the proportion between the molecules:</p>
+<blockquote>
+<div><p>packs ⟨solute.ext⟩ ⟨solvent1.ext⟩ ⟨solvent2.ext⟩ … -pro [<em>N1</em>:<em>N2</em>:<em>N3</em>…]</p>
+</div></blockquote>
+<p>The initial box can also be created based on the molar concentration <em>M</em> of the solute (a situation in which there is more than one solute molecule in the box):</p>
+<blockquote>
+<div><p>packs ⟨solute.ext⟩ ⟨solvent.ext⟩ -cco <em>M</em></p>
+</div></blockquote>
+<p>or based on molal concentration <em>M</em>:</p>
+<blockquote>
+<div><p>packs ⟨solute.ext⟩ ⟨solvent.ext⟩ -bco <em>M</em></p>
+</div></blockquote>
+<p>The box density <em>D</em> is automatically adjusted based on the density of the solvent used (if it is part of the program’s database), or defined manually by the user:</p>
+<blockquote>
+<div><p>packs ⟨solute.ext⟩ ⟨solvent.ext⟩ -mol <em>N</em> -den <em>D</em></p>
+</div></blockquote>
+<p>The list of parameterized solvents is obtained from the command:</p>
+<blockquote>
+<div><p>packs -lst</p>
+</div></blockquote>
+<p>Any of the parameterized solvents can be provided as input to the program in the simulation box creation step.</p>
+<p>Several additional options for adjusting packaging parameters are available. The complete list can be accessed from the help menu of the PACKS module.</p>
 </section>
 <section id="execution-options">
-<h2><span class="section-number">2.5.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.1.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>trajs ⟨trajectory.gro/xtc⟩ [⟨-options⟩]</p>
+<div><p>packs ⟨solute⟩ {⟨solvent⟩} [⟨-options⟩]</p>
 </div></blockquote>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
-     auto : Execute an automated trajectory extraction from simulation files.                      [-ta](●)(■)
-          » Description
-            btrj = 1000 blocks with 10% extraction
-          » NOTE: this option is recommended in queue systems.
-          + #1: Individual Options - (no data analysis) ------------------------------
-     -itr = I     : Extracts position structure #I from the trajectory.                            [-it](●)(■)⁽†⁾
-     -ntr = N     : Extract N equaly spaced MD steps for truncated trajectory.                     [-nt](●)(■)
-     -str = M     : Extract equaly spaced frames at every M steps from trajectory.                 [-st](●)(■)
-          + #2: Combinable Options - (with data analysis) ----------------------------
-     -ctr = [I:J] : Skip I equilibration steps and extract J production steps.                     [-ct](●)(■)⁽*⁾
-     -btr = [B:X] : Select frames from B trajectory blocks into X% final steps.                    [-bt]   (■)⁽*⁾
-     -ptr = [P:D] : Select configurations around pressure P with tolerance ±D (in bar).            [-pt]   (■)⁽*⁾
-          + #3: Output file formats - (GROMACS only) ---------------------------------
-     -xyz : Output in XYZ file format. [default]                                                   [-xy]   (■)
-     -pdb : Output in PDB file format.                                                             [-pd]   (■)
-     -gro : Output in GRO file format.                                                             [-gr]   (■)
-          + #4: Other Options --------------------------------------------------------
-     -prd : Select configuration production steps only and the corresponding properties.           [-pr](●)(■)⁽*⁾
-     -grp : Extract short-ranged non-bonded potential energies.                                    [-gr]   (■)⁽*⁾
-     -nbx : Don´t make corrections for “fragmented” molecules near the box edges.                  [-nb]   (■)
-     -bak : Save intermediate PDB and XVG files for alternative convertions.                       [-bk]   (■)
-     -deb : Save intermediate XVG file and create a reconstructed ENT file.                        [-db]   (■)
-     -for : Force new extraction and override previous PDB file.                                   [-fm](●)(■)
+ ⟨solute⟩ = File with solute  geometry (.com/log/inp/out/xyz/xtb/gro/pdb)
+⟨solvent⟩ = File with solvent geometry (.com/log/inp/out/xyz/xtb/gro/pdb)
   -------------------------------------------------------------------------------------------------
-  ⁽*⁾ Configurable options in automated mode. (●) ORCA available. (■) GROMACS available.
-  ⁽†⁾ Structure position, not configuration step.
+     Nmol = Number of solvent molecules in the packing step.           [Default: 0][=Determine]    [-mol][-nm]
+     Npck = Number of packing layers.                                  [Default: 2]                [-npk][-np]
+     dCel = Dimensions of the simulation cell (in nanometers).         [Default: Not defined]      [-cel][-dc]
+     gCel = Gap between solute and cell edges (in nanometers).         [Default: Not defined]      [-gap][-dg]
+     bCon = Molal concentration of the simulation cell (in mol·kg⁻¹).  [Default: Not defined]      [-bco][-bc]
+     cCon = Molar concentration of the simulation cell (in mol·L⁻¹).   [Default: Not defined]      [-cco][-cc]
+     Prop = Proportion between solvent molecules. [N1:N2:...]          [Default: Not defined]      [-pro][-pr]
+     Dens = Density of the simulation cell (in g·mL⁻¹).                [Default: 1.0]              [-den][-ds]⁽*⁾
+     cIon = File with counterion to be added for charge neutrality.    [Default: None]             [-cnt][-ci]
+    Shape = Packaging format (sphere|cube|box).                        [Default: Sphere/Cube]      [-shp][-sp]
+   Format = Type of generated file (inp|gro).                          [Default: Auto]             [-fmt][-ft]
+   Tolera = Minimum distance tolerated in packing (in Å).              [Default: Not defined]      [-tol][-to]
+   Repack : Resubmit the packing procedure with new parameters.        [Default: No]               [-rep][-rp]
+    Force : Run in forced mode (no warning messages).                  [Default: No]               [-for][-fm]
+   Normal : Run in normal mode (conventional packing configuration).   [Default: No]               [-nor][-cv]
+   Iterat : Run in iterative mode (to adjust tolerance).               [Default: No]               [-ite][-it]
+  Include : Insert external force field into generated topologie.      [Default: No]               [-inc][-in]⁽†⁾
+   FField = Force field parameters.      [OPL|GRO|CHM|AMB|LPG|QFC|ATB] [Default: OPLS/AA]          [-fft][-ff]⁽†⁾
+   Backup : Save original input files.                                 [Default: No]               [-bak][-bk]
+  Solvent = Solvent to be used in C-PCM/ALPB solvation model.          [Default: Auto]             [-svt][-sv]
+     List : Lists the set of solvents in the database.                 [Default: No]               [-lst][-ls]
+    Check : Checks the consistency of simulation box settings.         [Default: No]               [-chk][-ck]
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Configurable options in automated mode. ⁽†⁾ GROMACS only
 </pre></div>
 </div>
 </section>
 <section id="quickstart-examples">
-<h2><span class="section-number">2.5.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.1.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Under construction…</p></li>
+<li><p>Example #1: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/2_PACKS_Test01.zip" title="Example #1 with *ORCA* program">Creating a box for <em>ORCA</em> with a solute and water molecules</a></p></li>
+<li><p>Example #2: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/2_PACKS_Test02.zip" title="Example #2 with *ORCA* program">Creating a box for <em>ORCA</em> with a solute and solvent mixture</a></p></li>
+<li><p>Example #3: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/2_PACKS_Test03.zip" title="Example #3 with *GROMACS* program">Creating a box for <em>GROMACS</em> with a solute and water molecules</a></p></li>
+<li><p>Example #4: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/2_PACKS_Test04.zip" title="Example #4 with *GROMACS* program">Creating a box for <em>GROMACS</em> with a solute and a solvent mixture</a></p></li>
 </ul>
 </section>
 </section>
@@ -449,20 +484,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="s2m4plots.html"
+       href="s1c0index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>PLOTS</p>
+        <p class="prev-next-title"><span class="section-number">1. </span><strong>Configuration</strong></p>
       </div>
     </a>
     <a class="right-next"
-       href="s3c0index.html"
+       href="s1m2gmdff.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span><strong>Microsolvation</strong></p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>GMDFF</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -482,9 +517,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-trajectories">2.5.1. MD Trajectories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">2.5.2. Execution Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">2.5.3. Quickstart Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-box-creation">1.1.1. Simulation Box Creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">1.1.2. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">1.1.3. Quickstart Examples</a></li>
 </ul>
   </nav></div>
 

@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2.1. MDRUN" href="s2m1mdrun.html" />
-    <link rel="prev" title="1.2. PACKS" href="s1m2packs.html" />
+    <link rel="prev" title="1.2. GMDFF" href="s1m2gmdff.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,8 +173,8 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s1m1gmdff.html">1.1. GMDFF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s1m2packs.html">1.2. PACKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s1m1packs.html">1.1. PACKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s1m2gmdff.html">1.2. GMDFF</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">2. <strong>Simulation</strong></a><ul>
@@ -360,11 +360,11 @@ document.write(`
 </div>
 <p>The second stage of using the suite consists of executing and analyzing the simulation. The execution can be done using the following command structure:</p>
 <blockquote>
-<div><p>mdrun ⟨simbox.ext⟩ [⟨-options⟩]</p>
+<div><p>solvate ⟨simbox.ext⟩ -mdrun [⟨-options⟩]</p>
 </div></blockquote>
 <p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em> (inp [<em>ORCA</em>], or gro [<em>GROMACS</em>]), <em>simbox</em> is the simulation box file in it’s initial configuration, and “-options” a set of options for the simulation control. After each step performed (minimization, equilibration, and production), the data can be analyzed using the following command structure:</p>
 <blockquote>
-<div><p>datas ⟨simbox.ext⟩ [⟨-options⟩]</p>
+<div><p>solvate ⟨simbox.ext⟩ -datas [⟨-options⟩]</p>
 </div></blockquote>
 <p>where “-options” is a set of options for the simulation data analysis.</p>
 <p>Several options for adjusting simulation parameters, as well as analyzing properties and extracting data, are available for the <em>ORCA</em> and <em>GROMACS</em> programs. The complete list can be accessed in the help menu of the MDRUN and DATAS modules.</p>
@@ -409,12 +409,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="s1m2packs.html"
+       href="s1m2gmdff.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span>PACKS</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>GMDFF</p>
       </div>
     </a>
     <a class="right-next"

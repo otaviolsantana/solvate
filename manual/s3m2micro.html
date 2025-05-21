@@ -173,8 +173,8 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s1m1gmdff.html">1.1. GMDFF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s1m2packs.html">1.2. PACKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s1m1packs.html">1.1. PACKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s1m2gmdff.html">1.2. GMDFF</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
@@ -368,15 +368,15 @@ document.write(`
 <h2><span class="section-number">3.2.1. </span>Clusters Extraction<a class="headerlink" href="#clusters-extraction" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module manages the extraction of microsolvation clusters. It is possible to select <em>N</em> low-energy clusters, each containing <em>M</em> solvent molecules. The value of <em>M</em> can be determined from a previous RDF analysis (using the DATAS module), defined based on the solute-solvent ratio (at a user-specified concentration), or calculated automatically (based on a cutoff distance corresponding to the diameter of the sphere surrounding the solvent molecule). The extraction is performed using the following command:</p>
 <blockquote>
-<div><p>micro ⟨simbox.trj.xyz⟩ -nc <em>N</em> -ns <em>M</em></p>
+<div><p>micro ⟨simbox.trj.xyz⟩ -str <em>N</em> -nsv <em>M</em></p>
 </div></blockquote>
 <p>The extraction based on molal concentration <em>C</em> is performed using the command:</p>
 <blockquote>
-<div><p>micro ⟨simbox.trj.xyz⟩ -nc <em>N</em> -bc <em>C</em></p>
+<div><p>micro ⟨simbox.trj.xyz⟩ -str <em>N</em> -bco <em>C</em></p>
 </div></blockquote>
 <p>The extraction based on the number <em>S</em> of solvation shells (estimated from the solvent radius) is performed using the command:</p>
 <blockquote>
-<div><p>micro ⟨simbox.trj.xyz⟩ -nc <em>N</em> -nl <em>S</em></p>
+<div><p>micro ⟨simbox.trj.xyz⟩ -str <em>N</em> -sol <em>S</em></p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -395,7 +395,7 @@ document.write(`
             Nstr = 1% of trajectory structures (1000 min, 10000 max)
             cTRJ = All production steps
           + ----------------------------------------------------------
-     -str = Number of clustered structures selected trajectory.        [Default: 1000] [Int.]      [-nc]⁽*⁾
+     -str = Number of clustered structures selected trajectory.        [Default: 1000] [Int.]      [-str]⁽*⁾
      -nsv = Number of solvent molecules in the clustering process.     [Default: 0]    [Int.]      [-ns]⁽*⁾
      -sol = Number of solvent layers in the clustering process.        [Default: 1]    [Int.]      [-nl]⁽*⁾
      -bco = Molal conc. of the microsolvation cluster (in mol·kg⁻¹).   [Default: 0.0]  [Real]      [-bc]⁽*⁾

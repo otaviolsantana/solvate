@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.5. TRAJS &#8212; Solvate Suite - Comprehensive Manual</title>
+    <title>1.2. GMDFF &#8212; Solvate Suite - Comprehensive Manual</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 's2m5trajs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's1m2gmdff';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Microsolvation" href="s3c0index.html" />
-    <link rel="prev" title="2.4. PLOTS" href="s2m4plots.html" />
+    <link rel="next" title="2. Simulation" href="s2c0index.html" />
+    <link rel="prev" title="1.1. PACKS" href="s1m1packs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,18 +172,18 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="s1m1packs.html">1.1. PACKS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s1m2gmdff.html">1.2. GMDFF</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2. GMDFF</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s2m1mdrun.html">2.1. MDRUN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m3stats.html">2.3. STATS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m4plots.html">2.4. PLOTS</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. TRAJS</a></li>
-</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l2"><a class="reference internal" href="s2m5trajs.html">2.5. TRAJS</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Microsolvation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s3m1msrun.html">3.1. MSRUN</a></li>
@@ -254,7 +254,7 @@
       
       
       
-      <li><a href="_sources/s2m5trajs.md" target="_blank"
+      <li><a href="_sources/s1m2gmdff.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +338,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>TRAJS</h1>
+    <h1>GMDFF</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -348,9 +348,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-trajectories">2.5.1. MD Trajectories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">2.5.2. Execution Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">2.5.3. Quickstart Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-force-fields">1.2.1. MD Force Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">1.2.2. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">1.2.3. Quickstart Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -362,58 +362,104 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="trajs">
-<h1><span class="section-number">2.5. </span>TRAJS<a class="headerlink" href="#trajs" title="Link to this heading">#</a></h1>
-<section id="md-trajectories">
-<h2><span class="section-number">2.5.1. </span>MD Trajectories<a class="headerlink" href="#md-trajectories" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">TRAJS</span></code> module performs the extraction of simulated trajectory from <em>GROMACS</em> program. It can be used from the command:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="gmdff">
+<h1><span class="section-number">1.2. </span>GMDFF<a class="headerlink" href="#gmdff" title="Link to this heading">#</a></h1>
+<section id="md-force-fields">
+<h2><span class="section-number">1.2.1. </span>MD Force Fields<a class="headerlink" href="#md-force-fields" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">GMDFF</span></code> module mediates the creation of force field parameters (itp files), as well as making special adjustments for the construction of the topology (top file). The simplest usage consists of the following command:</p>
 <blockquote>
-<div><p>trajs ⟨simbox.gro⟩ [⟨-options⟩]</p>
+<div><p>gmdff ⟨input.ext⟩</p>
 </div></blockquote>
+<p>where <em>ext</em> is one of the extensions recognized by the <em>Solvate Suite</em> (com/log [<em>Gaussian</em>], inp/out [<em>ORCA</em>], xyz/xtb [<em>xTB</em>], gro/pdb [<em>GROMACS</em>]).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Simply type <code class="docutils literal notranslate"><span class="pre">trajs</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">gmdff</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
 </div>
+<p>If the simulation box is prepared for the <em>GROMACS</em> program (which is determined by the extension of the input files) the program automatically runs the GMDFF module, which prepares the force field files as well as the system topology file. This means that, in the general case, it is possible to create the simulation box and its topology file from a single command line. In these cases, however, it is recommended to run the GMDFF module first, in order to prepare all the necessary force field files required for executing the PACKS module. This is done using the following command structure:</p>
+<blockquote>
+<div><p>gmdff ⟨input.ext⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<p>where <em>ext</em> is one of the extensions recognized by Solvate Suite (com/log [<em>Gaussian</em>], inp/out [<em>ORCA</em>], xyz/xtb [<em>xTB</em>], gro/pdb [<em>GROMACS</em>]), <em>input</em> is the file with the structure of the solute or solvent molecule, and “-options” a set of options for the configuration of the force field to be created.</p>
+<p>There are 4 scenarios in which this module can be used:</p>
+<ul class="simple">
+<li><p>In the case of biomolecule PDB files, the program performs structure preparation (removal of heteroatoms and addition of hydrogens, without adjusting protonation based on pH, which may require additional preparations to be carried out by the user), followed by conversion to the <em>GROMACS</em> format (gro file) and creation of the force field parameters in a single input (itp file).</p></li>
+<li><p>In the case of force fields obtained by external servers (such as LigParGen and ATB) the module removes any residual charges, a necessary step for building simulation boxes that are, in fact, electrically neutral. This is done by homogeneously compensating for any residual charge between all atoms in the structure.</p></li>
+<li><p>In the case of internally parameterized solvent molecules, the program selects the appropriate parameters and writes them to a force field input (itp file), as well as converting the input file to the appropriate format (gro file).</p></li>
+<li><p>In the case of small molecules, the module sequentially executes the <em>Q-Force</em> program to generate parameters from a quantum chemical calculation.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case of using the <em>Q-Force</em> program, the user can generate a default settings file with the <code class="docutils literal notranslate"><span class="pre">-chk</span></code> option. The edited file can then be read by the program with the <code class="docutils literal notranslate"><span class="pre">-cfg</span></code> option. Alternatively, the user can provide his own settings file with the <code class="docutils literal notranslate"><span class="pre">-cfg</span> <span class="pre">⟨file.ini⟩</span></code> command.</p>
+</div>
+<p>For <em>Q-Force</em>, it is possible to check whether the options are appropriate to start the force field creation:</p>
+<blockquote>
+<div><p>gmdff ⟨input.ext⟩ -chk</p>
+</div></blockquote>
+<p>In this case, a configuration file (ini) is generated with a default set of execution options, which can be edited by the user to apply custom configurations. This file can then be read using the following command:</p>
+<blockquote>
+<div><p>gmdff ⟨input.ext⟩ -cfg</p>
+</div></blockquote>
+<p>Alternatively, the user can provide a custom settings file via the following command:</p>
+<blockquote>
+<div><p>gmdff ⟨input.ext⟩ -cfg config.ini</p>
+</div></blockquote>
+<p>Several force field parameters (OPLS/AA, GROMOS, CHARMM and AMBER) for a wide range of solvents are part of the program database, coming from several sources (GROMACS repository, LigParGen, ATB and Q-Force). The complete list of parameters can be displayed from the command:</p>
+<blockquote>
+<div><p>gmdff -lst</p>
+</div></blockquote>
+<p>It is possible to display only the parameters of a specific force field, such as OPLS/AA:</p>
+<blockquote>
+<div><p>gmdff -lst opls</p>
+</div></blockquote>
+<p>Once you have identified the desired parameters, you can obtain them from the command:</p>
+<blockquote>
+<div><p>gmdff ⟨solvent_forcefield⟩</p>
+</div></blockquote>
+<p>For example, the TIP3P parameters in the OPLS/AA force field are obtained from:</p>
+<blockquote>
+<div><p>gmdff tip3p_oplsaa.wtr</p>
+</div></blockquote>
+<p>Finally, if the input file matches that of the simulation box, the program combines the force field files into a single and independent topology file. This results in only two files for starting the simulation: the simulation box (gro file) and the topology inputs (top file, with all the force field parameters).</p>
 </section>
 <section id="execution-options">
-<h2><span class="section-number">2.5.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>trajs ⟨trajectory.gro/xtc⟩ [⟨-options⟩]</p>
+<div><p>gmdff ⟨molecule.ext⟩ [⟨-options⟩]</p>
 </div></blockquote>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
-     auto : Execute an automated trajectory extraction from simulation files.                      [-ta](●)(■)
-          » Description
-            btrj = 1000 blocks with 10% extraction
-          » NOTE: this option is recommended in queue systems.
-          + #1: Individual Options - (no data analysis) ------------------------------
-     -itr = I     : Extracts position structure #I from the trajectory.                            [-it](●)(■)⁽†⁾
-     -ntr = N     : Extract N equaly spaced MD steps for truncated trajectory.                     [-nt](●)(■)
-     -str = M     : Extract equaly spaced frames at every M steps from trajectory.                 [-st](●)(■)
-          + #2: Combinable Options - (with data analysis) ----------------------------
-     -ctr = [I:J] : Skip I equilibration steps and extract J production steps.                     [-ct](●)(■)⁽*⁾
-     -btr = [B:X] : Select frames from B trajectory blocks into X% final steps.                    [-bt]   (■)⁽*⁾
-     -ptr = [P:D] : Select configurations around pressure P with tolerance ±D (in bar).            [-pt]   (■)⁽*⁾
-          + #3: Output file formats - (GROMACS only) ---------------------------------
-     -xyz : Output in XYZ file format. [default]                                                   [-xy]   (■)
-     -pdb : Output in PDB file format.                                                             [-pd]   (■)
-     -gro : Output in GRO file format.                                                             [-gr]   (■)
-          + #4: Other Options --------------------------------------------------------
-     -prd : Select configuration production steps only and the corresponding properties.           [-pr](●)(■)⁽*⁾
-     -grp : Extract short-ranged non-bonded potential energies.                                    [-gr]   (■)⁽*⁾
-     -nbx : Don´t make corrections for “fragmented” molecules near the box edges.                  [-nb]   (■)
-     -bak : Save intermediate PDB and XVG files for alternative convertions.                       [-bk]   (■)
-     -deb : Save intermediate XVG file and create a reconstructed ENT file.                        [-db]   (■)
-     -for : Force new extraction and override previous PDB file.                                   [-fm](●)(■)
+     .ext = Input file extension (.com/log/inp/out/xyz/xtb/pdb/gro)
+          + ----------------------------------------------------------
+          ● Q-Force Options
+     -chr = Molecular charge.                                          [Default: 0]                [-cm][-chrg]
+     -mul = Molecular multiplicity.                                    [Default: 1]                [-ml][-mult]
+     -pcm = Solvent for C-PCM model.                                   [Default: None]             [-sv][-cpcm]
+     -chk : Verify generated configuration file before submit.         [Default: No]               [-ck][-check]
+     -cfg = Execute with user defined input configurations.            [Default: No]               [-ic][-incfg]
+     -prc = Number of processors to be used.                           [Default: 4]                [-pc][-proc]
+     -mem = Amount of memory in GB to be used.                         [Default: 8]                [-me][-nmem]
+
+          ● Additional Options
+     -fld = Force field parameters.      [OPL|GRO|CHM|AMB|LPG|QFC|ATB] [Default: OPLS/AA]          [-ff][-field]
+     -wtr = Water model (conditional).⁽†⁾[SPC|SPCE||TIP3P|TIP4P|TIP5P] [Default: SPC/E]            [-wm][-water]
+     -lst : Provides the complete list of parameterized solvents.      [Default: No]               [-ls][-lists]
+     -for : Execute in forced mode.                                    [Default: No]               [-fm][-force]
   -------------------------------------------------------------------------------------------------
-  ⁽*⁾ Configurable options in automated mode. (●) ORCA available. (■) GROMACS available.
-  ⁽†⁾ Structure position, not configuration step.
+  Total CPUs: 12 (max. MPI-procs.) :: System Memory: 5 GB
+  -------------------------------------------------------------------------------------------------
+  ⁽†⁾ Specifies the model to use if the input file corresponds to a water molecule.
+  ⁽*⁾ Repositories: https://traken.chem.yale.edu/ligpargen
+                    https://atb.uq.edu.au
+                    https://cgenff.com
 </pre></div>
 </div>
 </section>
 <section id="quickstart-examples">
-<h2><span class="section-number">2.5.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Under construction…</p></li>
+<li><p>Example #1: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/1_GMDFF_Test01.zip" title="Example #1 with a protein PDB file">Preparing a protein PDB file</a></p></li>
+<li><p>Example #2: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/1_GMDFF_Test02.zip" title="Example #2 of creating force field parameters">Creating the Q-Force force field parameters</a></p></li>
+<li><p>Example #3: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/1_GMDFF_Test03.zip" title="Example #3 of handling force field parameters from external servers">Handling force field parameters from external servers</a></p></li>
+<li><p>Example #4: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/1_GMDFF_Test04.zip" title="Example #4 of handling force field parameters from internal database">Handling force field parameters from internal database</a></p></li>
 </ul>
 </section>
 </section>
@@ -449,20 +495,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="s2m4plots.html"
+       href="s1m1packs.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>PLOTS</p>
+        <p class="prev-next-title"><span class="section-number">1.1. </span>PACKS</p>
       </div>
     </a>
     <a class="right-next"
-       href="s3c0index.html"
+       href="s2c0index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span><strong>Microsolvation</strong></p>
+        <p class="prev-next-title"><span class="section-number">2. </span><strong>Simulation</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -482,9 +528,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-trajectories">2.5.1. MD Trajectories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">2.5.2. Execution Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">2.5.3. Quickstart Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-force-fields">1.2.1. MD Force Fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">1.2.2. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">1.2.3. Quickstart Examples</a></li>
 </ul>
   </nav></div>
 

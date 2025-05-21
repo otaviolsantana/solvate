@@ -173,8 +173,8 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s1m1gmdff.html">1.1. GMDFF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s1m2packs.html">1.2. PACKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s1m1packs.html">1.1. PACKS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s1m2gmdff.html">1.2. GMDFF</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
@@ -355,31 +355,24 @@ document.write(`
 <p><strong>SETTING UP THE MICROSOLVATION</strong></p>
 <p>In the <strong>third stage</strong>, after extracting the trajectory, the truncated trajectory file <em>simbox.try.xyz</em> is obtained. The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module can then select <em>N</em> number of lower-energy clusters, each containing <em>M</em> solvent molecules. The value of <em>M</em> can be determined from a previous RDF analysis (using the DATAS module), set based on the solute-solvent ratio (at a concentration specified by the user), or calculated automatically (based on a cutoff distance corresponding to the diameter of the sphere encompassing the solvent molecule). The extraction is performed using the following command structure:</p>
 <blockquote>
-<div><p>micro ⟨simbox.trj.xyz⟩ [⟨-options⟩]</p>
+<div><p>solvate ⟨simbox.trj.xyz⟩ -micro [⟨-options⟩]</p>
 </div></blockquote>
 <p>After this extraction, the selected clusters are saved in a file <em>solute.trj.xyz</em>. This file can be used to analyze hydrogen bonds with the <code class="docutils literal notranslate"><span class="pre">BONDS</span></code> module. Alternatively, one can treat microsolvation at the level of the first solvation shell with the <code class="docutils literal notranslate"><span class="pre">GCALC</span></code> module, simultaneously treating all types of short-range interactions present in the system under investigation, regardless of the nature of the solvent. These modules are executed in two steps. In the first, all clusters present in the input file are characterized, aiming to select several <em>C</em> clusters with the lowest energy. In the second step, the <em>C</em> clusters are prepared for optimization and the Gibbs free energy extrapolation, considering one of the treatment options to remove any imaginary frequencies. In each of them, the procedure uses the following command structure:</p>
 <blockquote>
-<div><p>bonds ⟨solute.trj.xyz⟩ [⟨-options⟩]</p>
+<div><p>solvate ⟨solute.trj.xyz⟩ -bonds [⟨-options⟩]</p>
 </div></blockquote>
 <p>or:</p>
 <blockquote>
-<div><p>gcalc ⟨solute.trj.xyz⟩ [⟨-options⟩]</p>
+<div><p>solvate ⟨solute.trj.xyz⟩ -gcalc [⟨-options⟩]</p>
 </div></blockquote>
-<p>In the optimization step, the input files are saved in a separate jobrunning folder. In this folder, the module <code class="docutils literal notranslate"><span class="pre">QUEUE</span></code> can be executed to perform the optimization and the Gibbs free energy extrapolation in a queueing system:</p>
-<blockquote>
-<div><p>queue [⟨-options⟩]</p>
-</div></blockquote>
-<p>This procedure sequentially executed the <code class="docutils literal notranslate"><span class="pre">ONION</span></code> module, which is the resource responsible for performing geometry optimization, frequency calculation, and obtaining the extrapolated Gibbs free energy:</p>
-<blockquote>
-<div><p>oniom ⟨solute.gjf⟩ [⟨-options⟩]</p>
-</div></blockquote>
+<p>In the optimization step, the input files are saved in a separate jobrunning folder. In this folder, the module <code class="docutils literal notranslate"><span class="pre">QUEUE</span></code> can be executed directly to perform the optimization and the Gibbs free energy extrapolation in a queueing system. This procedure sequentially executes the <code class="docutils literal notranslate"><span class="pre">ONION</span></code> module, which is the resource responsible for performing geometry optimization, frequency calculation, and obtaining the extrapolated Gibbs free energy.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Several additional options for treating clusters are available. The complete list can be accessed in the help menu of the MICRO, BONDS/GCALC, and QUEUE modules (just type the program name on the command line, without additional options). Finally, all the processes can be automated through the MSRUN module. For examples, visit the MICRO, BONDS/GCALC, and QUEUE tutorials page.</p>
 </div>
 <p>Once all the necessary settings for executing the microsolvation treatment are known, the MSRUN module makes it possible to perform the entire procedure from a single command:</p>
 <blockquote>
-<div><p>msrun ⟨input.trj.xyz⟩ [⟨-options⟩]</p>
+<div><p>solvate ⟨input.trj.xyz⟩ -msrun [⟨-options⟩]</p>
 </div></blockquote>
 <p>where <em>input.trj.xyz</em> can be the file <em>simbox.trj.xyz</em> (from extracted trajectory file with TRAJS module, which corresponds to the complete procedure by default), or the file <em>solute.trj.xyz</em> (from extracted clusters file with MICRO module, in which the partial procedure is executed, without MICRO reexecution). The settings provided via <em>-options</em> make it possible to adjust the execution of the MICRO, BONDS/GCALC, QUEUE, and ONIOM modules independently.</p>
 <div class="admonition note">
