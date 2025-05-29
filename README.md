@@ -35,6 +35,7 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- Inclusion of features in MDRUN for multiple initial configurations in a single input. (under development)
 	- Inclusion of features in MDRUN for running simulations with auto-equilibration. (under development)
 	- Inclusion of features in GCALC for deleting clusters before and after optimization.
+	- Implementation of the CONFS submodule for automation of conformational analysis.
  	- Bug fixes...
 
 **CITATION**
