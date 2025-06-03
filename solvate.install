@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# SOLVATE Local Instalation
+
+if [[ -f Solvate.tgz ]]; then
+   tar xfz Solvate.tgz
+   ./Solvate.make
+   exit
+fi
+
+# SOLVATE GitHub Instalation
+
+if [[ `echo $@ | grep -i "\-release"` != "" || `echo $@ | grep -i "\-r"` != "" ]]; then
+   clear ; echo -e "\033[1;33mRelease update...\033[0m"
+   cd $HOME/.bin/solvate ; rm -rf solvate* modules share ; cd ..
+   wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip ; unzip main.zip ; rm main.zip
+   mv -f solvate-main/* solvate/. ; rm -rf solvate-main
+   cp solvate.profile solvate/ ; chmod +x solvate/solvate* solvate/modules/*
+elif [[ `echo $@ | grep -i "\-beta"` != "" ||  `echo $@ | grep -i "\-b"` != "" ]]; then
+   clear ; echo -e "\033[1;33mBeta update...\033[0m"
+   cd $HOME/.bin/solvate ; rm -rf solvate* modules share ; cd ..
+   wget https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip ; unzip main.zip ; rm main.zip
+   mv -f solvate-beta-main/* solvate/. ; rm -rf solvate-beta-main
+   cp solvate.profile solvate/ ; chmod +x solvate/solvate* solvate/modules/*
+else
+   clear ; echo -e "\033[1;33mBeta update... [DEFAULT]\033[0m"
+   cd $HOME/.bin/solvate ; rm -rf solvate* modules share ; cd ..
+   wget https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip ; unzip main.zip ; rm main.zip
+   mv -f solvate-beta-main/* solvate/. ; rm -rf solvate-beta-main
+   cp solvate.profile solvate/ ; chmod +x solvate/solvate* solvate/modules/*
+fi
+
+# SOLVATE Definitions
+
+export HOME_SOLVATE=$HOME/.bin/solvate && export HOME_PROGRAM=$HOME/.progs
+
+# Instaling dependencies
+# chmod +x $HOME_SOLVATE/nodes/packmol/packmol.install && $HOME_SOLVATE/nodes/packmol/packmol.install
+# chmod +x $HOME_SOLVATE/nodes/qforce/qforce.install   && $HOME_SOLVATE/nodes/qforce/qforce.install
+
+# Configuring dependencies
+
+# ORC=orca_5.0.4 ; XTB=xtb_6.6.0 ; GMX=gmx_2022.4 ; PCK=packmol ; QFC=qforce
+
+# rm -rf $HOME_SOLVATE/suite/orca    && ln -sf $HOME_PROGRAM/$ORC $HOME_SOLVATE/suite/orca
+# rm -rf $HOME_SOLVATE/suite/xtb     && ln -sf $HOME_PROGRAM/$XTB $HOME_SOLVATE/suite/xtb
+# rm -rf $HOME_SOLVATE/suite/gmx     && ln -sf $HOME_PROGRAM/$GMX $HOME_SOLVATE/suite/gmx
+# rm -rf $HOME_SOLVATE/suite/packmol && ln -sf $HOME_PROGRAM/$PCK $HOME_SOLVATE/suite/packmol
+# rm -rf $HOME_SOLVATE/suite/qforce  && ln -sf $HOME_PROGRAM/$QFC $HOME_SOLVATE/suite/qforce
+# rm -rf $HOME_SOLVATE/suite/packmol && ln -sf $HOME_PROGRAM/$PCK $HOME_SOLVATE/suite/packmol
+# #m -rf $HOME_SOLVATE/suite/gsn     && ln -sf $HOME_PROGRAM/$GSN $HOME_SOLVATE/suite/gsn
+# #m -rf $HOME_SOLVATE/suite/gvw     && ln -sf $HOME_PROGRAM/$GVW $HOME_SOLVATE/suite/gvw
+# #m -rf $HOME_SOLVATE/suite/vmd     && ln -sf $HOME_PROGRAM/$VMD $HOME_SOLVATE/suite/vmd
+
+# Initialize configurations
+
+source $HOME_SOLVATE/solvate.profile
