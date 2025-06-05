@@ -415,28 +415,28 @@ document.write(`
  ⟨solute⟩ = File with solute  geometry (.com/log/inp/out/xyz/xtb/gro/pdb)
 ⟨solvent⟩ = File with solvent geometry (.com/log/inp/out/xyz/xtb/gro/pdb)
   -------------------------------------------------------------------------------------------------
-     Nmol = Number of solvent molecules in the packing step.           [Default: 0][=Determine]    [-mol][-nm]
-     Npck = Number of packing layers.                                  [Default: 2]                [-npk][-np]
-     dCel = Dimensions of the simulation cell (in nanometers).         [Default: Not defined]      [-cel][-dc]
-     gCel = Gap between solute and cell edges (in nanometers).         [Default: Not defined]      [-gap][-dg]
-     bCon = Molal concentration of the simulation cell (in mol·kg⁻¹).  [Default: Not defined]      [-bco][-bc]
-     cCon = Molar concentration of the simulation cell (in mol·L⁻¹).   [Default: Not defined]      [-cco][-cc]
-     Prop = Proportion between solvent molecules. [N1:N2:...]          [Default: Not defined]      [-pro][-pr]
-     Dens = Density of the simulation cell (in g·mL⁻¹).                [Default: 1.0]              [-den][-ds]⁽*⁾
-     cIon = File with counterion to be added for charge neutrality.    [Default: None]             [-cnt][-ci]
-    Shape = Packaging format (sphere|cube|box).                        [Default: Sphere/Cube]      [-shp][-sp]
-   Format = Type of generated file (inp|gro).                          [Default: Auto]             [-fmt][-ft]
-   Tolera = Minimum distance tolerated in packing (in Å).              [Default: Not defined]      [-tol][-to]
-   Repack : Resubmit the packing procedure with new parameters.        [Default: No]               [-rep][-rp]
-    Force : Run in forced mode (no warning messages).                  [Default: No]               [-for][-fm]
-   Normal : Run in normal mode (conventional packing configuration).   [Default: No]               [-nor][-cv]
-   Iterat : Run in iterative mode (to adjust tolerance).               [Default: No]               [-ite][-it]
-  Include : Insert external force field into generated topologie.      [Default: No]               [-inc][-in]⁽†⁾
-   FField = Force field parameters.      [OPL|GRO|CHM|AMB|LPG|QFC|ATB] [Default: OPLS/AA]          [-fft][-ff]⁽†⁾
-   Backup : Save original input files.                                 [Default: No]               [-bak][-bk]
-  Solvent = Solvent to be used in C-PCM/ALPB solvation model.          [Default: Auto]             [-svt][-sv]
-     List : Lists the set of solvents in the database.                 [Default: No]               [-lst][-ls]
-    Check : Checks the consistency of simulation box settings.         [Default: No]               [-chk][-ck]
+     -mol = Number of solvent molecules in the packing step.           [Default: 0][=Determine]    [-nm][Nmol]
+     -npk = Number of packing layers.                                  [Default: 2]                [-np][Npck]
+     -cel = Dimensions of the simulation cell (in nanometers).         [Default: Not defined]      [-dc][dCel]
+     -gap = Gap between solute and cell edges (in nanometers).         [Default: Not defined]      [-dg][gCel]
+     -bco = Molal concentration of the simulation cell (in mol·kg⁻¹).  [Default: Not defined]      [-bc][bCon]
+     -cco = Molar concentration of the simulation cell (in mol·L⁻¹).   [Default: Not defined]      [-cc][cCon]
+     -pro = Proportion between solvent molecules. [N1:N2:...]          [Default: Not defined]      [-pr][Prop]
+     -den = Density of the simulation cell (in g·mL⁻¹).                [Default: 1.0]              [-ds][Dens]⁽*⁾
+     -cnt = File with counterion to be added for charge neutrality.    [Default: None]             [-ci][cIon]
+     -shp = Packaging format (sphere|cube|box).                        [Default: Sphere/Cube]      [-sp][Shape]
+     -fmt = Type of generated file (inp|gro).                          [Default: Auto]             [-ft][Format]
+     -tol = Minimum distance tolerated in packing (in Å).              [Default: Not defined]      [-to][Tolera]
+     -rep : Resubmit the packing procedure with new parameters.        [Default: No]               [-rp][Repack]
+     -for : Run in forced mode (no warning messages).                  [Default: No]               [-fm][Force]
+     -nor : Run in normal mode (conventional packing configuration).   [Default: No]               [-cv][Normal]
+     -ite : Run in iterative mode (to adjust tolerance).               [Default: No]               [-it][Iterat]
+     -inc : Insert external force field into generated topologie.      [Default: No]               [-in][Include]⁽†⁾
+     -fft = Force field parameters.      [OPL|GRO|CHM|AMB|LPG|QFC|ATB] [Default: OPLS/AA]          [-ff][FField] ⁽†⁾
+     -bak : Save original input files.                                 [Default: No]               [-bk][Backup]
+     -svt = Solvent to be used in C-PCM/ALPB solvation model.          [Default: Auto]             [-sv][Solvent]
+     -lst : Lists the set of solvents in the database.                 [Default: No]               [-ls][List]
+     -chk : Checks the consistency of simulation box settings.         [Default: No]               [-ck][Check]
   -------------------------------------------------------------------------------------------------
   ⁽*⁾ Configurable options in automated mode. ⁽†⁾ GROMACS only
 </pre></div>

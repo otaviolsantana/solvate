@@ -394,45 +394,44 @@ document.write(`
 <blockquote>
 <div><p>datas ⟨file.ext⟩ [-dat [-opt]][-plt [-opt]] [-trj [-opt]]</p>
 </div></blockquote>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------------------------------------
-   auto : Execute an automated properties extraction from simulation files.                      [-da](●)(■)
-        » Description
-          Properties extraction + statistical and graphical analysis
-        » NOTE: this option is recommended in queue systems.
-        + ----------------------------------------------------------
-   -dat : Generate a dat file only. [for GMX: -min|-opt|-nvt|-npt]                               [-df](●)(■)
-   -cpt : Generate a dat file in compact format.                                                 [-cp](●)(■)
-   -dot : Convert dots to commas.                                                                [-dt](●)(■)
-   -psa : Performs statistical analysis.                                                         [-ps](●)(■)
-   -for : Force new property data extraction.                                                    [-fm](●)(■)
-        + ----------------------------------------------------------
-   -rms : RMSD analysis for SLT molecular residue (full trajectory).                             [-rs]   (■)
-   -rme : RMSD/E analysis for SLT molecular residue vs energy (extracted trajectory).            [-ra]   (■)
-   -rdf : RDF analysis for center of masses of ref SLT and sel SVT residues.                     [-rd]   (■)(†)
-        = [I:J] : RDF analysis for ref SLT/I and sel SVT/J labels.                               [-rd]   (■)
-   -pdf : PDF analysis for center of masses of ref SLT and sel SVT residues.                     [-pd](●)(■)(‡)
-        = [I:J] : PDF analysis for ref SLT/I and sel SVT/J indexes.                              [-pd](●)(■)
-   -sma : Calculate simple moving average at frequency 5 to the extracted RDF data.              [-sm]   (■)
-        = Specification of frequency N for the SMA analysis (-1 = remove previous analysis).     [-sm]   (■)
-   -tim = Final simulation interval (in ps) to extract RDF data (def.: 100 ps).                  [-tm]   (■)
-   -cnv = Cumulative numerical value to be highlighted in the RDF/PDF analysis.                  [-cv](●)(■)
-   -shw : Visualize the performed SMA analysis.                                                  [-sh]   (■)
-        + ----------------------------------------------------------
-   -plt : Generate graphs for params vs simulation time.                                         [-pl](●)(■)
-   -stp : Generate graphs for params vs simulation step.                                         [-st](●)(■)
-        + ----------------------------------------------------------
-   -trj : Analize the trajectory file.                                                           [-tr](●)(■)
-   -ext : Extract a truncated trajectory file.                                                   [-tr](●)(■)
-   -ctr = [I:J] : Skip I equilibration steps and extract J production steps.                     [-ct](●)(■)⁽*⁾
-   -btr = [B:X] : Select frames from B trajectory blocks into X% final steps.                    [-bt](●)(■)⁽*⁾
-   -ptr = [P:D] : Select configurations aroud pressure P with tolerance ±D (in bar).             [-pt]   (■)⁽*⁾
-   -prd : Select configuration production steps only and the corresponding properties.           [-pr](●)(■)⁽*⁾
-   -grp : Extrac short-ranged non-bonded potential energies.                                     [-gr]   (■)⁽*⁾
-   -nbx : Do not make corrections for “fragmented” molecules near the box edges.                 [-nb]   (■)
--------------------------------------------------------------------------------------------------
-⁽*⁾ Configurable options in automated mode. (●) ORCA available. (■) GROMACS available.
-⁽†⁾ RDF = Radial Distribution Function. (from TRJ.XTC file)
-⁽‡⁾ PDF = Pair Distribution Function.   (from TRY.XYZ file)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+     auto : Execute an automated properties extraction from simulation files.                      [-da](●)(■)
+          » Description
+            Properties extraction + statistical and graphical analysis
+          » NOTE: this option is recommended in queue systems.
+          + ----------------------------------------------------------
+     -dat : Generate a dat file only. [for GMX: -min|-opt|-nvt|-npt]                               [-df](●)(■)
+     -cpt : Generate a dat file in compact format.                                                 [-cp](●)(■)
+     -dot : Convert dots to commas.                                                                [-dt](●)(■)
+     -psa : Performs statistical analysis.                                                         [-ps](●)(■)
+     -for : Force new property data extraction.                                                    [-fm](●)(■)
+          + ----------------------------------------------------------
+     -rms : RMSD analysis for SLT molecular residue (full trajectory).                             [-rs]   (■)
+     -rme : RMSD/E analysis for SLT molecular residue vs energy (extracted trajectory).            [-ra]   (■)
+     -rdf : RDF analysis for center of masses of ref SLT and sel SVT residues.                     [-rd]   (■)⁽†⁾
+          = [I:J] : RDF analysis for ref SLT/I and sel SVT/J labels.                               [-rd]   (■)
+     -pdf : PDF analysis for center of masses of ref SLT and sel SVT residues.                     [-pd](●)(■)⁽‡⁾
+          = [I:J] : PDF analysis for ref SLT/I and sel SVT/J indexes.                              [-pd](●)(■)
+     -sma : Calculate simple moving average at frequency 5 to the extracted RDF data.              [-sm]   (■)
+     -tim = Final simulation interval (in ps) to extract RDF data (def.: 100 ps).                  [-tm]   (■)
+     -cnv = Cumulative numerical value to be highlighted in the RDF/PDF analysis.                  [-cv](●)(■)
+     -shw : Visualize the performed SMA analysis.                                                  [-sh]   (■)
+          + ----------------------------------------------------------
+     -plt : Generate graphs for params vs simulation time.                                         [-pl](●)(■)
+     -stp : Generate graphs for params vs simulation step.                                         [-st](●)(■)
+          + ----------------------------------------------------------
+     -trj : Analize the trajectory file.                                                           [-tr](●)(■)
+     -ext : Extract a truncated trajectory file.                                                   [-tr](●)(■)
+     -ctr = [I:J] : Skip I equilibration steps and extract J production steps.                     [-ct](●)(■)⁽*⁾
+     -btr = [B:X] : Select frames from B trajectory blocks into X% final steps.                    [-bt](●)(■)⁽*⁾
+     -ptr = [P:D] : Select configurations aroud pressure P with tolerance ±D (in bar).             [-pt]   (■)⁽*⁾
+     -prd : Select configuration production steps only and the corresponding properties.           [-pr](●)(■)⁽*⁾
+     -grp : Extrac short-ranged non-bonded potential energies.                                     [-gr]   (■)⁽*⁾
+     -nbx : Do not make corrections for “fragmented” molecules near the box edges.                 [-nb]   (■)
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Configurable options in automated mode. (●) ORCA available. (■) GROMACS available.
+  ⁽†⁾ RDF = Radial Distribution Function. (from TRJ.XTC file)
+  ⁽‡⁾ PDF = Pair Distribution Function.   (from TRY.XYZ file)
 </pre></div>
 </div>
 </section>
