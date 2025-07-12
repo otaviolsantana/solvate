@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction &#8212; Solvate Suite - Comprehensive Manual</title>
+    <title>2.5. TRAJS &#8212; Solvate Suite - Comprehensive Manual</title>
   
   
   
@@ -57,10 +57,11 @@
     <script async="async" src="static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's2m5trajs';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Configuration" href="s1c0index.html" />
+    <link rel="next" title="3. Microsolvation" href="s3c0index.html" />
+    <link rel="prev" title="2.4. PLOTS" href="s2m4plots.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -143,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -172,19 +171,19 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s1m1packs.html">1.1. PACKS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s1m2gmdff.html">1.2. GMDFF</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="s2m1mdrun.html">2.1. MDRUN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m3stats.html">2.3. STATS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m4plots.html">2.4. PLOTS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s2m5trajs.html">2.5. TRAJS</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. TRAJS</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Microsolvation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s3m1msrun.html">3.1. MSRUN</a></li>
@@ -255,7 +254,7 @@
       
       
       
-      <li><a href="_sources/index.md" target="_blank"
+      <li><a href="_sources/s2m5trajs.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -339,7 +338,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction</h1>
+    <h1>TRAJS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -349,7 +348,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-trajectories">2.5.1. MD Trajectories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">2.5.2. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">2.5.3. Quickstart Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -361,30 +362,60 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<p>Welcome to the comprehensive <em><strong>Solvate Suite User Guide</strong></em>! The <em>Solvate Suite</em> is a modular and integrated toolkit designed to streamline the preparation and processing of molecular systems with explicit solvents, bridging molecular dynamics (MD) simulations with quantum chemistry calculations. This package was conceived to meet the needs of researchers working at the interface between classical mechanics and electronic structure methods, especially in contexts that require a more realistic modeling of solvated environments, such as reaction mechanisms in solution, spectroscopic studies, and thermochemical properties.</p>
-<p>With a flexible and highly customizable approach, <em>Solvate Suite</em> allows you to:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="trajs">
+<h1><span class="section-number">2.5. </span>TRAJS<a class="headerlink" href="#trajs" title="Link to this heading">#</a></h1>
+<section id="md-trajectories">
+<h2><span class="section-number">2.5.1. </span>MD Trajectories<a class="headerlink" href="#md-trajectories" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">TRAJS</span></code> module performs the extraction of simulated trajectory from <em>GROMACS</em> program. It can be used from the command:</p>
+<blockquote>
+<div><p>trajs ⟨simbox.gro⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">trajs</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
+</div>
+</section>
+<section id="execution-options">
+<h2><span class="section-number">2.5.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>trajs ⟨trajectory.gro/xtc⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+     auto : Execute an automated trajectory extraction from simulation files.                      [-ta](●)(■)
+          » Description
+            btrj = 1000 blocks with 10% extraction
+          » NOTE: this option is recommended in queue systems.
+          + #1: Individual Options - (no data analysis) ------------------------------
+     -itr = I     : Extracts position structure #I from the trajectory.                            [-it](●)(■)⁽†⁾
+     -ntr = N     : Extract N equaly spaced MD steps for truncated trajectory.                     [-nt](●)(■)
+     -str = M     : Extract equaly spaced frames at every M steps from trajectory.                 [-st](●)(■)
+          + #2: Combinable Options - (with data analysis) ----------------------------
+     -ctr = [I:J] : Skip I equilibration steps and extract J production steps.                     [-ct](●)(■)⁽*⁾
+     -btr = [B:X] : Select frames from B trajectory blocks into X% final steps.                    [-bt]   (■)⁽*⁾
+     -ptr = [P:D] : Select configurations around pressure P with tolerance ±D (in bar).            [-pt]   (■)⁽*⁾
+          + #3: Output file formats - (GROMACS only) ---------------------------------
+     -xyz : Output in XYZ file format. [default]                                                   [-xy]   (■)
+     -pdb : Output in PDB file format.                                                             [-pd]   (■)
+     -gro : Output in GRO file format.                                                             [-gr]   (■)
+          + #4: Other Options --------------------------------------------------------
+     -prd : Select configuration production steps only and the corresponding properties.           [-pr](●)(■)⁽*⁾
+     -grp : Extract short-ranged non-bonded potential energies.                                    [-gr]   (■)⁽*⁾
+     -nbx : Don´t make corrections for “fragmented” molecules near the box edges.                  [-nb]   (■)
+     -bak : Save intermediate PDB and XVG files for alternative convertions.                       [-bk]   (■)
+     -deb : Save intermediate XVG file and create a reconstructed ENT file.                        [-db]   (■)
+     -for : Force new extraction and override previous PDB file.                                   [-fm](●)(■)
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Configurable options in automated mode. (●) ORCA available. (■) GROMACS available.
+  ⁽†⁾ Structure position, not configuration step.
+</pre></div>
+</div>
+</section>
+<section id="quickstart-examples">
+<h2><span class="section-number">2.5.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Create initial configurations for AIMD/BOMD simulations with <em>ORCA</em> or classical MD simulations with <em>GROMACS</em>;</p></li>
-<li><p>Generate solvation boxes with various solvents and force fields (OPLS-AA, GROMOS, CHARMM, and AMBER) from diverse sources (<em>GROMACS</em> database, LigParGen, ATB, or <em>Q-Force</em>);</p></li>
-<li><p>Integrate data from molecular dynamics simulations with input files for electronic structure calculations (semiempirical, DFT, MP2, etc.);</p></li>
-<li><p>Automate repetitive steps such as snapshot extraction, and input preparation for software like <em>Gaussian</em>, <em>ORCA</em>, <em>xTB</em>, and <em>GROMACS</em>;</p></li>
-<li><p>Perform statistical and structural analyses of solvent environments around target species.</p></li>
-</ul>
-<p>This manual was written to guide users — from beginners to advanced — through the efficient use of <em>Solvate Suite</em>’s features. Throughout the chapters, you will find step-by-step instructions, practical examples, useful tips, and conceptual explanations that help you understand not only the “how”, but also the “why” of each step.</p>
-<p>Get ready to accelerate your computational workflow and explore complex systems with greater control, reproducibility, and speed.</p>
-<section id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong><em>Solvate Suite</em>: A Command-Line Interface for Molecular Simulations and Multiscale Microsolvation Modeling</strong>
-Otávio L. Santana; Daniel G. Silva; Sidney R. Santana
-<em>J. Chem. Inf. Model. 2024, 64, 9, 3767–3778</em>
-(<a class="reference external" href="https://pubs.acs.org/doi/10.1021/acs.jcim.3c01899">https://pubs.acs.org/doi/10.1021/acs.jcim.3c01899</a>)</p></li>
+<li><p>Under construction…</p></li>
 </ul>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -417,12 +448,21 @@ Otávio L. Santana; Daniel G. Silva; Sidney R. Santana
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="s2m4plots.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>PLOTS</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="s1c0index.html"
+       href="s3c0index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span><strong>Configuration</strong></p>
+        <p class="prev-next-title"><span class="section-number">3. </span><strong>Microsolvation</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -442,7 +482,9 @@ Otávio L. Santana; Daniel G. Silva; Sidney R. Santana
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-trajectories">2.5.1. MD Trajectories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">2.5.2. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">2.5.3. Quickstart Examples</a></li>
 </ul>
   </nav></div>
 
