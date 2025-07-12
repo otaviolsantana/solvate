@@ -31,7 +31,6 @@ This is a repository of test files for executing the program suite, integrated i
 * Test #01: [Extraction of microsolvation clusters from water systems](https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/5_MICRO_Test01.zip). [Water example]
 * Test #02: [Extraction of microsolvation clusters from DMSO systems](https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/5_MICRO_Test02.zip). [DMSO example]
 
-**BONDS & GCALC**
+**GCALC**
 
-* Test #01: [Microsolvation at H-bonds level](https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/6_BONDS_Test01.zip). [BONDS example]
-* Test #02: [Microsolvation at first solvation shell](https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/6_GCALC_Test01.zip). [GCALC example]
+* Test #01: [Microsolvation at first solvation shell](https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/6_GCALC_Test01.zip). [GCALC example]
