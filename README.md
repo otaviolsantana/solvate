@@ -28,7 +28,7 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- Integration of the MICRO, GCALC, and ONIOM modules via MSRUN to automate microsolvation.
  	- Bug fixes...
 
-* _Solvate Suite 2025.07_ (Coming soon...)
+* _Solvate Suite 2025.07_
  
 	- Inclusion of features in GMDFF for running Q-Force with user-customized parameters.
 	- Inclusion of features in PACKS for simulations with multiple solute conformations.
