@@ -425,12 +425,15 @@ document.write(`
         dat : Calc Data   (write)[Extract calculated data (option: nogeom)]
         sup : Supl Data   (write)[Extract supplementary data]
         sep : Sepa Data   (write)[Separate input/output data]
-        job : Jobs Exec   (write)[Separate input/output jobs]
+        spl : Splt Data   (write)[Split input/output data]
+        div : Divd Data   (write)[Divide input/output data]
+        job : Jobs Exec   (write)[Divide input/output jobs]
         frq : Calc Frqs   (write)[Extract vibrational frequency data]
-        img = Imag Dist   (write)[Imaginary mode distortion (factor of distortion)]
+        ifr = Imag Dist   (write)[Imaginary mode distortion (factor of distortion)]
             + ----------------------------------------------------------
         slt : SLTs Extn   (write)[Solute  extraction from trajectory frames]
         svt : SVTs Extn   (write)[Solvent extraction from trajectory frames]
+        pcf = PChg File   (write)[Solvent as discrete point charges]
   -------------------------------------------------------------------------------------------------
 
   -------------------------------------------------------------------------------------------------
@@ -511,7 +514,7 @@ OPTIONS/DEFAULTS
 <section id="bonds">
 <h2><span class="section-number">5.4. </span><strong>BONDS</strong><a class="headerlink" href="#bonds" title="Link to this heading">#</a></h2>
 <ul>
-<li><p>Hydrogen bond analyzer</p>
+<li><p>Hydrogen bonds analyzer</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
 bonds ⟨solute.ext⟩ ⟨solvent.ext⟩ [⟨-options⟩]
 
