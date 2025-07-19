@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 's3c0index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.1. MSRUN" href="s3m1msrun.html" />
-    <link rel="prev" title="2.5. TRAJS" href="s2m5trajs.html" />
+    <link rel="next" title="3.1. MICRO" href="s3m1micro.html" />
+    <link rel="prev" title="2.2. DATAS" href="s2m2datas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,24 +180,13 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s2m1mdrun.html">2.1. MDRUN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s2m3stats.html">2.3. STATS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s2m4plots.html">2.4. PLOTS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s2m5trajs.html">2.5. TRAJS</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. <strong>Microsolvation</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s3m1msrun.html">3.1. MSRUN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3m2micro.html">3.2. MICRO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3m3gcalc.html">3.3. GCALC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3m4queue.html">3.4. QUEUE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3m5oniom.html">3.5. ONIOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3m1micro.html">3.1. MICRO</a></li>
 </ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="s4c0index.html">4. <strong>Management</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s4m1files.html">4.1. FILES</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="s5c0index.html">5. <strong>Additional Modules</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="s4c0index.html">4. <strong>Additional Modules</strong></a></li>
 <li class="toctree-l1"><a class="reference external" href="https://otaviolsantana.github.io/solvate/">Solvate Suite Homepage</a></li>
 </ul>
 
@@ -352,31 +341,18 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="microsolvation">
 <h1><span class="section-number">3. </span><strong>Microsolvation</strong><a class="headerlink" href="#microsolvation" title="Link to this heading">#</a></h1>
 <p><strong>SETTING UP THE MICROSOLVATION</strong></p>
-<p>In the <strong>third stage</strong>, after extracting the trajectory, the truncated trajectory file <em>simbox.try.xyz</em> is obtained. The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module can then select <em>N</em> number of lower-energy clusters, each containing <em>M</em> solvent molecules. The value of <em>M</em> can be determined from a previous RDF analysis (using the DATAS module), set based on the solute-solvent ratio (at a concentration specified by the user), or calculated automatically (based on a cutoff distance corresponding to the diameter of the sphere encompassing the solvent molecule). The extraction is performed using the following command structure:</p>
+<p>In the <strong>third stage</strong>, following trajectory extraction, the truncated trajectory file <em>simbox.try.xyz</em> is generated. The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module can then be employed in two steps to carry out the microsolvation procedure.</p>
+<p>In the first step, the module selects <em>N</em> low-energy clusters, each composed of <em>M</em> solvent molecules. The value of <em>M</em> may be: (1) determined from a prior radial distribution function (RDF) analysis using the DATAS module; (2) defined based on the solute-to-solvent ratio at a user-specified concentration; or (3) calculated automatically, using a cutoff distance corresponding to the diameter of a solvation sphere. The extraction is performed using the following command structure:</p>
 <blockquote>
 <div><p>solvate ⟨simbox.trj.xyz⟩ -micro [⟨-options⟩]</p>
 </div></blockquote>
-<p>After this extraction, the selected clusters are saved in a file <em>solute.trj.xyz</em>. This file can be used to analyze hydrogen bonds with the <code class="docutils literal notranslate"><span class="pre">BONDS</span></code> module. Alternatively, one can treat microsolvation at the level of the first solvation shell with the <code class="docutils literal notranslate"><span class="pre">GCALC</span></code> module, simultaneously treating all types of short-range interactions present in the system under investigation, regardless of the nature of the solvent. These modules are executed in two steps. In the first, all clusters present in the input file are characterized, aiming to select several <em>C</em> clusters with the lowest energy. In the second step, the <em>C</em> clusters are prepared for optimization and the Gibbs free energy extrapolation, considering one of the treatment options to remove any imaginary frequencies. In each of them, the procedure uses the following command structure:</p>
+<p>After this extraction, the selected clusters are stored in the file <em>solute.trj.xyz</em>. In the second step, this file serves as input to optimize the hydrogen bonds within the microsolvation clusters. Subsequently, all microsolvation clusters can be optimized (with constraints, at the xTB level). Finally, the desired properties can be calculated based on user-specified configurations. This procedure is carried out using the following command structure:</p>
 <blockquote>
-<div><p>solvate ⟨solute.trj.xyz⟩ -bonds [⟨-options⟩]</p>
+<div><p>solvate ⟨solute.trj.xyz⟩ -micro [⟨-options⟩]</p>
 </div></blockquote>
-<p>or:</p>
-<blockquote>
-<div><p>solvate ⟨solute.trj.xyz⟩ -gcalc [⟨-options⟩]</p>
-</div></blockquote>
-<p>In the optimization step, the input files are saved in a separate jobrunning folder. In this folder, the module <code class="docutils literal notranslate"><span class="pre">QUEUE</span></code> can be executed directly to perform the optimization and the Gibbs free energy extrapolation in a queueing system. This procedure sequentially executes the <code class="docutils literal notranslate"><span class="pre">ONION</span></code> module, which is the resource responsible for performing geometry optimization, frequency calculation, and obtaining the extrapolated Gibbs free energy.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Several additional options for treating clusters are available. The complete list can be accessed in the help menu of the MICRO, BONDS/GCALC, and QUEUE modules (just type the program name on the command line, without additional options). Finally, all the processes can be automated through the MSRUN module. For examples, visit the MICRO, BONDS/GCALC, and QUEUE tutorials page.</p>
-</div>
-<p>Once all the necessary settings for executing the microsolvation treatment are known, the MSRUN module makes it possible to perform the entire procedure from a single command:</p>
-<blockquote>
-<div><p>solvate ⟨input.trj.xyz⟩ -msrun [⟨-options⟩]</p>
-</div></blockquote>
-<p>where <em>input.trj.xyz</em> can be the file <em>simbox.trj.xyz</em> (from extracted trajectory file with TRAJS module, which corresponds to the complete procedure by default), or the file <em>solute.trj.xyz</em> (from extracted clusters file with MICRO module, in which the partial procedure is executed, without MICRO reexecution). The settings provided via <em>-options</em> make it possible to adjust the execution of the MICRO, BONDS/GCALC, QUEUE, and ONIOM modules independently.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The list of options can be seen from the applications menu, which is accessible from the command line by typing the module name, without any other parameters.</p>
+<p>Various processing options for cluster treatment are available. The complete list can be accessed via the help menu of the MICRO module by executing the module name without any arguments on the command line. These procedures can be fully automated using the “-auto” option.</p>
 </div>
 <p><strong>STAGE STRUCTURE</strong></p>
 <p><img alt="image" src="images/stage3.png" /></p>
@@ -415,20 +391,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="s2m5trajs.html"
+       href="s2m2datas.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>TRAJS</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>DATAS</p>
       </div>
     </a>
     <a class="right-next"
-       href="s3m1msrun.html"
+       href="s3m1micro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>MSRUN</p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>MICRO</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

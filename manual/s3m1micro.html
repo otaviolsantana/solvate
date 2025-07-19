@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Configuration &#8212; Solvate Suite - Comprehensive Manual</title>
+    <title>3.1. MICRO &#8212; Solvate Suite - Comprehensive Manual</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 's1c0index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's3m1micro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1.1. PACKS" href="s1m1packs.html" />
-    <link rel="prev" title="Introduction" href="index.html" />
+    <link rel="next" title="4. Additional Modules" href="s4c0index.html" />
+    <link rel="prev" title="3. Microsolvation" href="s3c0index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,19 +172,19 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. <strong>Configuration</strong></a><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="s1c0index.html">1. <strong>Configuration</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s1m1packs.html">1.1. PACKS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s1m2gmdff.html">1.2. GMDFF</a></li>
-</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s2m1mdrun.html">2.1. MDRUN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Microsolvation</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s3m1micro.html">3.1. MICRO</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Microsolvation</strong></a><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. MICRO</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="s4c0index.html">4. <strong>Additional Modules</strong></a></li>
 <li class="toctree-l1"><a class="reference external" href="https://otaviolsantana.github.io/solvate/">Solvate Suite Homepage</a></li>
@@ -242,7 +242,7 @@
       
       
       
-      <li><a href="_sources/s1c0index.md" target="_blank"
+      <li><a href="_sources/s3m1micro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -313,7 +313,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -324,11 +326,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Configuration</h1>
+    <h1>MICRO</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clusters-extraction">3.1.1. Clusters Extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clusters-treatment">3.1.2. Clusters Treatment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">3.1.3. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">3.1.4. Quickstart Examples</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -338,27 +351,97 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="configuration">
-<h1><span class="section-number">1. </span><strong>Configuration</strong><a class="headerlink" href="#configuration" title="Link to this heading">#</a></h1>
-<p><strong>SETTING UP MD SIMULATIONS</strong></p>
-<p>In the <strong>first stage</strong>, <em>Solvate Suite</em> provides optimized protocols for setting up the initial configuration of simulation boxes, enabling AIMD/BOMD simulations with <em>ORCA</em> or classical MD simulations with <em>GROMACS</em>. The construction of the initial simulation box is handled by the <code class="docutils literal notranslate"><span class="pre">PACKS</span></code> module, through the iterative use of the <em>PackMol</em> program. In the case of classical MD simulations, this process includes creating or adjusting force field parameters and building the topology input file. The generation of force field parameters is managed by the <code class="docutils literal notranslate"><span class="pre">GMDFF</span></code> module, which produces parameter files (itp) and applies specific adjustments to the topology file (top) based on various input formats, such as files generated by <em>Gaussian</em>, <em>ORCA</em>, <em>xTB</em>, or <em>GROMACS</em>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Although the PACKS module manages the use of GMDFF, enabling the generation of force field parameters during the packing process, it is recommended to run the GMDFF module beforehand. Regardless, the PACKS module will verify the consistency of the parameters at the end of the packing procedure.</p>
-</div>
-<p>The main program can control the use of the core modules, allowing uniform execution throughout all stages of the suite’s use. For example, the suite’s first stage involves creating and configuring the simulation box. This is done using the following basic command structure:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="micro">
+<h1><span class="section-number">3.1. </span>MICRO<a class="headerlink" href="#micro" title="Link to this heading">#</a></h1>
+<section id="clusters-extraction">
+<h2><span class="section-number">3.1.1. </span>Clusters Extraction<a class="headerlink" href="#clusters-extraction" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module manages the extraction of microsolvation clusters. It is possible to select <em>N</em> low-energy clusters, each containing <em>M</em> solvent molecules. The value of <em>M</em> can be determined from a previous RDF analysis (using the DATAS module), defined based on the solute-solvent ratio (at a user-specified concentration), or calculated automatically (based on a cutoff distance corresponding to the diameter of the sphere surrounding the solvent molecule). The extraction is performed using the following command:</p>
 <blockquote>
-<div><p>solvate ⟨solute.ext⟩ ⟨solvent.ext⟩ [⟨-options⟩]</p>
+<div><p>micro ⟨simbox.trj.xyz⟩ -str <em>N</em> -nsv <em>M</em></p>
 </div></blockquote>
-<p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em> (com/log [<em>Gaussian</em>], inp/out [<em>ORCA</em>], xyz/xtb [<em>xTB</em>], gro/pdb [<em>GROMACS</em>]), <em>inputN</em> the files with the structures of the solute and solvent molecules, and “-options” a set of options for the configuration of the box to be created.</p>
+<p>The extraction based on molal concentration <em>C</em> is performed using the command:</p>
+<blockquote>
+<div><p>micro ⟨simbox.trj.xyz⟩ -str <em>N</em> -bco <em>C</em></p>
+</div></blockquote>
+<p>The extraction based on the number <em>S</em> of solvation shells (estimated from the solvent radius) is performed using the command:</p>
+<blockquote>
+<div><p>micro ⟨simbox.trj.xyz⟩ -str <em>N</em> -sol <em>S</em></p>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The list of options can be seen from the applications menu, which is accessible from the command line by typing the module name, without any other parameters.</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">micro</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
 </div>
-<p><strong>STAGE STRUCTURE</strong></p>
-<p><img alt="image" src="images/stage1.png" /></p>
-<div class="toctree-wrapper compound">
+</section>
+<section id="clusters-treatment">
+<h2><span class="section-number">3.1.2. </span>Clusters Treatment<a class="headerlink" href="#clusters-treatment" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module can also perform property calculations based on the microsolvation cluster treatment. This includes the optimization of hydrogen bonds within the clusters, constrained optimization of the entire clusters at the xTB level, and subsequent property evaluation with configurations set by the user. These calculations are executed using the following command:</p>
+<blockquote>
+<div><p>micro ⟨solute.trj.xyz⟩ -opt -hbd -key “keywords”</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">micro</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
 </div>
+</section>
+<section id="execution-options">
+<h2><span class="section-number">3.1.3. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>micro ⟨trajectory.trj.xyz⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+  MICROSOLVATION CLUSTERS EXTRACTION                                                               [-ce]
+  -------------------------------------------------------------------------------------------------
+     auto : Execute an automated microsolvation clusterization from simulation files.              [-ms]
+          » Description
+            bCon = 1 mol·kg⁻¹ (for setting the number of solvent molecules)
+            Nstr = 1% of trajectory structures (1000 min, 10000 max)
+            cTRJ = All production steps
+          + ----------------------------------------------------------
+     -str = Number of clustered structures selected trajectory.        [Default: 1000] [Int.]      [-nc]⁽*⁾
+     -nsv = Number of solvent molecules in the clustering process.     [Default: 0]    [Int.]      [-ns]⁽*⁾
+     -sol = Number of solvent layers in the clustering process.        [Default: 1]    [Int.]      [-nl]⁽*⁾
+     -bco = Molal conc. of the microsolvation cluster (in mol·kg⁻¹).   [Default: 0.0]  [Real]      [-bc]⁽*⁾
+     -cfg = Nº of MD equilibration steps [:Nº of MD production steps]. [Default: 0:0]  [Auto]      [-ct]⁽*⁾
+     -chr = Value of microsolvated solute charge.                      [Default: 0]    [Int.]      [-ch]⁽*⁾
+     -mlt = Value of microsolvated solute multiplicity.                [Default: 1]    [Int.]      [-ml]⁽*⁾
+     -prs = Value of simulation pressure (in bar).                     [Default: 1.0]  [Real]      [-pr]⁽*⁾
+     -tmp = Value of simulation temperature (in K).                    [Default: 298]  [Real]      [-tp]⁽*⁾
+     -svt = Solvent to be used in ALPB solvation model.                [Default: Auto] [Text]      [-sv]⁽*⁾
+     -rtn : Retain the original orientation of the clusters.           [Default: No]               [-rt]⁽*⁾
+     -psv : Preserve the original trajectory file.                     [Default: No]               [-pv]⁽*⁾
+     -for : Execute in forced mode.                                    [Default: No]               [-fm]⁽*⁾
+          + ----------------------------------------------------------
+     -prc = Number of parallel CPU processes to run.                   [Default: 8]                [-pc]⁽*⁾
+     -mem = Amount of memmory to be used (in GB).                      [Default: 16]               [-mm]⁽*⁾
+  -------------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+<blockquote>
+<div><p>micro ⟨solute.trj.xyz⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+  MICROSOLVATION CLUSTERS TREATMENT                                                                [-ct]
+  -------------------------------------------------------------------------------------------------
+     -opt : Optimize microsolvation cluster structures (FCA procedure).[Default: No]               [-op]
+     -hbd : Optimize hydrogen bonding in the microsolvation cavity.    [Default: No]               [-hb]
+     -apc : Perform the “Average Point Charges” method.                [Default: No]               [-av]
+     -key = “List of keywords” for final calculation (with ORCA).      [Default: M062X 6-311+G(d)] [-kw]⁽*⁾
+     -for : Execute in forced mode.                                    [Default: No]               [-fm]
+          + ----------------------------------------------------------
+     -prc = Number of parallel CPU processes to run.                   [Default: 8]                [-pc]⁽*⁾
+     -mem = Amount of memmory to be used (in GB).                      [Default: 16]               [-mm]⁽*⁾
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Configurable options in automated mode.
+</pre></div>
+</div>
+</section>
+<section id="quickstart-examples">
+<h2><span class="section-number">3.1.4. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Example #1: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/6_MICRO_Test01.zip" title="Example #1 with a simulation with ORCA">Extracting clusters from a simulation with ORCA</a></p></li>
+<li><p>Example #2: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/6_MICRO_Test02.zip" title="Example #2 with a simulation with GROMACS">Extracting clusters from a simulation with GROMACS</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -392,20 +475,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="s3c0index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>Introduction</strong></p>
+        <p class="prev-next-title"><span class="section-number">3. </span><strong>Microsolvation</strong></p>
       </div>
     </a>
     <a class="right-next"
-       href="s1m1packs.html"
+       href="s4c0index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.1. </span>PACKS</p>
+        <p class="prev-next-title"><span class="section-number">4. </span><strong>Additional Modules</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -415,6 +498,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clusters-extraction">3.1.1. Clusters Extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clusters-treatment">3.1.2. Clusters Treatment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">3.1.3. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">3.1.4. Quickstart Examples</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

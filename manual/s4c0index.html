@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Management &#8212; Solvate Suite - Comprehensive Manual</title>
+    <title>4. Additional Modules &#8212; Solvate Suite - Comprehensive Manual</title>
   
   
   
@@ -60,8 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 's4c0index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4.1. FILES" href="s4m1files.html" />
-    <link rel="prev" title="3.5. ONIOM" href="s3m5oniom.html" />
+    <link rel="prev" title="3.1. MICRO" href="s3m1micro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,24 +179,13 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="s2m1mdrun.html">2.1. MDRUN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s2m3stats.html">2.3. STATS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s2m4plots.html">2.4. PLOTS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s2m5trajs.html">2.5. TRAJS</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Microsolvation</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s3m1msrun.html">3.1. MSRUN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3m2micro.html">3.2. MICRO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3m3gcalc.html">3.3. GCALC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3m4queue.html">3.4. QUEUE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3m5oniom.html">3.5. ONIOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3m1micro.html">3.1. MICRO</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. <strong>Management</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s4m1files.html">4.1. FILES</a></li>
-</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="s5c0index.html">5. <strong>Additional Modules</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. <strong>Additional Modules</strong></a></li>
 <li class="toctree-l1"><a class="reference external" href="https://otaviolsantana.github.io/solvate/">Solvate Suite Homepage</a></li>
 </ul>
 
@@ -324,7 +312,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -335,11 +325,73 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Management</h1>
+    <h1>Additional Modules</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-management">4.1. <strong>File Management</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outin">4.1.1. <strong>OUTIN</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solvs">4.1.2. <strong>SOLVS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">4.1.3. <strong>MDPAR</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.2. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">4.2.1. <strong>BONDS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">4.2.2. <strong>CONFS</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biomolecular-treatment">4.3. <strong>Biomolecular Treatment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdbio">4.3.1. <strong>PDBIO</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdb2x">4.3.2. <strong>PDB2X</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ionic">4.3.3. <strong>IONIC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grout">4.3.4. <strong>GROUT</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">4.3.5. <strong>GRO2X</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">4.3.6. <strong>GROTC</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-purposes">4.4. <strong>Multiple Purposes</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check">4.4.1. <strong>CHECK</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">4.4.2. <strong>CLEAN</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compt">4.4.3. <strong>COMPT</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deply">4.4.4. <strong>DEPLY</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imags">4.4.5. <strong>IMAGS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infos">4.4.6. <strong>INFOS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molap">4.4.7. <strong>MOLAP</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rmsds">4.4.8. <strong>RMSDS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalc">4.4.9. <strong>SCALC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solvx">4.4.10. <strong>SOLVX</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stand">4.4.11. <strong>STAND</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statx">4.4.12. <strong>STATX</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subst">4.4.13. <strong>SUBST</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summy">4.4.14. <strong>SUMMY</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suppy">4.4.15. <strong>SUPPY</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sview">4.4.16. <strong>SVIEW</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queuing-systems">4.5. <strong>Queuing Systems</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit">4.5.1. <strong>SUBMIT</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-interfaces">4.6. <strong>Program Interfaces</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runorca">4.6.1. <strong>runORCA</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runxtb">4.6.2. <strong>runXTB</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runcrest">4.6.3. <strong>runCREST</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rungmx">4.6.4. <strong>runGMX</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runbabel">4.6.5. <strong>runBABEL</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runjmol">4.6.6. <strong>runJMOL</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runvmd">4.6.7. <strong>runVMD</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runpackmol">4.6.8. <strong>runPACKMOL</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runqforce">4.6.9. <strong>runQFORCE</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -349,19 +401,688 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="management">
-<h1><span class="section-number">4. </span><strong>Management</strong><a class="headerlink" href="#management" title="Link to this heading">#</a></h1>
-<p><strong>FILE MANAGEMENT</strong></p>
-<p>In the <strong>fourth stage</strong> (and final), after all the steps of the computational experiment have been executed, it is possible to manage the significant volume of files from a single command. The <code class="docutils literal notranslate"><span class="pre">FILES</span></code> module can perform file management, archiving or unarchiving the files handled throughout the simulation and calculation of the electronic structure. Management is performed using the following command structure:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="additional-modules">
+<h1><span class="section-number">4. </span><strong>Additional Modules</strong><a class="headerlink" href="#additional-modules" title="Link to this heading">#</a></h1>
+<section id="file-management">
+<h2><span class="section-number">4.1. </span><strong>File Management</strong><a class="headerlink" href="#file-management" title="Link to this heading">#</a></h2>
+<section id="outin">
+<h3><span class="section-number">4.1.1. </span><strong>OUTIN</strong><a class="headerlink" href="#outin" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Manipulation of input/output files</p></li>
+</ul>
 <blockquote>
-<div><p>solvate ⟨solute.trj.xyz⟩ -files [⟨-options⟩]</p>
+<div><p>outin ⟨file_inp.ext⟩ ⟨file_out.ext⟩ [⟨-options⟩]</p>
 </div></blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The list of options can be seen from the applications menu, which is accessible from the command line by typing the module name, without any other parameters.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+  FILE FORMATS                                                                                     [-ff]
+  -------------------------------------------------------------------------------------------------
+  .ext: com : Gaussian    (read/write)[gjf]
+        inp : ORCA        (read/write)
+        xyz : xTB         (read/write)
+        gro : GROMACS     (read/write)
+        pdb : PDB         (read/write)
+        log : Gaussian    (read)
+        out : ORCA        (read)
+        xtb : xTB         (read)
+        xtc : GROMACS     (read)
+        trj : XYZ/GRO/PDB (read)
+            + ----------------------------------------------------------
+        cpt : Data Comp   (write)[Compress calculated data]
+        dat : Calc Data   (write)[Extract calculated data (option: nogeom)]
+        sup : Supl Data   (write)[Extract supplementary data]
+        sep : Sepa Data   (write)[Separate input/output data]
+        spl : Splt Data   (write)[Split input/output data]
+        div : Divd Data   (write)[Divide input/output data]
+        job : Jobs Exec   (write)[Divide input/output jobs]
+        frq : Calc Frqs   (write)[Extract vibrational frequency data]
+        ifr = Imag Dist   (write)[Imaginary mode distortion (factor of distortion)]
+            + ----------------------------------------------------------
+        slt : SLTs Extn   (write)[Solute  extraction from trajectory frames]
+        svt : SVTs Extn   (write)[Solvent extraction from trajectory frames]
+        pcf = PChg File   (write)[Solvent as point charges][ = Scale factor for atomic charges ]
+  -------------------------------------------------------------------------------------------------
+
+  -------------------------------------------------------------------------------------------------
+  CONVERTION OPTIONS                                                                               [-co]
+  -------------------------------------------------------------------------------------------------
+       -key = “List of keywords” (for Gaussian or ORCA).                                           [-kw]
+       -add = “List of keywords/additional” (for Gaussian).                                        [-ad]
+       -svt = Include solvent type for implicit (with ALPB or PCM solvation method).               [-sv]
+       -nmr : Include configuration for NMR calculation (for ORCA).                                [-nm]
+            + ----------------------------------------------------------
+       -itr = Extract structure nº N of a trajectory.                              [Value: I]      [-it](●)(■)
+       -ntr = Number N of equaly spaced MD steps for truncated trajectory.         [Value: I]      [-nt](●)(■)
+       -str = Extract equaly spaced frames at every M steps from trajectory.       [Value: I]      [-st]   (■)
+       -ctr = Skipe I equilibration and extract J production MD steps (auto mode). [Value: [I:J]]  [-ct](●)(■)
+       -btr = Select frames from I trajectory sections into J% final steps.        [Value: [I:J]]  [-bt]   (■)
+       -ptr = Select frames aroud pressure P with tolerance ±D (in bar).           [Value: [P:D]]  [-pt]   (■)
+       -nsm = Number of solvent molecules in the clustering process.               [Value: I]      [-ns](●)(■)
+       -bmc = Molal conc. of the microsolvation cluster (in mol·kg⁻¹).             [Value: I]      [-bc](●)(■)
+       -grp : Extract short-ranged non-bonded potential energies.                                  [-gr]   (■)
+       -nbx : Don´t make corrections for “fragmented” molecules near the box edges.                [-nb]   (■)
+            + ----------------------------------------------------------
+       -prs = Include pressure configuration for thermodinamic calculation.        [Value: N]      [-pr]
+       -tmp = Include temperature configuration for thermodinamic calculation.     [Value: N]      [-tp]
+       -fcc = Final concentration after compression (in mol·L⁻¹).                  [Value: N]      [-cf]
+       -frq = Scale factor for frequencies (for zero-point energy correction).     [Value: N]      [-sf]
+       -qha = Quasi-Harmonic Approximation (with optional cutoff frequency).       [Value: &lt;N&gt;]    [-fq]
+  -------------------------------------------------------------------------------------------------
+  (*) I,J = Integers; N,P,D = Real. (○) xTB available. (●) ORCA available. (■) GROMACS available.
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+</section>
+<section id="solvs">
+<h3><span class="section-number">4.1.2. </span><strong>SOLVS</strong><a class="headerlink" href="#solvs" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>List of available solvents and ions for packaging</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------
+solvs [&lt;solvent&gt;] [&lt;-option&gt;]
+
+OPTIONS/DEFAULTS
+   -field T   [Force field parameters]
+               ► ALL = All force fields
+               ● OPL = OPLS-AA/L all-atom force field
+               ○ LPG = OPLS-AA/L (from LigParGen)
+               ○ QFC = OPLS-AA/L (from Q-Force)
+               ● GRO = GROMOS96 54a7 force field
+               ○ ATB = GROMOS96 54a7 (from ATB)
+               ● CHM = CHARMM36 all-atom force field
+               ● AMB = AMBER-GS force field
+----------------------------------------------------
+</pre></div>
 </div>
+</li>
+</ul>
+</section>
+<section id="mdpar">
+<h3><span class="section-number">4.1.3. </span><strong>MDPAR</strong><a class="headerlink" href="#mdpar" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>List of available configuration files for MD simulations</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------
+mdpar [⟨-step N⟩]
+
+OPTIONS/DEFAULTS
+     -step N   [Step for extracting MDP parameters]
+               ► 0/ALL = List all MDP files
+               ○ 1/OPT = Box Optimization
+               ○ 2/MIN = Energy Minimization
+               ● 3/NVT = NVT Equilibration
+               ● 4/NPT = NPT Equilibration
+               ● 5/PRD = NPT Production
+---------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="microsolvation-treatment">
+<h2><span class="section-number">4.2. </span><strong>Microsolvation Treatment</strong><a class="headerlink" href="#microsolvation-treatment" title="Link to this heading">#</a></h2>
+<section id="bonds">
+<h3><span class="section-number">4.2.1. </span><strong>BONDS</strong><a class="headerlink" href="#bonds" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Hydrogen bonds analyzer</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
+bonds ⟨solute.ext⟩ ⟨solvent.ext⟩ [⟨-options⟩]
+
+PARAMETERS
+⟨solute.ext⟩ [Input solute COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
+⟨solvent.ext⟩ [Input solvent COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
+
+PROCEDURES
+-hbd       [Use Solvate/HBONDS procedure (default)]              [-hb]
+-crt B     [Use xTB/CREST procedure with B% Boltzmann cutoff]    [-cr]
+-dck N     [Use ORCA/DOCKER procedure for N solvent molecules]   [-dc]
+
+OPTIONS
+-xff       [Use of GFN-FF method (faster determination)]         [-xf]
+-xtb       [Use of GFN2-xTB method (slower determination)]       [-xt]
+-key       [List of keywords for final optimization]             [-kw]
+-svt T     [Include explicit solvent and PCM configuration]      [-sv]
+-prs M     [Pressure for thermochemistry calculation (in atm)]   [-ps]
+-tmp M     [Temperature for thermochemistry calculation (in K)]  [-tp]
+-con M     [Final concentration after compression (in mol·L⁻¹)]  [-fc]
+-prc P     [Number of processors to be used]                     [-pc]
+-mem M     [Amount of memory to use in GB]                       [-mm]
+-deb       [Check generated inp file before submit]              [-db]
+-for       [Execute in forced mode]                              [-fm]
+--------------------------------------------------------------------
+NOTE: This is an interface to CREST and ORCA programs.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="confs">
+<h3><span class="section-number">4.2.2. </span><strong>CONFS</strong><a class="headerlink" href="#confs" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Conformational analysis automator</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
+confs ⟨input.ext⟩ [⟨-options⟩]
+
+PARAMETERS
+      input.ext [Input COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
+
+OPTIONS
+-inp       [Output file in ORCA format (default)]                [-in]
+-gro       [Output file in GROMACS format]                       [-gr]
+-pdb       [Output file in PDB format (for LigParGen)]           [-pd]
+-xyz       [Output file in XYZ format (for LigParGen)]           [-xy]
+-sep       [Split the output file into its conformers]           [-sp]
+-xff       [Use GFN-FF in conformational analysis (default)]     [-xf]
+-xtb       [Use GFN2-xTB in conformational analysis (slower)]    [-xt]
+-key       [List of keywords for final optimization]             [-kw]
+-svt T     [Include implicity solvation configuration]           [-sv]
+-prs M     [Pressure for thermochemistry calculation (in atm)]   [-ps]
+-tmp M     [Temperature for thermochemistry calculation (in K)]  [-tp]
+-con M     [Final concentration after compression (in mol·L⁻¹)]  [-fc]
+-prc N     [Number of processors to be used]                     [-pc]
+-mem N     [Amount of memory to use in GB]                       [-mm]
+-deb       [Check generated inp file before submit]              [-db]
+-for       [Execute in forced mode]                              [-fm]
+--------------------------------------------------------------------
+NOTE: This is an interface to CREST program.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="biomolecular-treatment">
+<h2><span class="section-number">4.3. </span><strong>Biomolecular Treatment</strong><a class="headerlink" href="#biomolecular-treatment" title="Link to this heading">#</a></h2>
+<section id="pdbio">
+<h3><span class="section-number">4.3.1. </span><strong>PDBIO</strong><a class="headerlink" href="#pdbio" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>PDB processor for Biomolecular systems</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+pdbio ⟨input.pdb⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.pdb [Input PDB file]
+output.gro/itp [Output GRO/ITP file]
+
+OPTIONS/DEFAULTS
+    -ffp T     [Force field parameters]  [Default: OPLS]
+               * GRO = GROMOS96 54a7 force field
+               * OPL = OPLS-AA/L all-atom force field
+
+ADDITIONAL
+    -pdb       [Archives PDB input]
+    -gro       [Generate GRO geometry file]
+    -itp       [Produces ITP forcefield file]
+    -ion       [Don&#39;t do ITP files of ionic species]
+    -lap       [Override PDB input file]
+    -cls       [Wipe all PDB comment lines]
+    -bak       [Create a backup of auxiliary files]
+-------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="pdb2x">
+<h3><span class="section-number">4.3.2. </span><strong>PDB2X</strong><a class="headerlink" href="#pdb2x" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>PDB cleaner module</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------
+pdb2x ⟨input.pdb⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.pdb [Input PDB file]
+    output.ent [Output ENT file]
+--------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="ionic">
+<h3><span class="section-number">4.3.3. </span><strong>IONIC</strong><a class="headerlink" href="#ionic" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>PDB ions forcefield constructor</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
+ionic ⟨input.pdb⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.pdb [Input PDB file]
+output.gro/itp [Output GRO/ITP file]
+------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="grout">
+<h3><span class="section-number">4.3.4. </span><strong>GROUT</strong><a class="headerlink" href="#grout" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>GRO files processor module</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+grout ⟨input.gro/itp⟩ [⟨-options⟩]
+
+PARAMETERS
+ input.gro/itp [Input GRO/ITP file]
+output.gro/itp [Output GRO/ITP file]
+
+OPTIONS
+    -gro       [Archives GRO input/output]
+    -itp       [Produces a concatenated ITP forcefield file]
+    -pdb       [Converts a PDB file to GRO input geometry]
+-------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="gro2x">
+<h3><span class="section-number">4.3.5. </span><strong>GRO2X</strong><a class="headerlink" href="#gro2x" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>GRO cleaner module</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
+gro2x ⟨input.gro/itp⟩ [⟨-options⟩]
+
+PARAMETERS
+ input.gro/itp [Input GRO/ITP file]
+output.gro/itp [Output GRO/ITP file]
+------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="grotc">
+<h3><span class="section-number">4.3.6. </span><strong>GROTC</strong><a class="headerlink" href="#grotc" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>GRO total charge calculator</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------
+grotc ⟨input.gro⟩
+
+PARAMETERS
+ input.gro     [Input GRO file]
+-------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="multiple-purposes">
+<h2><span class="section-number">4.4. </span><strong>Multiple Purposes</strong><a class="headerlink" href="#multiple-purposes" title="Link to this heading">#</a></h2>
+<section id="check">
+<h3><span class="section-number">4.4.1. </span><strong>CHECK</strong><a class="headerlink" href="#check" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Monitoring of procedures progress</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
+check ⟨input.ext⟩ [⟨compt.ext⟩] [⟨-options⟩]
+
+PARAMETERS
+     input.ext [Input file]
+     compt.ext [Compacted file]
+               [Extensions: COM/INP/XYZ/LOG/OUT/XTB/TMP]
+
+OPTIONS
+    -ext       [Extract compacted internal file]
+               (ex.: check inpfile.zip cptfile.cpt -ext)
+    -del       [Deletes compacted internal file][zip only]
+               (ex.: check inpfile.zip cptfile.cpt -del)
+    -ren       [Renames compacted internal file][zip only]
+               (ex.: check inpfile.zip oldfile.cpt -ren newfile.cpt)
+--------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="clean">
+<h3><span class="section-number">4.4.2. </span><strong>CLEAN</strong><a class="headerlink" href="#clean" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Cleaner for temporary files</p></li>
+</ul>
+</section>
+<section id="compt">
+<h3><span class="section-number">4.4.3. </span><strong>COMPT</strong><a class="headerlink" href="#compt" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Compression of output files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------
+compt ⟨output.log/out/xtb⟩ [-chk]
+
+PARAMETERS
+    output.ext [Output LOG/OUT/XTB file]
+----------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="deply">
+<h3><span class="section-number">4.4.4. </span><strong>DEPLY</strong><a class="headerlink" href="#deply" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Full deployment dependencies check</p></li>
+</ul>
+</section>
+<section id="imags">
+<h3><span class="section-number">4.4.5. </span><strong>IMAGS</strong><a class="headerlink" href="#imags" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Imaginary mode distortion</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------
+imags &lt;output.log/out/xtb&gt; [-img fator]
+
+PARAMETERS
+    output.ext [Output LOG/OUT/XTB file]
+----------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="infos">
+<h3><span class="section-number">4.4.6. </span><strong>INFOS</strong><a class="headerlink" href="#infos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Displaying system information</p></li>
+</ul>
+</section>
+<section id="molap">
+<h3><span class="section-number">4.4.7. </span><strong>MOLAP</strong><a class="headerlink" href="#molap" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Structural alignment for RMSD minimization</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------------------------------
+molap ⟨reference.ext⟩ ⟨structure.ext⟩ [⟨trajectory.trj.xyz⟩] [⟨-options⟩]
+
+PARAMETERS
+     files.ext [Input  COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
+
+OPTIONS
+    -bak       [Save modified “structure” file with minimized RMSD (at system origin)]      [-bk]
+    -ref       [Save modified “structure” file with minimized RMSD (at “reference” center)] [-rf]
+    -str       [Save modified “structure” file with minimized RMSD (at “structure” center)] [-st]
+    -slt       [Reorientation relative to the central solute fragment]                      [-sf]
+-------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="rmsds">
+<h3><span class="section-number">4.4.8. </span><strong>RMSDS</strong><a class="headerlink" href="#rmsds" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Calculation of structural RMSD and solute energy</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------------------------------------------------------
+rmsds ⟨reference.ext⟩ ⟨structure.ext⟩ [⟨preoptimization.ext⟩] [⟨trajectory.trj.xyz⟩]
+
+PARAMETERS
+      input.ext [Output COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
+
+OPTIONS
+-min       [Maximum structural superposition for RMSD minimization]              [-mr]
+-bak       [Save RMSD information in the input “structure” file]                 [-bk]
+-for       [Force new calculation and override previous output]                  [-fm]
+------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="scalc">
+<h3><span class="section-number">4.4.9. </span><strong>SCALC</strong><a class="headerlink" href="#scalc" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Chemical shifts calculator</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+scalc ⟨input.trj.xyz⟩ [⟨-options⟩]
+
+PARAMETERS
+ input.trj.xyz [Output TRJ file]
+
+OPTIONS
+    -ato A     [Atomic symbol of the species to be analyzed] [-at]
+    -ref N     [Reference value for chemical shifts (in ppm)] [-rf]
+    -eqv [L]   [List of equivalent atoms. (note: -eqv=[A1=A2:B1=B2=B3...])] [-eq]
+               +----------------------------------------------------------+
+    -out F     [Force reading specified ONIOM output file]                  [-of]
+    -out       [Force reading default ONIOM output file]                    [-of]
+               +----------------------------------------------------------+
+    -hbd       [Use BONDS data]                                             [-hb]
+    -gcc       [Use GCALC data]                                             [-gc]
+    -plt       [Plot the NMR spectrum]                                      [-pt]
+---------------------------------------------------------------------------
+* Note : Requires “gcc” file, and optionally “pcm” and “exp” files.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="solvx">
+<h3><span class="section-number">4.4.10. </span><strong>SOLVX</strong><a class="headerlink" href="#solvx" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Solvent identifier in clusters</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
+solvx ⟨file.trj.xyz⟩
+
+PARAMETERS
+  file.trj.xyz [Output TJR.XYZ file]
+------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="stand">
+<h3><span class="section-number">4.4.11. </span><strong>STAND</strong><a class="headerlink" href="#stand" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Modify input to standard orientation</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------------
+stand ⟨input.ext⟩ &amp;
+
+PARAMETERS
+     input.ext [Input GJF/COM/INP/XYZ/GRO]
+------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="statx">
+<h3><span class="section-number">4.4.12. </span><strong>STATX</strong><a class="headerlink" href="#statx" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Full statistical analysis directly from GMX program</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------
+statx ⟨output.log⟩
+
+PARAMETERS
+    output.log  [Output LOG file]
+---------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="subst">
+<h3><span class="section-number">4.4.13. </span><strong>SUBST</strong><a class="headerlink" href="#subst" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Modification of texts in editable files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------
+subst ⟨input.ext⟩ &quot;text1&quot; &quot;text2&quot;
+
+PARAMETERS
+    input.ext [Extensions: all]
+---------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="summy">
+<h3><span class="section-number">4.4.14. </span><strong>SUMMY</strong><a class="headerlink" href="#summy" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Extraction of properties from output files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------------
+summy ⟨output.log/out/xtb⟩
+
+PARAMETERS
+    output.ext  [Output LOG/OUT/XTB file]
+
+OPTIONS/DEFAULTS
+       -prs N   [Pressure configuration for thermodinamic calculation]
+       -tmp N   [Temperature configuration for thermodinamic calculation]
+       -fcc N   [Final concentration after compression (in mol·L⁻¹)]
+       -frq N   [Scale factor for frequencies (for zero-point energy correction)]
+       -qha &lt;N&gt; [Quasi-Harmonic Approximation (with optional cutoff frequency)]
+---------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="suppy">
+<h3><span class="section-number">4.4.15. </span><strong>SUPPY</strong><a class="headerlink" href="#suppy" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Extraction of supplementary data from output files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------------
+suppy ⟨output.log/out/xtb⟩
+
+PARAMETERS
+    output.ext  [Output LOG/OUT/XTB file]
+
+OPTIONS/DEFAULTS
+       -prs N   [Pressure configuration for thermodinamic calculation]
+       -tmp N   [Temperature configuration for thermodinamic calculation]
+       -fcc N   [Final concentration after compression (in mol·L⁻¹)]
+       -frq N   [Scale factor for frequencies (for zero-point energy correction)]
+       -qha &lt;N&gt; [Quasi-Harmonic Approximation (with optional cutoff frequency)]
+---------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="sview">
+<h3><span class="section-number">4.4.16. </span><strong>SVIEW</strong><a class="headerlink" href="#sview" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Visualization of input/output files</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------
+sview ⟨input.ext⟩ [⟨-options⟩] &amp;
+
+PARAMETERS
+    input.ext  [Input file]⁽*⁾
+
+GENERAL OPTIONS
+    -try I     [Generate a try file with N truncated steps (.trj file)]
+    -vmd       [Force file open with VMD program]
+    -cpt       [Perform compression of input/output files for GVW program]
+
+JMOL OPTIONS
+    -noc       [Run without input convertion]
+
+VMD OPTIONS
+    -cpk       [Show solute with VDW representation]
+    -vdw       [Show solute with VDW representation]
+    -lico      [Activate Licorice for solvent shell]
+    -dyna      [Activate DynamicBonds for solvent shell]
+    -surf      [Activate QuickSurf for solvent shell]
+    -text      [Execute in a text mode]
+--------------------------------------------------------------------------------
+⁽*⁾ Conversions: COM/GJF/LOG/INP/OUT/XYZ/XTB/PDB/GRO/TRJ
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="queuing-systems">
+<h2><span class="section-number">4.5. </span><strong>Queuing Systems</strong><a class="headerlink" href="#queuing-systems" title="Link to this heading">#</a></h2>
+<section id="submit">
+<h3><span class="section-number">4.5.1. </span><strong>SUBMIT</strong><a class="headerlink" href="#submit" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Run the program in the system queue</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------
+submit ⟨program⟩ ⟨input.ext⟩ ⟨-options⟩ ⟨-ntasks I⟩
+
+PARAMETERS
+     program   [gsn/orca/xtb/gmx program]
+     input.ext [Input GJF/COM/INP/XYZ/GRO file]
+
+OPTIONS/DEFAULTS
+    -options   [Program specific options]
+    -queue  T  [Name of available queue]
+    -ntasks I  [Number of processors]    [-prc]
+    -qmemor I  [Amount of memory (in GB)][-mem]
+    -preserve  [Preserve the submission job file]
+    -debug     [Check generated job before submit]
+
+AVAILABLE SYSTEM BATCH
+    »Local Machine
+
+WARNING
+     This is an open-source script that may require
+     adjustments depending on the available queue
+     system
+---------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="program-interfaces">
+<h2><span class="section-number">4.6. </span><strong>Program Interfaces</strong><a class="headerlink" href="#program-interfaces" title="Link to this heading">#</a></h2>
+<section id="runorca">
+<h3><span class="section-number">4.6.1. </span><strong>runORCA</strong><a class="headerlink" href="#runorca" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>ORCA</em> program interface</p></li>
+</ul>
+</section>
+<section id="runxtb">
+<h3><span class="section-number">4.6.2. </span><strong>runXTB</strong><a class="headerlink" href="#runxtb" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>xTB</em> program interface</p></li>
+</ul>
+</section>
+<section id="runcrest">
+<h3><span class="section-number">4.6.3. </span><strong>runCREST</strong><a class="headerlink" href="#runcrest" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>CREST</em> program interface</p></li>
+</ul>
+</section>
+<section id="rungmx">
+<h3><span class="section-number">4.6.4. </span><strong>runGMX</strong><a class="headerlink" href="#rungmx" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>GROMACS</em> program interface</p></li>
+</ul>
+</section>
+<section id="runbabel">
+<h3><span class="section-number">4.6.5. </span><strong>runBABEL</strong><a class="headerlink" href="#runbabel" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>oBabel</em> program interface</p></li>
+</ul>
+</section>
+<section id="runjmol">
+<h3><span class="section-number">4.6.6. </span><strong>runJMOL</strong><a class="headerlink" href="#runjmol" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>JMol</em> program interface</p></li>
+</ul>
+</section>
+<section id="runvmd">
+<h3><span class="section-number">4.6.7. </span><strong>runVMD</strong><a class="headerlink" href="#runvmd" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>VMD program interface</p></li>
+</ul>
+</section>
+<section id="runpackmol">
+<h3><span class="section-number">4.6.8. </span><strong>runPACKMOL</strong><a class="headerlink" href="#runpackmol" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>PackMol</em> program interface</p></li>
+</ul>
+</section>
+<section id="runqforce">
+<h3><span class="section-number">4.6.9. </span><strong>runQFORCE</strong><a class="headerlink" href="#runqforce" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>Q-Force</em> program interface</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -395,22 +1116,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="s3m5oniom.html"
+       href="s3m1micro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.5. </span>ONIOM</p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>MICRO</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="s4m1files.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.1. </span>FILES</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -418,6 +1130,75 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-management">4.1. <strong>File Management</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outin">4.1.1. <strong>OUTIN</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solvs">4.1.2. <strong>SOLVS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">4.1.3. <strong>MDPAR</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.2. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">4.2.1. <strong>BONDS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">4.2.2. <strong>CONFS</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biomolecular-treatment">4.3. <strong>Biomolecular Treatment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdbio">4.3.1. <strong>PDBIO</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdb2x">4.3.2. <strong>PDB2X</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ionic">4.3.3. <strong>IONIC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grout">4.3.4. <strong>GROUT</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">4.3.5. <strong>GRO2X</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">4.3.6. <strong>GROTC</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-purposes">4.4. <strong>Multiple Purposes</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check">4.4.1. <strong>CHECK</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clean">4.4.2. <strong>CLEAN</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compt">4.4.3. <strong>COMPT</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deply">4.4.4. <strong>DEPLY</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imags">4.4.5. <strong>IMAGS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infos">4.4.6. <strong>INFOS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#molap">4.4.7. <strong>MOLAP</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rmsds">4.4.8. <strong>RMSDS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalc">4.4.9. <strong>SCALC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solvx">4.4.10. <strong>SOLVX</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stand">4.4.11. <strong>STAND</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statx">4.4.12. <strong>STATX</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subst">4.4.13. <strong>SUBST</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summy">4.4.14. <strong>SUMMY</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suppy">4.4.15. <strong>SUPPY</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sview">4.4.16. <strong>SVIEW</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#queuing-systems">4.5. <strong>Queuing Systems</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit">4.5.1. <strong>SUBMIT</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-interfaces">4.6. <strong>Program Interfaces</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runorca">4.6.1. <strong>runORCA</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runxtb">4.6.2. <strong>runXTB</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runcrest">4.6.3. <strong>runCREST</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rungmx">4.6.4. <strong>runGMX</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runbabel">4.6.5. <strong>runBABEL</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runjmol">4.6.6. <strong>runJMOL</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runvmd">4.6.7. <strong>runVMD</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runpackmol">4.6.8. <strong>runPACKMOL</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#runqforce">4.6.9. <strong>runQFORCE</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
