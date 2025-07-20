@@ -182,7 +182,7 @@ fi
 # Setting environment variables
 
 if [[ $JOBTYPE = "SCRIPT" ]]; then
-   JOBNAME=$(basename $1 | sed 's/\.[^.]*$//')
+   JOBNAME=$(basename $1 | sed -E 's/(\.[^.]+){1,2}$//')
    PRGSJOB=$JOBNAME".jobout"
    PROGEXE=$PWD/$1
    INPNAME=""
