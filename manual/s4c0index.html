@@ -345,6 +345,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.2. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">4.2.1. <strong>BONDS</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">4.2.2. <strong>CONFS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msrun">4.2.3. <strong>MSRUN</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcalc">4.2.4. <strong>GCALC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">4.2.5. <strong>QUEUE</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oniom">4.2.6. <strong>ONIOM</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biomolecular-treatment">4.3. <strong>Biomolecular Treatment</strong></a><ul class="nav section-nav flex-column">
@@ -603,6 +607,184 @@ OPTIONS
 -for       [Execute in forced mode]                              [-fm]
 --------------------------------------------------------------------
 NOTE: This is an interface to CREST program.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="msrun">
+<h3><span class="section-number">4.2.3. </span><strong>MSRUN</strong><a class="headerlink" href="#msrun" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Microssolvation Aggregator</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------------------------------------
+msrun ⟨simbox.trj.xyz⟩ [⟨-options⟩]⁽ᵃ⁾
+msrun ⟨solute.trj.xyz⟩ [⟨-options⟩]⁽ᵇ⁾
+
+PARAMETERS
+⟨simbox.ext⟩ [Input simbox TRJ.XYZ file]
+⟨solute.ext⟩ [Input solute TRJ.XYZ file]
+
+PROCEDURES
+-auto      [Execute an automated microsolvation optimization]                                    [-ac]
+-gcc C     [GCALC module configuration. ( Ex.: -gc &quot;-ini -opt -max 100 -fca&quot; )]                  [-gc]⁽*⁾
+-que C     [QUEUE module configuration. ( Ex.: -qc &quot;-key “#ONIOM(M062X/6-311+G(d,p):xTB)...”&quot; )] [-qc]⁽*⁾⁽†⁾
+
+OPTIONS
+-prc N     [Number of parallel CPU processes to run]                   [Default: 8]              [-pc]
+-mem N     [Amount of memmory to be used (in GB)]                      [Default: 16]             [-mm]
+----------------------------------------------------------------------------------------------------
+⁽ᵃ⁾ From extracted tractory file (with TRAJS). [Complete procedure by default]
+⁽ᵇ⁾ From extracted clusters file (with MICRO). [Partial procedure, without MICRO reexecution]
+⁽*⁾ Each module can be run independently.
+⁽†⁾ The “-key” option can be passed separately.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="gcalc">
+<h3><span class="section-number">4.2.4. </span><strong>GCALC</strong><a class="headerlink" href="#gcalc" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Gibbs Free Energy Calculator</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------------------------
+gcalc ⟨solute.trj.xyz⟩ [⟨-options⟩]
+
+PARAMETERS
+⟨solute.ext⟩ [Input solute TRJ.XYZ file]
+
+PROCEDURES
+-auto      [Execute an automated microsolvation optimization]                                  [-ga]
+            » NOTE: this option is recommended in queue systems.
+            » HINT: -auto    [starts processing 100 clusters]
+                  : -auto N  [starts processing N clusters]
+                  : -auto +M [add M clusters to the previous analysis]
+
+STEPS CONTROL
+● Stage #1: Clusters Characterization                                                           [-s1]⁽▪⁾
+-ini       [Execute clusters characterization and selection]           [Default: Auto]         [-ic]
+            Characterization for structures selection.
+            Procedure performed at xTB-GFF level.
+
+● Stage #2: Clusters Treatment                                                                  [-s2]⁽▪⁾
+-opt       [Optimization and free energy calculation] (FSA|FCA|FCO)    [Default: FCA]          [-op]
+            Calculation after structures selection
+            Procedure performed at xTB-GFN2 level combined with DFT
+
+» FSA: [F]ull [S]olutes [A]ccommodated geometry (with SPH).¹ «xTB level»
+» FCA: [F]ull [C]luster [A]ccommodated geometry (with SPH).¹ «xTB level»
+» FCO: [F]ull [C]luster [O]ptimized geometry (with CHM).²    «xTB level»
+
+ADITIONAL OPTIONS
+● Selection Options
+-max M     [Maximum number of structures into energy window]           [Default: 100]          [-nw]⁽*⁾
+-add M     [Add M clusters to GFE procedure from INI step.             [Default: Not defined]  [-ad]⁽*⁾
+
+● System Options
+-chr N     [Value of microsolvated solute charge]                      [Default: Auto]         [-ch]⁽*⁾
+-mlt N     [Value of microsolvated solute multiplicity]                [Default: Auto]         [-ml]⁽*⁾
+-prs P     [Pressure for thermochemistry calculation (in atm)]         [Default: Auto]         [-ps]⁽*⁾
+-tmp T     [Temperature for thermochemistry calculation (in K)]        [Default: Auto]         [-tp]⁽*⁾
+
+● Solvation Options
+-svt S     [Solvent type (for ALPB/CPCM solvation method)]             [Default: Auto]         [-sv]⁽*⁾
+-nis       [No implicit solvation]                                     [Default: None]         [-ni]⁽*⁾
+
+● Configuration Options
+-prc N     [Number of parallel CPU processes to run]                   [Default: 8]            [-pc]⁽*⁾
+-mem M     [Amount of memmory to be used (in GB)]                      [Default: 16]           [-mm]⁽*⁾
+
+● Additional Options
+-key T     [“List of keywords” (for ONIOM program)]                    [Default: None]         [-kw]⁽*⁾
+-fcc N     [Final concentration after compression]                     [Default: 1.0 mol·kg⁻¹] [-fc]⁽*⁾
+-hbd       [Include H-bonds at extrapolation (for ORCA final step).    [Default: No]           [-nm]⁽*⁾
+-nmr       [Config. for NMR calculation (for ORCA final step).         [Default: No]           [-nm]⁽*⁾
+-for       [Force reexecution stages.                                  [Default: No]           [-fm]⁽*⁾
+-fil       [Filter high energy clusters (above 100.0 kcal·mol⁻¹).      [Default: No]           [-fi]⁽*⁾
+            + ----------------------------------------------------------
+-dat       [Extract data for selected stage.                           [Default: No]           [-dt]⁽*⁾
+-plt       [Plot extracted data.                                       [Default: No]           [-pd]⁽*⁾
+-bak       [Save generated graphs (without iterative interface).       [Default: No]           [-bk]
+            + ----------------------------------------------------------
+-exc [i,..][List of structural clusters to exclude. (inp) [i,j,k,...]  [Default: None]         [-ex]⁽†⁾
+-clr [i,..][List of optimized clusters to clean.    (out) [i,j,k,...]  [Default: None]         [-cl]⁽‡⁾
+            + ----------------------------------------------------------
+-del N     [Delete specified previous optimization]                    [Default: No]           [-dc]
+-ext N     [Extract specified previous calculation]                    [Default: No]           [-ec]
+-ren T     [Rename specified previous description] “DSC” / [OLD:NEW]   [Default: No]           [-rn]
+-chk       [Check all previous calculations] (= spec. to extract)      [Default: No]           [-ck]
+-log       [Summary of performed calculations]                         [Default: No]           [-lg]
+            + ----------------------------------------------------------
+-out T     [Force reading specified ONIOM output file]                 [Default: No]           [-of]
+            [Force reading default ONIOM output file]                   [Default: No]           [-of]
+            + ----------------------------------------------------------
+-bnd       [Execute in BONDS mode]                                     [Default: No]           [-bd]
+--------------------------------------------------------------------------------------------------
+⁽*⁾ Configurable options in automated mode.
+⁽▪⁾ Try “-sN” to view stage N only.
+⁽†⁾ The “ith” cluster identified from trj.xyz input file.
+⁽‡⁾ The “ith” cluster identified through graphical analysis.
+⁽¹⁾ SPH = Single Point Hessian.
+⁽²⁾ CHM = Conventional Hessiam Method.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="queue">
+<h3><span class="section-number">4.2.5. </span><strong>QUEUE</strong><a class="headerlink" href="#queue" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>QUEUE System Manager</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------------------------
+queue [⟨-options⟩]
+
+OPTIONS
+-inf       [Show current ONIOM calculation configuration]                                      [-if]
+-log       [Show current ONIOM calculation results]                                            [-lg]
+-run       [Perform the calculation procedure]                                                 [-rc]
+            + ----------------------------------------------------------
+-key T     [Complete list of keywords for ONIOM calculation configuration]                     [-kw]
+-chr N     [Charge value of the microsolvation cluster]                                        [-ch]
+-mlt N     [Multiplicity value of the microsolvation cluster]                                  [-ml]
+-des T     [Optional output configuration description]                                         [-ds]
+-fcc N     [Final concentration after compression]                     [Default: 1.0 mol·kg⁻¹] [-fc]
+-con       [Force concatenation of results over warnings]                                      [-cd]
+-clr       [Clean up run folder after archiving results]                                       [-cr]
+            + ----------------------------------------------------------
+-srm       [Execute calculation in a serial mode]                                              [-sr]
+-for       [Execute calculation in forced mode]                                                [-fm]
+            + ----------------------------------------------------------
+-bnd       [Execution for BONDS module]                                [Default: No]           [-bd]
+-gcc       [Execution for GCALC module]                                [Default: Yes]          [-gc]
+            + ----------------------------------------------------------
+-prc N     [Number of parallel CPU processes to run]                   [Default: 8]            [-pc]
+-mem N     [Amount of memmory to be used (in GB)]                      [Default: 16]           [-mm]
+--------------------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="oniom">
+<h3><span class="section-number">4.2.6. </span><strong>ONIOM</strong><a class="headerlink" href="#oniom" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>ONIOM Program</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------------------------
+oniom ⟨input.gjf⟩ [⟨-options⟩]
+
+PARAMETERS
+⟨input.gjf⟩ [File with GaussView format for Solvate/Microssolvation calculation]
+
+OPTIONS
+-opt       [Execute geometry optimization in forced mode]              [Default: No] [-op]
+-ext       [Execute ONIOM extrapolation in forced mode]                [Default: No] [-ex]
+            + ----------------------------------------------------------
+-srm       [Execute calculation in a serial mode]                      [Default: No] [-sr]
+-for       [Execute optimization and extrapolation in forced mode]     [Default: No] [-fm]
+-deb       [No extrapolation execution: only tests]                    [Default: No] [-ne]
+            + ----------------------------------------------------------
+-prc N     [Number of parallel CPU processes to run]                   [Default: 8]  [-pc]
+-mem N     [Amount of memmory to be used (in GB)]                      [Default: 16] [-mm]
+----------------------------------------------------------------------------------------
 </pre></div>
 </div>
 </li>
@@ -1170,6 +1352,10 @@ WARNING
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.2. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">4.2.1. <strong>BONDS</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">4.2.2. <strong>CONFS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msrun">4.2.3. <strong>MSRUN</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcalc">4.2.4. <strong>GCALC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">4.2.5. <strong>QUEUE</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oniom">4.2.6. <strong>ONIOM</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biomolecular-treatment">4.3. <strong>Biomolecular Treatment</strong></a><ul class="nav section-nav flex-column">
