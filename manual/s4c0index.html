@@ -337,8 +337,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-management">4.1. <strong>File Management</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outin">4.1.1. <strong>OUTIN</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solvs">4.1.2. <strong>SOLVS</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">4.1.3. <strong>MDPAR</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#files">4.1.2. <strong>FILES</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solvs">4.1.3. <strong>SOLVS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">4.1.4. <strong>MDPAR</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.2. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
@@ -471,8 +472,27 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="files">
+<h3><span class="section-number">4.1.2. </span><strong>FILES</strong><a class="headerlink" href="#files" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Input/output file Management</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------
+files ⟨solute+solvent_molN.ext⟩ [⟨-options⟩]
+
+PARAMETERS
+      input.ext [Output LOG/OUT/XTB file]
+
+OPTIONS
+-cpt       [Compact the intermediate files] [Default: No] [-cp]
+-ext       [Extract the intermediate files] [Default: No] [-ex]
+---------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
 <section id="solvs">
-<h3><span class="section-number">4.1.2. </span><strong>SOLVS</strong><a class="headerlink" href="#solvs" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.1.3. </span><strong>SOLVS</strong><a class="headerlink" href="#solvs" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>List of available solvents and ions for packaging</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------
@@ -495,7 +515,7 @@ OPTIONS/DEFAULTS
 </ul>
 </section>
 <section id="mdpar">
-<h3><span class="section-number">4.1.3. </span><strong>MDPAR</strong><a class="headerlink" href="#mdpar" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.1.4. </span><strong>MDPAR</strong><a class="headerlink" href="#mdpar" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>List of available configuration files for MD simulations</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------
@@ -759,7 +779,7 @@ PARAMETERS
 <section id="deply">
 <h3><span class="section-number">4.4.4. </span><strong>DEPLY</strong><a class="headerlink" href="#deply" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Full deployment dependencies check</p></li>
+<li><p>Full deployment Python dependencies check</p></li>
 </ul>
 </section>
 <section id="imags">
@@ -1142,8 +1162,9 @@ WARNING
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-management">4.1. <strong>File Management</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outin">4.1.1. <strong>OUTIN</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solvs">4.1.2. <strong>SOLVS</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">4.1.3. <strong>MDPAR</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#files">4.1.2. <strong>FILES</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solvs">4.1.3. <strong>SOLVS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">4.1.4. <strong>MDPAR</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.2. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
