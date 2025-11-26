@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.1. MDRUN &#8212; Solvate Suite - Comprehensive Manual</title>
+    <title>3.2. MICRO &#8212; Solvate Suite - Comprehensive Manual</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 's2m1mdrun';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's3m2micro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.2. DATAS" href="s2m2datas.html" />
-    <link rel="prev" title="2. Simulation" href="s2c0index.html" />
+    <link rel="next" title="4. Additional Modules" href="s4c0index.html" />
+    <link rel="prev" title="3.1. MACRO" href="s3m1macro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,15 +177,15 @@
 <li class="toctree-l2"><a class="reference internal" href="s1m2gmdff.html">1.2. GMDFF</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1. MDRUN</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="s2c0index.html">2. <strong>Simulation</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="s2m1mdrun.html">2.1. MDRUN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
-</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Applications</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s3m1macro.html">3.1. MACRO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="s3m2micro.html">3.2. MICRO</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Applications</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="s3m1macro.html">3.1. MACRO</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. MICRO</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="s4c0index.html">4. <strong>Additional Modules</strong></a></li>
 <li class="toctree-l1"><a class="reference external" href="https://otaviolsantana.github.io/solvate/">Solvate Suite Homepage</a></li>
@@ -243,7 +243,7 @@
       
       
       
-      <li><a href="_sources/s2m1mdrun.md" target="_blank"
+      <li><a href="_sources/s3m2micro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +327,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MDRUN</h1>
+    <h1>MICRO</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -337,9 +337,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-execution">2.1.1. MD Execution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">2.1.2. Execution Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">2.1.3. Quickstart Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clusters-extraction">3.2.1. Clusters Extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clusters-treatment">3.2.2. Clusters Treatment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">3.2.3. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">3.2.4. Quickstart Examples</a></li>
 </ul>
             </nav>
         </div>
@@ -351,126 +352,94 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mdrun">
-<h1><span class="section-number">2.1. </span>MDRUN<a class="headerlink" href="#mdrun" title="Link to this heading">#</a></h1>
-<section id="md-execution">
-<h2><span class="section-number">2.1.1. </span>MD Execution<a class="headerlink" href="#md-execution" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">MDRUN</span></code> module manages the execution of simulations, through a unified interface for the <em>ORCA</em> and <em>GROMACS</em> programs. The module can be run from the main program or directly from the command:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="micro">
+<h1><span class="section-number">3.2. </span>MICRO<a class="headerlink" href="#micro" title="Link to this heading">#</a></h1>
+<section id="clusters-extraction">
+<h2><span class="section-number">3.2.1. </span>Clusters Extraction<a class="headerlink" href="#clusters-extraction" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module manages the extraction of microsolvation clusters. It is possible to select <em>N</em> low-energy clusters, each containing <em>M</em> solvent molecules. The value of <em>M</em> can be determined from a previous RDF analysis (using the DATAS module), defined based on the solute-solvent ratio (at a user-specified concentration), or calculated automatically (based on a cutoff distance corresponding to the diameter of the sphere surrounding the solvent molecule). The extraction is performed using the following command:</p>
 <blockquote>
-<div><p>mdrun ⟨simbox.ext⟩ [⟨-options⟩]</p>
+<div><p>micro ⟨simbox.trj.xyz⟩ -str <em>N</em> -nsv <em>M</em></p>
 </div></blockquote>
-<p>where <em>ext</em> is one of the extensions recognized by <em>Solvate Suite</em> (<code class="docutils literal notranslate"><span class="pre">inp</span></code> [<em>ORCA</em>] or <code class="docutils literal notranslate"><span class="pre">gro</span></code> [<em>GROMACS</em>]), and “-options” a set of the configurations for the simulation execution.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Simply type <code class="docutils literal notranslate"><span class="pre">mdrun</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In the case of using the <em>GROMACS</em> program, the user can generate a default settings file with the <code class="docutils literal notranslate"><span class="pre">-chk</span></code> option. The edited file can then be read by the program with the <code class="docutils literal notranslate"><span class="pre">-cfg</span></code> option. Alternatively, the user can provide his own settings file with the <code class="docutils literal notranslate"><span class="pre">-cfg</span> <span class="pre">⟨file.mdp⟩</span></code> command.</p>
-</div>
-<p>For <em>GROMACS</em>, it is possible to check whether the options automatically configured after packaging are appropriate to start the simulation:</p>
+<p>The extraction based on molal concentration <em>C</em> is performed using the command:</p>
 <blockquote>
-<div><p>mdrun ⟨simbox.gro⟩ -chk</p>
+<div><p>micro ⟨simbox.trj.xyz⟩ -str <em>N</em> -bco <em>C</em></p>
 </div></blockquote>
-<p>In this case, a configuration file (mdp) is generated with a default set of execution options, which can be edited by the user to apply custom configurations. This file can then be read using the following command:</p>
+<p>The extraction based on the number <em>S</em> of solvation shells (estimated from the solvent radius) is performed using the command:</p>
 <blockquote>
-<div><p>mdrun ⟨simbox.gro⟩ -cfg</p>
-</div></blockquote>
-<p>Alternatively, the user can provide a custom settings file via the following command:</p>
-<blockquote>
-<div><p>mdrun ⟨simbox.gro⟩ -cfg config.mdp</p>
-</div></blockquote>
-<p>Before starting the simulation, it is necessary to carry out an initialization step for the initial box, which includes energy minimization and box optimization. For example, to initialize the simulation box at a pressure of 1.0 bar and a temperature of 298.15 K, you can use the following command:</p>
-<blockquote>
-<div><p>mdrun ⟨simbox.gro⟩ -ini -prs 1.0 -tmp 298.15</p>
-</div></blockquote>
-<p>After initialization, temperature equilibration can be performed in an NVT ensemble. For example, running 1.0 ns for equilibration in the NVT ensemble can be executed with the following command:</p>
-<blockquote>
-<div><p>mdrun ⟨simbox.gro⟩ -nvt -tmp 298.15 -tot 1.0</p>
-</div></blockquote>
-<p>and the pressure equilibration, in an NPT ensemble, with:</p>
-<blockquote>
-<div><p>mdrun ⟨simbox.gro⟩ -npt -prs 1.0 -tmp 298.15 -tot 1.0</p>
-</div></blockquote>
-<p>The equilibration steps involve saving the trajectory every 100 steps (in a trr file) to conserve disk space.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To assess the equilibrium, the properties acquired during the simulation can be analyzed using the <code class="docutils literal notranslate"><span class="pre">DATAS</span></code> module.</p>
-</div>
-<p>After achieving equilibration, the production step can proceed. In this step, the trajectory is saved at each step of the simulation (in an xtc file). Production is run with the following command:</p>
-<blockquote>
-<div><p>mdrun ⟨simbox.gro⟩ -prd -prs 1.0 -tmp 298.15 -tot 5.0</p>
+<div><p>micro ⟨simbox.trj.xyz⟩ -str <em>N</em> -sol <em>S</em></p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The trajectory extraction procedure can be performed using the <code class="docutils literal notranslate"><span class="pre">DATAS</span></code> module, which has several extraction filters available.</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">micro</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
 </div>
-<p>Finally, after extraction, it is possible to remove several files that are unnecessary for the final step of the microsolvation treatment, which can be done with the command:</p>
+</section>
+<section id="clusters-treatment">
+<h2><span class="section-number">3.2.2. </span>Clusters Treatment<a class="headerlink" href="#clusters-treatment" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module can also perform property calculations based on the microsolvation cluster treatment. This includes the optimization of hydrogen bonds within the clusters, constrained optimization of the entire clusters at the xTB level, and subsequent property evaluation with configurations set by the user. These calculations are executed using the following command:</p>
 <blockquote>
-<div><p>mdrun ⟨simbox.gro⟩ -cls</p>
+<div><p>micro ⟨solute.trj.xyz⟩ -opt -hbd -key “keywords”</p>
 </div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simply type <code class="docutils literal notranslate"><span class="pre">micro</span></code> in the terminal and press <em>enter</em> to see the full list of execution options for the module.</p>
+</div>
 </section>
 <section id="execution-options">
-<h2><span class="section-number">2.1.2. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2.3. </span>Execution Options<a class="headerlink" href="#execution-options" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>mdrun ⟨file.ext⟩ [⟨-options⟩]</p>
+<div><p>micro ⟨trajectory.trj.xyz⟩ [⟨-options⟩]</p>
 </div></blockquote>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
-   ORCA/GROMACS
+  MICROSOLVATION CLUSTERS EXTRACTION                                                               [-ce]
   -------------------------------------------------------------------------------------------------
-     auto : Execute the MD simulation with automatic settings.                                     [-ma](●)(■)⁽*⁾
+     auto : Execute an automated microsolvation clusterization from simulation files.              [-ms]
           » Description
-            ORC: [Default: -tot = 50.0 ps (prod.) | -dts = 1.0 fs]
-            GMX: [Default: -tot = 2.50 ns (prod.) | -dts = 2.0 fs]
+            bCon = 1 mol·kg⁻¹ (for setting the number of solvent molecules)
+            Nstr = 1% of trajectory structures (1000 min, 10000 max)
+            cTRJ = All production steps
           + ----------------------------------------------------------
-  » Automation Options:
-    -auto : Start MD simulation with automatic settings.                                           [-ra](●)(■)⁽*⁾
-    -init : Init. energy minimization with simulation box optimization procedure.                  [-ri](●)(■)⁽*⁾
-    -equi : Exec. MD equilibration procedure (with auto restart).                                  [-re](●)(■)⁽*⁾
-    -prod : Exec. MD production procedure (with auto restart).                                     [-rp](●)(■)⁽*⁾
-    -bomd : Run a BOMD simulation at GFN2-xTB level.                                               [-rb](●)   ⁽*⁾
-  » Procedure Options:
-     -min : Execute an energy minimization of the simulation box.                                  [-em](●)(■)⁽*⁾
-     -opt : Execute an optimization of the simulation box.                                         [-bo](●)(■)⁽*⁾
-     -nvt : Run an equilibration simulation on NVT ensamble.                                       [-nv](●)(■)⁽*⁾
-     -npt : Run an equilibration simulation on NPT ensamble.                                       [-np]   (■)⁽*⁾
-     -prd : Run a production simulation on NVT/NPT ensamble.                                       [-pd](●)(■)⁽*⁾
-  » Settings Options:
-     -met = MD simulation method (GFF|GF1|GF2).                        [Default: GFF]      [Text]  [-ms](●)
-     -prs = Pressure for the MD simulation (in bar).                   [Default: 1.00]     [Real]  [-ps]   (■)
-     -tcp = Time constant for pressure coupling (in ps).               [Default: 0.50]     [Real]  [-tp]   (■)
-     -bar = Type of barostat pressure coupling.                        [Default: Berendsen][Text]  [-br]   (■)
-            * BRDS = Berendsen | CRES = C-rescale | PARR = Parrinello  | MTTK
-     -tmp = Temperature for MD simulation (in K).                      [Default: 298.15]   [Real]  [-ts](●)(■)
-     -tct = Time constant for temperature coupling (in ps).            [Default: 0.50]     [Real]  [-tc]   (■)
-     -ter = Type of thermostat temperature coupling.                   [Default: V-rescale][Text]  [-tr]   (■)
-            * BRDS = Berendsen | VRES = V-rescale | NOSE = Nose-Hoover | ADSN = Andersen
-     -kap = Isothermal compressibility value (in bar⁻¹).               [Default: 1.0E-6]   [Real]  [-kp]   (■)
-     -nst = Simulation steps to update neighbor list.                  [Default: 100]      [Int.]  [-ns]   (■)
-     -dmp = Number of steps for dump positions.                        [Default: 1]        [Int.]  [-dp](●)(■)
-     -dts = Simulation time step (in fs).                              [Default: 1.0]      [Real]  [-dt]   (■)
-     -tot = Simulation additional (ORCA) or total (GMX) time (in ps).  [Default: Automatic][Real]  [-tt](●)(■)
-     -nrs = Number of simulation run steps.                            [Default: Automatic][Int.]  [-nr](●)(■)
-  » Additional Options:
-     -prc = Number of parallel CPU processes to run.                   [Default: 4]                [-pc](●)
-     -chk : Check generated files before submit.                       [Default: No]               [-ck](●)(■)
-     -cfg = Execute with user defined input configurations.            [Default: No]               [-ic]   (■)
-     -fix : Performs MD without atom constraints.                      [Default: No]               [-nf](●)
-     -nhr : Exec. with no H-bonds. restraints (for production steps).  [Default: No]               [-hr]   (■)
-     -clr : Cleaning unnecessary files (after extraction).             [Default: No]               [-cl]   (■)
-     -cpt : Compact output files.                                      [Default: No]               [-cp]   (■)
-     -ext : Extract output files.                                      [Default: No]               [-ex]   (■)
-     -for : Execute in forced mode (suppressing upper to 2 warnings).  [Default: No]       [FORCE] [-lc](●)(■)
+     -str = Number of clustered structures selected trajectory.        [Default: 1000] [Int.]      [-nc]⁽*⁾
+     -nsv = Number of solvent molecules in the clustering process.     [Default: 0]    [Int.]      [-ns]⁽*⁾
+     -sol = Number of solvent layers in the clustering process.        [Default: 1]    [Int.]      [-nl]⁽*⁾
+     -bco = Molal conc. of the microsolvation cluster (in mol·kg⁻¹).   [Default: 0.0]  [Real]      [-bc]⁽*⁾
+     -cfg = Nº of MD equilibration steps [:Nº of MD production steps]. [Default: 0:0]  [Auto]      [-ct]⁽*⁾
+     -chr = Value of microsolvated solute charge.                      [Default: 0]    [Int.]      [-ch]⁽*⁾
+     -mlt = Value of microsolvated solute multiplicity.                [Default: 1]    [Int.]      [-ml]⁽*⁾
+     -prs = Value of simulation pressure (in bar).                     [Default: 1.0]  [Real]      [-pr]⁽*⁾
+     -tmp = Value of simulation temperature (in K).                    [Default: 298]  [Real]      [-tp]⁽*⁾
+     -svt = Solvent to be used in ALPB solvation model.                [Default: Auto] [Text]      [-sv]⁽*⁾
+     -rtn : Retain the original orientation of the clusters.           [Default: No]               [-rt]⁽*⁾
+     -psv : Preserve the original trajectory file.                     [Default: No]               [-pv]⁽*⁾
+     -for : Execute in forced mode.                                    [Default: No]               [-fm]⁽*⁾
+          + ----------------------------------------------------------
+     -prc = Number of parallel CPU processes to run.                   [Default: 8]                [-pc]⁽*⁾
+     -mem = Amount of memmory to be used (in GB).                      [Default: 16]               [-mm]⁽*⁾
   -------------------------------------------------------------------------------------------------
-  ⁽*⁾ Configurable options in automated mode. (●) ORCA available. (■) GROMACS available.
+</pre></div>
+</div>
+<blockquote>
+<div><p>micro ⟨solute.trj.xyz⟩ [⟨-options⟩]</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
+  MICROSOLVATION CLUSTERS TREATMENT                                                                [-ct]
+  -------------------------------------------------------------------------------------------------
+     -opt : Optimize microsolvation cluster structures (FCA procedure).[Default: No]               [-op]
+     -hbd : Optimize hydrogen bonding in the microsolvation cavity.    [Default: No]               [-hb]
+     -key = “List of keywords” for final calculation (with ORCA).      [Default: M062X 6-311+G(d)] [-kw]⁽*⁾
+     -for : Execute in forced mode.                                    [Default: No]               [-fm]
+          + ----------------------------------------------------------
+     -prc = Number of parallel CPU processes to run.                   [Default: 8]                [-pc]⁽*⁾
+     -mem = Amount of memmory to be used (in GB).                      [Default: 16]               [-mm]⁽*⁾
+  -------------------------------------------------------------------------------------------------
+  ⁽*⁾ Configurable options in automated mode.
 </pre></div>
 </div>
 </section>
 <section id="quickstart-examples">
-<h2><span class="section-number">2.1.3. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.2.4. </span>Quickstart Examples<a class="headerlink" href="#quickstart-examples" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Example #1: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/3_MDRUN_Test01.zip" title="Example #1 with a simulation with ORCA">Submitting a simulation with ORCA</a></p></li>
-<li><p>Example #2: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/3_MDRUN_Test02.zip" title="Example #2 with a simulation with GROMACS">Submitting a simulation with GROMACS</a></p></li>
+<li><p>Example #1: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/6_MICRO_Test01.zip" title="Example #1 with a simulation with ORCA">Extracting clusters from a simulation with ORCA</a></p></li>
+<li><p>Example #2: <a class="reference external" href="https://raw.githubusercontent.com/otaviolsantana/solvate/refs/heads/main/tests/6_MICRO_Test02.zip" title="Example #2 with a simulation with GROMACS">Extracting clusters from a simulation with GROMACS</a></p></li>
 </ul>
 </section>
 </section>
@@ -506,20 +475,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="s2c0index.html"
+       href="s3m1macro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span><strong>Simulation</strong></p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>MACRO</p>
       </div>
     </a>
     <a class="right-next"
-       href="s2m2datas.html"
+       href="s4c0index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>DATAS</p>
+        <p class="prev-next-title"><span class="section-number">4. </span><strong>Additional Modules</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -539,9 +508,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#md-execution">2.1.1. MD Execution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">2.1.2. Execution Options</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">2.1.3. Quickstart Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clusters-extraction">3.2.1. Clusters Extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clusters-treatment">3.2.2. Clusters Treatment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-options">3.2.3. Execution Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart-examples">3.2.4. Quickstart Examples</a></li>
 </ul>
   </nav></div>
 

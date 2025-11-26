@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 's4c0index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="3.1. MICRO" href="s3m1micro.html" />
+    <link rel="prev" title="3.2. MICRO" href="s3m2micro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,8 +181,9 @@
 <li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Microsolvation</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s3m1micro.html">3.1. MICRO</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="s3c0index.html">3. <strong>Applications</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="s3m1macro.html">3.1. MACRO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3m2micro.html">3.2. MICRO</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. <strong>Additional Modules</strong></a></li>
@@ -342,22 +343,22 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">4.1.4. <strong>MDPAR</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.2. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">4.2.1. <strong>BONDS</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">4.2.2. <strong>CONFS</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msrun">4.2.3. <strong>MSRUN</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcalc">4.2.4. <strong>GCALC</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">4.2.5. <strong>QUEUE</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oniom">4.2.6. <strong>ONIOM</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biomolecular-treatment">4.2. <strong>Biomolecular Treatment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdbio">4.2.1. <strong>PDBIO</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdb2x">4.2.2. <strong>PDB2X</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ionic">4.2.3. <strong>IONIC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grout">4.2.4. <strong>GROUT</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">4.2.5. <strong>GRO2X</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">4.2.6. <strong>GROTC</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biomolecular-treatment">4.3. <strong>Biomolecular Treatment</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdbio">4.3.1. <strong>PDBIO</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdb2x">4.3.2. <strong>PDB2X</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ionic">4.3.3. <strong>IONIC</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grout">4.3.4. <strong>GROUT</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">4.3.5. <strong>GRO2X</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">4.3.6. <strong>GROTC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.3. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">4.3.1. <strong>CONFS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">4.3.2. <strong>BONDS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msrun">4.3.3. <strong>MSRUN</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcalc">4.3.4. <strong>GCALC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">4.3.5. <strong>QUEUE</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oniom">4.3.6. <strong>ONIOM</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-purposes">4.4. <strong>Multiple Purposes</strong></a><ul class="nav section-nav flex-column">
@@ -541,79 +542,199 @@ OPTIONS/DEFAULTS
 </section>
 </section>
 <hr class="docutils" />
-<section id="microsolvation-treatment">
-<h2><span class="section-number">4.2. </span><strong>Microsolvation Treatment</strong><a class="headerlink" href="#microsolvation-treatment" title="Link to this heading">#</a></h2>
-<section id="bonds">
-<h3><span class="section-number">4.2.1. </span><strong>BONDS</strong><a class="headerlink" href="#bonds" title="Link to this heading">#</a></h3>
+<section id="biomolecular-treatment">
+<h2><span class="section-number">4.2. </span><strong>Biomolecular Treatment</strong><a class="headerlink" href="#biomolecular-treatment" title="Link to this heading">#</a></h2>
+<section id="pdbio">
+<h3><span class="section-number">4.2.1. </span><strong>PDBIO</strong><a class="headerlink" href="#pdbio" title="Link to this heading">#</a></h3>
 <ul>
-<li><p>Hydrogen bonds analyzer</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
-bonds ⟨solute.ext⟩ ⟨solvent.ext⟩ [⟨-options⟩]
+<li><p>PDB processor for Biomolecular systems</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+pdbio ⟨input.pdb⟩ [⟨-options⟩]
 
 PARAMETERS
-⟨solute.ext⟩ [Input solute COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
-⟨solvent.ext⟩ [Input solvent COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
+     input.pdb [Input PDB file]
+output.gro/itp [Output GRO/ITP file]
 
-PROCEDURES
--hbd       [Use Solvate/HBONDS procedure (default)]              [-hb]
--crt B     [Use xTB/CREST procedure with B% Boltzmann cutoff]    [-cr]
--dck N     [Use ORCA/DOCKER procedure for N solvent molecules]   [-dc]
+OPTIONS/DEFAULTS
+    -ffp T     [Force field parameters]  [Default: OPLS]
+               * GRO = GROMOS96 54a7 force field
+               * OPL = OPLS-AA/L all-atom force field
 
-OPTIONS
--xff       [Use of GFN-FF method (faster determination)]         [-xf]
--xtb       [Use of GFN2-xTB method (slower determination)]       [-xt]
--key       [List of keywords for final optimization]             [-kw]
--svt T     [Include explicit solvent and PCM configuration]      [-sv]
--prs M     [Pressure for thermochemistry calculation (in atm)]   [-ps]
--tmp M     [Temperature for thermochemistry calculation (in K)]  [-tp]
--con M     [Final concentration after compression (in mol·L⁻¹)]  [-fc]
--prc P     [Number of processors to be used]                     [-pc]
--mem M     [Amount of memory to use in GB]                       [-mm]
--deb       [Check generated inp file before submit]              [-db]
--for       [Execute in forced mode]                              [-fm]
---------------------------------------------------------------------
-NOTE: This is an interface to CREST and ORCA programs.
+ADDITIONAL
+    -pdb       [Archives PDB input]
+    -gro       [Generate GRO geometry file]
+    -itp       [Produces ITP forcefield file]
+    -ion       [Don&#39;t do ITP files of ionic species]
+    -lap       [Override PDB input file]
+    -cls       [Wipe all PDB comment lines]
+    -bak       [Create a backup of auxiliary files]
+-------------------------------------------------------------
 </pre></div>
 </div>
 </li>
 </ul>
 </section>
+<section id="pdb2x">
+<h3><span class="section-number">4.2.2. </span><strong>PDB2X</strong><a class="headerlink" href="#pdb2x" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>PDB cleaner module</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------
+pdb2x ⟨input.pdb⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.pdb [Input PDB file]
+    output.ent [Output ENT file]
+--------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="ionic">
+<h3><span class="section-number">4.2.3. </span><strong>IONIC</strong><a class="headerlink" href="#ionic" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>PDB ions forcefield constructor</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
+ionic ⟨input.pdb⟩ [⟨-options⟩]
+
+PARAMETERS
+     input.pdb [Input PDB file]
+output.gro/itp [Output GRO/ITP file]
+------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="grout">
+<h3><span class="section-number">4.2.4. </span><strong>GROUT</strong><a class="headerlink" href="#grout" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>GRO files processor module</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
+grout ⟨input.gro/itp⟩ [⟨-options⟩]
+
+PARAMETERS
+ input.gro/itp [Input GRO/ITP file]
+output.gro/itp [Output GRO/ITP file]
+
+OPTIONS
+    -gro       [Archives GRO input/output]
+    -itp       [Produces a concatenated ITP forcefield file]
+    -pdb       [Converts a PDB file to GRO input geometry]
+-------------------------------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="gro2x">
+<h3><span class="section-number">4.2.5. </span><strong>GRO2X</strong><a class="headerlink" href="#gro2x" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>GRO cleaner module</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
+gro2x ⟨input.gro/itp⟩ [⟨-options⟩]
+
+PARAMETERS
+ input.gro/itp [Input GRO/ITP file]
+output.gro/itp [Output GRO/ITP file]
+------------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="grotc">
+<h3><span class="section-number">4.2.6. </span><strong>GROTC</strong><a class="headerlink" href="#grotc" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>GRO total charge calculator</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------
+grotc ⟨input.gro⟩
+
+PARAMETERS
+ input.gro     [Input GRO file]
+-------------------------------
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="microsolvation-treatment">
+<h2><span class="section-number">4.3. </span><strong>Microsolvation Treatment</strong><a class="headerlink" href="#microsolvation-treatment" title="Link to this heading">#</a></h2>
 <section id="confs">
-<h3><span class="section-number">4.2.2. </span><strong>CONFS</strong><a class="headerlink" href="#confs" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.1. </span><strong>CONFS</strong><a class="headerlink" href="#confs" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>Conformational analysis automator</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------
 confs ⟨input.ext⟩ [⟨-options⟩]
 
 PARAMETERS
       input.ext [Input COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
 
 OPTIONS
--inp       [Output file in ORCA format (default)]                [-in]
--gro       [Output file in GROMACS format]                       [-gr]
--pdb       [Output file in PDB format (for LigParGen)]           [-pd]
--xyz       [Output file in XYZ format (for LigParGen)]           [-xy]
--sep       [Split the output file into its conformers]           [-sp]
--xff       [Use GFN-FF in conformational analysis (default)]     [-xf]
--xtb       [Use GFN2-xTB in conformational analysis (slower)]    [-xt]
--key       [List of keywords for final optimization]             [-kw]
--svt T     [Include implicity solvation configuration]           [-sv]
--prs M     [Pressure for thermochemistry calculation (in atm)]   [-ps]
--tmp M     [Temperature for thermochemistry calculation (in K)]  [-tp]
--con M     [Final concentration after compression (in mol·L⁻¹)]  [-fc]
--prc N     [Number of processors to be used]                     [-pc]
--mem N     [Amount of memory to use in GB]                       [-mm]
--deb       [Check generated inp file before submit]              [-db]
--for       [Execute in forced mode]                              [-fm]
---------------------------------------------------------------------
+-xff       [Use GFN-FF in conformational analysis (default)]    [-xf]
+-xtb       [Use GFN2-xTB in conformational analysis (slower)]   [-xt]
+-key T     [Keywords for final optimization («xTB Opt Freq»)]   [-kw]
+-svt T     [Include implicity solvation configuration]          [-sv]
+-prs N     [Pressure for thermochemistry calculation (in atm)]  [-ps]
+-tmp N     [Temperature for thermochemistry calculation (in K)] [-tp]
+-con N     [Final concentration after compression (in mol·L⁻¹)] [-fc]
+-min N     [minimum Boltzmann weight for free energy averaging] [-mp]
+-prc P     [Number of processors to be used]                    [-pc]
+-mem M     [Amount of memory to use in GB]                      [-mm]
+-deb       [Check generated inp file before submit]             [-db]
+-for       [Execute in forced mode]                             [-fm]
+
+OUTPUT FORMATS
+-inp       [Output file in ORCA format (default)]               [-in]
+-gro       [Output file in GROMACS format]                      [-gr]
+-pdb       [Output file in PDB format (for LigParGen)]          [-pd]
+-xyz       [Output file in XYZ format (for LigParGen)]          [-xy]
+-sep       [Split the output file into its conformers]          [-sp]
+-------------------------------------------------------------------
 NOTE: This is an interface to CREST program.
 </pre></div>
 </div>
 </li>
 </ul>
 </section>
+<section id="bonds">
+<h3><span class="section-number">4.3.2. </span><strong>BONDS</strong><a class="headerlink" href="#bonds" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Hydrogen bonds analyzer</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------
+bonds ⟨input.ext⟩ [⟨-options⟩]
+
+PARAMETERS
+      input.ext [Input COM/LOG/INP/OUT/XYZ/XTB/GRO/PDB file]
+
+OPTIONS
+-xff       [Use GFN-FF in conformational analysis (default)]    [-xf]
+-xtb       [Use GFN2-xTB in conformational analysis (slower)]   [-xt]
+-key T     [Keywords for final optimization («xTB Opt Freq»)]   [-kw]
+-svt T     [Include explicit solvent and PCM configuration]     [-sv]
+-prs N     [Pressure for thermochemistry calculation (in atm)]  [-ps]
+-tmp N     [Temperature for thermochemistry calculation (in K)] [-tp]
+-con N     [Final concentration after compression (in mol·L⁻¹)] [-fc]
+-min N     [minimum Boltzmann weight for free energy averaging] [-mp]
+-prc P     [Number of processors to be used]                    [-pc]
+-mem M     [Amount of memory to use in GB]                      [-mm]
+-deb       [Check generated inp file before submit]             [-db]
+-for       [Execute in forced mode]                             [-fm]
+
+PROCEDURES
+-nci N     [Use CREST/NCI procedure with N svt mol]             [-nc]
+-hbd N     [Use CREST/HBD procedure with N svt mol] (default)   [-hb]
+-------------------------------------------------------------------
+NOTE: This is an interface to CREST and ORCA programs.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
 <section id="msrun">
-<h3><span class="section-number">4.2.3. </span><strong>MSRUN</strong><a class="headerlink" href="#msrun" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.3. </span><strong>MSRUN</strong><a class="headerlink" href="#msrun" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>Microssolvation Aggregator</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------------------------------------
@@ -643,7 +764,7 @@ OPTIONS
 </ul>
 </section>
 <section id="gcalc">
-<h3><span class="section-number">4.2.4. </span><strong>GCALC</strong><a class="headerlink" href="#gcalc" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.4. </span><strong>GCALC</strong><a class="headerlink" href="#gcalc" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>Gibbs Free Energy Calculator</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------------------------
@@ -731,7 +852,7 @@ ADITIONAL OPTIONS
 </ul>
 </section>
 <section id="queue">
-<h3><span class="section-number">4.2.5. </span><strong>QUEUE</strong><a class="headerlink" href="#queue" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.5. </span><strong>QUEUE</strong><a class="headerlink" href="#queue" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>QUEUE System Manager</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------------------------------------------------------------------------
@@ -765,7 +886,7 @@ OPTIONS
 </ul>
 </section>
 <section id="oniom">
-<h3><span class="section-number">4.2.6. </span><strong>ONIOM</strong><a class="headerlink" href="#oniom" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.6. </span><strong>ONIOM</strong><a class="headerlink" href="#oniom" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>ONIOM Program</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>----------------------------------------------------------------------------------------
@@ -785,124 +906,6 @@ OPTIONS
 -prc N     [Number of parallel CPU processes to run]                   [Default: 8]  [-pc]
 -mem N     [Amount of memmory to be used (in GB)]                      [Default: 16] [-mm]
 ----------------------------------------------------------------------------------------
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="biomolecular-treatment">
-<h2><span class="section-number">4.3. </span><strong>Biomolecular Treatment</strong><a class="headerlink" href="#biomolecular-treatment" title="Link to this heading">#</a></h2>
-<section id="pdbio">
-<h3><span class="section-number">4.3.1. </span><strong>PDBIO</strong><a class="headerlink" href="#pdbio" title="Link to this heading">#</a></h3>
-<ul>
-<li><p>PDB processor for Biomolecular systems</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
-pdbio ⟨input.pdb⟩ [⟨-options⟩]
-
-PARAMETERS
-     input.pdb [Input PDB file]
-output.gro/itp [Output GRO/ITP file]
-
-OPTIONS/DEFAULTS
-    -ffp T     [Force field parameters]  [Default: OPLS]
-               * GRO = GROMOS96 54a7 force field
-               * OPL = OPLS-AA/L all-atom force field
-
-ADDITIONAL
-    -pdb       [Archives PDB input]
-    -gro       [Generate GRO geometry file]
-    -itp       [Produces ITP forcefield file]
-    -ion       [Don&#39;t do ITP files of ionic species]
-    -lap       [Override PDB input file]
-    -cls       [Wipe all PDB comment lines]
-    -bak       [Create a backup of auxiliary files]
--------------------------------------------------------------
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
-<section id="pdb2x">
-<h3><span class="section-number">4.3.2. </span><strong>PDB2X</strong><a class="headerlink" href="#pdb2x" title="Link to this heading">#</a></h3>
-<ul>
-<li><p>PDB cleaner module</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--------------------------------
-pdb2x ⟨input.pdb⟩ [⟨-options⟩]
-
-PARAMETERS
-     input.pdb [Input PDB file]
-    output.ent [Output ENT file]
---------------------------------
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
-<section id="ionic">
-<h3><span class="section-number">4.3.3. </span><strong>IONIC</strong><a class="headerlink" href="#ionic" title="Link to this heading">#</a></h3>
-<ul>
-<li><p>PDB ions forcefield constructor</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
-ionic ⟨input.pdb⟩ [⟨-options⟩]
-
-PARAMETERS
-     input.pdb [Input PDB file]
-output.gro/itp [Output GRO/ITP file]
-------------------------------------
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
-<section id="grout">
-<h3><span class="section-number">4.3.4. </span><strong>GROUT</strong><a class="headerlink" href="#grout" title="Link to this heading">#</a></h3>
-<ul>
-<li><p>GRO files processor module</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------
-grout ⟨input.gro/itp⟩ [⟨-options⟩]
-
-PARAMETERS
- input.gro/itp [Input GRO/ITP file]
-output.gro/itp [Output GRO/ITP file]
-
-OPTIONS
-    -gro       [Archives GRO input/output]
-    -itp       [Produces a concatenated ITP forcefield file]
-    -pdb       [Converts a PDB file to GRO input geometry]
--------------------------------------------------------------
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
-<section id="gro2x">
-<h3><span class="section-number">4.3.5. </span><strong>GRO2X</strong><a class="headerlink" href="#gro2x" title="Link to this heading">#</a></h3>
-<ul>
-<li><p>GRO cleaner module</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------
-gro2x ⟨input.gro/itp⟩ [⟨-options⟩]
-
-PARAMETERS
- input.gro/itp [Input GRO/ITP file]
-output.gro/itp [Output GRO/ITP file]
-------------------------------------
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
-<section id="grotc">
-<h3><span class="section-number">4.3.6. </span><strong>GROTC</strong><a class="headerlink" href="#grotc" title="Link to this heading">#</a></h3>
-<ul>
-<li><p>GRO total charge calculator</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-------------------------------
-grotc ⟨input.gro⟩
-
-PARAMETERS
- input.gro     [Input GRO file]
--------------------------------
 </pre></div>
 </div>
 </li>
@@ -1318,12 +1321,12 @@ WARNING
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="s3m1micro.html"
+       href="s3m2micro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>MICRO</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>MICRO</p>
       </div>
     </a>
 </div>
@@ -1349,22 +1352,22 @@ WARNING
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mdpar">4.1.4. <strong>MDPAR</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.2. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">4.2.1. <strong>BONDS</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">4.2.2. <strong>CONFS</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msrun">4.2.3. <strong>MSRUN</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcalc">4.2.4. <strong>GCALC</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">4.2.5. <strong>QUEUE</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oniom">4.2.6. <strong>ONIOM</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biomolecular-treatment">4.2. <strong>Biomolecular Treatment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdbio">4.2.1. <strong>PDBIO</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdb2x">4.2.2. <strong>PDB2X</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ionic">4.2.3. <strong>IONIC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grout">4.2.4. <strong>GROUT</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">4.2.5. <strong>GRO2X</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">4.2.6. <strong>GROTC</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biomolecular-treatment">4.3. <strong>Biomolecular Treatment</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdbio">4.3.1. <strong>PDBIO</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pdb2x">4.3.2. <strong>PDB2X</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ionic">4.3.3. <strong>IONIC</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grout">4.3.4. <strong>GROUT</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gro2x">4.3.5. <strong>GRO2X</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grotc">4.3.6. <strong>GROTC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsolvation-treatment">4.3. <strong>Microsolvation Treatment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confs">4.3.1. <strong>CONFS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonds">4.3.2. <strong>BONDS</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#msrun">4.3.3. <strong>MSRUN</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gcalc">4.3.4. <strong>GCALC</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">4.3.5. <strong>QUEUE</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oniom">4.3.6. <strong>ONIOM</strong></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-purposes">4.4. <strong>Multiple Purposes</strong></a><ul class="nav section-nav flex-column">

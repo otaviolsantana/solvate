@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Microsolvation &#8212; Solvate Suite - Comprehensive Manual</title>
+    <title>3. Applications &#8212; Solvate Suite - Comprehensive Manual</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 's3c0index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.1. MICRO" href="s3m1micro.html" />
+    <link rel="next" title="3.1. MACRO" href="s3m1macro.html" />
     <link rel="prev" title="2.2. DATAS" href="s2m2datas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,8 +182,9 @@
 <li class="toctree-l2"><a class="reference internal" href="s2m2datas.html">2.2. DATAS</a></li>
 </ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. <strong>Microsolvation</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="s3m1micro.html">3.1. MICRO</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. <strong>Applications</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="s3m1macro.html">3.1. MACRO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3m2micro.html">3.2. MICRO</a></li>
 </ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="s4c0index.html">4. <strong>Additional Modules</strong></a></li>
@@ -324,7 +325,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Microsolvation</h1>
+    <h1>Applications</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -338,11 +339,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="microsolvation">
-<h1><span class="section-number">3. </span><strong>Microsolvation</strong><a class="headerlink" href="#microsolvation" title="Link to this heading">#</a></h1>
-<p><strong>SETTING UP THE MICROSOLVATION</strong></p>
-<p>In the <strong>third stage</strong>, following trajectory extraction, the truncated trajectory file <em>simbox.try.xyz</em> is generated. The <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> module can then be employed in two steps to carry out the microsolvation procedure.</p>
-<p>In the first step, the module selects <em>N</em> low-energy clusters, each composed of <em>M</em> solvent molecules. The value of <em>M</em> may be: (1) determined from a prior radial distribution function (RDF) analysis using the DATAS module; (2) defined based on the solute-to-solvent ratio at a user-specified concentration; or (3) calculated automatically, using a cutoff distance corresponding to the diameter of a solvation sphere. The extraction is performed using the following command structure:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="applications">
+<h1><span class="section-number">3. </span><strong>Applications</strong><a class="headerlink" href="#applications" title="Link to this heading">#</a></h1>
+<p><strong>PERFORMING APPLICATIONS</strong></p>
+<p>In the <strong>third stage</strong>, following trajectory extraction, the truncated trajectory file <em>simbox.try.xyz</em> is generated. The <code class="docutils literal notranslate"><span class="pre">MACRO</span></code> (under development) and <code class="docutils literal notranslate"><span class="pre">MICRO</span></code> modules can be used for the treatment of biomolecules or for microsolvation analysis, respectively.</p>
+<p><strong>PERFORMING THE MICROSOLVATION TREATMENT</strong></p>
+<p>In the first step of the microsolvation treatment, the module selects <em>N</em> low-energy clusters, each composed of <em>M</em> solvent molecules. The value of <em>M</em> may be: (1) determined from a prior radial distribution function (RDF) analysis using the DATAS module; (2) defined based on the solute-to-solvent ratio at a user-specified concentration; or (3) calculated automatically, using a cutoff distance corresponding to the diameter of a solvation sphere. The extraction is performed using the following command structure:</p>
 <blockquote>
 <div><p>solvate ⟨simbox.trj.xyz⟩ -micro [⟨-options⟩]</p>
 </div></blockquote>
@@ -400,11 +402,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="s3m1micro.html"
+       href="s3m1macro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>MICRO</p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>MACRO</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
