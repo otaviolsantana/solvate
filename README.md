@@ -21,6 +21,7 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- Inclusion of features in MDRUN for running simulations with auto-equilibration. (under development)
 	- Implementation of the CONFS submodule for automation of conformational analysis. (under development)
 	- Implementation of the BONDS submodule for automation of hydrogen bond search. (under development)
+	- Implementation of the GSOLV submodule for automation of solvation Gibbs Free energy. (under development)
  	- Bug fixes...
 
 * _Solvate Suite 2025.07_
