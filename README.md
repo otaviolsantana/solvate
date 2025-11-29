@@ -17,11 +17,11 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 
 * _Solvate Suite 2025.12_ (Coming soon...)
  
-	- Inclusion of features in PACKS for multiple initial configurations in a single input. (under development)
-	- Inclusion of features in MDRUN for running simulations with auto-equilibration. (under development)
-	- Implementation of the CONFS submodule for automation of conformational analysis. (under development)
-	- Implementation of the BONDS submodule for automation of hydrogen bond search. (under development)
-	- Implementation of the GSOLV submodule for automation of solvation Gibbs Free energy. (under development)
+	- PACKS features inclusion for multiple initial configurations in a single input. (under development)
+	- MDRUN features inclusion for running simulations with auto-equilibration. (under development)
+	- CONFS submodule implementation for automation of conformational analysis. (under development)
+	- BONDS submodule implementation for automation of hydrogen bond search. (under development)
+	- GSOLV submodule implementation for automation of solvation Gibbs Free energy. (under development)
  	- Bug fixes...
 
 * _Solvate Suite 2025.07_
