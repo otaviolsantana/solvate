@@ -22,7 +22,7 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- MACRO submodule implementation for biomolecules treatment. (under development)
 	- CONFS submodule implementation for automation of conformational analysis. (under development)
 	- BONDS submodule implementation for automation of hydrogen bond search. (under development)
-	- GSOLV submodule implementation for automation of solvation Gibbs Free energy. (under development)
+	- GSOLV submodule implementation for solvation Gibbs Free energy calculation. (under development)
  	- Bug fixes...
 
 * _Solvate Suite 2025.07_
