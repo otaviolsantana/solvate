@@ -15,17 +15,10 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 
 **CHANGELOG**
 
-* _Solvate Suite 2024.08_
+* _Solvate Suite 2025.12_ (Coming soon...)
  
-	- Inclusion of parameters for simulation configuration through the MDPAR submodule.
-	- Expansion of the list of parameterized solvents via SOLVS submodule.
-	- Addition of SAC and SOC optimization procedures in the treatment of microsolvation.
-	- Implementation of the search for similarities in the SOC procedure.
- 	- RMSD cutoff estimate for the SOC procedure via the RMSDE submodule.
- 	- Data extraction from SUMMY and SUPPY modules with concentration and temperature correction.
-   	- Minimization of structural RMSD from files with multiple structures (trj.xyz).
-  	- Microssolvation clusters extraction with reorientation of structures relative to the solute.
-	- Integration of the MICRO, GCALC, and ONIOM modules via MSRUN to automate microsolvation.
+	- Inclusion of features in PACKS for multiple initial configurations in a single input. (under development)
+	- Inclusion of features in MDRUN for running simulations with auto-equilibration. (under development)
  	- Bug fixes...
 
 * _Solvate Suite 2025.07_
@@ -37,10 +30,17 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- Implementation of the BONDS submodule for automation of hydrogen bond analysis.
  	- Bug fixes...
 
-* _Solvate Suite 2025.12_ (Coming soon...)
+* _Solvate Suite 2024.08_
  
-	- Inclusion of features in MDRUN for multiple initial configurations in a single input. (under development)
-	- Inclusion of features in MDRUN for running simulations with auto-equilibration. (under development)
+	- Inclusion of parameters for simulation configuration through the MDPAR submodule.
+	- Expansion of the list of parameterized solvents via SOLVS submodule.
+	- Addition of SAC and SOC optimization procedures in the treatment of microsolvation.
+	- Implementation of the search for similarities in the SOC procedure.
+ 	- RMSD cutoff estimate for the SOC procedure via the RMSDE submodule.
+ 	- Data extraction from SUMMY and SUPPY modules with concentration and temperature correction.
+   	- Minimization of structural RMSD from files with multiple structures (trj.xyz).
+  	- Microssolvation clusters extraction with reorientation of structures relative to the solute.
+	- Integration of the MICRO, GCALC, and ONIOM modules via MSRUN to automate microsolvation.
  	- Bug fixes...
 
 **CITATION**
