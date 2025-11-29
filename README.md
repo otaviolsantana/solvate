@@ -19,6 +19,7 @@ For more information about the program, visit the [Solvate Suite](https://otavio
  
 	- PACKS features inclusion for multiple initial configurations in a single input. (under development)
 	- MDRUN features inclusion for running simulations with auto-equilibration. (under development)
+	- MACRO submodule implementation for biomolecules treatment. (under development)
 	- CONFS submodule implementation for automation of conformational analysis. (under development)
 	- BONDS submodule implementation for automation of hydrogen bond search. (under development)
 	- GSOLV submodule implementation for automation of solvation Gibbs Free energy. (under development)
