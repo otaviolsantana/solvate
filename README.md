@@ -15,7 +15,7 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 
 **CHANGELOG**
 
-* _Solvate Suite 2025.12_ (Coming soon...)
+* _Solvate Suite 2026.01_ (Coming soon...)
  
 	- PACKS features inclusion for multiple initial configurations in a single input. (under development)
 	- MDRUN features inclusion for running simulations with auto-equilibration. (under development)
