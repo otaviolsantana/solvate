@@ -416,53 +416,50 @@ document.write(`
 <div><p>mdrun ⟨file.ext⟩ [⟨-options⟩]</p>
 </div></blockquote>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  -------------------------------------------------------------------------------------------------
-   ORCA/GROMACS
-  -------------------------------------------------------------------------------------------------
-     auto : Execute the MD simulation with automatic settings.                                     [-ma](●)(■)⁽*⁾
-          » Description
-            ORC: [Default: -tot = 50.0 ps (prod.) | -dts = 1.0 fs]
-            GMX: [Default: -tot = 2.50 ns (prod.) | -dts = 2.0 fs]
-          + ----------------------------------------------------------
   » Automation Options:
-    -auto : Start MD simulation with automatic settings.                                           [-ra](●)(■)⁽*⁾
-    -init : Init. energy minimization with simulation box optimization procedure.                  [-ri](●)(■)⁽*⁾
-    -equi : Exec. MD equilibration procedure (with auto restart).                                  [-re](●)(■)⁽*⁾
-    -prod : Exec. MD production procedure (with auto restart).                                     [-rp](●)(■)⁽*⁾
-    -bomd : Run a BOMD simulation at GFN2-xTB level.                                               [-rb](●)   ⁽*⁾
+    -auto : Start MD simulation with automatic settings.                                            [-ra](●)(■)⁽*⁾
+    -init : Init. energy minimization with simulation box optimization procedure.                   [-ri](●)(■)⁽*⁾
+    -equi : Exec. MD equilibration procedure (with auto restart).                                   [-rq](●)(■)⁽*⁾
+    -prod : Exec. MD production procedure (with auto restart).                                      [-rp](●)(■)⁽*⁾
+    -bomd : Run a BOMD simulation at GFN2-xTB level.                                                [-rb](●)   ⁽*⁾
   » Procedure Options:
-     -min : Execute an energy minimization of the simulation box.                                  [-em](●)(■)⁽*⁾
-     -opt : Execute an optimization of the simulation box.                                         [-bo](●)(■)⁽*⁾
-     -nvt : Run an equilibration simulation on NVT ensamble.                                       [-nv](●)(■)⁽*⁾
-     -npt : Run an equilibration simulation on NPT ensamble.                                       [-np]   (■)⁽*⁾
-     -prd : Run a production simulation on NVT/NPT ensamble.                                       [-pd](●)(■)⁽*⁾
+     -min : Execute an energy minimization of the simulation box.                                   [-em](●)(■)⁽*⁾
+     -opt : Execute an optimization of the simulation box.                                          [-bo](●)(■)⁽*⁾
+     -nvt : Run an equilibration simulation on NVT ensamble.                                        [-nv](●)(■)⁽*⁾
+     -npt : Run an equilibration simulation on NPT ensamble.                                        [-np]   (■)⁽*⁾
+     -prd : Run a production simulation on NVT/NPT ensamble.                                        [-pd](●)(■)⁽*⁾
   » Settings Options:
-     -met = MD simulation method (GFF|GF1|GF2).                        [Default: GFF]      [Text]  [-ms](●)
-     -prs = Pressure for the MD simulation (in bar).                   [Default: 1.00]     [Real]  [-ps]   (■)
-     -tcp = Time constant for pressure coupling (in ps).               [Default: 0.50]     [Real]  [-tp]   (■)
-     -bar = Type of barostat pressure coupling.                        [Default: Berendsen][Text]  [-br]   (■)
+     -met = MD simulation method (GFF|GF1|GF2).                        [Default: GFF]      [Text]   [-ms](●)
+     -prs = Pressure for the MD simulation (in bar).                   [Default: 1.00]     [Real]   [-ps]   (■)
+     -tcp = Time constant for pressure coupling (in ps).               [Default: 0.50]     [Real]   [-tp]   (■)
+     -bar = Type of barostat pressure coupling.                        [Default: Berendsen][Text]   [-br]   (■)
             * BRDS = Berendsen | CRES = C-rescale | PARR = Parrinello  | MTTK
-     -tmp = Temperature for MD simulation (in K).                      [Default: 298.15]   [Real]  [-ts](●)(■)
-     -tct = Time constant for temperature coupling (in ps).            [Default: 0.50]     [Real]  [-tc]   (■)
-     -ter = Type of thermostat temperature coupling.                   [Default: V-rescale][Text]  [-tr]   (■)
+     -tmp = Temperature for MD simulation (in K).                      [Default: 298.15]   [Real]   [-ts](●)(■)
+     -tct = Time constant for temperature coupling (in ps).            [Default: 0.50]     [Real]   [-tc]   (■)
+     -ter = Type of thermostat temperature coupling.                   [Default: V-rescale][Text]   [-tr]   (■)
             * BRDS = Berendsen | VRES = V-rescale | NOSE = Nose-Hoover | ADSN = Andersen
-     -kap = Isothermal compressibility value (in bar⁻¹).               [Default: 1.0E-6]   [Real]  [-kp]   (■)
-     -nst = Simulation steps to update neighbor list.                  [Default: 100]      [Int.]  [-ns]   (■)
-     -dmp = Number of steps for dump positions.                        [Default: 1]        [Int.]  [-dp](●)(■)
-     -dts = Simulation time step (in fs).                              [Default: 1.0]      [Real]  [-dt]   (■)
-     -tot = Simulation additional (ORCA) or total (GMX) time (in ps).  [Default: Automatic][Real]  [-tt](●)(■)
-     -nrs = Number of simulation run steps.                            [Default: Automatic][Int.]  [-nr](●)(■)
+     -kap = Isothermal compressibility value (in bar⁻¹).               [Default: 1.0E-6]   [Real]   [-kp]   (■)
+     -nst = Simulation steps to update neighbor list.                  [Default: 100]      [Int.]   [-ns]   (■)
+     -dmp = Number of steps for dump positions.                        [Default: 1]        [Int.]   [-dp](●)(■)
+     -dts = Simulation time step (in fs).                              [Default: 1.0]      [Real]   [-dt]   (■)
+     -tot = Simulation additional (ORCA) or total (GMX) time (in ps).  [Default: Automatic][Real]   [-tt](●)(■)
+     -nrs = Number of simulation run steps.                            [Default: Automatic][Int.]   [-nr](●)(■)
+  » Restraints Options:
+     -ncm : Exec. with no center of mass restraints.                   [Default: No]       [Log.]   [-nc](●)(■)
+     -npr : Exec. with no solute atoms restraints.                     [Default: No]       [Log.]   [-np](●)(■)
   » Additional Options:
-     -prc = Number of parallel CPU processes to run.                   [Default: 4]                [-pc](●)
-     -chk : Check generated files before submit.                       [Default: No]               [-ck](●)(■)
-     -cfg = Execute with user defined input configurations.            [Default: No]               [-ic]   (■)
-     -fix : Performs MD without atom constraints.                      [Default: No]               [-nf](●)
-     -nhr : Exec. with no H-bonds. restraints (for production steps).  [Default: No]               [-hr]   (■)
-     -clr : Cleaning unnecessary files (after extraction).             [Default: No]               [-cl]   (■)
-     -cpt : Compact output files.                                      [Default: No]               [-cp]   (■)
-     -ext : Extract output files.                                      [Default: No]               [-ex]   (■)
-     -for : Execute in forced mode (suppressing upper to 2 warnings).  [Default: No]       [FORCE] [-lc](●)(■)
+     -chk : Check generated files before submit.                       [Default: No]       [Log.]   [-ck](●)(■)
+     -cfg = Execute with user defined input configurations.            [Default: No]       [Txt.]   [-ic]   (■)
+     -clr : Cleaning unnecessary files (after extraction).             [Default: No]       [Log.]   [-cl]   (■)
+     -cpt : Compact output files.                                      [Default: No]       [Log.]   [-cp]   (■)
+     -ext : Extract output files.                                      [Default: No]       [Log.]   [-ex]   (■)
+     -for : Execute in forced mode (suppressing upper to 2 warnings).  [Default: No]       [Log.]   [-lc](●)(■)
+  » System Options:
+     -prc = Number of processors to be used.                           [Default: 4]        [Int.]   [-pc](●)(■)
+     -mem = Amount of memory in GB to be used.                         [Default: 8]        [Int.]   [-mm](●)
   -------------------------------------------------------------------------------------------------
   ⁽*⁾ Configurable options in automated mode. (●) ORCA available. (■) GROMACS available.
+  ⁽*⁾ Note: This is an interface to ORCA and GROMACS programs.
 </pre></div>
 </div>
 </section>
