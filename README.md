@@ -19,6 +19,8 @@ For more information about the program, visit the [Solvate Suite](https://otavio
  
 	- Inclusion of features in PACKS for multiple initial configurations in a single input. (under development)
 	- Inclusion of features in MDRUN for running simulations with auto-equilibration. (under development)
+	- Implementation of the CONFS submodule for automation of conformational analysis. (under development)
+	- Implementation of the BONDS submodule for automation of hydrogen bond search. (under development)
  	- Bug fixes...
 
 * _Solvate Suite 2025.07_
@@ -26,8 +28,6 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- Inclusion of features in GMDFF for running Q-Force with user-customized parameters.
 	- Inclusion of features in PACKS for simulations with multiple solute conformations.
 	- Inclusion of features in GCALC for deleting clusters before and after optimization.
-	- Implementation of the CONFS submodule for automation of conformational analysis.
-	- Implementation of the BONDS submodule for automation of hydrogen bond analysis.
  	- Bug fixes...
 
 * _Solvate Suite 2024.08_
