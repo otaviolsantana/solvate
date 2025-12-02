@@ -23,7 +23,7 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- CONFS submodule implementation for automation of conformational analysis. (under development)
 	- BONDS submodule implementation for automation of hydrogen bond search. (under development)
 	- GSOLV submodule implementation for solvation Gibbs Free energy calculation. (under development)
-    - Inclusion of auto complete feature for the main modules
+    - Inclusion of autocomplete feature for the main modules.
  	- Bug fixes...
 
 * _Solvate Suite 2025.07_
