@@ -32,7 +32,6 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 * _Solvate Suite 2025.07_
  
 	- Inclusion of features in GMDFF for running Q-Force with user-customized parameters.
-	- Inclusion of features in PACKS for simulations with multiple solute conformations.
 	- Inclusion of features in GCALC for deleting clusters before and after optimization.
  	- Bug fixes...
 
