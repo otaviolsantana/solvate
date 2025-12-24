@@ -17,14 +17,14 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 
 * _Solvate Suite 2026.01_ (Coming soon...)
  
-	- PACKS: Creation of initial configurations with multiple solute conformations. (under development)
-	- MDRUN: Execution of simulations with a self-equilibration feature. (under development)
-	- MICRO: Restructuring for a simplified microsolvation treatment. (under development)
-	- MACRO: Implementation of a submodule for biomolecular systems. (under development)
-	- ONIOM: Implementation of a submodule for parallel ONIOM calculations. (under development)
-	- CONFS: Implementation of a submodule for automated conformational analysis. (under development)
-	- BONDS: Implementation of a submodule for automated hydrogen-bond search. (under development)
-	- GSOLV: Implementation of a submodule for automated explicit solvation free-energy calculations. (under development)
+	- PACKS: Creation of initial configurations with multiple solute conformations.
+	- MDRUN: Execution of simulations with a self-equilibration feature.
+	- MICRO: Restructuring for a simplified microsolvation treatment.
+	- MACRO: Implementation of a submodule for biomolecular systems.
+	- ONIOM: Implementation of a submodule for parallel ONIOM calculations.
+	- CONFS: Implementation of a submodule for automated conformational analysis.
+	- BONDS: Implementation of a submodule for automated hydrogen-bond search.
+	- GSOLV: Implementation of a submodule for automated explicit solvation free-energy calculations.
     - Integration of the suite with the _CP2K_ program.
     - Inclusion of an autocomplete feature for the main modules.
  	- Bug fixes...
