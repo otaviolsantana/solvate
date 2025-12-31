@@ -27,6 +27,7 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- GSOLV: Implementation of a submodule for automated explicit solvation free-energy calculations.
     - Integration of the suite with the _CP2K_ program.
     - Inclusion of an autocomplete feature for the main modules.
+    - Inclusion of features for controlling molecular fragment restrictions in GROMACS.
  	- Bug fixes...
 
 * _Solvate Suite 2025.07_
