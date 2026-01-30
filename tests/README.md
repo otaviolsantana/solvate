@@ -1,6 +1,6 @@
 ## TEST SUITE
 
-This is a repository of test files for executing the program suite, integrated into the [tutorials](https://github.com/otaviolsantana/solvate/tree/main/tutorials) page.
+This is a repository of test files for executing the _Solvate Suite_ (2026.01), integrated into the [tutorials](https://github.com/otaviolsantana/solvate/tree/main/tutorials) page.
 
 **GMDFF**
 
