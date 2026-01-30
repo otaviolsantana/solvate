@@ -3,6 +3,41 @@
 # SUBMIT launch script.
 #
 
+# Defining colors
+
+if [[ `echo $@ | grep -i "\-nocol"` ]]; then
+   NCBLK=""; NCRED=""; NCGRN=""; NCYLW=""; NCBLU=""; NCPUR=""; NCOLV=""; NCWHT=""; NCGRY=""; NCXYZ=""; BCBLK=""; BCRED=""; BCGRN=""; BCYLW=""; BCBLU=""; BCPUR=""; BCOLV=""; BCWHT=""; BCGRY=""; BCXYZ=""; FLASH=""; RESET=""
+else
+   NCBLK=$(tput setaf 0)             # NCBLK=""
+   NCRED=$(tput setaf 1)             # NCWHT="\e[29m"
+   NCGRN=$(tput setaf 2)             # NCGRY="\e[30m"
+   NCYLW=$(tput setaf 3)             # NCRED="\e[31m"
+   NCBLU=$(tput setaf 4)             # NCGRN="\e[32m"
+   NCPUR=$(tput setaf 5)             # NCYLW="\e[33m"
+   NCOLV=$(tput setaf 6)             # NCBLU="\e[34m"
+   NCWHT=$(tput setaf 7)             # NCPUR="\e[35m"
+   NCGRY=$(tput setaf 8)             # NCOLV="\e[36m"
+   NCXYZ=$(tput setaf 9)             # ...
+   BCBLK=$(tput setaf 0)$(tput bold) # NCBLK=""
+   BCRED=$(tput setaf 1)$(tput bold) # BCWHT="\e[29;1m"
+   BCGRN=$(tput setaf 2)$(tput bold) # BCGRY="\e[30;1m"
+   BCYLW=$(tput setaf 3)$(tput bold) # BCRED="\e[31;1m"
+   BCBLU=$(tput setaf 4)$(tput bold) # BCGRN="\e[32;1m"
+   BCPUR=$(tput setaf 5)$(tput bold) # BCYLW="\e[33;1m"
+   BCOLV=$(tput setaf 6)$(tput bold) # BCBLU="\e[34;1m"
+   BCWHT=$(tput setaf 7)$(tput bold) # BCPUR="\e[35;1m"
+   BCGRY=$(tput setaf 8)$(tput bold) # BCOLV="\e[36;1m"
+   BCXYZ=$(tput setaf 9)$(tput bold) # ...
+   FLASH=$(tput blink)               # FLASH="\e[31;5m"
+   RESET=$(tput sgr0)                # RESET="\e[0m"
+fi
+
+newargs=()
+for arg in "$@"; do
+   if [[ `echo $arg | grep -i "\-nocol"` = "" ]]; then newargs+=("$arg") ; fi
+done
+set -- "${newargs[@]}"
+
 # Determining system batch
 
 TEST_SLUR=`echo $(command -v sbatch)`     # SLURM System
@@ -32,36 +67,34 @@ fi
 
 if [[ `echo $1 | grep -ian "\-ver"` ]]; then
 
-   infov "SUBMIT :: Sub-Module"
-   exit
+   infov "SUBMIT :: Sub-Module" ; exit
 
 elif [[ -z $1 ]]; then
 
-   FILES1=`ls *.com *.gjf *.inp *.xyz *.gro`
-   FILES2=`ls *.sh`
+   FILES1=$(ls *.com *.gjf *.inp *.xyz *.gro)
+   FILES2=$(ls *.sh)
 
    clear
    echo
-   echo -e "\033[1;34m --------------------------------------------------- \033[0m"
-  #echo -e "\033[1;31m submit \033[1;32m⟨program⟩ ⟨input.ext⟩ ⟨-options⟩ ⟨-ntasks I⟩ \033[0m"
-   echo -e "\033[1;32m submit ⟨program⟩ ⟨input.ext⟩ ⟨-options⟩ ⟨-ntasks I⟩ \033[0m"
+   echo -e "${NCGRY} ---------------------------------------------------- ${RESET}"
+   echo -e "${BCGRN} submit ⟨program⟩ ⟨input.ext⟩ ⟨-options⟩ ⟨-ntasks I⟩  ${RESET}"
    echo
-   echo -e "\033[1;33m PARAMETERS                                          \033[0m"
-   echo -e "\033[1;21m      program   [gsn/orca/xtb/gmx program]           \033[0m"
-   echo -e "\033[1;21m      input.ext [Input GJF/COM/INP/XYZ/GRO file]     \033[0m"
+   echo -e "${BCYLW} PARAMETERS                                           ${RESET}"
+   echo -e "${NCWHT}     program        [orca/cp2k/xtb/mopac/gmx program] ${RESET}"
+   echo -e "${NCWHT}     input.ext      [Input INP/ICP/XYZ/MOP/GRO file]  ${RESET}"
    echo
-   echo -e "\033[1;33m OPTIONS/DEFAULTS                                    \033[0m"
-   echo -e "\033[1;21m     -options   [Program specific options]           \033[0m"
-   echo -e "\033[1;21m     -queue  T  [Name of available queue]            \033[0m"
-   echo -e "\033[1;21m     -ntasks I  [Number of processors]    [-prc]     \033[0m"
-   echo -e "\033[1;21m     -qmemor I  [Amount of memory (in GB)][-mem]     \033[0m"
-   echo -e "\033[1;21m     -preserve  [Preserve the submission job file]   \033[0m"
-   echo -e "\033[1;21m     -debug     [Check generated job before submit]  \033[0m"
+   echo -e "${BCYLW} OPTIONS                                              ${RESET}"
+   echo -e "${NCWHT}     -options   [Program specific options]            ${RESET}"
+   echo -e "${NCWHT}     -queue  T  [Name of available queue]             ${RESET}"
+   echo -e "${NCWHT}     -ntasks I  [Number of processors]    [-prc]      ${RESET}"
+   echo -e "${NCWHT}     -qmemor I  [Amount of memory (in GB)][-mem]      ${RESET}"
+   echo -e "${NCWHT}     -preserve  [Preserve the submission job file]    ${RESET}"
+   echo -e "${NCWHT}     -debug     [Check generated job before submit]   ${RESET}"
   #echo
-  #echo -e "\033[1;33m ADDITIONAL                                          \033[0m"
-  #echo -e "\033[1;21m     -batch  T  [Name of system batch]               \033[0m"
+  #echo -e "${BCYLW} ADDITIONAL                                           ${RESET}"
+  #echo -e "${NCWHT}     -batch  T  [Name of system batch]                ${RESET}"
    echo
-   echo -e "\033[1;33m AVAILABLE SYSTEM BATCH                              \033[0m"
+   echo -e "${BCYLW} AVAILABLE SYSTEM BATCH                               ${RESET}"
    if [[ $MACHINE == "PBS" ]]; then
       echo "     »Torque/PBS (Portable Batch System) [qbub]"
    elif [[ $MACHINE == "LSF" ]]; then
@@ -80,26 +113,32 @@ elif [[ -z $1 ]]; then
       echo "     »NOT DEFINED"
    fi
    echo
-   echo -e "\033[1;33m WARNING                                             \033[0m"
-   echo -e "\033[1;21m      This is an open-source script that may require \033[0m"
-   echo -e "\033[1;21m      adjustments depending on the available queue   \033[0m"
-   echo -e "\033[1;21m      system                                         \033[0m"
-   echo -e "\033[1;34m --------------------------------------------------- \033[0m"
+   echo -e "${BCYLW} WARNING                                              ${RESET}"
+   echo -e "${NCWHT}      This is an open-source script that may require  ${RESET}"
+   echo -e "${NCWHT}      adjustments depending on the available queue    ${RESET}"
+   echo -e "${NCWHT}      system                                          ${RESET}"
+   echo -e "${NCGRY} ---------------------------------------------------- ${RESET}"
    echo
 
    infos -compact
 
-   if [[ $FILES1 != "" ]]; then
+   if [[ -n $FILES && -n $FILES2 ]]; then
       echo
       echo " Input(s):"
       echo
       echo " » "$FILES1
       echo
-   else
+      echo " Script(s):"
       echo
-   fi
-
-   if [[ $FILES2 != "" ]]; then
+      echo " » "$FILES2
+      echo
+   elif [[ -n $FILES1 ]]; then
+      echo
+      echo " Input(s):"
+      echo
+      echo " » "$FILES1
+      echo
+   elif [[ -n $FILES2 ]]; then
       echo
       echo " Script(s):"
       echo
@@ -475,7 +514,7 @@ if [[ $MACHINE != "LOC" ]]; then
    fi
    echo "    Options:" $WORKCFG
    echo "     Procs.:" $CNTASKS "(Max.:" $MAXPROC")"
-   echo "     Memory:" $CFGMEMO "(Max.:" $MAXMEMO"GB)"
+   echo "     Memory:" $CFGMEMO "(Max.:" $MAXMEMO" GB)"
    echo " ========================================================="
    echo
 
