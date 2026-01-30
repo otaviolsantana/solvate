@@ -6,7 +6,7 @@
 
 **OVERVIEW**
 
-This is the repository for _Solvate Suite_ dependencies. All programs available here are distributed free of charge by their developers.
+This is the repository for _Solvate Suite_ (2026.01) dependencies. All programs available here are distributed free of charge by their developers.
 
 **LICENSE**
 
