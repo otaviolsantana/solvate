@@ -1,0 +1,378 @@
+#!/bin/bash
+
+# Instalando o programa
+
+if [[ -f SOLVATE.zip ]]; then
+   unzip -qo SOLVATE.zip ; ./Solvate.make ; exit
+fi
+
+# Instalando o suite
+
+if [ -d ~/.bin/solvate ]; then
+   export HOME_SOLVATE=~/.bin/solvate
+elif [ -d ~/bin/solvate ]; then
+   export HOME_SOLVATE=~/bin/solvate
+fi
+if [[ $HOME_SOLVATE = "" ]]; then
+   echo
+   echo " --------------------------------------------------"
+   echo " ERRO: Defina a variável HOME_SOLVATE corretamente!"
+   echo " --------------------------------------------------"
+   echo
+   exit
+fi
+
+if [ -d ~/Dropbox/Fontes/1.Solvate/Additionals/system/sources/ ]; then
+   export SRCS_SOLVATE=~/Dropbox/Fontes/1.Solvate/Additionals/system/sources/
+fi
+if [[ $SRCS_SOLVATE = "" ]]; then
+   echo
+   echo " --------------------------------------------------"
+   echo " ERRO: Defina a variável SRCS_SOLVATE corretamente!"
+   echo " --------------------------------------------------"
+   echo
+   exit
+fi
+
+# Verificando a instalação dos compiladores
+
+if [[ $(which gfortran) = "" || $(which gcc) = "" ]]; then
+   echo
+   echo " ---------------------------------------------"
+   echo " ERRO: instale os compiladores GFORTRAN e GCC!"
+   echo " ---------------------------------------------"
+   echo
+   exit
+fi
+
+# Limpando instalações prévias
+
+# echo ' Esta operação apagará a pasta “modules”. Pressione “enter” para continuar ou “ctrl+c” para cancelar.' && read
+
+rm -f $HOME_SOLVATE/alpha/*
+rm -f $HOME_SOLVATE/modules/*
+
+# Instalando o Solvate Suite
+
+echo " ========================================================"
+
+cd $SRCS_SOLVATE
+
+cd solvate
+echo " [00/00] Instalando o programa SOLVATE SUITE..."
+./SOLVATE.install
+cd ..
+
+echo " --------------------------------------------------------"
+
+cd packs
+echo " [01/09] Instalando o programa PACKS..."
+./PACKS.install
+cd ..
+
+cd gmdff
+echo " [02/09] Instalando o programa GMDFF..."
+./GMDFF.install
+cd ..
+
+cd mdrun
+echo " [03/09] Instalando o programa MDRUN..."
+./MDRUN.install
+cd ..
+
+cd datas
+echo " [04/09] Instalando o programa DATAS..."
+./DATAS.install
+cd ..
+
+cd stats
+echo " [05/09] Instalando o programa STATS..."
+./STATS.install
+cd ..
+
+cd plots
+echo " [06/09] Instalando o programa PLOTS..."
+./PLOTS.install
+cd ..
+
+cd trajs
+echo " [07/09] Instalando o programa TRAJS..."
+./TRAJS.install
+cd ..
+
+cd macro
+echo " [08/09] Instalando o programa MACRO...[ development... ]"
+./MACRO.install
+cd ..
+
+cd micro
+echo " [09/09] Instalando o programa MICRO..."
+./MICRO.install
+cd ..
+
+echo " --------------------------------------------------------"
+
+cd outin
+echo " [A1/A1] Instalando o programa OUTIN..."
+./OUTIN.install
+cd ..
+
+echo " --------------------------------------------------------"
+
+cd confs
+echo " [B1/B3] Instalando o programa CONFS..."
+./CONFS.install
+cd ..
+
+cd bonds
+echo " [B2/B3] Instalando o programa BONDS..."
+./BONDS.install
+cd ..
+
+cd gsolv
+echo " [B3/B3] Instalando o programa GSOLV...[ development... ]"
+./GSOLV.install
+cd ..
+
+echo " --------------------------------------------------------"
+
+cd msrun
+echo " [C1/C4] Instalando o programa MSRUN..."
+./MSRUN.install
+cd ..
+
+cd gcalc
+echo " [C2/C4] Instalando o programa GCALC..."
+./GCALC.install
+cd ..
+
+cd queue
+echo " [C3/C4] Instalando o programa QUEUE..."
+./QUEUE.install
+cd ..
+
+cd oniom
+echo " [C4/C4] Instalando o programa ONIOM..."
+./ONIOM.install
+cd ..
+
+echo " --------------------------------------------------------"
+
+cd delta
+echo " [D1/D6] Instalando o programa DELTA...[ development... ]"
+./DELTA.install
+cd ..
+
+cd files
+echo " [D2/D6] Instalando o programa FILES..."
+./FILES.install
+cd ..
+
+cd molap
+echo " [D3/D6] Instalando o programa MOLAP..."
+./MOLAP.install
+cd ..
+
+cd rmsds
+echo " [D4/D6] Instalando o programa RMSDS..."
+./RMSDS.install
+cd ..
+
+cd scalc
+echo " [D5/D6] Instalando o programa SCALC..."
+./SCALC.install
+cd ..
+
+cd solvx
+echo " [D6/D6] Instalando o programa SOLVX..."
+./SOLVX.install
+cd ..
+
+echo " --------------------------------------------------------"
+
+cd scripts
+echo " [E1/E1] Instalando o programa SCRIPTS..."
+echo " --------------------------------------------------------"
+./SCRIPTS.install
+cd ..
+
+#if [[ -d packmol ]]; then
+#   cd packmol
+#   echo " [0X/0Y] Instalando o programa PackMol..."
+#   ./packmol.install
+#   cd ..
+#fi
+
+#if [[ -d qforce ]]; then
+#   cd qforce
+#   echo " [0Y/0Y] Instalando o programa Q-Force..."
+#   ./qforce.install
+#   cd ..
+#fi
+
+# Limpando fontes (em clusters)
+
+#if [[ `echo $(which sbatch)` != "" && `echo $@ | grep -i "local"` = "" ]]; then
+#   rm -rf solvate ...
+#   ls -l
+#fi
+
+# Ajustando propriedades...
+
+chmod ugo+x $HOME_SOLVATE/modules/*
+chmod  go-w $HOME_SOLVATE/modules/*
+
+# Exibindo arquivos instalados...
+
+echo " ========================================================"
+ls -l $(which solvate)
+ls -l $HOME_SOLVATE/modules/
+echo " ========================================================"
+
+# Verificando o suite
+
+if [[ $(which solvate) = "" ]]; then
+   echo " WARNING: verify the instalation of SOLVATE."
+fi
+# -------------------------------------------------------------
+if [[ $(which packs) = "" ]]; then
+   echo " WARNING: verify the instalation of PACKS."
+fi
+if [[ $(which gmdff) = "" ]]; then
+   echo " WARNING: verify the instalation of GMDFF."
+fi
+if [[ $(which mdrun) = "" ]]; then
+   echo " WARNING: verify the instalation of MDRUN."
+fi
+if [[ $(which datas) = "" ]]; then
+   echo " WARNING: verify the instalation of DATAS."
+fi
+if [[ $(which stats) = "" ]]; then
+   echo " WARNING: verify the instalation of STATS."
+fi
+if [[ $(which plots) = "" ]]; then
+   echo " WARNING: verify the instalation of PLOTS."
+fi
+if [[ $(which trajs) = "" ]]; then
+   echo " WARNING: verify the instalation of TRAJS."
+fi
+if [[ $(which macro) = "" ]]; then
+   echo " WARNING: verify the instalation of MACRO."
+fi
+if [[ $(which micro) = "" ]]; then
+   echo " WARNING: verify the instalation of MICRO."
+fi
+# -------------------------------------------------------------
+if [[ $(which outin) = "" ]]; then
+   echo " WARNING: verify the instalation of OUTIN."
+fi
+# -------------------------------------------------------------
+if [[ $(which confs) = "" ]]; then
+   echo " WARNING: verify the instalation of CONFS."
+fi
+if [[ $(which bonds) = "" ]]; then
+   echo " WARNING: verify the instalation of BONDS."
+fi
+if [[ $(which gsolv) = "" ]]; then
+   echo " WARNING: verify the instalation of GSOLV."
+fi
+# -------------------------------------------------------------
+if [[ $(which msrun) = "" ]]; then
+   echo " WARNING: verify the instalation of MSRUN."
+fi
+if [[ $(which gcalc) = "" ]]; then
+   echo " WARNING: verify the instalation of GCALC."
+fi
+if [[ $(which queue) = "" ]]; then
+   echo " WARNING: verify the instalation of QUEUE."
+fi
+if [[ $(which oniom) = "" ]]; then
+   echo " WARNING: verify the instalation of ONIOM."
+fi
+# -------------------------------------------------------------
+if [[ $(which delta) = "" ]]; then
+   echo " WARNING: verify the instalation of DELTA."
+fi
+if [[ $(which files) = "" ]]; then
+   echo " WARNING: verify the instalation of FILES."
+fi
+if [[ $(which molap) = "" ]]; then
+   echo " WARNING: verify the instalation of MOLAP."
+fi
+if [[ $(which rmsds) = "" ]]; then
+   echo " WARNING: verify the instalation of RMSDS."
+fi
+if [[ $(which scalc) = "" ]]; then
+   echo " WARNING: verify the instalation of SCALC."
+fi
+if [[ $(which solvx) = "" ]]; then
+   echo " WARNING: verify the instalation of SOLVX."
+fi
+# -------------------------------------------------------------
+if [[ $(which runpackmol) = "" ]]; then
+   echo " WARNING: verify the instalation of PACKMOL."
+fi
+if [[ $(which runcforce) = "" ]]; then
+   echo " WARNING: verify the instalation of CFORCE."
+fi
+if [[ $(which runqforce) = "" ]]; then
+   echo " WARNING: verify the instalation of QFORCE."
+fi
+if [[ $(which rungsn) = "" ]]; then
+   echo " WARNING: install GAUSSIAN program."
+fi
+if [[ $(which runorca) = "" ]]; then
+   echo " WARNING: install ORCA program."
+fi
+if [[ $(which runxtb) = "" ]]; then
+   echo " WARNING: install XTB program."
+fi
+if [[ $(which runcrest) = "" ]]; then
+   echo " WARNING: install CREST program."
+fi
+if [[ $(which rungmx) = "" ]]; then
+   echo " WARNING: install GROMACS program."
+fi
+if [[ $(which awk) = "" ]]; then
+   echo " WARNING: install AWK program."
+fi
+
+# Finalizando a instalação...
+
+DD=`date | awk '{print $2}'`
+MM=`date | awk '{print $3}'`
+AA=`date | awk '{print $4}'`
+
+if [[ $MM = 'jan' ]]; then
+   MM='jan'
+elif [[ $MM = 'fev' ]]; then
+   MM='feb'
+elif [[ $MM = 'mar' ]]; then
+   MM='mar'
+elif [[ $MM = 'abr' ]]; then
+   MM='apr'
+elif [[ $MM = 'mai' ]]; then
+   MM='may'
+elif [[ $MM = 'jun' ]]; then
+   MM='jun'
+elif [[ $MM = 'jul' ]]; then
+   MM='jul'
+elif [[ $MM = 'ago' ]]; then
+   MM='aug'
+elif [[ $MM = 'set' ]]; then
+   MM='sep'
+elif [[ $MM = 'out' ]]; then
+   MM='oct'
+elif [[ $MM = 'nov' ]]; then
+   MM='nov'
+elif [[ $MM = 'dez' ]]; then
+   MM='dec'
+fi
+
+DATENEW=$DD"."$MM"."$AA #`echo ${01}`
+
+echo
+echo " Instalação concluída!"
+echo
+echo " Last update:" $DATENEW
+echo
