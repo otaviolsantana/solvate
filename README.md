@@ -21,7 +21,7 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 	- MACRO: Implementation of a submodule for biomolecular systems.
 	- GSOLV: Implementation of a submodule for automated explicit solvation free-energy calculations.
 
-* _Solvate Suite 2026.01_
+* _Solvate Suite 2026.01_ (Convergent Edge)
  
 	- PACKS: Creation of initial configurations with multiple solute conformations.
 	- MDRUN: Execution of simulations with a self-equilibration feature.
@@ -33,13 +33,13 @@ For more information about the program, visit the [Solvate Suite](https://otavio
     - Inclusion of features for controlling molecular fragment restrictions in _GROMACS_.
  	- Bug fixes...
 
-* _Solvate Suite 2025.07_
+* _Solvate Suite 2025.07_ (Bleading Frontier)
  
 	- Inclusion of features in GMDFF for running Q-Force with user-customized parameters.
 	- Inclusion of features in GCALC for deleting clusters before and after optimization.
  	- Bug fixes...
 
-* _Solvate Suite 2024.08_
+* _Solvate Suite 2024.08_ (Ascending Edge)
  
 	- Inclusion of parameters for simulation configuration through the MDPAR submodule.
 	- Expansion of the list of parameterized solvents via SOLVS submodule.
