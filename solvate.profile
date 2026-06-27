@@ -12,25 +12,11 @@ source $HOME_SOLVATE/solvate.complete
 
 # SOLVATE + Suite Programs
 
-source $HOME_SOLVATE/suite/gsn.profile
-source $HOME_SOLVATE/suite/orca.profile
-source $HOME_SOLVATE/suite/cp2k.profile
-source $HOME_SOLVATE/suite/xtb.profile
-source $HOME_SOLVATE/suite/mopac.profile
-source $HOME_SOLVATE/suite/gmx.profile
+# SOLVATE + Suite Programs
 
-#ource $HOME_SOLVATE/suite/boss.profile
-#ource $HOME_SOLVATE/suite/chimera.profile
-
-source $HOME_SOLVATE/suite/gvw.profile
-source $HOME_SOLVATE/suite/vmd.profile
-
-source $HOME_SOLVATE/suite/packmol.profile
-source $HOME_SOLVATE/suite/qforce.profile
-source $HOME_SOLVATE/suite/travis.profile
-
-source $HOME_SOLVATE/suite/openmpi.profile
-source $HOME_SOLVATE/suite/intel.profile
+for FILE in "$HOME_SOLVATE"/suite/*.profile; do
+   [[ -f "$FILE" ]] && source "$FILE"
+done
 
 # Some useful aliases
 
