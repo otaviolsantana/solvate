@@ -12,8 +12,6 @@ source $HOME_SOLVATE/solvate.complete
 
 # SOLVATE + Suite Programs
 
-# SOLVATE + Suite Programs
-
 for FILE in "$HOME_SOLVATE"/suite/*.profile; do
    [[ -f "$FILE" ]] && source "$FILE"
 done
