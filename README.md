@@ -13,6 +13,10 @@ For more information about the program, visit the [Solvate Suite](https://otavio
 - Part 1: [Molecular Simulation Integration](https://doi.org/10.5281/zenodo.8110727)
 - Part 2: [Molecular Modeling of Microsolvation](https://doi.org/10.5281/zenodo.10073747)
 
+**INSTALLATION**
+
+The suite is distributed pre-compiled for Linux systems, being only necessary to download and configure it. To do this, follow the instructions available in the program [home page](https://otaviolsantana.github.io/solvate/installation.html).
+
 **CHANGELOG**
 
 * _Solvate Suite 2026.07_ (Coming soon...)
