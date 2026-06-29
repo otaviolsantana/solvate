@@ -175,68 +175,26 @@
                </div>
                <div class="text">
                   <p style="font-size: 23px">
-                  The suite is distributed pre-compiled for Linux systems, being only necessary to configure it. To do this:</p></br>
-                  <p style="font-size: 23px">
-                  ❶ Download manually the latest release version:</p></br>
-                  <a href="https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip">
-                  <p style="font-size: 23px"><font face="Courier New" color="#2a6099">
-                  wget https://github.com/otaviolsantana/solvate/archive/refs/heads/main.zip</font></p></br></a>
-                  <p style="font-size: 23px">
-                  ① or the latest beta version:</p></br>
-                  <a href="https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip">
-                  <p style="font-size: 23px"><font face="Courier New" color="#2a6099">
-                  wget https://github.com/otaviolsantana/solvate-beta/archive/refs/heads/main.zip</font></p></br></a>
-                  <p style="font-size: 23px">
-                  ① or the installation program:</p></br>
+                  ❶ Download the installation program:</p></br>
                   <a href="https://raw.githubusercontent.com/otaviolsantana/solvate/main/solvate.install">
                   <p style="font-size: 23px"><font face="Courier New" color="#2a6099">
                   wget https://raw.githubusercontent.com/otaviolsantana/solvate/main/solvate.install</font></p></br></a>
                </div>
                <div class="text">
                   <p style="font-size: 23px">
-                  ❷ Decompress the “<i>main.zip</i>” file with your preferred <i>zip</i> manager or use the command:</p></br>
-                  <p style="font-size: 23px"><font face="Courier New" color="#2a6099">
-                  unzip main.zip</font></p></br>
-                  <p style="font-size: 17px"><font color="#c9211e">
-                  <b><u>Note</u></b>: A directory named “<i>solvate-main</i>” (for release) or “<i>solvate-beta-main</i>” (for beta
-                  version) will be extracted. Inside this directory, you will find all the binaries and configuration files for
-                  <b>Solvate Suite</b>. Since this is a precompiled version, you will only need to adjust a few settings to ensure the
-                  suite functions correctly. For internal consistency, rename the extracted directory to “<i>solvate</i>” and move it to
-                  your desired installation location.</font><br></p></br>
-                  <p style="font-size: 23px">
-                  ② Alternatively, make the “<i>solvate.install</i>” program executable and run it, specifying the program version and
-                  the installation path (installation options can be viewed by running the installer without any parameters):</p></br>
+                  ❷ Make the “<i>solvate.install</i>” program executable and run it:</p></br>
                   <p style="font-size: 23px"><font face="Courier New" color="#2a6099">
                   chmod +x solvate.install ; ./solvate.install</font></p></br>
                </div>
                <div class="text">
                   <p style="font-size: 23px">
-                  ❸ Next, make the “<i>solvate.config</i>” program executable and run it (configuration options can be viewed by
-                  running the setup utility without parameters):</p></br>
-                  <p style="font-size: 23px"><font face="Courier New" color="#2a6099">
-                  chmod +x solvate.config ; ./solvate.config</font></p></br>
-                  <p style="font-size: 17px"><font color="#c9211e">
-                  <b><u>Note</u></b>: This is done automatically by the “<i>solvate.install</i>” program.</font><br></br>
-                  </p>
-               </div>
-               <div class="text">
-                  <p style="font-size: 23px">
-                  ❹ Then, edit the following line in the “<i>solvate.profile</i>”:</p></br>
-                  <p style="font-size: 23px"><font face="Courier New" color="#2a6099">
-                  export HOME_SOLVATE=“⟨<i>Solvate Suite Directory</i>⟩”</font></p></br>
-                  <p style="font-size: 17px"><font color="#c9211e">
-                  <b><u>Note</u></b>: This section is located in the first few lines of the “<i>solvate.profile</i>” configuration
-                  file.</font><br></br>
-                  </p>
-               </div>
-               <div class="text">
-                  <p style="font-size: 23px">
-                  ❺ Finally, add the following line to your bash configuration file (/home/$USER/.bashrc):</p></br>
+                  ❸ Finally, add the following line to your bash configuration file (/home/$USER/.bashrc):</p></br>
                   <p style="font-size: 23px"><font face="Courier New" color="#2a6099">
                   source “⟨<i>Solvate Suite Directory</i>⟩”/solvate.profile</font></p></br>
                   <p style="font-size: 17px"><font color="#c9211e">
-                  <b><u>Note</u></b>: The path to be added must be the same as the one specified in step 4.</font>
-                  </p>
+                  <b><u>Note</u></b>: The installer requires you to specify the version (release or beta) to be installed. By default,
+                  the directory from which the installer is run serves as the installation location for the suite, but this can be
+                  changed during installation. Run the installer without parameters to see how to specify the version and program path.</font></p>
                </div>
             </div>
          </div>
