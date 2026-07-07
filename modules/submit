@@ -294,13 +294,15 @@ EXEC_SLM() # 1: SLURM System
    WORKCFG=$WORKCFG' -prc '$CNTASKS' -mem '$CFGMEMO' -local'
  # -------------------------------------------------------------------------------------------------
 
+ ##if [[ -z "$EMAIL" ]]; then read -rp "E-mail: " EMAIL; fi
+
    echo '#!/bin/bash'                                          > $JOBNAME.job
    echo ''                                                    >> $JOBNAME.job
    echo '#SBATCH --job-name='$JOBNAME''                       >> $JOBNAME.job
    echo '#SBATCH --ntasks='$CNTASKS''                         >> $JOBNAME.job
    echo '#SBATCH --time=300:00:00'                            >> $JOBNAME.job
- ##echo '#SBATCH --mail-type=END'                             >> $JOBNAME.job
- ##echo '#SBATCH --mail-user=my_mail@google.com'              >> $JOBNAME.job
+   echo '#SBATCH --mail-type=END'                             >> $JOBNAME.job
+   echo '#SBATCH --mail-user='$EMAIL''                        >> $JOBNAME.job
  # if [[ $PROGEXE = 'rungmx' ]]; then
  #    echo '#SBATCH --job-name='$JOBNAME''                    >> $JOBNAME.job
  #    echo '#SBATCH --ntasks=1'                               >> $JOBNAME.job
