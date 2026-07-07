@@ -19,11 +19,16 @@ The suite is distributed pre-compiled for Linux systems, being only necessary to
 
 **CHANGELOG**
 
-* _Solvate Suite 2026.07_ (Coming soon...)
+* _Solvate Suite 2027.01_ (Coming soon...)
  
 	- BONDS: Implementation of a submodule for automated hydrogen-bond search.
 	- MACRO: Implementation of a submodule for biomolecular systems.
 	- GSOLV: Implementation of a submodule for automated explicit solvation free-energy calculations.
+
+* _Solvate Suite 2026.07_ (Convergent Frontier)
+ 
+	- Creation of self-installation resources.
+ 	- Minor bug fixes...
 
 * _Solvate Suite 2026.01_ (Convergent Edge)
  
@@ -35,7 +40,7 @@ The suite is distributed pre-compiled for Linux systems, being only necessary to
     - Integration of the suite with the _CP2K_ program.
     - Inclusion of an autocomplete feature for the main modules.
     - Inclusion of features for controlling molecular fragment restrictions in _GROMACS_.
- 	- Bug fixes...
+ 	- Minor bug fixes...
 
 * _Solvate Suite 2025.07_ (Bleading Frontier)
  
