@@ -26,6 +26,11 @@ source $HOME_SOLVATE/suite/packmol.profile
 source $HOME_SOLVATE/suite/qforce.profile
 source $HOME_SOLVATE/suite/openmpi.profile
 
+#ource $HOME_SOLVATE/suite/boss.profile
+#ource $HOME_SOLVATE/suite/chimera.profile
+#ource $HOME_SOLVATE/suite/travis.profile
+#ource $HOME_SOLVATE/suite/intel.profile
+
 # Some useful aliases
 
 #-------------------------# #-------------------------#
@@ -51,11 +56,16 @@ alias   babel="runbabel"
 #-------------------------# #-------------------------#
 alias sysinfo="infos"      ; alias info="infos"
 alias credits="infov"
-alias  update="infou"
+alias updates="infou"
+#-------------------------# #-------------------------#
+alias  update="solvate.update"
+alias  config="solvate.config -auto"
 #-------------------------# #-------------------------#
 
 
 # Setting number of threads and stack memory
+
+#export OMP_NUM_THREADS=`lscpu | grep -ia "CPU(s):" | grep -ia -v list | grep -ia -v numa | head -n1 | awk '{print $2}'`
 
 ulimit -s unlimited
 

@@ -574,7 +574,7 @@ jmols_complete()
    curr="${COMP_WORDS[COMP_CWORD]}"
    prev="${COMP_WORDS[COMP_CWORD-1]}"
    # Allowed extensions
-   ALLOW_EXT="com log inp out icp ocp xyz xtb mop mpc gro pdb cif trj cpt dat sup spl job slt svt"
+   ALLOW_EXT="com log inp out icp ocp xyz xtb mop mpc gro pdb ent cif trj cpt dat sup spl job slt svt"
    # List of files
    ALLOW_ARQ=""
    for FILE in *; do
