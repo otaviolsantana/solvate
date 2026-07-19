@@ -2,7 +2,7 @@
 
 # SOLVATE Definitions
 
-export HOME_SOLVATE="⟨Solvate_Suite_Directory⟩"
+export HOME_SOLVATE=/home/otavio/.bin/solvate
 export MANPATH=$MANPATH:$HOME_SOLVATE/share/man
 export PATH=$PATH:$HOME_SOLVATE:$HOME_SOLVATE/alpha:$HOME_SOLVATE/modules:$HOME_SOLVATE/share:$HOME_SOLVATE/suite:$MANPATH
 
