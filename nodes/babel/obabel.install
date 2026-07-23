@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Instaling OpenBabel
+
+tar xfz obabel.tgz ; chmod ug+x obabel
+
+if [ ! -z $1 ]; then
+   sudo chown root:users obabel
+   sudo mv -f obabel $1/
+fi
