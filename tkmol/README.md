@@ -16,7 +16,7 @@ To explore practical examples, check out the Zenodo repository:
 
 **CHANGELOG**
 
-* _TkMol Suite 2026.12_ (Coming soon...)
+* _TkMol Suite 2027.01_ (Coming soon...)
 
 	- TKBIO: Toolkit for macromolecular input preparation.
 
