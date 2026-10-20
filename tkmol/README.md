@@ -36,7 +36,7 @@ If you use _TkMol Suite_, please cite:
  	Daniel G. Silva, Otávio L. Santana, Sidney R. Santana
 	J. Chem. Inf. Model. 2026, XX, X, XXXX–XXXX
 
-Link: [https://doi.org/10.1021/acs.jcim.3c01899]
+Link: [https://doi.org/10.1021/acs.jcim.3cXXXXX]
 
 **LICENSE**
 
